@@ -1,0 +1,219 @@
+<html lang="en">
+    <head>
+        <title>Свойства</title>
+        <script src="js/newTexCommands.js" defer></script>
+        <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <h1><a name="begin"></a><a href="index.html">Определения и свойства числовых выражений</a></h1>
+            <ul>
+                <li><a href="#frac">Дробь</a></li>
+                <li><a href="#log">Логарифм</a></li>
+                <li><a href="#pow">Степень</a></li>
+                <li><a href="#abs">Модуль</a></li>
+                <li><a href="#0root">Корень чётной степени</a></li>
+                <li><a href="#1root">Корень нечётной степени</a></li>
+            </ul>
+        <h2><a name="frac"></a><a href="#begin">Дробь</a></h2>
+        <i>Определение:</i> \(\displaystyle \frac{a}{b} = c \Leftrightarrow 
+            \left\{
+                \begin{array}{l}
+                    b \cdot c = a \\
+                    b \neq 0
+                \end{array}
+            \right.
+        \)
+        <ol>
+            <li>
+            \( \displaystyle \frac{a \cdot c}{b \cdot c} = \frac{a}{b} \) <br>
+            <ul>
+                <li><b>Сократить:</b> дописать в системе \(c \neq 0\).</li>
+                <li><b>Домножить:</b> должно быть известно \(c \neq 0\).</li>
+            </ul>
+            </li>
+            <li>
+                \( \displaystyle a : \frac{b}{c} = a \cdot \frac{c}{b} \) <br>
+            <ul>
+                <li><b>Заменить деление умножением:</b> дописать в системе \(c \neq 0\).</li>
+                <li><b>Заменить умножение делением:</b> должно быть известно \(c \neq 0\).</li>
+            </ul>
+            </li>
+            <li>
+                \( \displaystyle \frac{a}{c} \pm \frac{b}{c} = \frac{a \pm b}{c} \)
+            </li>
+            <li>\(\displaystyle \frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}  \)</li>
+            </ol>
+        <h2><a name="log"></a><a href="#begin">Логарифм</a></h2>
+        <i>Определение:</i>
+        \(\displaystyle \log_a{b} = c \Leftrightarrow 
+            \left\{
+                \begin{array}{l}
+                    a^c = b \\
+                    a > 0 \\
+                    a \neq 1 \\
+                    b>0
+                \end{array}
+            \right.
+        \)
+            <ol>
+            <li>\( \displaystyle \log_a{b^c}= c \cdot \log_a{b} \) <br>
+                <ul>
+                    <li><b>Скинуть чётную степень:</b> должно быть известно \( b \geq 0 \).</li>
+                    <li><b>Закинуть чётную степень:</b> дописать в системе \( b>0 \).</li>
+                </ul>
+            </li>
+            <li>
+                \( \displaystyle \log_{a^c}{b} = \frac{1}{c} \cdot \log_a{b} \) <br>
+                <ul>
+                    <li><b>Скинуть чётную степень:</b> должно быть известно \( a \geq 0 \).</li>
+                    <li><b>Закинуть чётную степень:</b> дописать в системе \( a>0 \).</li>
+                </ul>
+            </li>
+            <li>
+                \( \displaystyle \log_a{(b \cdot c)} = \log_a{b} + \log_a{c} \) <br>
+                <ul>
+                    <li><b>Разъединить:</b> должно быть известно \(b \geq 0\) (либо \(c \geq 0\)). </li>
+                    <li><b>Соединить:</b> дописать в системе \(b>0\) (либо \(c > 0\)).</li>
+                </ul>
+            </li>
+            <li>
+                \( \displaystyle \log_a{\frac{b}{c}} = \log_a{b} - \log_a{c} \) <br>
+                <ul>
+                    <li><b>Разъединить:</b> должно быть известно \(b \geq 0\) (либо \(c \geq 0\)). </li>
+                    <li><b>Соединить:</b> дописать в системе \(b>0\) (либо \(c > 0\)).</li>
+                </ul>
+            </li>
+            <li>
+                \( \displaystyle \log_a{a} = 1 \) <br>
+                <ul>
+                    <li><b>Превратить в 1:</b> дописать в системе \( a>0,~ a \neq 1 \).</li>
+                    <li><b>Расписать 1:</b> должно быть известно \( a>0,~ a \neq 1 \).</li>
+                </ul>
+            </li>
+            <li>
+                \( \displaystyle \log_a{1} = 0 \) <br>
+                <ul>
+                    <li><b>Превратить в 0:</b> дописать в системе \( a>0,~ a \neq 1 \).</li>
+                    <li><b>Расписать 0:</b> должно быть известно \( a>0,~ a \neq 1 \).</li>
+                </ul>
+            </li>
+            <li>
+                \( \displaystyle a^{\log_a{b}} = b \) <br>
+                <ul>
+                    <li><b>Свернуть в число:</b> дописать в системе \( b>0,~a>0,~a \neq 1 \).</li>
+                    <li><b>Расписать число:</b> должно быть известно \(b>0,~a>0,~a \neq 1\).</li>
+                </ul>
+            </li>
+            <li>
+                \( \displaystyle \log_a{b} = \frac{\log_c{b}}{\log_c{a}} \) <br>
+                <ul>
+                    <li><b>Перейти к новому основанию:</b> должно быть известно \(c>0,~c \neq 1\)</li>
+                    <li><b>Свернуть:</b> дописать в системе \( c>0,~ c \neq 1 \)</li>
+                </ul>
+            </li>
+            <li>
+                \( \displaystyle a^{\log_b{c}} = c^{\log_b{a}} \) <br>
+            </li>
+            <li>
+                \( \displaystyle \log_a{b} \cdot \log_c{d} = \log_a{d} \cdot \log_c{b} \)
+            </li>
+        </ol>
+        <h2><a name="pow"></a><a href="#begin">Степень</a></h2>
+            <i>Определение:</i>
+            \( \displaystyle a^b = \underbrace{a \cdot a \cdot \ldots \cdot a}_{b~штук} \)
+            <ol>
+                <li>
+                    \( a^b \cdot a^c = a^{b+c} \)
+                </li>
+                <li>
+                    \( \displaystyle \frac{a^b}{a^c} = a^{b-c} \)
+                </li>
+                <li>
+                    \( \displaystyle \left(a^b\right)^c = a^{b \cdot c} \)
+                </li>
+                <li>\( \displaystyle a^{-b} = \frac{1}{a^b} \)</li>
+                <li>\( \displaystyle a^c \cdot b^c = (a \cdot b)^c \)</li>
+                <li>\( \displaystyle \frac{a^c}{b^c} = \left( \frac{a}{b} \right)^c \)</li>
+                <li>\( a^0 = 1 \)</li>
+                <li>\( \displaystyle a^{\frac{1}{b}} = \sqrt[b]{a} \)</li>
+            </ol>
+        <h2><a name="abs"></a><a href="#begin">Модуль</a></h2>
+            <i>Определение:</i>
+            \(
+                |a| = знак(a) \cdot a
+            \)
+            <ol>
+                <li>\(|a| \geq 0\)</li>
+                <li>\( |a|=|-a| \)</li>
+                <li>\( |a| \cdot |b| = |a \cdot b| \)</li>
+                <li>\( \displaystyle \frac{|a|}{|b|} = \left| \frac{a}{b} \right| \)</li>
+                <li>\( a^{2n} = |a|^{2n} \)</li>
+                <li>\( |a| = \sqrt[2n]{a^{2n}} \)</li>
+            </ol>
+            <h2><a name="1root"></a><a href="#begin">Корень нечётной степени</a></h2>
+            <i>Определение:</i>
+            \(
+                \sqrt[b]{a} = c \Leftrightarrow
+                \left\{
+                    \begin{array}{l}
+                        c^b = a \\
+                        b \in \mathbb{N} \\
+                        b ~\not\mathop{\vdots}~ 2
+                    \end{array}
+                \right.
+            \)
+            <ol>
+                <li>
+                    \( \sqrt[c]{a} \cdot \sqrt[c]{b} = \sqrt[c]{a \cdot b} \)
+                </li>
+                <li>
+                    \(\displaystyle \frac{\sqrt[c]{a}}{\sqrt[c]{b}} = \sqrt[c]{\frac{a}{b}} \)
+                </li>
+                <li>
+                    \( (\sqrt[b]{a})^b = a \)
+                </li>
+                <li>\( \sqrt[b]{a^b} = a \)</li>
+                <li>\( \sqrt[b]{\sqrt[c]{a}} = \sqrt[b \cdot c]{a} \)</li>
+            </ol>
+        <h2><a name="0root"></a><a href="#begin">Корень чётной степени</a></h2>
+            <i>Определение:</i>
+            \(
+                \sqrt[b]{a} = c \Leftrightarrow
+                \left\{
+                    \begin{array}{l}
+                        c^b = a \\
+                        c \geq 0 \\
+                        a \geq 0 \\
+                        b \in \mathbb{N} \\
+                        b ~\vdots~ 2
+                    \end{array}
+                \right.
+            \)
+            <ol>
+                <li>
+                    \( \sqrt[c]{a} \cdot \sqrt[c]{b} = \sqrt[c]{a \cdot b} \) <br>
+                    <ul>
+                        <li><b>Соединить:</b> дописать в системе \(a \geq 0,~ b \geq 0\).</li>
+                        <li><b>Разъединить:</b> должно быть известно \(a \geq 0,~ b \geq 0\).</li>
+                    </ul>
+                </li>
+                <li>
+                    \(\displaystyle \frac{\sqrt[c]{a}}{\sqrt[c]{b}} = \sqrt[c]{\frac{a}{b}} \) <br>
+                    <ul>
+                        <li><b>Соединить:</b> дописать в системе \(a \geq 0,~ b \geq 0\).</li>
+                        <li><b>Разъединить:</b> должно быть известно \(a \geq 0,~ b \geq 0\).</li>
+                    </ul>
+                </li>
+                <li>
+                    \( (\sqrt[b]{a})^b = a \) <br>
+                    <ul>
+                        <li><b>Возвести в степень:</b> дописать в системе \(a \geq 0 \).</li>
+                        <li><b>Расписать число:</b> должно быть известно \(a \geq 0 \).</li>
+                    </ul>
+                </li>
+                <li>\( \sqrt[b]{a^b} = |a| \)</li>
+                <li>\( \sqrt[b]{\sqrt[c]{a}} = \sqrt[b \cdot c]{a} \)</li>
+            </ol>
+    </body>
+</html>

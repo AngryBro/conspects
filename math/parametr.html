@@ -1,0 +1,529 @@
+<html lang="en">
+    <head>
+        <title>Параметры</title>
+        <link rel="stylesheet" href="style.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1><a name="begin" href="index.html">Методы решения задач с параметрами</a></h1>
+        <ul>
+			<li><a href="#graphic">Графический</a></li>
+			<li><a href="#analytic">Аналитический</a></li>
+			<li><a href="#change">Замена</a></li>
+			<li><a href="#sqr">Квадратный трёхчлен</a></li>
+			<!-- <li><a href="#function">Функция</a></li> -->
+			<li><a href="#symmetry">Симметрия</a></li>
+			<li><a href="#evaluation">Оценка</a></li>
+		</ul>
+		<h2><a href="#begin" name="graphic">Графический</a></h2>
+		<h4>Постановка задачи</h4>
+		<table>
+		<tr><td>
+		Определить сколько решений \((x,y)\) имеет выражение \(F(x,y,a)\) <br>
+			в зависимости от параметра \(a\).
+		</td></tr>
+		</table>
+		<h4>Решение</h4>
+		<ol>
+			<li>
+				Преобразование \(F(x,y,a) \Leftrightarrow 
+					\begin{cases}
+						G(x,y) \\
+						A(x,y,a)
+					\end{cases}
+				\).
+			</li>
+			<li>
+				Даём описание графику \(G\), строим его.
+			</li>
+			<li>
+				Даём описание графику \(A\), определяем на что влияет \(a\).
+			</li>
+			<li>
+				Перебираем все \(a\) от \(\operatorname{min}(a)\) до \(\operatorname{max}(a)\).<br>
+				Строим график \(A\) при \(a=\operatorname{min}(a)\), медленно увеличиваем \(a\),<br>
+				следим за тем, как меняется график \(A\).<br>
+				Всякий раз, когда количество общих точек \(A\) и \(G\) меняется,<br>
+				рисуем график \(A\) на том моменте, начиная с которого / в котором / заканчивая которым<br>
+				количество общих точек с графиком \(G\) меняется.<br>
+				Подписываем сколько общих точек в каждом граничном случае.
+			</li>
+			<li>
+				В каждом зарисованном граничном случае находим \(a\).
+			</li>
+			<li>
+				На прямой отмечаем все найденные \(a\), подписываем сколько решений при таких \(a\),<br>
+				Если решений нужное количество, точка закрашенная, иначе выколотая.
+			</li>
+			<li>
+				По графику считаем количество решений на промежутках,<br>
+				подписываем, закрашиваем нужные.
+			</li>
+			<li>
+				В ответ выписываем закрашенные промежутки.
+			</li>
+		</ol>
+		<h2><a href="#begin" name="analytic">Аналитический</a></h2>
+		<h4>Постановка задачи</h4>
+		<table>
+		<tr><td>
+		Определить сколько решений \(x\) имеет выражение \(F(x,a)\) <br>
+			в зависимости от параметра \(a\).
+		</td></tr>
+		</table><br>
+		<h4>Решение</h4>
+		<ol>
+			<li>
+				Преобразование \(F(x,a) \Leftrightarrow
+				\left[
+					\begin{array}{l}
+						G_1(x,a)~~~(1) \\
+						G_2(x,a)~~~(2) \\
+						\ldots \\
+						G_n(x,a)~~~(n)
+					\end{array}
+				\right.
+				\)
+			</li>
+			<li>
+				Каждое выражение совокупности анализируется.<br>
+				Возможны 3 случая:<br>
+				<ul>
+					<li>
+						\(
+							G_i(x,a) \Leftrightarrow 
+							\begin{cases}
+								x = x_i(a) \\
+								a \in A
+							\end{cases}
+						\)<br>
+						\(x_i\) &mdash; возможное решение \((i)\).<br>
+						Является решением при \(a \in A\).
+					</li>
+					<li>
+						\(
+							G_i(x,a) \Leftrightarrow
+							\begin{cases}
+								x \in T \\
+								a \in A
+							\end{cases}
+						\)<br>
+						При \(a \in A\) решений бесконечно.
+					</li>
+					<li>
+						\(
+							G_i(x,a) \Leftrightarrow
+							\begin{cases}
+								x^2+px+q = 0 \\
+								f(x,a) \neq 0 \\
+								a \in A
+							\end{cases}
+						\)<br>
+						\(x_{i_1},x_{i_2}\) &mdash; возможные решения \((i)\).<br>
+						\(x_{i_1,i_2}\) существуют при \(
+							\begin{cases}
+								D \geq 0 \\
+								a \in A
+							\end{cases}
+						\).<br>
+						Находим \(a\), при которых \(f(x,a) = 0\):<br>
+						\(
+							\begin{cases}
+								x^2+px+q = 0 \\
+								f(x,a) = 0
+							\end{cases} \Leftrightarrow
+								(x,a) \in A_{x,a}
+						\)<br>
+						Для каждого найденного \(a\) определяем сколько из \(x_{i_1,i_2}\) не являются решениями.
+						<br>На оси \(a\) для \(x_{i_1,i_2}\) в найденных \(a\) будет \( < 2\) решений.<br> 
+						Совпадение \(x_{i_1}=x_{i_2}\) при \(D=0\).
+					</li>
+				</ul>
+			</li>
+			<li>
+				\(x_i\) и \(x_j\) совпадают, если они являются решением системы из \((i)\) и \((j)\). <br>
+				\(
+					\begin{cases}
+						G_i(x,a) \\
+						G_j(x,a)
+					\end{cases}
+				\)
+			</li>
+			<li>
+				Рисуем \(n\) осей \(a\). На оси для \(x_i\) рисуем множество существования решения. 
+			</li>
+			<li>
+				На осях для \(x_i\) и \(x_j\) соединяем дугой \(a\), при которых решения совпадают.
+			</li>
+			<li>
+				Рисуем ось \(a\). Отмечаем все числа, отмеченные на всех прямых ранее.<br>
+				Подписываем сколько решений в каждой точке.<br>
+				Там где нужное число решений, точка закрашенная, иначе выколотая.<br>
+			</li>
+			<li>
+				Подписываем сколько решений на промежутках, нужные закрашиваем.
+			</li>
+			<li>
+				В ответ выписываем закрашенные промежутки.
+			</li>
+		</ol>
+		<h2><a href="#begin" name="change">Замена</a></h2>
+		<ol>
+			<li> <b>Добавление/исключение переменной.</b><br><br>
+				<table>
+				<tr>
+				<td>
+				\(
+					\begin{cases}
+						F(x,y,a) \\
+						y = f(x,a)
+					\end{cases} 
+					\Longrightarrow
+					F\left(x,f(x,a),a)\right)
+				\)
+				</td>
+				</tr>
+				</table><br>
+				Количество решений при таком переходе сохраняется. 
+			</li>
+			<li> <b>Переход к новой переменной</b><br><br>
+				<table>
+				<tr>
+				<td>
+				\(F(f(x),a) \overset{t=f(x)}{\Longleftrightarrow} F(t,a)\)
+				</td>
+				</tr>
+				</table><br>
+				В координатах \(Oxt\) рисуется график \(t=f(x)\).<br>
+				По нему строится таблица для множеств \(t\) и количества решений \(x\).<br><br>
+				<table>
+					<tr>
+						<td>Множество \(t\)</td><td>Количество \(x\)</td>
+					<tr>
+					<tr>
+						<td>\(T_1\)</td><td>\(k_1\)</td>
+					</tr>
+					<tr>
+						<td>\(T_2\)</td><td>\(k_2\)</td>
+					</tr>
+					<tr>
+						<td>\(\ldots\)</td><td>\(\ldots\)</td>
+					</tr>
+					<tr>
+						<td>\(T_n\)</td><td>\(k_n\)</td>
+					</tr>
+				</table>
+				\((T_1 \cup T_2 \cup \ldots \cup T_n = \mathbb{R})\)
+				<br><br>
+				При решении задачи для \(F(t,a)\) количество решений для \(x\)<br>
+				считается с помощью таблицы.
+				Обратная замена не делается.
+			</li>
+			<li> <b>Переход к новому параметру</b><br><br>
+				<table>
+				<tr>
+				<td>
+				\(F(x,f(a)) \overset{b = f(a)}{\Longleftrightarrow} F(x,b)\)
+				</td>
+				</tr>
+				</table>
+				<br>
+				Найти \(b\) для задачи с \(F(x,b)\),
+				значения \(a\) получить обратной заменой.
+			</li>
+			<li><b>Замена для преобразований</b><br><br>
+				<table>
+				<tr>
+				<td>
+				\(F(x,f(x,a),a) \overset{u = f(x,a)}{\Longleftrightarrow} F(x,u,a)\)
+				</td>
+				</tr>
+				</table>
+				<br>
+				Используется только для преобразований по свойствам и переходам.<br>
+				После преобразований выполняется обратная замена.
+			</li>
+		</ol>
+		<h2><a name='sqr' href='#begin'>Квадратный трёхчлен</a></h2>
+		<h4>Постановка задачи</h4>
+		<table>
+		<tr><td>
+		Исследовать множества решений выражения \(ax^2+bx+c \vee 0\)<br>
+		на заданных множествах, ограниченных числами \(x_i\).
+		</td></tr>
+		</table>
+		<h4>Решение</h4>
+		<ol>
+			<li>
+				Рассматриваем случай \(a=0\) отдельно.
+			</li>
+			<li>
+				При \(a \neq 0\) обозначаем и считаем:
+				<ul>
+					<li>
+						\(
+							f(x) = ax^2+bx+c
+						\) &mdash; парабола.
+					</li>
+					<li>
+						\(
+							D = b^2-4ac
+						\)
+					</li>
+					<li>
+						\(
+							x_в = -\displaystyle\frac{b}{2a}
+						\)
+					</li>
+					<li>
+						\(
+							f(x_i) = ax_i^2+bx_i+c
+						\)
+					</li>
+				</ul>
+			</li>
+			<li>
+				Перебор всех случаев:
+				<ul>
+					<li>
+						<ol>
+							<li>
+							\(a < 0\) &mdash; ветви вниз
+							</li>
+							<li>
+							\(a > 0\) &mdash; ветви вверх
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>
+								\(D < 0\) &mdash; парабола не пересекает ось абсцисс
+							</li>
+							<li>
+								\(D = 0\) &mdash; парабола касается оси абсцисс
+							</li>
+							<li>
+								\(D > 0\) &mdash; парабола пересекает ось абсцисс
+							</li>
+						</ol>
+					</li>
+					<li>
+						\(x_в \vee x_i\)
+					</li>
+					<li>
+						\(f(x_i) \vee 0\)
+					</li>
+				</ul>
+				Реализация перебора:<br><br>
+				<div>
+					\(\tiny n_1)\normalsize ~a \vee 0\)
+					<div style='margin-left:1cm'>
+						\(\tiny n_1.n_2)\normalsize~ D\vee 0\)
+						<div style='margin-left:1cm'>
+							\(\tiny n_1.n_2.n_3)\normalsize ~x_в \vee x_i\)
+							<div style='margin-left:1cm'>
+								\(\tiny n_1.n_2.n_3.n_4)\normalsize ~f(x_i)\vee 0\)
+								<div style='margin-left:1cm'>
+									\(\tiny n_1.n_2.n_3.n_4.n_5)\normalsize ~f(x_j)\vee 0\)
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				Если случай не подходит, то вложенные случаи не рассматриваются.
+				<br>
+				Если случай может подойти, то рассматриваются вложенные
+				случаи.
+				<br><br>
+				Замечания по перебору случаев и дальнейшему решению:
+				<ul>
+					<li>
+						Случай \(a=0\) не содержит подслучаев.
+					</li>
+					<li>
+						Случай \(D < 0 \) не содержит подслучаев.
+					</li>
+					<li>
+						Случай \(D=0\) содержит только подслучаи \(x_в\vee x_i\).
+					</li>
+					<li>
+						Случай, выражающийся ложным при любых значениях
+						<br>параметров выражением,
+						не рассматривается.
+					</li>
+					<li>
+						Случаи с одинаковыми подслучаями можно объединить.
+					</li>
+					<li>
+						\(
+							a \cdot f(x_i) < 0 \Rightarrow D>0
+						\)
+					</li>
+				</ul>
+			</li>
+			<li>
+				Выбрав подходящие случаи, составляется выражение \(F(a,D,x_в,f(x_i))\),<br>
+				решение которого является ответом.
+			</li>
+		</ol>
+		<h2><a name='symmetry' href='#begin'>Симметрия</a></h2>
+		<h4>Постановка задачи</h4>
+		<table>
+		<tr><td>
+		Найти значения параметра \(a\), при каждом из которых<br>
+		\(F(x,a)\) имеет ровно \(n\) решений.
+		</td></tr>
+		</table><br>
+		<h4>Решение</h4>
+		<ol>
+			<li>
+				Находим все такие \(f_i(x)\),<br>
+				для которых верно \(F(f_i(x),a) \Leftrightarrow F(x,a)\).<br>
+				\(f_1(x) = x\).
+			</li>
+			<li>
+				Если \(x\) &mdash; решение, то \(f_2(x),~f_3(x)\ldots f_k(x)\) 
+				&mdash; тоже решения.<br>
+			</li>
+			<li>
+				Решений \(f_1(x),~f_2(x),\ldots f_k(x)~~~k\), требуется решений \(n\),<br>
+				\(n\) не делится на \(k\), следовательно какие-то решения совпадают.
+			</li>
+			<li> Совпадения решений:<br>
+				\(
+					\begin{cases}
+						F(x,a) \\
+						f_i(x) = f_j(x)
+					\end{cases}
+				\).
+			</li>
+			<li>
+				При каждом найденном \(a\) находим количество решений \(F(x,a)\).<br>
+			</li>
+			<li>
+				В ответ выписываем \(a\), при которых ровно \(n\) решений.
+			</li>
+		</ol>
+		<a href='javascript:OpenList("example_symmetry")'><b>Пример</b></a>
+		<div hidden id='example_symmetry' style="margin-top:1cm">
+			<table>
+			<tr style="text-align:left"><td>
+				Найдите все значения параметра \(a\), при каждом из которых система<br><br>
+				\(~~~~~~~
+					\begin{cases}
+						ax^2+a-1=y-|\sin{x}| \\
+						\operatorname{tg^2}{x}+y^2=1
+					\end{cases}
+				\)<br><br>
+				имеет единственное решение.
+			</td></tr>
+		</table><br>
+		<b>Решение</b><br><br>
+		Если \((x;y)\) &mdash; решение, то \((-x;y)\) тоже решение, так как<br>
+		\(a(-x)^2=ax^2,~~|\sin{(-x)}|=|\sin{x}|,~~\operatorname{tg^2}{(-x)}=\operatorname{tg^2}{x}\).<br><br>
+		Решений \((x;y),~(-x;y)\) 2, требуется 1, 1 не делится на 2, следовательно решения должны совпадать.<br><br>
+		1. \(
+			\begin{cases}
+				(x;y)=(-x;y) \\
+				ax^2+a-1=y-|\sin{x}| \\
+				\operatorname{tg^2}{x}+y^2=1
+			\end{cases} \Leftrightarrow
+			\begin{cases}
+				x=0 \\
+				a-1=y \\
+				y^2=1
+			\end{cases} \Rightarrow
+			(a-1)^2 = 1 \Leftrightarrow
+			\left[
+				\begin{array}{l}
+					a = 0 \\
+					a = 2
+				\end{array}
+			\right.
+		\).<br><br>
+		При \(a = 0\):<br>
+		\(
+			\begin{cases}
+				-1=y-|\sin{x}| \\
+				\operatorname{tg^2}{x}+y^2=1
+			\end{cases}
+		\), пары \((0;-1)\) и \((\pi ;-1)\) являются решениями. Решений больше 1.<br><br>
+		При \(a=2\):<br>
+		\(
+			\begin{cases}
+				2x^2+1=y-|\sin{x}| \\
+				\operatorname{tg^2}{x}+y^2=1
+			\end{cases} \Leftrightarrow
+			\begin{cases}
+				y = 2x^2+1+|\sin{x}| \\
+				y^2=1-\operatorname{tg^2}{x}
+			\end{cases};
+		\)<br><br>
+		Так как \(x^2\geq 0,~~|\sin{x}|\geq 0,~~-\operatorname{tg^2}{x}\leq 0\), то <br><br>
+		\(
+			\begin{cases}
+				y \geq 1 \\
+				y^2 \leq 1
+			\end{cases} \Leftrightarrow
+			\begin{cases}
+				y \geq 1 \\
+				-1 \leq y \leq 1
+			\end{cases} \Leftrightarrow y = 1.
+		\)<br><br>
+		\(
+			\begin{cases}
+				y = 2x^2+1+|\sin{x}| \\
+				y^2=1-\operatorname{tg^2}{x}
+			\end{cases} \Leftrightarrow
+			\begin{cases}
+				2x^2+|\sin{x}|=0 \\
+				\operatorname{tg^2}{x} = 0 \\
+				y = 1
+			\end{cases} \Leftrightarrow
+			\begin{cases}
+				(x;y)=(0;1) \\
+				\sin{x} = 0 \\
+				\operatorname{tg}{x} = 0
+			\end{cases} \Leftrightarrow (x;y)=(0;1).
+		\)<br>
+		Одно решение.<br><br>
+		Одно решение при \(a=2\).<br><br>
+		<b>Ответ:</b> \(a=2\).
+		</div>
+		<h2><a name='evaluation' href='#begin'>Оценка</a></h2>
+		<h4>Постановка задачи</h4>
+		<table>
+		<tr><td>
+		Исследовать количество решений \(F(x,a)\)<br>
+		в зависимости от параметра \(a\).
+		</td></tr>
+		</table><br>
+		<h4>Решение</h4>
+		<ol>
+			<li>
+				Используя свойства выражений из пункта 3, составляем такую систему \(G(a) \Leftarrow F(x,a)\),<br>
+				решением которой является конечное множество значений \(a\).
+			</li>
+			<li>
+				При каждом найденном \(a\) решаем \(F(x,a)\).
+			</li>
+			<li>
+				Часто используются следующие свойства:
+				<ul>
+					<li>
+						\(
+							t^{2n},~|t| \geq 0
+						\)
+					</li>
+					<li>
+						\(
+							-1 \leq \sin{t},~\cos{t} \leq 1
+						\)
+					</li>
+				</ul>
+			</li>
+		</ol>
+    </body>
+</html>

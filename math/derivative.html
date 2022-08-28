@@ -1,0 +1,138 @@
+<html lang="en">
+    <head>
+        <title>Исследование функции</title>
+		<meta charset='utf-8'/>
+        <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1><a name="begin"></a><a href="index.html">Исследование функции</a></h1>
+        <ul>
+            <li><a href="#derivative">Производная и функция</a></li>
+            <li><a href="#points">Типы точек</a></li>
+			<li><a href="#touching">Касание графиков</a></li>
+			<li><a href="#touching">Первообразная и интеграл</a></li>
+			<li><a href="#alg">Алгоритм исследования</a></li>
+        </ul>
+        <h2><a name='derivative' href='#begin'>Производная и функция</a></h2>
+		<h3>Обозначения</h3>
+		<ul>
+			<li>
+				\(x(t)~-\) значение функции \(x\) в точке \(t\). 
+			</li>
+			<li>
+				\(x'(t)~-\) производная функции \(x\) в точке \(t\).
+			</li>
+		</ul>
+		<h3>Определения</h3>
+		<ul>
+			<li>
+				\(x'(t) = \displaystyle\lim_{t_1 \rightarrow t}\frac{x(t_1)-x(t)}{t_1-t}\). 
+			</li>
+			<li>
+				\(
+					x(t) \nearrow\) при \(~t\in T \Leftrightarrow
+				\) для любых \(t_2>t_1 \in T:~~x(t_2)>x(t_1)\).
+			</li>
+			<li>
+				\(
+					x(t) \searrow\) при \(~t\in T \Leftrightarrow
+				\) для любых \(t_2>t_1 \in T:~~x(t_2) < x(t_1) \).
+			</li>
+		</ul>
+		<h3>Свойства</h3>
+		Обозначения:
+		<ul>
+			<li>
+				\(x~-\) функция.
+			</li>
+			<li>
+				\(t~-\) аргумент функции.
+			</li>
+			<li>
+				\(c~-\) постоянное число (константа).
+			</li>
+		</ul>
+		<text id='derpr'>
+		</text>
+		<ol>
+			<li> 
+				\(
+					x'(t) \geq 0,~~ (x'(t)=0\) в конечном количестве точек) при 
+					\(t \in (t_1;~t_2)\) \( ~~\Leftrightarrow~~
+					x(t) \nearrow \) при  \(t \in [t_1;~t_2].
+				\)
+			</li>
+			<li>
+				\(
+					x'(t) \leq 0,~~ (x'(t)=0\) в конечном количестве точек) при 
+					\(t \in (t_1;~t_2)\) \( ~~\Leftrightarrow~~
+					x(t) \searrow \) при  \(t \in [t_1;~t_2].
+				\)
+			</li>
+		</ol>
+		<h2><a name='points' href='#begin'>Типы точек</a></h2>
+		<ol>
+			<li>
+				Критическая точка &ndash; точка, в которой функция существует, а производная либо равна 0,
+				либо не существует.
+			</li>
+			<li>
+				Стационарная точка &ndash; точка, в которой производная равна 0.
+			</li>
+			<li>
+				Точка максимума &ndash; точка, значение функции в которой больше,
+				чем значение в соседних точках.
+			</li>
+			<li>
+				Точка минимума &ndash; точка, значение функции в которой меньше,
+				чем значение в соседних точках.
+			</li>
+			<li>
+				Точка экстремума &ndash; точка, являющаяся либо точкой максимума,
+				либо точкой минимума.
+			</li>
+		</ol>
+		<h2><a name='touching' href='#begin'>Касание графиков</a></h2>
+		График \(x = f(t)\) касается графика \(x=\varphi(t)\) в точке \(t_0\):<br><br>
+		\(
+			\begin{cases}
+				f(t) = \varphi(t) \\
+				f'(t) = \varphi '(t) \\
+				t = t_0
+			\end{cases}.
+		\)
+		<h2><a name='integral' href='#begin'>Первообразная и интеграл</a></h2>
+		<ol>
+			<li>
+				\(F(t)~-\) первообразная \(f(t) \Leftrightarrow F'(t)=f(t).\)
+			</li>
+			<li>
+				\(S_{[t_1,t_2]} = \displaystyle\int_{t_1}^{t_2}f(t)~dt = 
+				F(t_2)-F(t_1).\)
+			</li>
+		</ol>
+		<h2><a name='alg' href='#begin'>Алгоритм исследования функции на возрастание и убывание</a></h2>
+		<ol>
+			<li>
+				Поиск области определения.
+			</li>
+			<li>
+				Нахождение производной.
+			</li>
+			<li>
+				Поиск критических точек.
+			</li>
+			<li>
+				Вычисление знаков производной на промежутках.
+			</li>
+			<li>
+				Определение возрастания и убывания на промежутках по знаку производной.
+			</li>
+		</ol>
+		<div id='test'></div>
+		<script src="derivativeproof.js"></script>
+		<script>Print(0)</script>
+    </body>
+</html>

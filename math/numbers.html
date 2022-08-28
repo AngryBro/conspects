@@ -1,0 +1,271 @@
+<html lang="en">
+    <head>
+        <title>Теория чисел</title>
+        <script src='js/newTexCommands.js' defer></script>
+        <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <h1><a href="index.html" name="begin">Теория чисел</a></h1>
+        О том, как работают целые числа.
+        <ul>
+            <li><a href="#def">Определения</a></li>
+            <li><a href="#feach">Свойства</a></li>
+            <li><a href="#sign">Признаки</a></li>
+        </ul>
+        <h2><a href="#begin" name="def">Определения</a></h2>
+        <ol>
+            <li>
+                
+                    \(a\) делится на \(d \Leftrightarrow a ~\vdots~ d \Leftrightarrow a = x \cdot d\)
+                
+            </li>
+            <li>
+                \(
+                    a\) не делится на \(d \Leftrightarrow a ~\not\vdots~ d \Leftrightarrow a \neq x \cdot d
+                \)
+            </li>
+            <li>
+                \(a\) делится на \(d\) с остатком \(r\), \(q\) &ndash; целая часть
+                \(
+                    \Leftrightarrow
+                    \cases{
+                        a = q \cdot d + r \\ 
+                        0 \leq r < d
+                    }    
+                \)
+            </li>
+            <li>
+                \(d~ -\) делитель числа \(a \Leftrightarrow a ~\vdots~ d\)   
+            </li>
+            <li>
+                \(a~ -\) кратное числа \(d \Leftrightarrow a ~\vdots~ d\)   
+            </li>
+            <li>
+                \(\operatorname{НОД}{(a_1;~a_2;\ldots ;~a_n)} ~-\) наибольшее число, на которое делится каждое из чисел \(a_1,~a_2,\ldots ,~a_n\)
+            </li>
+            <li>
+                \(\operatorname{НОК}{(a_1;~a_2;\ldots ;~a_n)} ~-\) наименьшее число, которое делится на каждое из чисел \(a_1,~a_2,\ldots ,~a_n\)
+            </li>
+            <li>
+                Простое число &ndash; натуральное число, имеющее ровно 2 различных натуральных делителя
+            </li>
+            <li>
+                Составное число &ndash; натуральное число, имеющее более 2 различных натуральных делителей
+            </li>
+            <li>
+                \(a_1,~a_2,\ldots ,~a_n~ -\) взаимно простые числа \(\Leftrightarrow \operatorname{НОД}{(a_1;~a_2;\ldots ;~a_n)}=1\)
+            </li>
+            <li>
+                \(\mequiv{a}{c}{d} ~-\) числа \(a\) и \(c\) имеют равный остаток при делении на \(d > 0\)
+            </li>
+        </ol>
+        <h2><a href="#begin" name="feach">Свойства</a></h2>
+        <ol>
+            <li>
+                \(
+                    a ~\vdots~ b ~\vdots~ c \Rightarrow
+                    a ~\vdots~ c
+                \)
+            </li>
+            <li>
+                \(
+                    a_1,~a_2,\ldots ,~a_n ~\vdots~ d \Rightarrow
+                    (c_1  a_1 + c_2  a_2+ \ldots + c_n  a_n) ~\vdots~ d
+                \)
+            </li>
+            <li>
+                \( 
+                    \cases{
+                        a ~\vdots~ d \\
+                        b ~\not\vdots d~
+                    } \Rightarrow (a \pm b) ~\not\vdots~d
+                \)
+            </li>
+            <li>
+                \(
+                    \left\{
+                        \begin{array}{l}
+                            (a_1 \cdot a_2 \cdot \ldots \cdot a_n) ~\not\vdots~ p
+                            \Leftrightarrow
+                            a_1,~ a_2 , \ldots ,~ a_n ~\not\vdots~p
+                            \\
+                            p - ~простое
+                        \end{array}
+                    \right.  
+                \)
+            </li>
+            <li>
+                \(
+                    \operatorname{НОД}{(a;~b)} \cdot \operatorname{НОК}{(a;~b)} = a \cdot b
+                \)
+            </li>
+            <li>
+                \(
+                    b ~\vdots~ a_1,~a_2,\ldots ,~a_n \Rightarrow
+                    b ~\vdots~ \operatorname{НОК}{(a_1;~a_2;\ldots ;~a_n)}
+                \)
+            </li>
+            <li>
+                \(
+                    \left\{
+                        \begin{array}{l}
+                            (a \cdot c ) ~\vdots~ d \\
+                            \operatorname{НОД}{(c;~d)} = 1
+                        \end{array}
+                    \right. \Rightarrow
+                    a ~\vdots~ d
+                \)
+            </li>
+            <li>
+                \(
+                    \left\{
+                        \begin{array}{l}
+                            a = p_1^{\gamma_1} \cdot p_2^{\gamma_2} \cdot\ldots
+                            \cdot p_n^{\gamma_n} \\
+                            p_i - различные ~простые ~числа \\
+                            \gamma_i - натуральные~ показатели
+                        \end{array}
+                    \right.
+                \)
+            </li>
+            <li>
+                \(
+                    
+                            a = p_1^{\gamma_1} \cdot p_2^{\gamma_2} \cdot\ldots
+                            \cdot p_n^{\gamma_n} 
+                            
+                         \Rightarrow 
+                         
+                         \left\{
+                            \begin{array}{l}
+                               Количество~натуральных~делителей ~a~ равно~
+                    d(a)=(\gamma_1 +1)\cdot (\gamma_2 + 1)\cdot\ldots\cdot (\gamma_n + 1)\\
+                               Произведение~натуральных~делителей~a~равно ~ a^{\frac{d(a)}{2}}      
+                            \end{array}
+                        \right.
+                         
+                         
+                \)
+            </li>
+            <li>
+                <a href="javascript:OpenList('equiv')">Свойства \( \Large \equiv \)</a>
+                <ul id="equiv" hidden="true">
+                    <li>
+                        \(
+                            \mequiv{a}{b}{d} \Leftrightarrow
+                            (a-b) ~\vdots~ d
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            a \equiv b \Leftrightarrow
+                            a + c \equiv  b+c
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{a}{b}{d} \Leftrightarrow
+                            \mequiv{a}{b + d}{d}
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{a \cdot c}{b \cdot c}{d\cdot c}   
+                            \Leftrightarrow
+                            \mequiv{a}{b}{d} 
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            a \equiv b \Rightarrow
+                            a \cdot c \equiv b \cdot c
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{a}{b}{d \cdot c}   
+                            \Rightarrow
+                            \mequiv{a}{b}{d} 
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \cases{
+                                    \mequiv{a \cdot c}{b \cdot c}{d} \\
+                                    \operatorname{НОД}{(c;~d)} = 1
+                            } \Rightarrow
+                            \mequiv{a}{b}{d} 
+                        \)
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <h2><a href="#begin" name="sign">Признаки</a></h2>
+        <ol>
+            <li>
+                \(
+                    \forall\) простого \( p \in [2;~\sqrt{a}] ~~ a ~~\not\vdots p \Rightarrow
+                    a ~-\) простое
+                
+            </li>
+            <li>
+                \(
+                    \left\{
+                        \begin{array}{l}
+                            a = b \cdot c \\
+                            b>1 \\
+                            c > 1 
+                        \end{array}
+                    \right. \Rightarrow
+                    a -
+                \) составное
+            </li>
+            <li><a href="javascript:OpenList('div')">
+                \(
+                    \mequiv{\overline{a_n a_{n-1} \ldots a_2 a_1}}{\overline{a_{\operatorname{max}{(k;~m)}} \ldots a_2 a_1}}{2^k \cdot 5^m}
+                \)</a>
+                <ul id="div" hidden="true">
+                    <li>
+                        \(
+                            \mequiv{\overline{a_n a_{n-1} \ldots a_3 a_2 a_1}}{a_1}{2; 5; 10}
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{\overline{a_n a_{n-1} \ldots a_3 a_2 a_1}}{\overline{a_2 a_1}}{4; 20; 25; 50; 100}
+                        \)
+                    </li>
+                </ul>
+            </li>
+            
+            <li>
+                \(
+                    \mequiv{\overline{a_n a_{n-1} \ldots a_2 a_1}}{a_1+a_2+a_3 + \ldots +a_n}{3; 9}
+                \)
+            </li>
+            <li><a href="javascript:OpenList('div11')">
+                \(
+                    \mequiv{\overline{a_n a_{n-1} \ldots a_2 a_1}} 
+                    {+a_1 - a_2 + a_3 -a_4 + \ldots}{11}
+                \)</a>
+                <ul id="div11" hidden="true">
+                    <li>
+                        \(
+                            \mequiv{\overline{a_4 a_3 a_2 a_1}} 
+                            {+a_1 - a_2 + a_3 -a_4}{11}
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{\overline{a_5 a_4 a_3 a_2 a_1}} 
+                            {+a_1 - a_2 + a_3 -a_4 + a_5}{11}
+                        \)
+                    </li>
+                </ul>
+            </li>
+            
+        </ol>
+    </body>
+</html>

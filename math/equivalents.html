@@ -1,0 +1,743 @@
+<html lang="en">
+    <head>
+        <title>Переходы</title>
+        <script src="js/newTexCommands.js" defer></script>
+        <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <h1><a name="begin"></a><a href="index.html">Равносильные переходы</a></h1>
+        <ul>
+            <li><a href="#equal">\( \LARGE = \)</a></li>
+            <li><a href="#notequal">\( \LARGE \neq \)</a></li>
+            <li><a href="#more">\( \LARGE > \normalsize,~ \LARGE< \normalsize,~ \LARGE \geq \normalsize,~ \LARGE \leq \)</a></li>
+            <li><a href="#andor">\( \LARGE \{ \normalsize,~ \LARGE [ \)</a></li>
+        </ul>
+        <h2><a name="equal"></a><a href="#begin">\( \Huge = \)</a></h2>
+            <ol>
+                <li><a href="javascript:OpenList('list1')">
+                    \( 
+                    \begin{array}[t]{|l|} \hline
+                    \displaystyle a_n t^n + a_{n-1} t^{n-1} + \ldots
+                    + a_2  t^2 + a_1  t + a_0 = 0 \Leftrightarrow \\
+                    \Leftrightarrow (t - t_1) \cdot(t - t_2) \cdot \ldots \cdot (t - t_m) = 0 \Leftrightarrow
+                    \left[
+                    \begin{array}{l}
+                    t=t_1 \\
+                    t=t_2 \\
+                    \ldots \\
+                    t=t_m
+                    \end{array}
+                    \right. \\ \hline \end{array} \)</a>
+                    <ul hidden="true" id="list1">
+                        <li>
+                            \(
+                                a t^2 + b  t + c = 0
+                                \Leftrightarrow
+                                \left[
+                                    \begin{array}{l}
+                                        t = t_1 \\
+                                        t = t_2
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="javascript:OpenList('list2')">\( \begin{array}[t]{|l|} \hline
+                    \displaystyle a_1 \cdot a_2 \cdot \ldots \cdot a_n = 0 \Leftrightarrow
+                    \left\{
+                        \begin{array}{l}
+                            \left[
+                                \begin{array}{l}
+                                    a_1 = 0 \\
+                                    a_2 = 0 \\
+                                    \ldots \\
+                                    a_n = 0
+                                \end{array}
+                            \right. \\
+                            ограничения~из~a_1,~a_2, \ldots ,a_n
+                        \end{array}
+                    \right. \\ \hline \end{array}
+                    \)</a>
+                    <ul hidden="true" id="list2">
+                        <li>
+                            \(
+                                a \cdot b = 0
+                                \Leftrightarrow
+                                \left[
+                                    \begin{array}{l}
+                                        \left\{
+                                            \begin{array}{l}
+                                                a = 0 \\
+                                                ограничения~из~b
+                                            \end{array}
+                                        \right. \\
+                                        \left\{
+                                            \begin{array}{l}
+                                                b = 0 \\
+                                                ограничения~из~a
+                                            \end{array}
+                                        \right.
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="javascript:OpenList('list3')">
+                    \(\begin{array}[t]{|l|} \hline \displaystyle \frac{a}{b} = \frac{c}{d} \Leftrightarrow
+                    \left\{
+                        \begin{array}{l}
+                            a \cdot d = b \cdot c \\
+                            b \neq 0 \\
+                            d \neq 0
+                        \end{array}
+                    \right. \\ \hline \end{array}
+                    \)</a>
+                    <ul hidden="true" id="list3">
+                        <li>
+                            \( \displaystyle
+                                \frac{a}{b} = 0 \Leftrightarrow
+                                \left\{
+                                    \begin{array}{l}
+                                        a = 0 \\
+                                        b \neq 0
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="javascript:OpenList('list4')">
+                    \(\begin{array}[t]{|l|} \hline \displaystyle \operatorname{МонотоннаяФункция}{(a)} = \operatorname{МонотоннаяФункция}{(b)}
+                    \Leftrightarrow
+                    \left\{
+                        \begin{array}{l}
+                            a=b \\
+                            ограничение~на~a~или~b
+                        \end{array}
+                    \right. \\ \hline \end{array}
+                    \)</a>
+                    <ul hidden="true" id="list4">
+                        <li>
+                            \(
+                                c^a = c^b ~~\overset{c = const\neq 1}{\Longleftrightarrow}~~
+                                a = b
+                            \)
+                        </li>
+                        
+                        <li>
+                            \(
+                                \log_c{a} = \log_c{b} ~~\overset{c = const}{\Longleftrightarrow}~~
+                                \left\{
+                                    \begin{array}{l}
+                                        a = b \\
+                                        a > 0
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                \sqrt[2n]{a} = \sqrt[2n]{b} \Leftrightarrow
+                                \left\{
+                                    \begin{array}{l}
+                                        a = b \\
+                                        a \geq 0
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                \sqrt[2n+1]{a} = \sqrt[2n+1]{b} \Leftrightarrow
+                                a = b
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                a^{2n+1} = b^{2n+1} \Leftrightarrow
+                                a = b
+                            \)
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="javascript:OpenList('list5')">
+                    \(\begin{array}[t]{|l|} \hline \displaystyle \sqrt[2n]{a} = b 
+                    \Leftrightarrow
+                    \left\{
+                        \begin{array}{l}
+                            a = b^{2n} \\
+                            b \geq 0
+                        \end{array}
+                    \right. \\ \hline \end{array}
+                    \)</a>
+                    <ul hidden="true" id="list5">
+                        <li>
+                            \(
+                                \sqrt{a} = b \Leftrightarrow
+                                \left\{
+                                    \begin{array}{l}
+                                        a = b^2 \\
+                                        b \geq 0
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:OpenList('list6')">
+                        \( 
+							\begin{array}[t]{|l|} \hline 
+								a_n x^n + a_{n-1} x^{n-1}y + a_{n-2}x^{n-2}y^2 + \ldots +a_1xy^{n-1}+a_0y^n=0
+							\\ \hline \end{array}
+                        \)
+                    </a>
+                    <ul hidden="true" id="list6">
+                        <li>
+                            \(
+                                a \cdot m^{t} = b \cdot n^{t}  ~\Leftrightarrow ~
+                                a \cdot \left(\displaystyle\frac{m}{n}\right)^t = b
+                            \)
+                        </li>
+						<li>
+                            \(
+                                a \cdot \left(m^2\right)^{t} + b \cdot (mn)^{t} + c \cdot \left(n^2\right)^{t} = 0  ~\Leftrightarrow ~
+                                a \cdot \left(\left(\displaystyle\frac{m}{n}\right)^t\right)^2 + 
+								b \cdot \left(\displaystyle\frac{m}{n}\right)^t + c = 0
+                            \)
+                        </li>
+						<li>
+                            \(
+                                a \cdot \sin{t} = b \cdot \cos{t}  ~\Leftrightarrow~
+                                a \cdot \operatorname{tg}{t} = b
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                a \cdot \sin^2{t} + b \cdot \sin{t} \cdot \cos{t} + c \cdot \cos^2{t} = 0 ~\Leftrightarrow ~
+                                a \cdot \operatorname{tg^2}{t} + b \cdot \operatorname{tg}{t} + c = 0
+                            \)
+                        </li>
+                    </ul>
+                </li>
+                
+            </ol>
+        <h2><a name="notequal"></a><a href="#begin">\( \Huge \neq \)</a></h2>
+            <ol>
+                <li>
+                    \( \begin{array}[t]{|l|} \hline
+                    a_1 \cdot a_2 \cdot \ldots \cdot a_n \neq 0
+                    \Leftrightarrow
+                    \left\{
+                        \begin{array}{l}
+                            a_1 \neq 0 \\
+                            a_2 \neq 0 \\
+                            \ldots \\
+                            a_n \neq 0
+                        \end{array}
+                    \right. \\ \hline \end{array}
+                    \)
+                </li>
+                <li>
+                    <a href="javascript:OpenList('list7')">
+                        \(
+                            \begin{array}[t]{|l|} \hline \displaystyle
+                            \frac{a}{b} \neq \frac{c}{d} \Leftrightarrow
+                            \left\{
+                                \begin{array}{l}
+                                    a \cdot d \neq b \cdot c \\
+                                    b \neq 0 \\
+                                    d \neq 0
+                                \end{array}
+                            \right. \\ \hline \end{array}
+                        \)
+                    </a>
+                    <ul id="list7" hidden="true"><li>
+                    \( \displaystyle
+                    \frac{a}{b} \neq 0 \Leftrightarrow
+                    \left\{
+                        \begin{array}{l}
+                            a \neq 0 \\
+                            b \neq 0
+                        \end{array}
+                    \right.
+                    \)
+                    </li></ul>
+                </li>
+                <li><a href="javascript:OpenList('list8')">
+                    \( \begin{array}[t]{|l|} \hline
+                    \operatorname{МонотоннаяФункция}{(a)} \neq \operatorname{МонотоннаяФункция}{(b)}
+                    \Leftrightarrow
+                    \left\{
+                        \begin{array}{l}
+                            a \neq b \\
+                            ограничение~на~a \\
+                            ограничение~на~b
+                        \end{array}
+                    \right. \\ \hline \end{array}
+                    \)</a>
+                    <ul hidden="true" id="list8">
+                        <li>
+                            \(
+                                c^a \neq c^b ~~\overset{c = const\neq 1}{\Longleftrightarrow}~~
+                                a \neq b
+                            \)
+                        </li>
+                        
+                        <li>
+                            \(
+                                \log_c{a} \neq \log_c{b} ~~\overset{c = const}{\Longleftrightarrow}~~
+                                \left\{
+                                    \begin{array}{l}
+                                        a \neq b \\
+                                        a > 0 \\
+                                        b > 0
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                \sqrt[2n]{a} \neq \sqrt[2n]{b} \Leftrightarrow
+                                \left\{
+                                    \begin{array}{l}
+                                        a \neq b \\
+                                        a \geq 0 \\
+                                        b \geq 0
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                \sqrt[2n+1]{a} \neq \sqrt[2n+1]{b} \Leftrightarrow
+                                a \neq b
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                a^{2n+1} \neq b^{2n+1} \Leftrightarrow
+                                a \neq b
+                            \)
+                        </li>
+                    </ul>
+                </li>
+				<li>
+					\(\begin{array}[t]{|l|} \hline
+						\sqrt[2n]{a} \neq b \Leftrightarrow
+						\left[
+							\begin{array}{l}
+								\begin{cases}
+									b < 0 \\
+									a \geq 0
+								\end{cases} \\
+								\begin{cases}
+									b \geq 0 \\
+									a \geq 0 \\
+									a \neq b^{2n}
+								\end{cases}
+							\end{array}
+						\right.
+					\\ \hline
+					\end{array}
+					\)
+				</li>
+            </ol>
+        <h2><a name="more"></a><a href="#begin">\( \Huge > \normalsize,~ \Huge< \normalsize,~ \Huge \geq \normalsize,~ \Huge \leq \)</a></h2>
+            <ol>
+                <li><a href="javascript:OpenList('list9')">
+                    \(\begin{array}[t]{|l|} \hline \displaystyle
+                    \frac{(x-a_1)^{k_1} \cdot (x-a_2)^{k_2} \cdot \ldots \cdot (x-a_n)^{k_n}}
+                    {(x-b_1)^{t_1} \cdot (x-b_2)^{t_2} \cdot \ldots \cdot (x-b_m)^{t_m}} \vee 0
+                    - по~методу~интервалов \\ \hline \end{array}
+                    \)</a>
+                    <ul id="list9" hidden="true">
+                        
+                        <li>
+                            \(
+                                \displaystyle
+                                \frac{1}{(x - a_1)^{k_1}\cdot(x - a_2)^{k_2}\cdot\ldots\cdot(x - a_n)^{k_n}} \vee 0
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                \displaystyle
+                                (x - a_1)^{k_1}\cdot(x - a_2)^{k_2}\cdot\ldots\cdot(x - a_n)^{k_n} \vee 0
+                            \)
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="javascript:OpenList('list10')">
+                    \( \begin{array}[t]{|l|} \hline
+                    \operatorname{ВозрастающаяФункция}{(a)} \vee \operatorname{ВозрастающаяФункция}{(b)}
+                    \Leftrightarrow
+                    \left\{
+                        \begin{array}{l}
+                            a \vee b \\
+                            ограничение~на~a \\
+                            ограничение~на~b
+                        \end{array}
+                    \right. \\ \hline \end{array}
+                    \)</a>
+                    <ul hidden="true" id="list10">
+                        <li>
+                            \(
+                                c^a \leq c^b ~~\overset{c=const>1}{\Longleftrightarrow}~~
+                                a \leq b
+                            \)
+                        </li>
+                        
+                        <li>
+                            \(
+                                \log_{c}{a} \leq \log_{c}{b} ~~\overset{c = const>1}{\Longleftrightarrow}~~
+                                \left\{
+                                    \begin{array}{l}
+                                        a \leq b \\
+                                        a > 0
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                \sqrt[2n]{a} \leq \sqrt[2n]{b} \Leftrightarrow
+                                \left\{
+                                    \begin{array}{l}
+                                        a \leq b \\
+                                        a \geq 0
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                \sqrt[2n+1]{a} \leq \sqrt[2n+1]{b} \Leftrightarrow
+                                a \leq b
+                            \)
+                        </li>
+                        <li>
+                            \(
+                                a^{2n+1} \leq b^{2n+1} \Leftrightarrow
+                                a \leq b
+                            \)
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="javascript:OpenList('list11')">
+                    \( \begin{array}[t]{|l|} \hline
+                    \operatorname{УбывающаяФункция}{(a)} \vee \operatorname{УбывающаяФункция}{(b)}
+                    \Leftrightarrow
+                    \left\{
+                        \begin{array}{l}
+                            a \land b \\
+                            ограничение~на~a \\
+                            ограничение~на~b
+                        \end{array}
+                    \right. \\ \hline \end{array}
+                    \)</a>
+                    <ul hidden="true" id="list11">
+                        <li>
+                            \(
+                                c^a \leq c^b ~~\overset{c=const < 1 }{\Longleftrightarrow}~~
+                                a \geq b
+                            \)
+                        </li>
+                        
+                        <li>
+                            \(
+                                \log_{c}{a} \leq \log_{c}{b} ~~\overset{c = const<1}{\Longleftrightarrow}~~
+                                \left\{
+                                    \begin{array}{l}
+                                        a \geq b \\
+                                        b > 0
+                                    \end{array}
+                                \right.
+                            \)
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="javascript:OpenList('rational');Bold('ratLink')" id="ratLink">Метод рационализации</a>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="rational" hidden>
+                        <ol>
+                            <li>Справа 0</li>
+                            <li>Слева произведение</li>
+                            <li>
+                                Выбранные множители представлены в виде
+                                разности одинаковой монотонной функции
+                            </li>
+                        </ol>
+                        <b>В общем виде:</b>
+                        <ul>
+                            <li>
+                                \(
+                                    \frame{
+                                        \left(ВозрастающаяФункция(a)- ВозрастающаяФункция(b) \right)^{\pm n} \cdot X \vee 0
+                                        \Leftrightarrow
+                                        \cases {
+                                            (a-b)^{\pm n} \cdot X \vee 0 \\
+                                            ограничение~на~a \\
+                                            ограничение~на~b
+                                        }
+                                    }
+                                \)
+                            </li>
+                            <li>
+                                \(
+                                    \frame{
+                                        \left(УбывающаяФункция(a)- УбывающаяФункция(b) \right)^{\pm n} \cdot X \vee 0
+                                        \Leftrightarrow
+                                        \cases {
+                                            (b-a)^{\pm n} \cdot X \vee 0 \\
+                                            ограничение~на~a \\
+                                            ограничение~на~b
+                                        }
+                                    }
+                                \)
+                            </li>
+                        </ul>
+                        <b>Пример:</b>
+                        <div>
+                            \(
+                                \displaystyle
+                                \frac{(\log_{2}{a} - \log_{2}{b})\cdot(0.9^c - 0.9^d)}
+                                {(\sqrt{x} - \sqrt{y})\cdot(z^{2n+1} - t^{2n+1})} \vee 0
+                                \Leftrightarrow
+                                \cases{
+                                    \displaystyle \frac{(a-b) \cdot (d - c)}{(x-y) \cdot (z-t)} \vee 0 \\
+                                    a > 0 \\
+                                    b > 0 \\
+                                    x \geq 0 \\
+                                    y \geq 0
+                                }
+                            \)
+                        </div>
+                    </div>
+                </li>
+				<li>
+					\(
+						\begin{array}[t]{|l|} \hline
+							\sqrt[2n]{a} \vee b \overset{\vee \in \{>,\geq\}}{\Longleftrightarrow}
+							\left[
+								\begin{array}{l}
+									\begin{cases}
+										b < 0 \\
+										a \geq 0
+									\end{cases} \\
+									\begin{cases}
+										b  \geq 0 \\
+										a \vee b^{2n}
+									\end{cases}
+								\end{array}
+							\right. \\ \hline 
+						\end{array}
+					\)
+				</li>
+				<li>
+					\(
+						\begin{array}[t]{|l|} \hline
+							\sqrt[2n]{a} \vee b \overset{\vee \in \{ < ,\leq\}}{\Longleftrightarrow}
+							\begin{cases}
+								b \geq 0 \\
+								a \geq 0 \\
+								a \vee b^{2n}
+							\end{cases} \\ \hline
+						\end{array}
+					\)
+				</li>
+            </ol>
+        <h2><a name="andor"></a><a href="#begin">\( \Huge \{ \normalsize,~ \Huge [  \)</a></h2>
+            <ol>
+                <li>
+                \( \begin{array}[t]{|l|} \hline 
+                    \left\{
+                        \begin{array}{l}
+                            A \\
+                            A
+                        \end{array}
+                    \right.
+                    \Leftrightarrow
+                    A \\ \hline \end{array}
+                \)
+                </li>
+                <li>
+                \(\begin{array}[t]{|l|} \hline
+                    \left[
+                        \begin{array}{l}
+                            A \\
+                            A
+                        \end{array}
+                    \right.
+                    \Leftrightarrow
+                    A \\ \hline \end{array}
+                \)
+                </li>
+				<li>
+					\(\begin{array}[t]{|l|} \hline
+						\begin{cases}
+							\begin{cases}
+								A \\ B
+							\end{cases} \\
+							C
+						\end{cases} \Leftrightarrow
+						\begin{cases}
+							A \\ B \\ C
+						\end{cases}\\ \hline \end{array}
+					\)
+				</li>
+				<li>
+					\(\begin{array}[t]{|l|} \hline
+						\left[
+						\begin{array}{l}
+							\left[
+							\begin{array}{l}
+								A \\ B
+							\end{array}\right. \\
+							C
+						\end{array}\right. \Leftrightarrow
+						\left[
+						\begin{array}{l}
+							A \\ B \\ C
+						\end{array}\right. \\ \hline \end{array}
+					\)
+				</li>
+				<li>
+					\(\begin{array}[t]{|l|} \hline
+						\begin{cases}
+							\left[
+								\begin{array}{l}
+									A \\
+									B 
+								\end{array} 
+							\right. \\
+							C
+						\end{cases} ~\Leftrightarrow~
+						\left[
+							\begin{array}{l}
+								\begin{cases}
+									A \\
+									C 
+								\end{cases} \\
+								\begin{cases}
+									B \\
+									C 
+								\end{cases}
+							\end{array}
+						\right.
+						\\ \hline \end{array}
+					\)
+				</li>
+				<li>
+					\(\begin{array}[t]{|l|} \hline
+						\begin{cases}
+							A \\ B
+						\end{cases} ~~~\overset{A \Rightarrow B}{\Longleftrightarrow}
+						~~~A\\ \hline \end{array}
+					\)
+				</li>
+				<li>
+                \( \begin{array}[t]{|l|} \hline
+                    \displaystyle ложь \Leftrightarrow  x \not \in \mathbb{R}
+                    \\ \hline \end{array}
+                \)
+                </li>
+                <li><a href="javascript:OpenList('list13')">
+                \( \begin{array}[t]{|l|} \hline
+                    истина \Leftrightarrow ограничения
+                    \\ \hline \end{array}
+                \)</a>
+                    <ul id="list13" hidden="true">
+                        <li>
+                            \(
+                                истина~без~ограничений \Leftrightarrow
+                                x \in \mathbb{R}
+                            \)
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                \( \begin{array}[t]{|l|} \hline
+                    \left\{
+                        \begin{array}{l}
+                            A \\
+                            x \not \in \mathbb{R}
+                        \end{array}
+                    \right.
+                    \Leftrightarrow
+                    x \not \in \mathbb{R} \\ \hline \end{array}
+                \)
+                </li>
+                <li>
+                \(\begin{array}[t]{|l|} \hline
+                    \left\{
+                        \begin{array}{l}
+                            A \\
+                            x \in \mathbb{R}
+                        \end{array}
+                    \right.
+                    \Leftrightarrow A \\ \hline \end{array}
+                \)
+                </li>
+                <li>
+                \(\begin{array}[t]{|l|} \hline
+                    \left[
+                        \begin{array}{l}
+                            A \\
+                            x \not \in \mathbb{R}
+                        \end{array}
+                    \right.
+                    \Leftrightarrow A \\ \hline \end{array}
+                \)
+                </li>
+                <li>
+                \(\begin{array}[t]{|l|} \hline
+                    \left[
+                        \begin{array}{l}
+                            A \\
+                            x \in \mathbb{R}
+                        \end{array}
+                    \right.
+                    \Leftrightarrow x \in \mathbb{R} \\ \hline \end{array}
+                \)
+                </li>
+                <li>
+                \(\begin{array}[t]{|l|} \hline
+                    A \Leftrightarrow
+                    \left[
+                        \begin{array}{l}
+                            \left\{
+                                \begin{array}{l}
+                                    случай_1 \\
+                                    A
+                                \end{array}
+                            \right. \\
+                            \left\{
+                                \begin{array}{l}
+                                    случай_2 \\
+                                    A
+                                \end{array}
+                            \right. \\
+                            \ldots \\
+                            \left\{
+                                \begin{array}{l}
+                                    случай_n \\
+                                    A
+                                \end{array}
+                            \right. \\
+                        \end{array}
+                    \right. \\ \hline \end{array}
+                \)
+                </li>
+            </ol>
+    </body>
+</html>    

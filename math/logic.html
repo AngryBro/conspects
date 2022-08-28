@@ -1,0 +1,207 @@
+<html lang="en">
+    <head>
+        <title>Сравнения</title>
+        <link rel="stylesheet" href="css/index.css">
+        <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <h1><a href="index.html">Определения и свойства сравнений</a></h1>
+        <h2>Oпределения</h2> 
+        <ol>
+            <li>
+                \( \Huge a \vee b\) &mdash; сравнение.
+                Число \(a\) &ndash; левая часть, число \(b\) &ndash; правая часть.
+                Сравнение истиное, если выполняется условие знака \(\vee\).
+                Сравнение ложное, если условие знака \(\vee\) не выполняется.
+            </li>
+            <li>
+                \(
+                    a \vee b \vee c \Leftrightarrow
+                    \left\{
+                        \begin{array}{l}
+                            a \vee b \\
+                            b \vee c
+                        \end{array}
+                    \right.
+                \)
+            </li>
+        </ol>
+        <h2>Cвойства</h2>
+        <ol>
+            <li>
+                \(
+                    a \vee b \Leftrightarrow
+                    a + c \vee b + c
+                \)
+            </li>
+            <li>
+                \(
+                        a \vee b ~\overset{c>0}{\Longleftrightarrow}~
+                        a \cdot c \vee b \cdot c
+                \)
+            </li>
+            <li>
+                \(
+                    a \vee b ~\overset{c<0}{\Longleftrightarrow}~
+                        a \cdot c \land b \cdot c
+                \)
+            </li>
+            <li>
+                \(
+                    \left\{
+                        \begin{array}{l}
+                            a = b \\
+                            c = d
+                        \end{array}
+                    \right. \Rightarrow
+                    a+c = b+d
+                \)
+            </li>
+            <li>
+                \(
+                    \left\{
+                        \begin{array}{l}
+                            a = b \\
+                            c = d
+                        \end{array}
+                    \right. \Rightarrow
+                    a \cdot c = b \cdot d
+                \)
+            </li>
+            <li>
+                \(
+                    \left\{
+                        \begin{array}{l}
+                            a = b \\
+                            c = d \\
+                            c \neq 0
+                        \end{array}
+                    \right. \Rightarrow \displaystyle
+                    \frac{a}{c} = \frac{b}{d}
+                \)
+            </li>
+            <li><a href="javascript:OpenList('transit')">
+                \(
+                    a < b < c \Rightarrow a < c    
+                \) </a>
+                <ul hidden="true" id="transit">
+                    <li>
+                        \(
+                            a < b \leq c \Rightarrow a < c
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            a \leq b < c \Rightarrow a < c
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            a \leq b \leq c \Rightarrow a \leq c
+                        \)
+                    </li>
+                </ul>
+            </li>
+            <li><a href="javascript:OpenList('sum')">
+                \(
+                    \left\{
+                        \begin{array}{l}
+                            a > b \\
+                            c > d
+                        \end{array}
+                    \right. \Rightarrow
+                    a+c > b+d
+                \)</a>
+                <ul hidden="true" id="sum">
+                    <li>
+                        \(
+                            \left\{
+                                \begin{array}{l}
+                                    a \geq b \\
+                                    c > d
+                                \end{array}
+                            \right. \Rightarrow
+                            a+c > b+d
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \left\{
+                                \begin{array}{l}
+                                    a \geq b \\
+                                    c \geq d
+                                \end{array}
+                            \right. \Rightarrow
+                            a+c \geq b+d
+                        \)
+                    </li>
+                </ul>
+            </li>
+            <li><a href="javascript:OpenList('mult')">
+                \(
+                    \left\{
+                        \begin{array}{l}
+                            a > b \\
+                            c > d \\
+                            a,b,c,d \geq 0
+                        \end{array}
+                    \right. \Rightarrow
+                    a \cdot c > b \cdot d
+                \)</a>
+                <ul hidden="true" id="mult">
+                    <li>
+                        \(
+                            \left\{
+                                \begin{array}{l}
+                                    a \geq b \\
+                                    c > d \\
+                                    a,b,c,d > 0
+                                \end{array}
+                            \right. \Rightarrow
+                            a \cdot c > b \cdot d
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \left\{
+                                \begin{array}{l}
+                                    a \geq b \\
+                                    c \geq d \\
+                                    a,b,c,d > 0
+                                \end{array}
+                            \right. \Rightarrow
+                            a \cdot c \geq b \cdot d
+                        \)
+                    </li>
+                </ul>
+            </li>
+            <li><a href="javascript:OpenList('transpone')">
+                \(
+                    \left\{
+                        \begin{array}{l}
+                            a > b \\
+                            a,b > 0
+                        \end{array}
+                    \right. \Rightarrow
+                    \displaystyle
+                    \frac{1}{a} < \frac{1}{b}
+                \)</a>
+                <ul hidden="true" id="transpone">
+                    <li>
+                        \(
+                            \left\{
+                                \begin{array}{l}
+                                    a \geq b \\
+                                    a,b > 0
+                                \end{array}
+                            \right. \Rightarrow
+                            \displaystyle
+                            \frac{1}{a} \leq \frac{1}{b}
+                        \)
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </body>
+</html>

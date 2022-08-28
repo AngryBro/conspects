@@ -1,0 +1,222 @@
+<html lang="en">
+    <head>
+        <title>Координатная плоскость</title>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1><a name="begin"></a><a href="index.html">Координатная плоскость \(Oxy\)</a></h1>
+        <ul>
+            <li><a href="#graphics">Стандартные графики</a></li>
+			<li><a href="#transform">Преобразование графиков</a></li>
+            <li><a href="#work">Работа в координатах</a></li>
+        </ul>
+        <h2><a name="graphics"></a><a href="#begin">Стандартные графики</a></h2>
+        <ol>
+            <li>
+            \(
+                ax+by+c=0,~a^2+b^2 \neq 0
+            \) &mdash; прямая
+            </li>
+            <li><a href="javascript:OpenList('line')">
+            \(
+                y=a(x-b)+c
+            \) &mdash; невертикальная прямая</a>
+                <ul id="line" hidden="true">
+					<li>Содержит точку \((b,~c)\)</li>
+                    <li>От \(a\) зависит угол наклона</li>
+                </ul>
+            </li>
+            <li><a href="javascript:OpenList('vert')">
+            \(
+                x=a
+            \) &mdash; вертикальная прямая</a>
+                <ul id="vert" hidden="true">
+                    <li>Содержит точку \((a,~0)\)</li>
+                </ul>
+            </li>
+            <li><a href="javascript:OpenList('parabole')">
+            \(
+                y = a(x-b)^2 + c,~ a \neq 0
+            \) &mdash; парабола</a>
+                <ul id="parabole" hidden="true">
+					<li>Вершина \( (b,~c) \)</li>
+                    <li>От \(a\) зависит направление ветвей и ширина</li>
+                </ul>
+            </li>
+			<li><a href="javascript:OpenList('hparabole')">
+            \(
+                y = a\sqrt{b(x-c)} + d, ~ ab \neq 0
+            \) &mdash; полупарабола</a>
+                <ul id="hparabole" hidden="true">
+                    <li>От \(b\) зависит направление ветвей</li>
+					<li>От \(\displaystyle\frac{1}{a^2b}\) зависит ширина</li>
+                    <li>Вершина \( (c,~d) \)</li>
+					<li>Полупарабола в области \(ay \geq ad\)</li>
+                </ul>
+            </li>
+            <li><a href="javascript:OpenList('angle')">
+            \(
+                y = a|x-b|+c
+            \) &mdash; угол</a>
+                <ul id="angle" hidden="true">
+					<li>Вершина \( (b,~c) \)</li>
+                    <li>От \(a\) зависит направление сторон и величина угла</li>
+                    <li>Левая сторона \(
+                    \left\{
+                        \begin{array}{l}
+                            y=-a(x-b)+c \\
+                            x \leq b
+                        \end{array}
+                    \right.
+                    \)</li>
+                    <li>Правая сторона \(
+                    \left\{
+                        \begin{array}{l}
+                            y=a(x-b)+c \\
+                            x \geq b
+                        \end{array}
+                    \right.
+                    \)</li>
+                </ul>
+            </li>
+            <li><a href="javascript:OpenList('circle')">
+            \(
+                (x-a)^2 + (y-b)^2 = c,~c>0
+            \) &mdash; окружность</a>
+                <ul id="circle" hidden="true">
+                    <li>Центр \( (a,~b) \)</li>
+                    <li>Радиус \( \sqrt{c} \)</li>
+                </ul>
+            </li>
+            <li><a href="javascript:OpenList('hyperbole')">
+            \( \displaystyle
+                y = \frac{a}{x-b} + c,~a \neq 0
+            \) &mdash; гипербола</a>
+                <ul id="hyperbole" hidden="true">
+                    <li>Центр \( (b,~c) \)</li>
+                    <li>От \(a\) зависит положение ветвей и расстояние между ними</li>
+                </ul>
+            </li>
+			<li><a href="javascript:OpenList('exp')">
+            \( \displaystyle
+                y = a^x,~0 < a \neq 1
+            \) &mdash; показательная функция</a>
+                <ul id="exp" hidden="true">
+                    <li>Содержит \( (0;~1) \)</li>
+                    <li>При \(a>1\) возрастает</li>
+					<li>При \(a < 1\) убывает </li>
+					<li>\(y>0\)</li>
+					<li>График выпуклый вниз</li>
+                </ul>
+            </li>
+			<li><a href="javascript:OpenList('log')">
+            \( \displaystyle
+                y = \log_a{x},~0 < a \neq 1
+            \) &mdash; логарифмическая функция</a>
+                <ul id="log" hidden="true">
+                    <li>Содержит \( (1;~0) \)</li>
+                    <li>При \(a>1\) возрастает, выпуклая вверх</li>
+					<li>При \(a < 1\) убывает, выпуклая вниз </li>
+					<li>\(x>0\)</li>
+                </ul>
+            </li>
+        </ol>
+		<h2><a name="transform" href="#begin">Преобразования графиков</a></h2>
+		<ol>
+			<li>
+				\(
+					G(x,y) \longrightarrow G(x-a,y-b)
+				\)<br><br>
+				Строим график \(G(x,y)\), передвигаем его на \(\overrightarrow{v}=(a,b)\).
+			</li>
+			<li>
+				\(
+					G(x_1,x_2) \longrightarrow G(|x_1|,x_2)
+				\)<br><br>
+				Строим график \(
+					\begin{cases}
+						G(x_1,x_2) \\
+						x_1 \geq 0
+					\end{cases}
+				\), отражаем симметрично по \(x_1=0\).
+			</li>
+			<li>
+				\(
+					y = f(x) \longrightarrow y = |f(x)|
+				\)<br><br>
+				Строим \(y=f(x)\), отражаем симметрично по \(y=0\) часть,
+				где \(y<0\).
+			</li>
+		</ol>
+        <h2><a name="work"></a><a href="#begin">Работа в координатах</a></h2>
+        <ol>
+            <li>
+                \(
+                    A \in G(x,~y) \Leftrightarrow G(A)
+                \)
+            </li>
+			<li>
+                Графики \(G(x,~y),~\Gamma(x,~y)\)
+                <ul>
+                    <li>Общие точки: \( 
+                        \left\{
+                            \begin{array}{l}
+                                G(x,~y) \\
+                                \Gamma(x,~y)
+                            \end{array}
+                        \right.
+                    \)</li>
+                </ul>
+            </li>
+            <li>
+                \(
+                    \rho ( (x_1,~y_1),~(x_2,~y_2) ) = \sqrt{ (x_1 - x_2)^2 + (y_1 - y_2)^2 }
+                \)
+            </li>
+            <li>
+                \( \displaystyle
+                    \rho ( (x_0,~y_0),~ ax + by + c = 0 ) = \frac{|a x_0 + b y_0 + c|}{\sqrt{a^2 + b^2}}
+                \)
+            </li>
+            <li>
+                Окружности \((x-x_1)^2 + (y - y_1)^2 = a_1 \cancel \Leftrightarrow
+                (x-x_2)^2 + (y - y_2)^2 = a_2\)
+                <ul>
+                    <li>Касаются внешним образом: \( \rho ((x_1,~y_1),~(x_2,~y_2)) = \sqrt{a_1} + \sqrt{a_2} \)</li>
+                    <li>Касаются внутренним образом: \( \rho ((x_1,~y_1),~(x_2,~y_2)) = \left|\sqrt{a_1} - \sqrt{a_2}\right| \)</li>
+                </ul>
+            </li>
+            <li>
+                Окружность \( (x-x_0)^2 + (y - y_0)^2 = z \) и прямая \(ax+by+c=0\)
+                <ul>
+                    <li>Касаются: \( \rho ( (x_0,~y_0),~ax+by+c=0 ) = \sqrt{z} \)</li>
+                </ul>
+            </li>
+            <li>
+                Графики \( y=a(x),~y=b(x)\)
+                <ul>
+                    <li>
+                        Касаются: \( 
+                            \left\{
+                                \begin{array}{l}
+                                    a(x)=b(x) \\
+                                    (a(x))'=(b(x))'
+                                \end{array}
+                            \right.
+                        \)
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Прямые \(y=a_1 x + b_1,~ y = a_2 x + b_2\)
+                <ul>
+                    <li>
+                        Параллельны или совпадают: \( a_1 = a_2 \)
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </body>
+</html>

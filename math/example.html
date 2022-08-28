@@ -1,0 +1,527 @@
+<html>
+	<head>
+		<title>Примеры</title>
+		<script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/index.js"></script>
+    </head>
+	<body>
+    <h1><a name="begin" href="index.html">Примеры решения задач</a></h1>
+        <h3>Задача 1</h3>
+        На доске написано несколько различных натуральных чисел, которые делятся на 3 и
+        <br>оканчиваются на 4.<br>
+        <a href="javascript:OpenList('task11');Bold('t11')"><span class="normal" id="t11">а) Может ли их сумма составлять 282?</span></a>
+        <div id="task11" hidden="true"><br><i>Решение</i>
+        <br><br>
+        Записаны числа: 24, 54, 204.<br>
+        Они делятся на 3. 24+54+204 = 282.<br>
+        <i>Ответ:</i> да.
+        <br><br></div>
+        <br><a href="javascript:OpenList('task12');Bold('t12')"><span class="normal" id="t12">б) Может ли их сумма составлять 390?</span></a>
+        <div id="task12" hidden="true"><br><i>Решение:</i><br><br>
+        Предположим может.<br>
+        Записаны \(n \geq 2\) натуральных чисел: \(a_1 < a_2 < \ldots < a_n\).<br>
+        \(n \in \mathbb{Z}.\) <br>
+        \( a_1 + a_2 + \ldots + a_n = 390. \)
+        <br> \( a_1,~a_2, \ldots ,a_n ~ \vdots ~ 3 \)
+        и оканчиваются на 4, значит <br>
+        \( (a_{i+1} - a_{i}) ~\vdots~ 3  \) и \( (a_{i+1} - a_{i}) ~\vdots~ 10 \Rightarrow \)
+         \((a_{i+1} - a_{i}) ~\vdots~ 30.\) <br>
+        \( a_{i+1} - a_{i} > 0 \Rightarrow a_{i+1} - a_{i} \geq 30 \).
+        Первые 3 числа оканчивающиеся на 4: 4, 14, 24. <br>На 3 делится только 24. Значит \(a_1 \geq 24\).
+        <br>При \(n=2\) сумма (390) оканчивается на 8. Неверно.<br>
+        При \(n=3\) сумма оканчивается на 2. Неверно.<br>
+        При \(n=4\) сумма оканчивается на 6. Неверно.<br>
+        При \(n \geq 5 :~ 390 = a_1+a_2+\ldots + a_n \geq a_1+a_2+a_3+a_4+a_5 \geq\)<br>
+        \( \geq  24 + 54 + 84+114+144 = 420.\)<br>
+        \(390 \geq 420 -\) противоречие.
+        <br><i>Ответ:</i> нет.<br><br></div>
+        <br><a href="javascript:OpenList('task13');Bold('t13')">
+        <span class="normal" id="t13">
+        в) Какое наибольшее количество чисел могло быть на доске, если их сумма равна 2226?</span></a>
+        <div id="task13" hidden="true"><br><i>Решение:</i><br>
+        <br> Пример:<br>
+        Числа: 24, 54, 84, 114, 144, 174, 204, 234, 1194.<br>
+        Все делятся на 3. 24 + 54 + 84 + 114 + 144 + 174 + 204 + 234 + 1194 = 2226.<br>
+        Всего 9 штук.
+        <br><br>
+        Оценка:<br>
+        Предположим чисел больше 9.<br>
+        Записаны \(n > 9 \) натуральных чисел: \(a_1 < a_2 < \ldots < a_n\).<br>
+        \(n \in \mathbb{Z}.\) <br>
+        \( a_1 + a_2 + \ldots + a_n = 2226. \)<br>
+        Из б) \((a_{i+1} - a_{i}) \geq 30;~a_1 \geq 24.\)<br>
+        При \(n=10\) сумма (2226) оканчивается на 0. Неверно.<br>
+        При \(n=11\) сумма оканчивается на 4. Неверно.<br>
+        При \(n \geq 12 :~ 2226 = a_1+a_2 + \ldots + a_n \geq a_1+a_2+\ldots +a_{12} \geq \)<br>
+        \( \underbrace{24+54+84+\ldots}_{12} = \frac{2\cdot 24+11 \cdot 30}{2} \cdot 12 \) = 2268.<br>
+        \( 2226 \geq 2268 - \) противоречие. Значит чисел не больше 9.
+        <br><i>Ответ:</i> 9.
+        </div>
+        
+        
+        
+     <h3>Задача 2</h3>
+	 
+		На доске написано 100 различных натуральных чисел с суммой 5100.
+		<br><a href="javascript:Bold('t21');OpenList('task21')"><span class="normal" id="t21">а) Может ли быть записано число 250?</span></a>
+            <div id="task21" hidden="true"><br><i>Решение</i><br><br>
+		Предположим может.<br>
+		Записаны различные натуральные числа: \( a_1;~ a_2;~\ldots ;~a_{99};~250. \)
+		<br> \(a_1 + a_2 + \ldots + a_{99}+250 = 5100.\)<br>
+		\(a_1 + a_2 + \ldots + a_{99} = 4850 \). <br>
+		\( 4850 = a_1 + a_2 + \ldots + a_{99} \geq 1+2+3+\ldots + 99 = 4950. \)<br>
+		\( 4850 \geq 4950 ~-\) противоречие.<br>
+		<i>Ответ:</i> нет.<br><br></div>
+        <br><a href="javascript:Bold('t22');OpenList('task22')"><span class="normal" id="t22">б) Можно ли обойтись без числа 11?</span></a>
+		<div id="task22" hidden="true"><br><i>Решение:</i><br><br>
+		Предположим можно.<br>
+		Записаны натуральные различные числа без 11: 
+		\( a_1;~ a_2;~\ldots ;~a_{100} \).<br>
+		\( a_1 + a_2 + \ldots + a_{100} = 5100 \).<br>
+		\( 5100 = a_1 + a_2 + \ldots + a_{100} \geq 
+		1+2+ \ldots + 10 + 12 +13 + \ldots + 101 = 5140\). <br>
+		\(5100 \geq 5140 ~-\) противоречие.<br>
+		<i>Ответ:</i> нет.<br><br></div>
+        <br><a href="javascript:Bold('t23');OpenList('task23')"><span class="normal" id="t23">в) Какое наименьшее количество чисел кратных 11 может быть записано?</span></a>
+	 
+		<div id="task23" hidden="true"><br><i>Решение:</i><br>
+		<br>Пример:<br>
+		Числа от 1 до 102 и 111, за исключением 99, 88, 77.<br>
+		Всего чисел 100, кратные 11: 11, 22,..., 66 &ndash; 6 штук.<br>
+		Сумма \( 1+\ldots+102 + 111 -99-88-77 = 5100. \)<br><br>
+		Оценка:<br>
+		Предположим, что чисел кратных 11 меньше 6.<br>
+		\(x~ -\) количество чисел делящихся на 11. <br>
+        \( x \in \mathbb{Z}. \)<br>
+		\( a_1 < a_2 < a_3 < \ldots < a_{91}< \ldots 
+		< a_{100-x} ~- \) числа не делящиеся на 11. <br>
+		\( b_1 < b_2 < \ldots < b_x ~- \) числа делящиеся на 11.<br>
+		\( a_1 + a_2 + \ldots + a_{100-x} + b_1 + b_2 + \ldots + b_x = 5100. \) <br>
+		\( b_1;~b_2;\ldots ;b_x ~\vdots~ 11 \). <br>
+		\( a_1;~a_2;~\ldots ;a_{100-x} ~\not\vdots~ 11\). <br>
+		\( x<6 \). (*) <br>
+		\( a_1 + a_2 + \ldots + a_{91} \geq 1+2+ \ldots +100 
+		-(99+88+ \ldots + 11)  = 4555\). <br>
+		\( a_{92} + a_{93} + \ldots + a_{100-x} \geq 
+		 \underbrace{101+102+ \ldots }_{9-x~штук} = 
+		\frac{(202+(8-x))(9-x)}{2} = \frac{1}{2} (210-x)(9-x) \). <br>
+		\( b_1 + b_2 + \ldots + b_x \geq \underbrace{11+22+\ldots}_{x~штук} =
+		\frac{11}{2} x(x+1) \). <br>
+		\( a_1 + \ldots + a_{91} + \ldots + a_{100-x} +
+         b_1 + \ldots + b_x	\geq 
+		 4555 + \frac{1}{2} (210-x)(9-x) +\frac{11}{2} x(x+1)  \). <br>
+		 \( 5100 \geq 4555+ \frac{1}{2}( (210-x)(9-x) +11x(x+1) ) \). <br>
+		 \( 1090 \geq 1890+x^2 - 219x + 11x^2+11x \Leftrightarrow 
+		 12x^2 - 208x + 800 \leq 0 \). <br>
+		 \( 3x^2 - 52x + 200 \leq 0 \Rightarrow 
+		 x \geq \frac{26 - \sqrt{76}}{3} > \frac{26-\sqrt{121}}{3} = 5 \). <br>
+		 \( x>5 \Rightarrow x \geq 6 ~- \) противоречие с (*).<br>
+		 <i>Ответ:</i> 6.<br><br>
+         </div>
+         
+         <h3>Задача 3</h3>
+            <a href="javascript:Bold('t31');OpenList('task31')"><span class="normal" id="t31">
+            а) Существует ли такое кратное 11 трёхзначное число, у которого <br>
+            вторая цифра в 14 раз меньше
+            произведения двух других его цифр?
+            </span></a><br>
+            
+            <div id="task31" hidden="true"><br><i>Решение</i><br><br>
+                Пример: 748. Делится на 11.<br>
+                \( 4 = \frac{7 \cdot 8}{14}\).<br>
+                <i>Ответ:</i> да.<br><br></div>
+            
+            <a href="javascript:Bold('t32');OpenList('task32')"><span class="normal" id="t32">
+            б) Существует ли такое кратное 11 трёхзначное число, у которого <br>
+            сумма всех цифр равна 7?</span></a><br>
+            <div id="task32" hidden="true"><br><i>Решение:</i><br><br>
+            Предположим существует.<br>
+                Число \(\overline{abc} ~\vdots~ 11;~a+b+c=7.\)<br>
+                \(0 \leq a,b,c \leq 9;~a,b,c \in \mathbb{Z}.\)
+                По признаку делимости: \((c-b+a) ~\vdots~ 11\).<br>
+                \( -c-b-a \leq c-b+a \leq c+b+a \Rightarrow -7 \leq c-b+a \leq 7 \Rightarrow\)<br>
+                \( c-b+a = 0 \Rightarrow b+c+a=2b \Rightarrow 7=2b \Rightarrow 7 ~\vdots~ 2 ~-\)
+                противоречие.<br>
+                <i>Ответ:</i> нет.<br><br></div>
+            
+            <a href="javascript:Bold('t33');OpenList('task33')"><span class="normal" id="t33">
+            в) Найдите наибольшее кратное 11 восьмизначное число, среди цифр которого<br>
+            по одному разу
+            встречаются цифры 1, 2, 3, 4, 5, 6, 7 и 9.</span></a>
+            
+                <div id="task33" hidden="true"><br><i>Решение:</i><br><br>
+                Пример:
+                97635241. Делится на 11.
+                <br><br>
+                Оценка:<br>
+                Предположим, существует число больше 97635241 кратное 11.<br>
+                Это число: \( \overline{abcdefgh} \). <br>
+                \( \{ a,b,c,d,e,f,g,h \} = \{1,2,3,4,5,6,7,9\} \).<br>
+                \( \overline{abcdefgh} > 97635241;~\overline{abcdefgh} ~\vdots~11 \).<br>
+                \( \overline{abcdefgh} > 97635241 \Rightarrow \overline{abc} = 976. \)<br>
+                \( \overline{976defgh} ~\vdots~11 \Rightarrow (h-g+f-e+d-6+7-9) ~\vdots~11 \).<br>
+                \( h+f+d+e+g=1+2+3+4+5=15 \Rightarrow
+                h+f+d = 15-e-g\).<br>
+                \( (15-e-g-e-g-8) ~\vdots~11 \Leftrightarrow  (7-2(e+g)) ~\vdots~11 \).<br>
+                \( 7 ~\not\vdots~ 2;~2(e+g) ~\vdots~ 2  \Rightarrow (7-2(e+g)) ~\not\vdots~2\).<br>
+                \( e,g \in \{1,2,3,4,5\} \Rightarrow 1+2 \leq e+g \leq 4+5. \)<br>
+                \( 3 \leq e+g \leq 9 \Rightarrow -11 \leq 7-2(e+g) \leq 1  \Rightarrow 7-2(e+g)=-11.\) <br>
+                \(e+g = 9 \Rightarrow \{e,g\}= \{4,5\} \Rightarrow \overline{e0g0} \leq 5040\).<br>
+                \( \{h,f,d\}=\{1,2,3\} \Rightarrow \overline{d0f0h} \leq 30201 \).<br>
+                \( 97635241 < \overline{976defgh} = 97600000+\overline{d0f0h} + \overline{e0g0} \leq 
+                97600000 + 30201 + 5040 = 97635241.\)<br>
+                \( 97635241 < 97635241 ~-\) противоречие. Значит числа больше 97635241 не существует.<br>
+                <i>Ответ:</i> 97635241.<br><br>
+            </div>
+            <h3>Задача 4</h3>
+            Можно ли привести пример пяти различных натуральных чисел,<br>
+            произведение которых равно 1512 и<br>
+            <a href="javascript:Bold('t41');Bold('task43_');OpenList('task41')"><span id="t41" class="normal">
+                а) пять;
+            </span></a><br>
+            <div id="task41" hidden="true"><br><i>Решение:</i><br><br>
+                Предположим можно.<br>
+                \(a_1 < a_2 < a_3 < a_4 < a_5 ~-\) пример таких чисел.<br>
+                 Они составляют геометрическую прогрессию со знаменателем \(q\).<br>
+                 \(a_3 \in \mathbb{N}~~(*). \)<br>
+                 \(a_1 \cdot a_2 \cdot a_3 \cdot a_4 \cdot a_5 = 1512 \).<br>
+                 \( a_2 = a_1 \cdot q;~a_3 = a_1 \cdot q^2 ;~ a_4 = a_1 \cdot q^3;~
+                 a_5 = a_1 \cdot q^4 \);<br>
+                 \( a_1 \cdot a_1 q \cdot a_1 q^2 \cdot a_1 q^3 \cdot
+                 a_1 q^4 =1512\);<br>
+                 \( a_1^5 q^{10} = 1512  \Leftrightarrow \left( a_1 q^2 \right)^5 = 1512 
+                 \Leftrightarrow a_3^5 = 1512.\)<br>
+                 \( a_3 = \sqrt[5]{1512};~4=\sqrt[5]{1024}<\sqrt[5]{1512}<\sqrt[5]{3125}=5; \)<br>
+                 \( 4 < a_3 < 5 \Rightarrow a_3 \not\in \mathbb{N} .\) Противоречит (*).<br>
+            <i>Ответ:</i> нет.<br><br></div>
+            
+            <a href="javascript:Bold('t42');Bold('task43_');OpenList('task42')"><span id="t42" class="normal" >
+                б) четыре;
+            </span></a><br>
+            <div id="task42" hidden="true"><br><i>Решение:</i><br><br>
+                Предположим можно.<br>
+                 \(a_1 < a_2 < a_3 < a_4;~ a_5 ~-\) пример таких чисел.<br>
+                 \(a_1;~a_2;~a_3;~a_4\) составляют геометрическую прогрессию.<br>
+                 \(a_2 \in \mathbb{N}~~(*). \)<br>
+                 \(a_1 \geq 1 \Rightarrow a_2 \geq 2 \Rightarrow a_3 \geq 3 
+                 \Rightarrow a_4 \geq 4 \Rightarrow a_4^2 \geq 16.\)<br>
+                 \(a_1 \cdot a_2 \cdot a_3 \cdot a_4 \cdot a_5 = 1512 =
+                    2^3 \cdot 3^3 \cdot 7\).<br>
+                 \( a_2 = a_1 \cdot q;~a_3 = a_1 \cdot q^2 ;~ a_4 = a_1 \cdot q^3;~
+                 \);<br>
+                 \( a_1 \cdot a_1 q \cdot a_1 q^2 \cdot a_1 q^3 \cdot
+                 a_5 =1512\);<br>
+                 \( a_1^2 \cdot a_4^2 \cdot a_5 = 2^3 \cdot 3^3 \cdot 7. \)<br>
+                 Делители-квадраты правой части: 1, 4, 9, 36.<br>
+                 Левая часть делится на \(a_4^2 \Rightarrow\) правая часть делится на \(a_4^2 \geq 16\), <br>
+                 значит \(a_4^2=36 \Rightarrow a_4=6\).<br>
+                 \(a_1^2 \cdot 36 \cdot a_5 = 2^3 \cdot 3^3 \cdot 7 \Rightarrow
+                  a_1^2 \cdot a_5 = 2 \cdot 3 \cdot 7\). <br>
+                  Делители-квадраты правой части: 1. Значит \( a_1 = 1. \)<br>
+                  \( 6 = a_4 = a_1 \cdot q^3 =q^3 \Rightarrow q = \sqrt[3]{6} 
+                  \Rightarrow a_2 = a_1 q = \sqrt[3]{6}.\)<br>
+                  \( 1 = \sqrt[3]{1} < \sqrt[3]{6} < \sqrt[3]{8} = 2 ;\)<br>
+                  \( 1 < a_2 < 2 \Rightarrow a_2 \not\in \mathbb{N} \). Противоречие с (*).<br>
+            <i>Ответ:</i> нет.<br><br></div>
+            
+            <a href="javascript:Bold('t43');Bold('task43_');OpenList('task43')"><span id="t43" class="normal" >
+                в) три
+            </span></a>
+            
+            <div id="task43" hidden="true"><br><i>Решение:</i><br><br>
+                Пример чисел: 1; 2; 4; 7; 27.<br>
+                 1; 2; 4 &ndash; геометрическая прогрессия.<br>
+                 \( 1 \cdot 2 \cdot 4 \cdot 7 \cdot 27 = 1512. \)<br>
+            <i>Ответ:</i> да. <br></div><br>
+            <span id="task43_" class="normal">из них образуют геометрическую прогрессию?</span>
+
+            <h3>Задача 5</h3>
+            Красный карандаш стоит 17 рублей, синий — 13 рублей. Нужно купить карандаши, имея всего 495
+            <br>рублей и соблюдая дополнительное условие: число синих карандашей не должно отличаться от
+            <br>числа красных карандашей больше чем на пять.
+            <br><a href="javascript:OpenList('task51');Bold('t51')"><span id="t51" class="normal" >
+            а) Можно ли купить при таких условиях 32 карандаша?</span></a>
+            <div id="task51" hidden="true"><br>
+            <i>Решение:</i>
+            <br><br>
+            
+            Купили 16 синих и 16 красных карандашей.<br>
+            Потратили \( 16 \cdot 13 + 16 \cdot 17 = 480 \leq 495 \) рублей.<br>
+            Число синих отличается от числа красных на \(0 \leq 5\).<br>
+            Всего 32 карандаша.<br>
+            <i>Ответ:</i> да.<br><br></div>
+            <br><a href="javascript:OpenList('task52');Bold('t52')"><span id="t52" class="normal" >
+            б) Можно ли купить при таких условиях 35 карандашей?</span></a>
+            <div id="task52" hidden="true"><br>
+            <i>Решение:</i><br><br>
+            
+            Предположим можно.<br>
+            Купили \(r\) красных и \(b\) синих карандашей.<br>
+            Потратили \(13b+17r \leq 495\) рублей.<br>
+            \(b-r \leq 5;~r+b=35.\)<br>
+            \( b=35-r;~~ 
+                \left\{
+                    \begin{array}{l}
+                        (35-r)-r \leq 5 \\
+                        13(35-r)+17r \leq 495 
+                    \end{array}
+                \right. \Rightarrow
+                \left\{
+                    \begin{array}{l}
+                        -2r \leq -30 \\
+                        4r + 455 \leq 495 
+                    \end{array}
+                \right. \Rightarrow \)<br> \( \Rightarrow
+                \left\{
+                    \begin{array}{l}
+                        r \geq 15 \\
+                        r \leq 10 
+                    \end{array}
+                \right. \Rightarrow 15 \leq r \leq 10 \Rightarrow 15 \leq 10.
+            \) Противоречие.<br>
+            <i>Ответ:</i> нет.<br><br></div>
+            <br><a href="javascript:OpenList('task53');Bold('t53')"><span id="t53" class="normal" >
+            в) Какое наибольшее число карандашей можно купить при таких условиях?</span></a>
+ 
+            <div id="task53" hidden="true"><br>
+            <i>Решение:</i>
+            <br><br>
+            
+            Оценка:<br>
+            Купили \(r\) красных и \(b\) синих карандашей.<br>
+            Всего купили \(x\) карандашей.<br>
+            Потратили \(13b+17r \leq 495\) рублей.<br>
+            \(b-r \leq 5;~r+b=x; ~~x \in \mathbb{Z}.\)<br>
+            \( b=x-r;~~ 
+                \left\{
+                    \begin{array}{l}
+                        (x-r)-r \leq 5 \\
+                        13(x-r)+17r \leq 495 
+                    \end{array}
+                \right. \Rightarrow
+                \left\{
+                    \begin{array}{l}
+                        -2r \leq 5-x \\
+                        4r + 13x \leq 495 
+                    \end{array}
+                \right. \Rightarrow \)<br> \( \Rightarrow
+                \left\{
+                    \begin{array}{l}
+                        4r \geq 2x-10 \\
+                        4r \leq 495-13x 
+                    \end{array}
+                \right. \Rightarrow 2x-10 \leq 4r \leq 495-13x \Rightarrow
+                2x-10 \leq 495-13x \Rightarrow\)<br>\(\Rightarrow
+                15x \leq 505 \Rightarrow x \leq 33\frac{2}{3} \Rightarrow x \leq 33.\)<br>
+                <br>Пример:<br>
+                Купили 17 синих и 16 красных карандашей.<br>
+                Потратили \( 17 \cdot 13 + 16 \cdot 17 = 493 \leq 495 \) рубля.<br>
+                Число синих отличается от числа красных на \(1 \leq 5\).<br>
+                Всего 33 карандаша.<br>
+                <i>Ответ:</i> 33.
+                </div>
+               
+            <h3>Задача 6</h3>
+            На доске было написано 20 натуральных чисел (необязательно различных), каждое из которых<br>
+            не превосходит 40. Вместо некоторых из чисел (возможно, одного) на доске написали числа,<br>
+            меньшие первоначальных на единицу. Числа, которые после этого оказались равными 0, с
+            доски стёрли.<br>
+            <a href="javascript:Bold('t61');OpenList('task61')"><span id="t61" class="normal">
+                а) Могло ли оказаться так, что среднее арифметическое чисел на доске увеличилось?
+            </span></a><br>
+            <div id="task61" hidden="true"><br><i>Решение:</i><br><br>
+                Пример:<br>
+                Изначально записаны числа: 10 единиц и 10 девяток.<br>
+                Уменьшили на 1 все единицы. Осталось 10 девяток.<br>
+                Среднее изначально: \( \frac{10+9 \cdot 10}{20} = 5. \)<br>
+                Среднее после действий: \(\frac{9 \cdot 10}{10} = 9.\)<br>
+                \( 9 > 5 .\) Среднее увеличилось.<br>
+         
+            <i>Ответ:</i> да.<br><br></div>
+            
+            <a href="javascript:Bold('t62');OpenList('task62')"><span id="t62" class="normal" >
+                б) Среднее арифметическое первоначально написанных чисел равнялось 27.<br>Могло ли среднее
+                арифметическое оставшихся на доске чисел оказаться равным 34?
+            </span></a><br>
+            <div id="task62" hidden="true"><br><i>Решение:</i><br><br>
+                Предположим могло.<br>
+                \(a_1 \leq a_2 \leq a_3 \leq \ldots \leq a_{20}\) &ndash; изначальные числа;<br>
+                их среднее: \(  \frac{a_1+a_2+\ldots +a_{20}}{20}=27 ~~(1). \)<br>
+                \( n ~- \) количество уменьшенных чисел, \(1 \leq n \leq 20 ~~(2)\).<br>
+                \(k~-\) количество стёртых чисел, \( k \in \mathbb{Z} ~~(3). \)<br>
+                Осталось \((20-k)\) чисел, сумма уменьшилась на \(n\);<br>
+                их среднее: \(\frac{a_1+a_2+\ldots + a_{20}-n}{20-k}=34~~(4).\)<br>
+                Из (1): \(a_1+a_2+\ldots +a_{20} = 540.\) Подставляем в (4):<br>
+                \( \frac{540-n}{20-k}=34 \Rightarrow 540-n=34(20-k) \Rightarrow
+                    n = 34k - 140.\) Подставляем в (2):<br>
+                \( 1 \leq 34k-140 \leq 20 \Rightarrow 141 \leq 34k \leq 160 \Rightarrow
+                    4 \frac{5}{34} \leq k \leq 4 \frac{24}{34} \Rightarrow\)<br>
+                \( \Rightarrow k \not\in \mathbb{Z} ~- \) противоречие с (3).<br>
+            <i>Ответ:</i> нет.<br><br></div>
+            
+            <a href="javascript:Bold('t63');OpenList('task63')"><span id="t63" class="normal" >
+                в) Среднее арифметическое первоначально написанных чисел равнялось 27.<br> Найдите
+                наибольшее возможное значение среднего арифметического чисел,<br> которые остались на
+                доске.
+            </span></a>
+            <div id="task63" hidden="true"><br><i>Решение:</i><br><br>
+                Оценка:<br>
+                \(a_1 \leq a_2 \leq a_3 \leq \ldots \leq a_{20} \leq 40\) &ndash; изначальные числа;<br>
+                их среднее: \(  \frac{a_1+a_2+\ldots +a_{20}}{20}=27 ~~(1). \)<br>
+                \( n ~- \) количество уменьшенных чисел.<br>
+                \(k~-\) количество стёртых чисел, \( k \in \mathbb{Z},~k \leq n. \)<br>
+                Осталось \((20-k)\) чисел, сумма уменьшилась на \(n\);<br>
+                их среднее: \(\frac{a_1+a_2+\ldots + a_{20}-n}{20-k}=x~~(2).\)<br>
+                Из (1): \(a_1+a_2+\ldots +a_{20} = 540.\)<br>
+                \( a_1+a_2+\ldots + a_{20} \leq \underbrace{1+1+\ldots +1}_{k} + 
+                    \underbrace{40+40+\ldots +40}_{20-k} = k+40(20-k).\)<br>
+                \(540 \leq 800-39k \Rightarrow k \leq 6 \frac{2}{3} \Rightarrow k\leq 6.\)<br>
+                \( x = \frac{540-n}{20-k} \leq \frac{540-k}{20-k} = 1+\frac{520}{20-k}
+                    \leq 1+\frac{520}{20-6} = 38 \frac{1}{7}.\)<br>
+                    \( x \leq 38 \frac{1}{7}. \)<br><br>
+                Пример:<br>
+                Изначальные числа: \( 1;~1;~1;~1;~1;~1;~14;~\underbrace{40;~40; \ldots ;~40}_{13} .\)<br>
+                Уменьшили на 1 все 1.<br>
+                Остались числа: \( 14;~\underbrace{40;~40; \ldots ;~40}_{13} .\)<br>
+                Изначальное среднее: \( \frac{1 \cdot 6 + 14 + 40 \cdot 13}{20} = 27. \)<br>
+                Среднее после действий: \( \frac{14+40 \cdot 13}{14} = 38 \frac{1}{7}. \)<br>
+            <i>Ответ:</i> \(38 \frac{1}{7}\). <br><br></div>
+            
+            <h3>Задача 7</h3>
+            
+            <a href="javascript:Bold('t71');OpenList('task71')"><span id="t71" class="normal">
+                а) Можно ли число 2014 представить в виде суммы двух различных натуральных чисел <br> с
+                одинаковой суммой цифр?
+            </span></a><br>
+            <div id="task71" hidden="true"><br><i>Решение:</i><br><br>
+                Пример: 2014 = 2006 + 8.<br>
+                У 2006 и 8 сумма цифр 8.<br>
+            <i>Ответ:</i> да.<br><br></div>
+            
+            <a href="javascript:Bold('t72');OpenList('task72')"><span id="t72" class="normal" >
+                б) Можно ли число 199 представить в виде суммы двух различных натуральных чисел <br> с
+                одинаковой суммой цифр?
+            </span></a><br>
+            <div id="task72" hidden="true"><br><i>Решение:</i><br><br>
+                Предположим можно.<br>
+                \(199=a+b,~0 \leq a,b \Rightarrow a<1000 \Rightarrow a=\overline{xyz}.\)<br>
+                \( b=199-\overline{xyz} = \overline{(1-x)(9-y)(9-z)}, \) так как нет перехода через десяток.<br>
+                Суммы цифр \(a\) и \(b\) равны: \(x+y+z=(1-x)+(9-y)+(9-z) \Rightarrow \) <br> \(
+                \Rightarrow 2(x+y+z)=19 \Rightarrow 19 ~\vdots~ 2 ~-\) противоречие.
+            <i>Ответ:</i> нет.<br><br></div>
+            
+            <a href="javascript:Bold('t73');OpenList('task73')"><span id="t73" class="normal" >
+                в) Найдите наименьшее натуральное число, которое можно представить в виде суммы <br> пяти
+                различных натуральных чисел с одинаковой суммой цифр.
+            </span></a>
+            <div id="task73" hidden="true"><br><i>Решение:</i><br><br>
+                Оценка:<br>
+                \( a_1 < a_2 < a_3 < a_4 < a_5 ~-\) натуральные числа с одинаковой суммой цифр.<br>
+                \( x=a_1+a_2+a_3+a_4+a_5 ~- \) искомое число.<br>
+                Так как суммы цифр \(a_i\) и \(a_{i+1}\) равны, то \(a_{i+1} \underset{9}{\equiv} a_i \Rightarrow\)<br>
+                \( \Rightarrow (a_{i+1}-a_i) ~\vdots~ 9;~a_{i+1}-a_i>0 \Rightarrow a_{i+1}-a_i \geq 9. \)<br>
+                Все возможные случаи:
+                <ol>
+                    <li>\( a_1=1 \)</li>
+                    <li>\( a_1=2 \)</li>
+                    <li>\( a_1=3 \)</li>
+                    <li>\( a_1 \geq 4 \).</li>
+                </ol>
+                Случай 1. \(a_1 = 1 \Rightarrow a_2 \geq 10 \Rightarrow a_3 \geq 100
+                \Rightarrow x = a_1+a_2+a_3+a_4+a_5 > 10+100 \geq 110\).<br>
+                Случай 2. \(a_1=2 \Rightarrow a_2 \geq 11 \Rightarrow a_3 \geq 20
+                \Rightarrow a_4 > 100 \Rightarrow\)<br>\(\Rightarrow x= a_1+a_2+a_3+a_4+a_5 > 100+20\geq 110.\)<br>
+                Случай 3. \(a_1=3 \Rightarrow a_2 \geq 12 \Rightarrow a_3 \geq 21 
+                \Rightarrow a_4 \geq 30 \Rightarrow a_5 >100 \Rightarrow\)<br>\(
+                \Rightarrow x = a_1+a_2+a_3+a_4+a_5 > 100+30 \geq 110.\)<br>
+                Случай 4. \(a_1 \geq 4 \Rightarrow x = a_1+a_2+a_3+a_4+a_5 \geq
+                4+13+22+31+40 = 110.\)<br>
+                Во всех случаях \(x \geq 110.\)<br><br>
+                Пример:<br>
+                110 = 4+13+22+31+40.<br>
+                У чисел 4, 13, 22, 31, 40 сумма цифр 4.<br>
+            <i>Ответ:</i> 110. <br><br></div>
+            
+            <h3>Задача 8</h3>
+            На листочке написано несколько натуральных чисел, среди которых могут быть одинаковые.<br>
+            Эти числа и их все возможные суммы (по 2, по 3 и т.д.) выписывают на доску в порядке<br>
+            неубывания. Если какое‐то число m, выписываемое на доску, повторяется несколько раз, то на<br>
+            доске оставляется только одно такое число m, а все остальные числа, равные m, стираются.<br>
+            Например, если задуманы числа 2,3,4,5, то на доске будет записан набор 2,3,4,5,6,7,8,9,10,11,12,14.<br>
+            <a href="javascript:Bold('t81');OpenList('task81')"><span id="t81" class="normal">
+            а) Приведите пример записанных на листочке чисел, при которых на доске будет записан<br>
+            набор 2,4,6,8.
+            </span></a>
+            <div id="task81" hidden="true"><br><i>Решение:</i><br><br>
+                2; 2; 2; 2.<br>
+            <br></div><br>
+            
+            <a href="javascript:Bold('t82');OpenList('task82')"><span id="t82" class="normal" >
+            б) Существует ли пример таких записанных на листочке чисел, для которых на доске записан<br>
+            набор чисел 1,3,4,5,6,9,10,11,12,13,14,17,18,19,20,22?
+            </span></a><br>
+            <div id="task82" hidden="true"><br><i>Решение:</i><br><br>
+            Предположим существует.<br>
+            \( a_1 \leq a_2 \leq \ldots \leq a_n ~- \) пример записанных на листочке чисел.<br>
+            Каждое число и каждая сумма выписана на доске.<br>
+            В том числе: \(a_1;~(a_1+a_2+\ldots + a_n);~a_2+a_3+\ldots + a_n\).<br>
+            \( a_1+a_2+\ldots + a_n = 22;~a_1=1 \Rightarrow a_2+a_3+\ldots + a_n = 21 \).<br>
+            Выписано число 21 \(\Rightarrow 21 \in \{1,3,4,5,6,9,10,11,12,13,14,17,18,19,20,22\}~-\) противоречие.<br>
+            <i>Ответ:</i> нет.<br><br></div>
+            
+            <a href="javascript:Bold('t83');OpenList('task83')"><span id="t83" class="normal" >
+            в) Приведите все примеры записанных на листочке чисел, для которых на доске будет записан<br>
+            набор чисел 9,10,11,19,20,21,22,30,31,32,33,41,42,43,52.
+            </span></a>
+            <div id="task83" hidden="true"><br><i>Решение:</i><br><br>
+                \( a_1 \leq a_2 \leq \ldots \leq a_n ~- \) записанные на листочке числа.<br>
+            Каждое число и каждая сумма выписана на доске.<br>
+            \(a_1=9;~a_1+a_2+\ldots + a_n = 52 \Rightarrow a_2+a_3+\ldots + a_n = 43.\)<br>
+            \(52 = a_1+a_2+\ldots + a_n \geq \underbrace{9+9+\ldots + 9}_{n} = 9n \Rightarrow
+            9n \leq 52 \Rightarrow n \leq 5\).<br>
+            Любая сумма \(a_{i_1}+a_{i_2}+\ldots +a_{i_k} \geq 9+9=18,\)<br>
+            значит 10, 11 есть среди изначальных чисел.<br>
+            Число 18 не выписано \(\Rightarrow a_2+a_1 \neq 18 \Rightarrow a_2 \neq 9 \Rightarrow a_2=10.\)<br>
+            Число 29 не выписано \(\Rightarrow a_1+a_2+a_3 \neq 29 \Rightarrow a_3 \neq 10 \Rightarrow a_3=11.\)<br>
+            \(a_4,a_5 \geq 11.\)<br>
+            Каждое число может быть либо включено в сумму, либо нет,<br>
+                значит всего сумм из \(n\) слагаемых \(2^n\), учитывая сумму без слагаемых.<br>
+                Всего непустых сумм \(2^n-1 \Rightarrow 2^n-1 \geq 15\), так как всего выписано 15 чисел.<br>
+                \(2^n \geq 16 \Rightarrow n \geq 4.\) Итого \(4 \leq n \leq 5\).<br>
+            Случай \(n=4.\) \(a_4 = 52-a_1-a_2-a_3=22 \Rightarrow\) изначальные числа: 9, 10, 11, 22.<br>
+            Проверка: <br>
+            По одному: 9, 10, 11, 22<br>
+            По два: 19, 20, 31, 32, 33, 21 <br>
+            По три: 30, 41, 42, 43<br>
+            По четыре: 52.<br>
+            Случай \(n=5.\) \(a_5+a_4=52-a_1-a_2-a_3=22,\)<br>
+            учитывая \(a_4,a_5 \geq 11 \Rightarrow a_4=a_5=11.\) Изначальные числа: 9, 10, 11, 11, 11.<br>
+            Проверка:<br>
+            Сумма 11 и 11 это 22, значит пример эквивалентен предыдущему.<br>
+            <i>Ответ:</i> 9,10,11,22 и 9,10,11,11,11. <br><br></div>
+            
+            <!--h3>Задача 4</h3>
+            
+            <a href="javascript:Bold('t');OpenList('task')"><span id="t" class="normal">
+            
+            </span></a><br>
+            <div id="task" hidden="true"><br><i>Решение:</i><br><br>
+                
+            <i>Ответ:</i> да.<br><br></div>
+            
+            <a href="javascript:Bold('t');OpenList('task')"><span id="t" class="normal" >
+            
+            </span></a><br>
+            <div id="task" hidden="true"><br><i>Решение:</i><br><br>
+            
+            <i>Ответ:</i> нет.<br><br></div>
+            
+            <a href="javascript:Bold('t');OpenList('task')"><span id="t" class="normal" >
+            
+            </span></a>
+            <div id="task" hidden="true"><br><i>Решение:</i><br><br>
+                
+            <i>Ответ:</i> <br><br></div-->
+	</body>
+</html>

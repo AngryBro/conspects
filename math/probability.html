@@ -1,0 +1,130 @@
+<html lang="en">
+    <head>
+        <title>Теория вероятностей</title>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1><a name="begin" href="index.html">Теория вероятностей</a></h1>
+        <ul>
+            <li><a href="#def">Определения</a></li>
+            <li><a href="#fea">Свойства</a></li>
+        </ul>
+        <h2><a name="def" href="#begin">Определения</a></h2>
+        <ol>
+            <li>
+                <b>Испытание</b> &ndash; действие в задаче.
+            </li>
+            <li>
+                <b>Исход</b> &ndash; неделимый гипотетический результат проведения испытания.
+            </li>
+            <li>
+                <b>Событие</b> &ndash; результат проведения испытания, состоящий из одного или нескольких исходов. 
+            </li>
+            <li>
+                <b>Благоприятный исход события</b> &ndash;
+                   исход испытания, при котором происходит данное событие.
+            </li>
+            <a href="javascript:OpenList('svg1')"><li>
+                <b>Совместные события</b> &ndash; события, которые могут произойти одновременно. 
+            </li>
+            <li>
+                <b>Несовместные события</b> &ndash; события, которые не могут произойти одновременно. 
+            </li>
+            <li>
+                <b>Зависимые события</b> &ndash; наступление одного события меняет вероятность другого события.
+            </li>
+            <li>
+                <b>Независимые события</b> &ndash; наступление одного события не меняет вероятность другого события. 
+            </li></a>
+            <div id="svg1" hidden="true">
+            <svg width="1000" height="300">
+                <text x="400" y="50" font-size="50" fill="black" font-family="Times New Roman">События</text>
+                <line x1="400" y1="60" x2="300" y2="100" stroke="black"></line>
+                <line x1="595" y1="60" x2="700" y2="100" stroke="black"></line>
+                <text x="200" y="130" font-size="40" fill="black" font-family="Times New Roman">Несовместные</text>
+                <text x="600" y="130" font-size="40" fill="black" font-family="Times New Roman">Совместные</text>
+                <line x1="650" y1="135" x2="580" y2="235" stroke="black"></line>
+                <line x1="750" y1="135" x2="850" y2="235" stroke="black"></line>
+                <text x="490" y="260" font-size="30" fill="black" font-family="Times New Roman">Зависимые</text>
+                <text x="780" y="260" font-size="30" fill="black" font-family="Times New Roman">Независимые</text>
+                <line x1="300" y1="140" x2="530" y2="235" stroke="black"></line>
+                <rect width="1000" height="300" stroke="black" stroke-width="5" fill="none"></rect>
+                
+            </svg>
+            </div>
+            <li>
+                <b>Вероятность события</b> &ndash; число, равное отношению числа благоприятных равновозможных исходов события, к числу всех равновозможных исходов испытания. 
+            </li>
+            <li>
+                \(\operatorname{P}{(A)} -\) вероятность события \(A\).
+            </li>
+            <li>
+                \(\overline A\) &ndash; событие противоположное событию \(A\).
+            </li>
+            <li>
+                \(A+B\) &ndash; событие, когда происходит хотя бы одно из событий \(A,~B\).
+            </li>
+            <li>
+                \(A \cdot B\) &ndash; событие, когда происходят сразу оба события \(A,~B\).
+            </li>
+            <li>
+                \(\large 1\) &ndash; событие, которое точно происходит.
+            </li>
+            <li>
+                \(\large 0\) &ndash; событие, которое точно не происходит.
+            </li>
+            <li>
+                \(C_n^k\) &ndash; количество вариантов выбрать \(k\) элементов из \(n\).
+            </li>
+            
+        </ol>
+        
+        <h2><a href="#begin" name="fea">Свойства</a></h2>
+        <ol>
+            <li>\( 0 \leq \operatorname{P}{(A)} \leq 1 \).</li>
+            <li>
+                \(
+                    \operatorname{P}{\left(\large 1 \normalsize \right)} = 1
+                \)
+            </li>
+            <li>
+                \(
+                    \operatorname{P}{\left(\large 0 \normalsize \right)} = 0
+                \)
+            </li>
+            <li>
+                \(
+                    \operatorname{P}{\left(\overline A\right)} = 
+                    1 - \operatorname{P}{(A)}.
+                \)
+            </li>
+            <li>
+                \(
+                    \operatorname{P}{(A+B)} = \operatorname{P}{(A)} +
+                    \operatorname{P}{(B)}
+                \), если события \(A,~B\) несовместные.
+            </li>
+            <li>
+                \(
+                    \operatorname{P}{(A \cdot B)} = 
+                    \operatorname{P}{(A)} \cdot \operatorname{P}{(B)}
+                \), если события \(A,~B\) независимые.
+            </li>
+            <li>
+                \(
+                    C_n^k = \displaystyle \frac{n!}{k! \cdot (n-k)!}.
+                \)
+            </li>
+            <li>
+                \(
+                    \operatorname{P}{(B)} = 
+                    C_n^k \cdot \operatorname{P^k}{(A)} \cdot 
+                    \operatorname{P^{n-k}}{\left(\overline{A}\right)}
+                \), событие \(B\) &ndash; наступление события \(A ~ k\) раз при проведении испытания
+                      \(n\) раз.
+            </li>
+        </ol>
+    </body>
+</html>
