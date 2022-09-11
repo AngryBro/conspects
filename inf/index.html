@@ -8,21 +8,21 @@
     <body>
         <ul>
             <li>
-                <h1><a href="javascript:OpenList('conspectlist')">Конспекты</a></h1>
-                    <ol id="conspectlist" hidden="true">
-                        <li><a href="">Python</a>
-                            <ol>
+                <h1><a href="javascript:OpenLists('conspectlist',['python'])">Конспекты</a></h1>
+                    <ol id="conspectlist">
+                        <li><a href="javascript:OpenList('python')">Python</a>
+                            <ol id="python">
                                 <li><a href="python/array.html">Массив (список)</a></li>
                                 <li><a href="python/dict.html">Ассоциативный массив (словарь)</a></li>
                                 <li><a href="python/string.html">Строка</a></li>
                                 <li><a href="python/number.html">Число</a></li>
+                                <li><a href="python/itertools.html">Itertools</a></li>
                                 <li><a>[данный раздел в разработке]</a></li>
                             </ol>
                         </li>
                         <li><a href="">Excel</a></li>
-                        <li id="excel">
-
-                        </li>
+                        <li><a>Стандартные алгоритмы</a></li>
+                        <li><a>Динамическое программирование</a></li>
                     </ol>
             </li>
         </ul>

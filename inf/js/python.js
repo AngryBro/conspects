@@ -7,5 +7,5 @@ html = html
 .replace(/{/g,'<span class="variable">\\(')
 .replace(/}/g,'\\)</span>')
 .replace(/__tempL__/g,'{')
-.replace(/__tempR__/g,'{');
+.replace(/__tempR__/g,'}');
 document.body.innerHTML = html;
