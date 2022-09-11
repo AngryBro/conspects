@@ -1,0 +1,43 @@
+body {
+    font-size: 25pt;
+    margin-left: 100;
+	font-family: Comic Sans MS;
+}
+li {
+    margin: 30px 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: blue;
+}
+table {
+	font-size: 40;
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+td {
+	border: 2px solid black;
+	padding: 7px;
+}
+th {
+	border: 2px solid black;
+	padding: 7px;
+}
+tr {
+	text-align: center;
+}
+.pur {
+    color: blueviolet;
+}
+.bl {
+    color: blue;
+}
+.variable {
+    color: grey;
+}
+.operation {
+    color:blueviolet;
+}

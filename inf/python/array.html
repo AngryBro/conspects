@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>Массив</title>
+        <link rel="stylesheet" href="../css/index.css">
+        <script src="../js/index.js"></script>
+        <script src="../js/python.js" defer></script>
+        <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <h1><a href="../../inf">Массив (список)</a></h1>
+        <ul>
+            <li><b>Массив</b> &mdash; упорядоченный набор объектов.</li>
+            <li>Нумерация объектов начинается с 0.</li>
+            <li>Нумерация объектов с конца массива начинается с -1.</li>
+        </ul>
+        <table>
+            <tr>
+                <th>Операция с массивом a</th>
+                <th>Изменение массива</th>
+                <th>Возвращаемое значение</th>
+                <th>Сложность</th>
+            </tr>
+            <tr>
+                <td>a{{[{i}]}}</td>
+                <td>нет</td>
+                <td>Элемент массива номер {i}</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>{element} {{in}} a</td>
+                <td>нет</td>
+                <td>Присутствует ли в массиве {element}</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>{element} {{not in}} a</td>
+                <td>нет</td>
+                <td>Отсутствует ли в массиве {element}</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{[}}{i1}{{:}}{i2}{{:}}{step}{{]}}</td>
+                <td>нет</td>
+                <td>Массив из элементов от {a[i1]} включительно,<br>до {a[i2]} не включительно, с шагом {step}</td>
+                <td>\(O(|i1-i2|)\)</td>
+            </tr>
+            <tr>
+                <td>a{{[::-1]}}</td>
+                <td>нет</td>
+                <td>Массив в обратном порядке</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{[{i}] = {element} }}</td>
+                <td>Элемент номер {i} будет равен {element}</td>
+                <td>нет</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>a{{+}}{b}</td>
+                <td>нет</td>
+                <td>Массив дополненный с конца массивом {b}</td>
+                <td>\(O(k)\)</td>
+            </tr>
+            <tr>
+                <td>{{len(}}a{{)}}</td>
+                <td>нет</td>
+                <td>Количество элементов массива</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>{{sum(}}a{{)}}</td>
+                <td>нет</td>
+                <td>Сумма элементов массива</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>{{min(}}a{{)}}</td>
+                <td>нет</td>
+                <td>Минимальный элемент массива</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>{{max(}}a{{)}}</td>
+                <td>нет</td>
+                <td>Максимальный элемент массива</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>{{sorted(}}a{{,reverse={flag},key={function})}}</td>
+                <td>нет</td>
+                <td>Сортированный массив в заданном порядке,<br>по правилу {function}</td>
+                <td>\(O(n\cdot \log{n})\)</td>
+            </tr>
+            <tr>
+                <td>{{list(set(}}a{{))}}</td>
+                <td>нет</td>
+                <td>Массив с уникальными элементами</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.copy()}}</td>
+                <td>нет</td>
+                <td>Копия массива</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.append({element})}}</td>
+                <td>Добавляется {element} в конец массива</td>
+                <td>нет</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.pop({i})}}</td>
+                <td>Удаляется элемент номер {i}</td>
+                <td>Удалённый элемент</td>
+                <td>\(O(n-i)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.count({element})}}</td>
+                <td>нет</td>
+                <td>Количество {element} в массиве</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.index({element})}}</td>
+                <td>нет</td>
+                <td>Номер {element} в массиве</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.sort(reverse={flag},key={function})}}</td>
+                <td>Сортирует массив в заданном порядке,<br>по правилу {function}</td>
+                <td>нет</td>
+                <td>\(O(n\cdot \log{n})\)</td>
+            </tr>
+        </table>
+    </body>
+</html>

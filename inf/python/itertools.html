@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Itertools</title>
+        <link rel="stylesheet" href="../css/index.css">
+        <script src="../js/index.js"></script>
+        <script src="../js/python.js" defer></script>
+        <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <h1><a href="../../inf">Itertools</a></h1>
+        <ul>
+            <li>Itertools &mdash; библиотека для работы с массивоподобными объектами.</li>
+            <li>Подключение: {{from}} itertools {{import}} *</li>
+        </ul>
+        <table>
+            <tr>
+                <th>Функция</th>
+                <th>Возвращаемый массив кортежей</th>
+            </tr>
+            <tr>
+                <td>{{permutations({iterable},{length})}}</td>
+                <td>Перестановки длиной {length}</td>
+            </tr>
+            <tr>
+                <td>{{product({iterable_1},{iterable_2},...,{iterable_n})}}</td>
+                <td>
+                    Всевозможные комбинации, где:
+                    <ul>
+                        <li>Первый элемент один из {iterable_1}</li>
+                        <li>Второй элемент один из {iterable_2}</li>
+                        <li>...</li>
+                        <li>n-й элемент один из {iterable_n}</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

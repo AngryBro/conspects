@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>Строка</title>
+        <link rel="stylesheet" href="../css/index.css">
+        <script src="../js/index.js"></script>
+        <script src="../js/python.js" defer></script>
+        <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <h1><a href="../../inf">Строка</a></h1>
+        <ul>
+            <li><b>Строка</b> &mdash; упорядоченный набор символов.</li>
+            <li>Строка неизменяемый объект.</li>
+            <li>Нумерация символов начинается с 0.</li>
+            <li>Нумерация символов с конца строки начинается с -1.</li>
+        </ul>
+        <table>
+            <tr>
+                <th>Операция со строкой s</th>
+                <th>Возвращаемое значение</th>
+                <th>Сложность</th>
+            </tr>
+            <tr>
+                <td>s{{[{i}]}}</td>
+                <td>Символ строки номер {i}</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>{t} {{in}} s</td>
+                <td>Присутствует ли в строке {t}</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>{t} {{not in}} s</td>
+                <td>Отсутствует ли в строке {t}</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{[{i1}:{i2}:{step}]}}</td>
+                <td>Строка из символов от {s[i1]} включительно,<br>до {s[i2]} не включительно, с шагом {step}</td>
+                <td>\(O(|i1-i2|)\)</td>
+            </tr>
+            <tr>
+                <td>s{{[::-1]}}</td>
+                <td>Строка в обратном порядке</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{+}}{t}</td>
+                <td>Строка дополненная с конца строкой {t}</td>
+                <td>\(O(k)\)</td>
+            </tr>
+            <tr>
+                <td>{{len(}}s{{)}}</td>
+                <td>Количество символов в строке</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.count({t})}}</td>
+                <td>Количество {t} в строке</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.find({t})}}</td>
+                <td>Индекс первого вхождения {t} в строку</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.rfind({t})}}</td>
+                <td>Индекс последнего вхождения {t} в строку</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.replace({t1},{t2},{count})}}</td>
+                <td>
+                    Строка с заменёнными {t1} на {t2},<br>
+                    заменяются первые {count} вхождений {t1}
+                </td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.split({t})}}</td>
+                <td>Массив из частей строки, разделённой по разделителю {t}</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.splitlines()}}</td>
+                <td>Массив из частей строки, разделённой по символу переноса строки</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.join({iterable})}}</td>
+                <td>Соединённый {iterable} по строке</td>
+                <td>\(O(n)\)</td>
+            </tr>
+        </table>
+    </body>
+</html>
