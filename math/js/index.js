@@ -12,3 +12,9 @@ Bold = id => {
         element.setAttribute('style',style);
     }
 }
+OpenLists = (id,ids) => {
+    OpenList(id);
+    for(var i = 0; i<ids.length; i++) {
+        document.getElementById(ids[i]).hidden = true;
+    }
+}
