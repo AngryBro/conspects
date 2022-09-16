@@ -1,9 +1,9 @@
 <html lang="en">
     <head>
         <title>Параметры</title>
-        <link rel="stylesheet" href="style.css">
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+        <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="js/index.js"></script>
     </head>
     <body>
         <h1><a name="begin" href="index.html">Методы решения задач с параметрами</a></h1>
@@ -12,7 +12,7 @@
 			<li><a href="#analytic">Аналитический</a></li>
 			<li><a href="#change">Замена</a></li>
 			<li><a href="#sqr">Квадратный трёхчлен</a></li>
-			<!-- <li><a href="#function">Функция</a></li> -->
+			<li><a href="#function">Функция [в разработке]</a></li>
 			<li><a href="#symmetry">Симметрия</a></li>
 			<li><a href="#evaluation">Оценка</a></li>
 		</ul>
@@ -503,8 +503,9 @@
 		<h4>Решение</h4>
 		<ol>
 			<li>
-				Используя свойства выражений из пункта 3, составляем такую систему \(G(a) \Leftarrow F(x,a)\),<br>
-				решением которой является конечное множество значений \(a\).
+				Используя свойства выражений из пункта 3, составляем такую систему \(G(a)\),<br>
+				что \(G(a) \Leftarrow F(x,a)\),
+				и решением которой является конечное множество значений \(a\).
 			</li>
 			<li>
 				При каждом найденном \(a\) решаем \(F(x,a)\).

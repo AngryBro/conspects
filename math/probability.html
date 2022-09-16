@@ -1,9 +1,9 @@
 <html lang="en">
     <head>
         <title>Теория вероятностей</title>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
+        <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/index.js"></script>
     </head>
     <body>
         <h1><a name="begin" href="index.html">Теория вероятностей</a></h1>
@@ -70,12 +70,6 @@
                 \(A \cdot B\) &ndash; событие, когда происходят сразу оба события \(A,~B\).
             </li>
             <li>
-                \(\large 1\) &ndash; событие, которое точно происходит.
-            </li>
-            <li>
-                \(\large 0\) &ndash; событие, которое точно не происходит.
-            </li>
-            <li>
                 \(C_n^k\) &ndash; количество вариантов выбрать \(k\) элементов из \(n\).
             </li>
             
@@ -84,16 +78,6 @@
         <h2><a href="#begin" name="fea">Свойства</a></h2>
         <ol>
             <li>\( 0 \leq \operatorname{P}{(A)} \leq 1 \).</li>
-            <li>
-                \(
-                    \operatorname{P}{\left(\large 1 \normalsize \right)} = 1
-                \)
-            </li>
-            <li>
-                \(
-                    \operatorname{P}{\left(\large 0 \normalsize \right)} = 0
-                \)
-            </li>
             <li>
                 \(
                     \operatorname{P}{\left(\overline A\right)} = 
