@@ -8,7 +8,6 @@
 	<body>
 		<h1><a name="begin" href="index.html">Координатное пространство \(Oxyz\)</a></h1>
 		<ul>
-			<li><a href="#matrix">Справка по теории матриц</a></li>
 			<li><a href="#point">Точка</a></li>
 			<li><a href="#vector">Вектор</a></li>
 			<li><a href="#lines">Уравнения прямой</a></li>
@@ -17,89 +16,11 @@
 			<li><a href="#angles">Углы</a></li>
 			<li><a href="#dists">Расстояния</a></li>
 		</ul>
-		<h2><a href="#begin" name="matrix">Справка по теории матриц</a></h2>
-		<h3>Определения</h3>
-		<ol>
-			<li>
-				Матрица &ndash; прямоугольная таблица чисел.<br>
-				Обозначение: 
-				\(
-					M =
-					\left(
-						\begin{array}{c}
-							m_{1,1} & m_{1,2} & m_{1,3} & \ldots & m_{1,q} \\
-							m_{2,1} & m_{2,2} & m_{2,3} & \ldots & m_{2,q} \\
-							\ldots & \ldots & \ldots & \ldots & \ldots \\
-							m_{p,1} & m_{p,2} & m_{p,3} & \ldots & a_{p,q} \\
-						\end{array}
-					\right) = \left(m_{i,j}\right)^{p,q}_{i=1,j=1}
-				\)<br>
-				\(M ~-\) матрица \(p \times q\).
-			</li>
-			<li>
-				\(
-					\left(
-						\begin{array}{c}
-							x \\
-							y \\
-							z
-						\end{array}
-					\right)
-				\) &ndash; матрица \(3 \times 1\), используемая для обозначения координат
-				векторов.
-			</li>
-			<li>
-				\(
-					\left(
-						x,y,z
-					\right)
-				\) &ndash; матрица \(1 \times 3\), используемая для обозначения координат
-				точек.
-			</li>
-			<li>
-				\(
-					(x,y,z)^T = \begin{pmatrix}
-						x\\y\\z
-					\end{pmatrix}
-				\).
-			</li>
-		</ol>
-		<h3>Свойства</h3>
-		<ol>
-			<li>
-				\(
-					\left( m_{i,j} \right)+\left( n_{i,j} \right) = 
-					\left( m_{i,j}+m_{i,j} \right)
-				\)
-			</li>
-			<li>
-				\(
-					k \cdot \left( m_{i,j} \right) = \left( k \cdot m_{i,j} \right)
-				\)
-			</li>
-			<li> \(
-				\begin{pmatrix}
-					m_{1,1} & m_{1,2} & m_{1,3} \\
-					m_{2,1} & m_{2,2} & m_{2,3} \\
-					m_{3,1} & m_{3,2} & m_{3,3}
-				\end{pmatrix} \cdot 
-				\begin{pmatrix}
-					n_1 \\
-					n_2 \\
-					n_3
-				\end{pmatrix} = 
-				\begin{pmatrix}
-					m_{1,1} \cdot n_1+ m_{1,2} \cdot n_2+ m_{1,3} \cdot n_3 \\
-					m_{2,1} \cdot n_1+ m_{2,2} \cdot n_2+ m_{2,3} \cdot n_3 \\
-					m_{3,1} \cdot n_1+ m_{3,2} \cdot n_2+ m_{3,3} \cdot n_3
-				\end{pmatrix} \)
-			</li>
-		</ol>
 		<h2><a href="#begin" name="point">Точка</a></h2>
 		<ol>
 			<li>
 				Точка \(M\) имеет координаты \(x,~y,~z\):
-				\( ~~~M = 
+				\( ~~~M
 					\left(
 						x,y,z
 					\right)
@@ -127,20 +48,23 @@
 		<h2><a href="#begin" name="vector">Вектор</a></h2>
 		<ol>
 			<li>
+				Вектор \(\overrightarrow{m}\) имеет координаты \(x,~y,~z\):
+				\(~~~\overrightarrow{m}\{x,~y,~z\}\).
+			</li>
+			<li>
 				Вектор с началом в точке \(M\) и концом в точке \(N\)
 				записывается так: \(\overrightarrow{MN}\).
 			</li>
 			<li>
-				\(\overrightarrow{MN} = N^T - M^T\).
+				\(\overrightarrow{MN} = N - M\).
 			</li>
 			<li>
 				\(\overrightarrow{m} ~\parallel~ k \cdot \overrightarrow{m}\).
 			</li>
 			<li>
 				Скалярное произведение векторов: \(
-				~~~ \begin{pmatrix} x_1\\y_1\\z_1 \end{pmatrix} \cdot
-				\begin{pmatrix} x_2\\y_2\\z_2 \end{pmatrix} =
-				x_1 \cdot x_2 + y_1 \cdot y_2 + z_1 \cdot z_2.
+				~~~ \overrightarrow{m} \cdot \overrightarrow{n} =
+				m_x \cdot n_x + m_y \cdot n_y + m_z \cdot n_z.
 				\)
 			</li>
 			<li> 
@@ -172,9 +96,9 @@
 			<li>\(\overrightarrow{n}~-\) направляющий вектор.</li>
 		</ul>
 		\(M \in m \parallel \overrightarrow{n},~~~
-		M = ( x_{\small M}, y_{\small M}, z_{\small M}),~~
-		\overrightarrow{n} = 
-		\begin{pmatrix} n_{x}\\n_{y}\\n_{z}\end{pmatrix}
+		M ( x_{\small M}, y_{\small M}, z_{\small M}),~~
+		\overrightarrow{n} 
+		\{ n_{x},~n_{y},~n_{z}\}
 		\).<br><br>
 		<a href="javascript:OpenList('line')">Уравнения прямой \(m:~~~
 		\displaystyle\frac{x-x_{\small M}}{n_x} = \frac{y-y_{\small M}}{n_y} = \frac{z-z_{\small M}}{n_z}.
@@ -182,7 +106,7 @@
 		<ul>
 		<ul id="line" hidden="true">
 			<li>
-				Если \(\overrightarrow{n} = \begin{pmatrix} 0\\n_y\\n_z \end{pmatrix}\), то 
+				Если \(\overrightarrow{n} = \{ 0,~n_y,~n_z \}\), то 
 				уравнения прямой \(m ~:~~~
 				\begin{cases}
 					\displaystyle\frac{y-y_{\small M}}{n_y} = \frac{z-z_{\small M}}{n_z} \\
@@ -191,7 +115,7 @@
 				\).
 			</li>
 			<li>
-				Если \(\overrightarrow{n} = \begin{pmatrix} 0\\0\\n_z \end{pmatrix}\), то 
+				Если \(\overrightarrow{n} \{ 0,~0,~n_z \}\), то 
 				уравнения прямой \(m ~:~~~
 				\begin{cases}
 					x = x_{\small M} \\
@@ -217,12 +141,22 @@
 			<li>\(\overrightarrow{n}~-~\) нормаль к плоскости.</li>
 		</ul>
 		\(
-			\overrightarrow{n} = \begin{pmatrix}
+			\begin{pmatrix}
+				m_1 \\
+				m_2 \\
+				m_3 
+			\end{pmatrix}
+			=
+			 \begin{pmatrix}
 					0 & -m_z & m_y \\
 					m_z & 0 & -m_x \\
 					-m_y & m_x & 0
-				\end{pmatrix} \cdot 
-				\overrightarrow{k}
+				\end{pmatrix}.\)<br><br>\(
+			\overrightarrow k \left\{
+				\overrightarrow{n} \cdot \overrightarrow{m_1},~ 
+				\overrightarrow{n} \cdot \overrightarrow{m_2},~
+				\overrightarrow{n} \cdot \overrightarrow{m_3}
+				\right\}
 		\).<br><br>
 		Доказательство того, что это нормаль:<br><br>
 		\(
