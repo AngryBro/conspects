@@ -107,6 +107,7 @@ function Print(proof_) {
 	}
 	cmd += '</table>';
 	document.getElementById('derivative_derpr').innerHTML = cmd;
+	MathJax.typeset();
 }	
 function DerivativePush(n,func,derivative) {
 	n = String(n);
