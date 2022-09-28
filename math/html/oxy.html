@@ -1,66 +1,67 @@
 <html lang="en">
     <head>
         <title>Координатная плоскость</title>
+        <script src="js/newTexCommands.js"></script>
         <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <link rel="stylesheet" href="css/index.css">
         <script src="js/index.js"></script>
     </head>
     <body>
-        <h1><a name="begin"></a><a href="index.html">Координатная плоскость \(Oxy\)</a></h1>
+        <h1><a name="oxy"></a><a href="index.html">Координатная плоскость \(Oxy\)</a></h1>
         <ul>
-            <li><a href="#graphics">Стандартные графики</a></li>
-			<li><a href="#transform">Преобразование графиков</a></li>
-            <li><a href="#work">Работа в координатах</a></li>
+            <li><a href="#oxy/graphics">Стандартные графики</a></li>
+			<li><a href="#oxy/transform">Преобразование графиков</a></li>
+            <li><a href="#oxy/work">Работа в координатах</a></li>
         </ul>
-        <h2><a name="graphics"></a><a href="#begin">Стандартные графики</a></h2>
+        <h2><a name="oxy/graphics"></a><a href="#oxy">Стандартные графики</a></h2>
         <ol>
             <li>
             \(
                 ax+by+c=0,~a^2+b^2 \neq 0
             \) &mdash; прямая
             </li>
-            <li><a href="javascript:OpenList('line')">
+            <li><a href="javascript:OpenList('oxy_line')">
             \(
                 y=a(x-b)+c
             \) &mdash; невертикальная прямая</a>
-                <ul id="line" hidden="true">
+                <ul id="oxy_line" hidden>
 					<li>Содержит точку \((b,~c)\)</li>
                     <li>От \(a\) зависит угол наклона</li>
                 </ul>
             </li>
-            <li><a href="javascript:OpenList('vert')">
+            <li><a href="javascript:OpenList('oxy_vert')">
             \(
                 x=a
             \) &mdash; вертикальная прямая</a>
-                <ul id="vert" hidden="true">
+                <ul id="oxy_vert" hidden>
                     <li>Содержит точку \((a,~0)\)</li>
                 </ul>
             </li>
-            <li><a href="javascript:OpenList('parabole')">
+            <li><a href="javascript:OpenList('oxy_parabole')">
             \(
                 y = a(x-b)^2 + c,~ a \neq 0
             \) &mdash; парабола</a>
-                <ul id="parabole" hidden="true">
+                <ul id="oxy_parabole" hidden>
 					<li>Вершина \( (b,~c) \)</li>
                     <li>От \(a\) зависит направление ветвей и ширина</li>
                 </ul>
             </li>
-			<li><a href="javascript:OpenList('hparabole')">
+			<li><a href="javascript:OpenList('oxy_hparabole')">
             \(
                 y = a\sqrt{b(x-c)} + d, ~ ab \neq 0
             \) &mdash; полупарабола</a>
-                <ul id="hparabole" hidden="true">
+                <ul id="oxy_hparabole" hidden>
                     <li>От \(b\) зависит направление ветвей</li>
 					<li>От \(\displaystyle\frac{1}{a^2b}\) зависит ширина</li>
                     <li>Вершина \( (c,~d) \)</li>
 					<li>Полупарабола в области \(ay \geq ad\)</li>
                 </ul>
             </li>
-            <li><a href="javascript:OpenList('angle')">
+            <li><a href="javascript:OpenList('oxy_angle')">
             \(
                 y = a|x-b|+c
             \) &mdash; угол</a>
-                <ul id="angle" hidden="true">
+                <ul id="oxy_angle" hidden>
 					<li>Вершина \( (b,~c) \)</li>
                     <li>От \(a\) зависит направление сторон и величина угла</li>
                     <li>Левая сторона \(
@@ -81,29 +82,29 @@
                     \)</li>
                 </ul>
             </li>
-            <li><a href="javascript:OpenList('circle')">
+            <li><a href="javascript:OpenList('oxy_circle')">
             \(
                 (x-a)^2 + (y-b)^2 = c,~c>0
             \) &mdash; окружность</a>
-                <ul id="circle" hidden="true">
+                <ul id="oxy_circle" hidden>
                     <li>Центр \( (a,~b) \)</li>
                     <li>Радиус \( \sqrt{c} \)</li>
                 </ul>
             </li>
-            <li><a href="javascript:OpenList('hyperbole')">
+            <li><a href="javascript:OpenList('oxy_hyperbole')">
             \( \displaystyle
                 y = \frac{a}{x-b} + c,~a \neq 0
             \) &mdash; гипербола</a>
-                <ul id="hyperbole" hidden="true">
+                <ul id="oxy_hyperbole" hidden>
                     <li>Центр \( (b,~c) \)</li>
                     <li>От \(a\) зависит положение ветвей и расстояние между ними</li>
                 </ul>
             </li>
-			<li><a href="javascript:OpenList('exp')">
+			<li><a href="javascript:OpenList('oxy_exp')">
             \( \displaystyle
                 y = a^x,~0 < a \neq 1
             \) &mdash; показательная функция</a>
-                <ul id="exp" hidden="true">
+                <ul id="oxy_exp" hidden>
                     <li>Содержит \( (0;~1) \)</li>
                     <li>При \(a>1\) возрастает</li>
 					<li>При \(a < 1\) убывает </li>
@@ -111,11 +112,11 @@
 					<li>График выпуклый вниз</li>
                 </ul>
             </li>
-			<li><a href="javascript:OpenList('log')">
+			<li><a href="javascript:OpenList('oxy_log')">
             \( \displaystyle
                 y = \log_a{x},~0 < a \neq 1
             \) &mdash; логарифмическая функция</a>
-                <ul id="log" hidden="true">
+                <ul id="oxy_log" hidden>
                     <li>Содержит \( (1;~0) \)</li>
                     <li>При \(a>1\) возрастает, выпуклая вверх</li>
 					<li>При \(a < 1\) убывает, выпуклая вниз </li>
@@ -123,7 +124,7 @@
                 </ul>
             </li>
         </ol>
-		<h2><a name="transform" href="#begin">Преобразования графиков</a></h2>
+		<h2><a name="oxy/transform" href="#oxy">Преобразования графиков</a></h2>
 		<ol>
 			<li>
 				\(
@@ -133,24 +134,24 @@
 			</li>
 			<li>
 				\(
-					G(x_1,x_2) \longrightarrow G(|x_1|,x_2)
+					G(s,t) \longrightarrow G(|s|,t)
 				\)<br><br>
 				Строим график \(
 					\begin{cases}
-						G(x_1,x_2) \\
-						x_1 \geq 0
+						G(s,t) \\
+						s \geq 0
 					\end{cases}
-				\), отражаем симметрично по \(x_1=0\).
+				\), отражаем симметрично по \(s=0\).
 			</li>
 			<li>
 				\(
 					y = f(x) \longrightarrow y = |f(x)|
 				\)<br><br>
-				Строим \(y=f(x)\), отражаем симметрично по \(y=0\) часть,
-				где \(y<0\).
+				Строим \(y=f(x)\), отражаем стирая симметрично по \(y=0\) часть,
+				где \(y < 0\).
 			</li>
 		</ol>
-        <h2><a name="work"></a><a href="#begin">Работа в координатах</a></h2>
+        <h2><a name="oxy/work"></a><a href="#oxy">Работа в координатах</a></h2>
         <ol>
             <li>
                 \(

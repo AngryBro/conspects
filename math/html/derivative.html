@@ -5,17 +5,18 @@
         <script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <link rel="stylesheet" href="css/index.css">
         <script src="js/index.js"></script>
+		<script src="js/derivativeProof.js"></script>
     </head>
     <body>
-        <h1><a name="begin"></a><a href="index.html">Исследование функции</a></h1>
+        <h1><a name="derivative"></a><a href="index.html">Исследование функции</a></h1>
         <ul>
-            <li><a href="#derivative">Производная и функция</a></li>
-            <li><a href="#points">Типы точек</a></li>
-			<li><a href="#touching">Касание графиков</a></li>
-			<li><a href="#touching">Первообразная и интеграл</a></li>
-			<li><a href="#alg">Алгоритм исследования</a></li>
+            <li><a href="#derivative/def">Производная и функция</a></li>
+            <li><a href="#derivative/points">Типы точек</a></li>
+			<li><a href="#derivative/touching">Касание графиков</a></li>
+			<li><a href="#derivative/integral">Первообразная и интеграл</a></li>
+			<li><a href="#derivative/alg">Алгоритм исследования</a></li>
         </ul>
-        <h2><a name='derivative' href='#begin'>Производная и функция</a></h2>
+        <h2><a name='derivative/def' href='#derivative'>Производная и функция</a></h2>
 		<h3>Обозначения</h3>
 		<ul>
 			<li>
@@ -54,7 +55,7 @@
 				\(c~-\) постоянное число (константа).
 			</li>
 		</ul>
-		<text id='derpr'>
+		<text id='derivative_derpr'>
 		</text>
 		<ol>
 			<li> 
@@ -72,7 +73,7 @@
 				\)
 			</li>
 		</ol>
-		<h2><a name='points' href='#begin'>Типы точек</a></h2>
+		<h2><a name='derivative/points' href='#derivative'>Типы точек</a></h2>
 		<ol>
 			<li>
 				Критическая точка &ndash; точка, в которой функция существует, а производная либо равна 0,
@@ -94,7 +95,7 @@
 				либо точкой минимума.
 			</li>
 		</ol>
-		<h2><a name='touching' href='#begin'>Касание графиков</a></h2>
+		<h2><a name='derivative/touching' href='#derivative'>Касание графиков</a></h2>
 		График \(x = f(t)\) касается графика \(x=\varphi(t)\) в точке \(t_0\):<br><br>
 		\(
 			\begin{cases}
@@ -103,7 +104,7 @@
 				t = t_0
 			\end{cases}.
 		\)
-		<h2><a name='integral' href='#begin'>Первообразная и интеграл</a></h2>
+		<h2><a name='derivative/integral' href='#derivative'>Первообразная и интеграл</a></h2>
 		<ol>
 			<li>
 				\(F(t)~-\) первообразная \(f(t) \Leftrightarrow F'(t)=f(t).\)
@@ -113,7 +114,7 @@
 				F(t_2)-F(t_1).\)
 			</li>
 		</ol>
-		<h2><a name='alg' href='#begin'>Алгоритм исследования функции на возрастание и убывание</a></h2>
+		<h2><a name='derivative/alg' href='#derivative'>Алгоритм исследования функции на возрастание и убывание</a></h2>
 		<ol>
 			<li>
 				Поиск области определения.
@@ -131,8 +132,6 @@
 				Определение возрастания и убывания на промежутках по знаку производной.
 			</li>
 		</ol>
-		<div id='test'></div>
-		<script src="derivativeproof.js"></script>
 		<script>Print(0)</script>
     </body>
 </html>

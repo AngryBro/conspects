@@ -6,17 +6,17 @@
 		<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	</head>
 	<body>
-		<h1><a name="begin" href="index.html">Координатное пространство \(Oxyz\)</a></h1>
+		<h1><a name="oxyz" href="index.html">Координатное пространство \(Oxyz\)</a></h1>
 		<ul>
-			<li><a href="#point">Точка</a></li>
-			<li><a href="#vector">Вектор</a></li>
-			<li><a href="#lines">Уравнения прямой</a></li>
-			<li><a href="#planeeq">Уравнение плоскости</a></li>
-			<li><a href="#normal">Поиск вектора нормали к плоскости</a></li>
-			<li><a href="#angles">Углы</a></li>
-			<li><a href="#dists">Расстояния</a></li>
+			<li><a href="#oxyz/point">Точка</a></li>
+			<li><a href="#oxyz/vector">Вектор</a></li>
+			<li><a href="#oxyz/lines">Уравнения прямой</a></li>
+			<li><a href="#oxyz/planeeq">Уравнение плоскости</a></li>
+			<li><a href="#oxyz/normal">Поиск вектора нормали к плоскости</a></li>
+			<li><a href="#oxyz/angles">Углы</a></li>
+			<li><a href="#oxyz/dists">Расстояния</a></li>
 		</ul>
-		<h2><a href="#begin" name="point">Точка</a></h2>
+		<h2><a href="#oxyz" name="oxyz/point">Точка</a></h2>
 		<ol>
 			<li>
 				Точка \(M\) имеет координаты \(x,~y,~z\):
@@ -26,7 +26,7 @@
 					\right)
 				\).
 			</li>
-			<li><a href="javascript:OpenList('point1')">
+			<li><a href="javascript:OpenList('oxyz_point1')">
 				\(
 					\left\{
 						\begin{array}{l}
@@ -36,7 +36,7 @@
 					\right. \Rightarrow
 					X = \displaystyle\frac{1}{m+n}( n \cdot M + m \cdot N). 
 				\)</a>
-				<ul id="point1" hidden="true">
+				<ul id="oxyz_point1" hidden>
 					<li>
 						\(X\) &ndash; середина \(MN \Rightarrow
 							X = \displaystyle\frac{1}{2}(M+N).
@@ -45,7 +45,7 @@
 				</ul>
 			</li>
 		</ol>
-		<h2><a href="#begin" name="vector">Вектор</a></h2>
+		<h2><a href="#oxyz" name="oxyz/vector">Вектор</a></h2>
 		<ol>
 			<li>
 				Вектор \(\overrightarrow{m}\) имеет координаты \(x,~y,~z\):
@@ -71,13 +71,13 @@
 				Длина вектора: \(\left|\overrightarrow{m}\right| = 
 				\sqrt{\overrightarrow{m}^2}\).
 			</li>
-			<li><a href="javascript:OpenList('perp')">Угол между векторами:
+			<li><a href="javascript:OpenList('oxyz_perp')">Угол между векторами:
 				\(~~~
 					\cos{\angle\left(\overrightarrow{m},\overrightarrow{n} \right)} =
 					\displaystyle\frac{\overrightarrow{m} \cdot \overrightarrow{n}}
 					{\left|\overrightarrow{m}\right| \cdot \left|\overrightarrow{n}\right|}
 				\).</a>
-				<ul id='perp' hidden>
+				<ul id='oxyz_perp' hidden>
 					<li>
 						\(
 							\overrightarrow{m} \perp \overrightarrow{n}
@@ -88,7 +88,7 @@
 				</ul>
 			</li>
 		</ol>
-		<h2><a href="#begin" name="lines">Уравнения прямой</a></h2>
+		<h2><a href="#oxyz" name="oxyz/lines">Уравнения прямой</a></h2>
 		Обозначения: 
 		<ul>
 			<li>\(m~-\) прямая.</li>
@@ -100,11 +100,11 @@
 		\overrightarrow{n} 
 		\{ n_{x},~n_{y},~n_{z}\}
 		\).<br><br>
-		<a href="javascript:OpenList('line')">Уравнения прямой \(m:~~~
+		<a href="javascript:OpenList('oxyz_line')">Уравнения прямой \(m:~~~
 		\displaystyle\frac{x-x_{\small M}}{n_x} = \frac{y-y_{\small M}}{n_y} = \frac{z-z_{\small M}}{n_z}.
 		\)</a>
 		<ul>
-		<ul id="line" hidden="true">
+		<ul id="oxyz_line" hidden>
 			<li>
 				Если \(\overrightarrow{n} = \{ 0,~n_y,~n_z \}\), то 
 				уравнения прямой \(m ~:~~~
@@ -124,7 +124,7 @@
 				\).
 			</li>
 		</ul></ul>
-		<h2><a href="#begin" name="planeeq">Уравнение плоскости</a></h2>
+		<h2><a href="#oxyz" name="oxyz/planeeq">Уравнение плоскости</a></h2>
 				Обозначения: 
 				<ul>
 					<li>\(\mu~-\) плоскость.</li>
@@ -133,7 +133,7 @@
 				</ul>
 				Уравнение плоскости \(\mu:~~~
 				n_x(x-x_{\small M})+n_y(y-y_{\small M})+n_z(z-z_{\small M})=0\).
-		<h2><a href="#begin" name="normal">Поиск вектора нормали к плоскости</a></h2>
+		<h2><a href="#oxyz" name="oxyz/normal">Поиск вектора нормали к плоскости</a></h2>
 		Обозначения:
 		<ul>
 			<li>\(\mu ~-~\) плоскость.</li>
@@ -152,10 +152,10 @@
 					m_z & 0 & -m_x \\
 					-m_y & m_x & 0
 				\end{pmatrix}.\)<br><br>\(
-			\overrightarrow k \left\{
-				\overrightarrow{n} \cdot \overrightarrow{m_1},~ 
-				\overrightarrow{n} \cdot \overrightarrow{m_2},~
-				\overrightarrow{n} \cdot \overrightarrow{m_3}
+			\overrightarrow n \left\{
+				\overrightarrow{k} \cdot \overrightarrow{m_1},~ 
+				\overrightarrow{k} \cdot \overrightarrow{m_2},~
+				\overrightarrow{k} \cdot \overrightarrow{m_3}
 				\right\}
 		\).<br><br>
 		Доказательство того, что это нормаль:<br><br>
@@ -173,7 +173,7 @@
 			\end{cases} ~\Rightarrow~
 			\overrightarrow{n} \perp \mu.
 		\)
-		<h2><a href="#begin" name="angles">Углы</a></h2>
+		<h2><a href="#oxyz" name="oxyz/angles">Углы</a></h2>
 		Обозначения: 
 		<ul>
 			<li>\(m,~n~-\) прямые.</li>
@@ -198,7 +198,7 @@
 				,~~~\) \(\overrightarrow{m},~\overrightarrow{n}~-\) нормали \(\mu\) и \(\nu\).
 			</li>
 		</ol>
-		<h2><a href="#begin" name="dists">Расстояния</a></h2>
+		<h2><a href="#oxyz" name="oxyz/dists">Расстояния</a></h2>
 		Обозначения: 
 		<ul>
 			<li>\(M,~N~-\) точки.</li>
