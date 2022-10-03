@@ -2,29 +2,877 @@
     <head>
         <title>Информатика</title>
         <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="js/python.js" defer></script>
         <link rel="stylesheet" href="css/index.css">
         <script src="js/index.js"></script>
     </head>
     <body>
+        <div hidden>\(
+            \def\RR{{\mathbb{R}}}
+            \def\NN{{\mathbb{N}}}
+            \def\ZZ{{\mathbb{Z}}}
+            \def\QQ{{\mathbb{Q}}}
+            \def\cases#1{{
+                \begin{cases} 
+                #1
+                \end{cases} 
+            }}
+            \def\union#1{{
+                \left[
+                    \begin{array}{l}
+                        #1 
+                    \end{array}
+                \right.
+            }}
+            \def\mequiv#1#2#3{{
+                #1 \equiv #2 ~~(\operatorname{mod~} #3)
+            }}
+            \def\matrix#1{
+                \begin{pmatrix}
+                    #1  
+                \end{pmatrix}
+            }
+        \)</div>
+        <div id="main" name="main">
+            <ul>
+                <li>
+                    <h1><a href="javascript:OpenLists('conspectlist',['python'])">Конспекты</a></h1>
+                        <ol id="conspectlist" hidden>
+                            <li><a href="javascript:OpenList('python')">Python</a>
+                                <ol id="python" hidden>
+                                    <!-- <li><a href="javascript:view('python/','')"></a></li> -->
+                                    <li><a href="javascript:view('python/input','Ввод')">Ввод данных</a></li>
+                                    <li><a href="javascript:view('python/output','Вывод')">Вывод данных</a></li>
+                                    <li><a href="javascript:view('python/assign','Присваивание')">Присваивание</a></li>
+                                    <li><a href="javascript:view('python/conditions','Условия')">Условия</a></li>
+                                    <li><a href="javascript:view('python/base','Операции')">Базовые операции</a></li>
+                                    <li><a href="javascript:view('python/cycles','Циклы')">Циклы</a></li>
+                                    <li><a href="javascript:view('python/functions','Функции')">Функции</a></li>
+                                    <li><a href="javascript:view('python/string','Строка')">Строка</a></li>
+                                    <li><a href="javascript:view('python/array','Массив')">Массив (список)</a></li>
+                                    <li><a href="javascript:view('python/iterable','Массивоподобный')">Массивоподобный объект</a></li>
+                                    <li><a href="javascript:view('python/dict','Словарь')">Ассоциативный массив (словарь)</a></li>
+                                    <li><a href="javascript:view('python/itertools','Itertools')">Itertools</a></li>
+                                    <li><a href="javascript:view('empty','Пусто')">[новые разделы в разработке]</a></li>
+                                </ol>
+                            </li>
+                            <li><a href="">Excel</a></li>
+                            <li><a href="javascript:view('algoritms','Алгоритмы')">Стандартные алгоритмы</a></li>
+                            <li><a>Динамическое программирование</a></li>
+                        </ol>
+                </li>
+                <li><h1><a href="">Прогресс учеников 2023</a></h1></li>
+                <li>
+                    <h1><a href="javascript:OpenList('timetable')">Расписание занятий</a></h1>
+                    <table id="timetable" hidden>
+                        <tbody>
+                            <tr>
+                                <th>День</th>
+                                <th>Время</th>
+                                <th>Группа</th>
+                            </tr>
+                            <tr>
+                                <td>ПН, ПТ</td>
+                                <td>18:00</td>
+                                <td>3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <div id="python/array" hidden>
+            <h1><a name="python/array" href="javascript:view('main','Информатика')">Массив (список)</a></h1>
         <ul>
-            <li>
-                <h1><a href="javascript:OpenLists('conspectlist',['python'])">Конспекты</a></h1>
-                    <ol id="conspectlist">
-                        <li><a href="javascript:OpenList('python')">Python</a>
-                            <ol id="python">
-                                <li><a href="python/array.html">Массив (список)</a></li>
-                                <li><a href="python/dict.html">Ассоциативный массив (словарь)</a></li>
-                                <li><a href="python/string.html">Строка</a></li>
-                                <li><a href="python/number.html">Число</a></li>
-                                <li><a href="python/itertools.html">Itertools</a></li>
-                                <li><a>[данный раздел в разработке]</a></li>
-                            </ol>
-                        </li>
-                        <li><a href="">Excel</a></li>
-                        <li><a>Стандартные алгоритмы</a></li>
-                        <li><a>Динамическое программирование</a></li>
-                    </ol>
-            </li>
+            <li><b>Массив</b> &mdash; упорядоченный набор объектов.</li>
+            <li>Нумерация объектов начинается с 0.</li>
+            <li>Нумерация объектов с конца массива начинается с -1.</li>
         </ul>
+        <table class="bigTable">
+            <tr>
+                <th>Операция с массивом a</th>
+                <th>Изменение массива</th>
+                <th>Возвращаемое значение</th>
+                <th>Сложность</th>
+            </tr>
+            <tr>
+                <td>a{{[{i}]}}</td>
+                <td>нет</td>
+                <td>Элемент массива номер {i}</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>{element} {{in}} a</td>
+                <td>нет</td>
+                <td>Присутствует ли в массиве {element}</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>{element} {{not in}} a</td>
+                <td>нет</td>
+                <td>Отсутствует ли в массиве {element}</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{[{i1}:{i2}:{step}]}}</td>
+                <td>нет</td>
+                <td>Массив из элементов от {a[i1]} включительно,<br>до {a[i2]} не включительно, с шагом {step}</td>
+                <td>\(O(|i1-i2|)\)</td>
+            </tr>
+            <tr>
+                <td>a{{[::-1]}}</td>
+                <td>нет</td>
+                <td>Массив в обратном порядке</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{[{i}] = {element} }}</td>
+                <td>Элемент номер {i} будет равен {element}</td>
+                <td>нет</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>a{{+}}{b}</td>
+                <td>нет</td>
+                <td>Массив дополненный с конца массивом {b}</td>
+                <td>\(O(k)\)</td>
+            </tr>
+            <tr>
+                <td>{{len(}}a{{)}}</td>
+                <td>нет</td>
+                <td>Количество элементов массива</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>{{sum(}}a{{)}}</td>
+                <td>нет</td>
+                <td>Сумма элементов массива</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>{{min(}}a{{)}}</td>
+                <td>нет</td>
+                <td>Минимальный элемент массива</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>{{max(}}a{{)}}</td>
+                <td>нет</td>
+                <td>Максимальный элемент массива</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>{{sorted(}}a{{,reverse={flag},key={function})}}</td>
+                <td>нет</td>
+                <td>Сортированный массив в заданном порядке,<br>по правилу {function}</td>
+                <td>\(O(n\cdot \log{n})\)</td>
+            </tr>
+            <tr>
+                <td>{{list(set(}}a{{))}}</td>
+                <td>нет</td>
+                <td>Массив с уникальными элементами</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.copy()}}</td>
+                <td>нет</td>
+                <td>Копия массива</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.append({element})}}</td>
+                <td>Добавляется {element} в конец массива</td>
+                <td>нет</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.pop({i})}}</td>
+                <td>Удаляется элемент номер {i}</td>
+                <td>Удалённый элемент</td>
+                <td>\(O(n-i)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.count({element})}}</td>
+                <td>нет</td>
+                <td>Количество {element} в массиве</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.index({element},{start},{end})}}</td>
+                <td>нет</td>
+                <td>
+                    Первый номер элемента {element} в массиве {a}{{[{start}:{end}]}}
+                </td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>a{{.sort(reverse={flag},key={function})}}</td>
+                <td>Сортирует массив в заданном порядке,<br>по правилу {function}</td>
+                <td>нет</td>
+                <td>\(O(n\cdot \log{n})\)</td>
+            </tr>
+        </table>
+        </div>
+        <div id="python/iterable" hidden>
+            <h1><a href="javascript:view('main','Информатика')" name="python/iterable">Массивоподобный объект</a></h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Операция</th>
+                        <th>Возвращаемое значение</th>
+                        <th>Сложность</th>
+                    </tr>
+                    <tr>
+                        <td>{element} {{in}} a</td>
+                        <td>Присутствует ли {element} в объекте</td>
+                        <td>\(O()\)</td>
+                    </tr>
+                    <tr>
+                        <td>{element} {{not in}} a</td>
+                        <td>Отсутствует ли {element} в объекте</td>
+                        <td>\(O()\)</td>
+                    </tr>
+                    <tr>
+                        <td>{{list(}}a{{)}}</td>
+                        <td>Массив из элементов объекта</td>
+                        <td>\(O(n)\)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="python/dict" hidden>
+            <h1><a name="python/dict" href="javascript:view('main','Информатика')">Ассоциативный массив (словарь)</a></h1>
+            <ul>
+                <li><b>Ассоциативный массив</b> &mdash; набор объектов, каждый из которых закреплён за уникальным ключом.</li>
+                <li>Понятие порядка отсутствует.</li>
+                <li>Ключом может являться любой неизменяемый объект, например число или строка.</li>
+            </ul>
+            <table class="bigTable">
+                <tr>
+                    <th>Операция с массивом a</th>
+                    <th>Изменение массива</th>
+                    <th>Возвращаемое значение</th>
+                    <th>Сложность</th>
+                </tr>
+                <tr>
+                    <td>a{{[{i}]}}</td>
+                    <td>нет</td>
+                    <td>Элемент массива c ключом {i}</td>
+                    <td>\(O(1)\)</td>
+                </tr>
+                <tr>
+                    <td>{key} {{in}} a</td>
+                    <td>нет</td>
+                    <td>Присутствует ли в массиве ключ {key}</td>
+                    <td>\(O(1)\)</td>
+                </tr>
+                <tr>
+                    <td>{key} {{not in}} a</td>
+                    <td>нет</td>
+                    <td>Отсутствует ли в массиве ключ {key}</td>
+                    <td>\(O(1)\)</td>
+                </tr>
+                <tr>
+                    <td>a{{[{i}] = {element} }}</td>
+                    <td>Элемент с ключом {i} будет равен {element}</td>
+                    <td>нет</td>
+                    <td>\(O(1)\)</td>
+                </tr>
+                <tr>
+                    <td>{{len(}}a{{)}}</td>
+                    <td>нет</td>
+                    <td>Количество ключей или элементов массива</td>
+                    <td>\(O(1)\)</td>
+                </tr>
+                <tr>
+                    <td>a{{.copy()}}</td>
+                    <td>нет</td>
+                    <td>Копия массива</td>
+                    <td>\(O(n)\)</td>
+                </tr>
+                <tr>
+                    <td>a{{.pop({i})}}</td>
+                    <td>Удаляется элемент с ключом {i}</td>
+                    <td>Удалённый элемент</td>
+                    <td>\(O(1)\)</td>
+                </tr>
+                <tr>
+                    <td>a{{.keys()}}</td>
+                    <td>нет</td>
+                    <td>Массивоподобный объект из ключей</td>
+                    <td>\(O(1)\)</td>
+                </tr>
+                <tr>
+                    <td>a{{.values()}}</td>
+                    <td>нет</td>
+                    <td>Массивоподобный объект из значений</td>
+                    <td>\(O(1)\)</td>
+                </tr>
+            </table>
+        </div>
+        <div id="python/itertools" hidden>
+            <h1><a href="javascript:view('main','Информатика')" name="python/itertools">Itertools</a></h1>
+        <ul>
+            <li>Itertools &mdash; библиотека для работы с массивоподобными объектами.</li>
+            <li>Подключение: {{from}} itertools {{import}} *</li>
+        </ul>
+        <table>
+            <tr>
+                <th>Функция</th>
+                <th>Возвращаемый массив кортежей</th>
+            </tr>
+            <tr>
+                <td>{{permutations({iterable},{length})}}</td>
+                <td>Перестановки длиной {length}</td>
+            </tr>
+            <tr>
+                <td>{{product({iterable_1},{iterable_2},...,{iterable_n})}}</td>
+                <td>
+                    Всевозможные комбинации, где:
+                    <ul>
+                        <li>Первый элемент один из {iterable_1}</li>
+                        <li>Второй элемент один из {iterable_2}</li>
+                        <li>...</li>
+                        <li>n-й элемент один из {iterable_n}</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        </div>
+        <div id="python/string" hidden>
+            <h1><a href="javascript:view('main','Информатика')" name="python/string">Строка</a></h1>
+        <ul>
+            <li><b>Строка</b> &mdash; упорядоченный набор символов.</li>
+            <li>Строка неизменяемый объект.</li>
+            <li>Нумерация символов начинается с 0.</li>
+            <li>Нумерация символов с конца строки начинается с -1.</li>
+        </ul>
+        <table class="bigTable">
+            <tr>
+                <th>Операция со строкой s</th>
+                <th>Возвращаемое значение</th>
+                <th>Сложность</th>
+            </tr>
+            <tr>
+                <td>s{{[{i}]}}</td>
+                <td>Символ строки номер {i}</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>{t} {{in}} s</td>
+                <td>Присутствует ли в строке {t}</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>{t} {{not in}} s</td>
+                <td>Отсутствует ли в строке {t}</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{[{i1}:{i2}:{step}]}}</td>
+                <td>Строка из символов от {s[i1]} включительно,<br>до {s[i2]} не включительно, с шагом {step}</td>
+                <td>\(O(|i1-i2|)\)</td>
+            </tr>
+            <tr>
+                <td>s{{[::-1]}}</td>
+                <td>Строка в обратном порядке</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{+}}{t}</td>
+                <td>Строка дополненная с конца строкой {t}</td>
+                <td>\(O(k)\)</td>
+            </tr>
+            <tr>
+                <td>{{len(}}s{{)}}</td>
+                <td>Количество символов в строке</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>{{int({s})}}</td>
+                <td>Целое число из строки</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>{{float({s})}}</td>
+                <td>Десятичная дробь из строки</td>
+                <td>\(O(1)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.count({t})}}</td>
+                <td>Количество {t} в строке</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.find({t})}}</td>
+                <td>
+                    Индекс первого вхождения {t} в строку<br>
+                    Если {t} отсутствует в строке, то -1
+                </td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.rfind({t})}}</td>
+                <td>
+                    Индекс последнего вхождения {t} в строку<br>
+                    Если {t} отсутствует в строке, то -1
+                </td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.replace({t1},{t2},{count})}}</td>
+                <td>
+                    Строка с заменёнными {t1} на {t2},<br>
+                    заменяются первые {count} вхождений {t1}
+                </td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.split({t})}}</td>
+                <td>Массив из частей строки, разделённой по разделителю {t}</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.splitlines()}}</td>
+                <td>Массив из частей строки, разделённой по символу переноса строки</td>
+                <td>\(O(n)\)</td>
+            </tr>
+            <tr>
+                <td>s{{.join({iterable})}}</td>
+                <td>Соединённый {iterable} по строке</td>
+                <td>\(O(n)\)</td>
+            </tr>
+        </table>
+        </div>
+        <div id="python/cycles" hidden>
+            <h1><a href="javascript:view('main','Информатика')" name="python/cycles">Циклы</a></h1>
+            <ul>
+                <li><a href="#python/cycles/for">Цикл {{for}}</a></li>
+                <li><a href="#python/cycles/while">Цикл {{while}}</a></li>
+                <li><a href="#python/cycles/continue">Пропуск шага</a></li>
+                <li><a href="#python/cycles/break">Остановка цикла</a></li>
+            </ul>
+            <h3><a href="#python/cycles" name="python/cycles/for">Цикл {{for}}</a></h3>
+            <div class="listing">
+{{for}} {element} {{in}} {iterable}{{:}}
+    {...code...}
+            </div>
+            <br>Перебирает все элементы в массивоподобном объекте.
+            <h3><a href="#python/cycles" name="python/cycles/while">Цикл {{while}}</a></h3>
+            <div class="listing">
+{{while}} {condition}{{:}}
+    {...code...}
+            </div>
+            <br>Выполняет код, пока условие {condition} истинное.
+            <h3><a href="#python/cycles" name="python/cycles/continue">Пропуск шага ({{continue}})</a></h3>
+            <div class="listing">
+{{for}} {element} {{in}} {iterable}{{:}}
+    {...code...} {{continue}}
+
+{{while}} {condition}{{:}}
+    {...code...} {{continue}}
+            </div>
+            <br>Пропускает шаг цикла. Не выполняет на данном шаге код после {{continue}}.
+            <h3><a href="#python/cycles" name="python/cycles/break">Остановка цикла ({{break}})</a></h3>
+            <div class="listing">
+{{for}} {element} {{in}} {iterable}{{:}}
+    {...code...} {{break}}
+
+{{while}} {condition}{{:}}
+    {...code...} {{break}}
+            </div>
+            <br>Останавливает цикл принудительно.
+        </div>
+        <div id="python/conditions" hidden>
+            <h1><a href="javascript:view('main','Информатика')" name="python/conditions">Условия</a></h1>
+            <ul>
+                <li>
+                    <h3>Обычное условие</h3>
+                    <div class="listing">
+{{if}} {condition}{{:}}
+    {...code1...} 
+{{else:}}
+    {...code2...}
+                    </div>
+                    <br>Если выражение {condition} истинное, то выполнится {...code1...},
+                    <br>иначе выполнится {...code2...}. Часть с {{else}} можно опустить. 
+                </li>
+                <li>
+                    <h3>Условный оператор</h3>
+                    <table class="inlinePyTable">
+                        <tbody>
+                            <tr>
+                                <th>Операция</th>
+                                <th>Возвращаемое значение</th>
+                            </tr>
+                            <tr>
+                                <td>{a} {{if}} {condition} {{else}} {b}</td>
+                                <td>{a}, если {condition} истинное, иначе {b}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <div id="python/assign" hidden>
+            <h1><a href="javascript:view('main','Информатика')" name="python/assign">Присваивание</a></h1>
+            <div class="listing">
+{a} {{=}} {b}
+            </div>
+            <br>В переменной {a} будет храниться такой же объект, как в переменной {b}.
+        </div>
+        <div id="python/input" hidden>
+            <h1><a href="javascript:view('main','Информатика')">Ввод данных</a></h1>
+            <ul>
+                <li>
+                    <h3>С клавиатуры</h3>
+                    <table class="inlinePyTable">
+                        <tbody>
+                            <tr>
+                                <th>Операция</th>
+                                <th>Возвращамое значение</th>
+                            </tr>
+                            <tr>
+                                <td>{{input()}}</td>
+                                <td>Строка, введённая с клавиатуры</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    <h3>Из файла</h3>
+                    <table class="inlinePyTable">
+                        <tbody>
+                            <tr>
+                                <th>Операция</th>
+                                <th>Возвращаемое значение</th>
+                            </tr>
+                            <tr>
+                                <td>{{open({file}).read()}}</td>
+                                <td>Строка, находящаяся в файле</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <div id="python/output" hidden>
+            <h1><a href="javascript:view('main','Информатика')" name="python/output">Вывод данных в терминал</a></h1>
+            <div class="listing">
+{{print({a1}, {a2},..., {an}, sep={delimiter}, end={tail})}}
+            </div>
+            <ul>
+                <li>
+                    Выводит {a1}, {a2},..., {an} с разделителем {delimiter}
+                    и ставит в конец строки {tail}.
+                </li>
+                <li>
+                    Параметры {{sep}} и {{end}} необязательные.
+                </li>
+                <li>
+                    По умолчанию разделитель пробел, а конец &ndash; символ переноса строки.
+                </li>
+            </ul>            
+        </div>
+        <div id="algoritms" hidden>
+            <h1><a href="javascript:view('main','Информатика')" name="algoritms">Стандартные алгоритмы</a></h1>
+            <ul>
+                <li><a href="#algoritms/10toN">
+                    Перевод числа из десятичной системы счисления в другую
+                </a></li>
+                <li><a href="#algoritms/Nto10">
+                    Перевод числа в десятичную систему счисления
+                </a></li>
+                <li><a href="#algoritms/prime">
+                    Проверка числа на простое
+                </a></li>
+                <li><a href="#algoritms/divs">
+                    Поиск всех натуральных делителей числа
+                </a></li>
+                <li><a href="#algoritms/nod">
+                    Поиск НОД и НОК двух чисел
+                </a></li>
+            </ul>
+            <div id="algoritms.10toN">
+                <h3><a name="algoritms/10toN" href="#algoritms">Перевод числа из десятичной системы счисления в другую</a></h3>
+                Постановка задачи:
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Дано число \(x\), записанное в десятичной системе счисления.
+                                <br>Требуется перевести его в систему счисления с основанием \(n\).
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                Решение задачи:
+                <ol>
+                    <li>Делим с остатком \(x\) на \(n\).</li>
+                    <li>Остаток записываем как цифра системы счисления с основанием \(n\).</li>
+                    <li>Делим с остатком полученную целую часть на \(n\).</li>
+                    <li>Остаток записываем перед предыдущим.</li>
+                    <li>Повторяем шаги 3 &mdash; 4 пока целая часть >0.</li>
+                    <li>Результат &mdash; строка остатков.</li>
+                </ol>
+            </div>
+            <div id="algoritms.Nto10">
+                <h3><a href="#algoritms" name="algoritms/Nto10">Перевод числа в десятичную систему счисления</a></h3>
+                Постановка задачи:
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Дано число \(x\), записанное в системе счисления с основанием \(n\).
+                                <br>Требуется перевести его в десятичную систему счисления.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                Решение задачи:
+                <ol>
+                    <li>
+                        Нумеруем цифры числа \(x\) слева направо, начиная с 0: \(\overline{a_ka_{k-1}...a_1a_0}\).
+                    </li>
+                    <li>
+                        Вычисляем сумму: \(\displaystyle\sum_{i = 0}^{k}\left(a_i \cdot n^i\right) = a_k \cdot n^k + a_{k-1} \cdot n^{k-1} + \ldots + a_1 \cdot n^1 + a_0 \cdot n^0 \).
+                    </li>
+                </ol>
+            </div>
+            <div id="algoritms.prime">
+                <h3><a href="#algoritms" name="algoritms/prime">Проверка числа на простое</a></h3>
+                Постановка задачи:
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Выяснить, является ли число \(x\) простым.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                Решение:
+                <ol>
+                    <li>Проверяем, делится ли \(x\) на целые числа из отрезка \(\left[2;~\sqrt{x}\right]\).</li>
+                    <li>Если ни на какое не делится, то \(x\) простое. Иначе составное или 1.</li>
+                </ol>
+            </div>
+            <div>
+                <h3><a href="#algoritms" name="algoritms/divs">Поиск всех натуральных делителей числа</a></h3>
+                Постановка задачи:
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Найти все натуральные делители числа \(x\) в порядке возрастания.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                Решение:
+                <ol>
+                    <li>
+                        Для всех целых \(i \in \left[1;~\sqrt{x}\right)\):
+                        <ul>
+                            <li>
+                                Если \(x ~\vdots~ i\), то выписываем \(i\) в первый набор, \(\displaystyle\frac{x}{i}\) в третий.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Если \(\sqrt{x}\) &mdash; целое число, то выписываем его во второй набор.</li>
+                    <li>Объединяем первый набор, второй набор и в обратном порядке третий набор.</li>
+                    <li>Полученный набор &mdash; все натуральные делители числа \(x\) в порядке возрастания.</li>
+                </ol>
+            </div>
+            <div id="algoritms.nod">
+                <h3><a href="#algoritms" name="algoritms/nod">Поиск НОД и НОК двух чисел (алгоритм Евклида)</a></h3>
+                Постановка задачи:
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Найти НОД и НОК двух целых чисел \(x\) и \(y\).
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                Решение:
+                <ol>
+                    <li>
+                        Если \(|x| < |y|\), то \(y\) заменить на \(y \% x\),
+                        <br>
+                        Иначе \(x\) заменить на \(x \% y\)
+                    </li>
+                    <li>
+                        Повторять шаг 1 пока \(x \cdot y \neq 0\).
+                    </li>
+                    <li>
+                        НОД будет равен \(x+y\).
+                    </li>
+                    <li>НОК считается по формуле: \(\operatorname{НОК}{(x,~y)} = \displaystyle\frac{x \cdot y}{\operatorname{НОД}{(x,~y)}}\).</li>
+                </ol>
+            </div>
+        </div>
+        <div id="empty" hidden>
+            <h1><a href="javascript:view('main','Информатика')">Здесь пока ничего нет</a></h1>
+            <h1>\(\Huge \varnothing\)</h1>
+        </div>
+        <div id="python/functions" hidden>
+            <h1><a href="javascript:view('main','Информатика')" name="python/functions">Функции</a></h1>
+            <h3>Определение функции</h3>
+            <div class="listing">
+{{def}} {f}{{({argument1},{argument2},...,{argumentn}):}}
+    {...code...}
+    {{return}} {result}
+            </div>
+            <ul>
+                <li>
+                    Конструкция {{return}} прерывает выполнение функции и возвращает значение.
+                </li>
+                <li>
+                    Конструкция {{return}} может отсутствовать.
+                </li>
+                <li>
+                    Выражение после {{return}} может отсутствовать.
+                </li>
+            </ul>
+            <h3>Вызов функции</h3>
+            <div class="listing">
+{f}{{({argument1},{argument2},...,{argumentn})}}
+            </div>
+        </div>
+        <div id="python/base" hidden>
+            <h1><a name="python/base" href="javascript:view('main','Информатика')">Базовые операции</a></h1>
+            <ul>
+                <li><a href="javascript:OpenLists('python.base.logic',['python.base.numbers'])">Операции с логическими единицами</a></li>
+                <li><a href="javascript:OpenLists('python.base.numbers',['python.base.logic'])">Операции с числами</a></li>
+            </ul>
+            <table id="python.base.logic" hidden>
+                <caption>Операции с логическими единицами</caption>
+                <tbody>
+                    <tr>
+                        <th>Операция</th>
+                        <th>Возвращаемое значение</th>
+                    </tr>
+                    <tr>
+                        <td>{{not}} {a}</td>
+                        <td>\(\neg\) {a}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{and}} {b}</td>
+                        <td>{a} \(\land\) {b}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{or}} {b}</td>
+                        <td>{a} \(\vee\) {b}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{==}} {b}</td>
+                        <td>{{True}}, если значения {a} и {b} одинаковые, иначе {{False}}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{!=}} {b}</td>
+                        <td>{{True}}, если значения {a} и {b} разные, иначе {{False}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{int({a})}}</td>
+                        <td>1, если {a} {{True}}, иначе 0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="python.base.numbers" hidden>
+                <caption>Операции с числами</caption>
+                <tbody>
+                    <tr>
+                        <th>Операция</th>
+                        <th>Возвращаемое значение</th>
+                    </tr>
+                    <tr>
+                        <td>{{-}}{a}</td>
+                        <td>Число {a}, умноженное на -1</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{+}} {b}</td>
+                        <td>Сумма чисел {a} и {b}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{-}} {b}</td>
+                        <td>Разность чисел {a} и {b}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{*}} {b}</td>
+                        <td>Произведение чисел {a} и {b}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{/}} {b}</td>
+                        <td>Частное чисел {a} и {b}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{//}} {b}</td>
+                        <td>Целая часть от деления {a} на {b}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{%}} {b}</td>
+                        <td>Остаток от деления {a} на {b}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{**}} {b}</td>
+                        <td>Число {a} в степени {b}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{==}} {b}</td>
+                        <td>{{True}}, если {a} равно {b}, иначе {{False}}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{!=}} {b}</td>
+                        <td>{{True}}, если {a} неравно {b}, иначе {{False}}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{<}} {b}</td>
+                        <td>{{True}}, если {a} меньше {b}, иначе {{False}}</td>
+                    </tr>
+                    <tr>
+                        <td>{a} {{<=}} {b}</td>
+                        <td>{{True}}, если {a} меньше или равно {b}, иначе {{False}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{abs({a})}}</td>
+                        <td>Модуль числа {a}</td>
+                    </tr>
+                    <tr>
+                        <td>{{int({a})}}</td>
+                        <td>Число {a} без знаков после точки</td>
+                    </tr>
+                    <tr>
+                        <td>{{str({a})}}</td>
+                        <td>Строка из числа {a}</td>
+                    </tr>
+                    <tr>
+                        <td>{{bool({a})}}</td>
+                        <td>{{False}}, если {a} равно 0, иначе {{True}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{bin({a})[2:]}}</td>
+                        <td>Строка двоичной записи натурального числа {a}</td>
+                    </tr>
+                    <tr>
+                        <td>{{oct({a})[2:]}}</td>
+                        <td>Строка восьмеричной записи натурального числа {a}</td>
+                    </tr>
+                    <tr>
+                        <td>{{hex({a})[2:]}}</td>
+                        <td>Строка шестнадцатеричной записи натурального числа {a}</td>
+                    </tr>
+                    <tr>
+                        <td>{{min({a1},{a2},...,{an})}}</td>
+                        <td>Минимальное число из {a1}, {a2},..., {an}</td>
+                    </tr>
+                    <tr>
+                        <td>{{max({a1},{a2},...,{an})}}</td>
+                        <td>Минимальное число из {a1}, {a2},..., {an}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>

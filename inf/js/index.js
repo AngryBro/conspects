@@ -18,3 +18,14 @@ OpenLists = (id,ids) => {
         document.getElementById(ids[i]).hidden = true;
     }
 }
+
+var lastPageId = 'main';
+function view(id,title) {
+    document.title = title;
+    var currentPage = document.getElementById(id);
+    var lastPage = document.getElementById(lastPageId);
+    lastPage.hidden = true;
+    currentPage.hidden = false;
+    lastPageId = id;
+    document.location.href='#'+id;
+}

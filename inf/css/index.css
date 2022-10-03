@@ -1,5 +1,5 @@
 body {
-    font-size: 25pt;
+    font-size: 20pt;
     margin-left: 100;
 	font-family: Comic Sans MS;
 }
@@ -14,7 +14,7 @@ a:hover {
     color: blue;
 }
 table {
-	font-size: 25;
+	font-size: 30;
 	border: 2px solid black;
 	border-collapse: collapse;
 }
@@ -37,7 +37,31 @@ tr {
 }
 .variable {
     color: grey;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 .operation {
     color:blueviolet;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.listing {
+	border-radius: 5px;
+	border: 1px solid rgb(118, 118, 118);
+	font-size: 30pt;
+	font-family:'Courier New', Courier, monospace;
+    display:inline-block;
+    vertical-align: top;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.code {
+    font-family: 'Courier New', Courier, monospace;
+}
+.bigTable {
+    font-size: 15pt;
+}
+caption {
+    font-size: 20pt;
+    border: solid black 2px;
 }
