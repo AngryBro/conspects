@@ -44,16 +44,17 @@
                                     <li><a href="javascript:view('python/input','Ввод')">Ввод данных</a></li>
                                     <li><a href="javascript:view('python/output','Вывод')">Вывод данных</a></li>
                                     <li><a href="javascript:view('python/assign','Присваивание')">Присваивание</a></li>
-                                    <li><a href="javascript:view('python/conditions','Условия')">Условия</a></li>
                                     <li><a href="javascript:view('python/base','Операции')">Базовые операции</a></li>
+                                    <li><a href="javascript:view('python/special','Специальные')">Специальные объекты</a></li>
+                                    <li><a href="javascript:view('python/conditions','Условия')">Условия</a></li>
                                     <li><a href="javascript:view('python/cycles','Циклы')">Циклы</a></li>
                                     <li><a href="javascript:view('python/functions','Функции')">Функции</a></li>
                                     <li><a href="javascript:view('python/string','Строка')">Строка</a></li>
-                                    <li><a href="javascript:view('python/array','Массив')">Массив (список)</a></li>
                                     <li><a href="javascript:view('python/iterable','Массивоподобный')">Массивоподобный объект</a></li>
+                                    <li><a href="javascript:view('python/array','Массив')">Массив (список)</a></li>
                                     <li><a href="javascript:view('python/dict','Словарь')">Ассоциативный массив (словарь)</a></li>
+                                    <li><a href="javascript:view('python/arrayGenerator','Генератор')">Генератор массивов</a></li>
                                     <li><a href="javascript:view('python/itertools','Itertools')">Itertools</a></li>
-                                    <li><a href="javascript:view('empty','Пусто')">[новые разделы в разработке]</a></li>
                                 </ol>
                             </li>
                             <li><a href="javascript:view('empty','Пусто')">Excel</a></li>
@@ -85,6 +86,7 @@
             <h1><a name="python/array" href="javascript:view('main','Информатика')">Массив (список)</a></h1>
         <ul>
             <li><b>Массив</b> &mdash; упорядоченный набор объектов.</li>
+            <li>Изменяемый объект.</li>
             <li>Нумерация объектов начинается с 0.</li>
             <li>Нумерация объектов с конца массива начинается с -1.</li>
         </ul>
@@ -223,14 +225,19 @@
                         <th>Сложность</th>
                     </tr>
                     <tr>
+                        <td>a{{[{i}]}}</td>
+                        <td>Элемент с номером {i}</td>
+                        <td>\(O(1)\)</td>
+                    </tr>
+                    <tr>
                         <td>{element} {{in}} a</td>
                         <td>Присутствует ли {element} в объекте</td>
-                        <td>\(O()\)</td>
+                        <td>\(O(n)\)</td>
                     </tr>
                     <tr>
                         <td>{element} {{not in}} a</td>
                         <td>Отсутствует ли {element} в объекте</td>
-                        <td>\(O()\)</td>
+                        <td>\(O(n)\)</td>
                     </tr>
                     <tr>
                         <td>{{list(}}a{{)}}</td>
@@ -244,6 +251,7 @@
             <h1><a name="python/dict" href="javascript:view('main','Информатика')">Ассоциативный массив (словарь)</a></h1>
             <ul>
                 <li><b>Ассоциативный массив</b> &mdash; набор объектов, каждый из которых закреплён за уникальным ключом.</li>
+                <li>Изменяемый объект.</li>
                 <li>Понятие порядка отсутствует.</li>
                 <li>Ключом может являться любой неизменяемый объект, например число или строка.</li>
             </ul>
@@ -343,7 +351,7 @@
             <h1><a href="javascript:view('main','Информатика')" name="python/string">Строка</a></h1>
         <ul>
             <li><b>Строка</b> &mdash; упорядоченный набор символов.</li>
-            <li>Строка неизменяемый объект.</li>
+            <li>Неизменяемый объект.</li>
             <li>Нумерация символов начинается с 0.</li>
             <li>Нумерация символов с конца строки начинается с -1.</li>
         </ul>
@@ -453,11 +461,23 @@
                 <li><a href="#python/cycles/break">Остановка цикла</a></li>
             </ul>
             <h3><a href="#python/cycles" name="python/cycles/for">Цикл {{for}}</a></h3>
-            <div class="listing">
+            <ul>
+                <li>
+                    <div class="listing">
 {{for}} {element} {{in}} {iterable}{{:}}
     {...code...}
-            </div>
-            <br>Перебирает все элементы в массивоподобном объекте.
+                    </div>
+                    <br>Перебирает все элементы в массивоподобном объекте.
+                </li>
+                <li>
+                    <div class="listing">
+{{for}} {i}{{,}}{element} {{in enumerate({iterable}):}}
+    {...code...}
+                    </div>
+                    <br>
+                    Также, только {i} &mdash; номер элемента.
+                </li>
+            </ul>
             <h3><a href="#python/cycles" name="python/cycles/while">Цикл {{while}}</a></h3>
             <div class="listing">
 {{while}} {condition}{{:}}
@@ -467,21 +487,25 @@
             <h3><a href="#python/cycles" name="python/cycles/continue">Пропуск шага ({{continue}})</a></h3>
             <div class="listing">
 {{for}} {element} {{in}} {iterable}{{:}}
-    {...code...} {{continue}}
+    {{continue}}
+    {...code...}
 
 {{while}} {condition}{{:}}
-    {...code...} {{continue}}
+    {{continue}}
+    {...code...}
             </div>
             <br>Пропускает шаг цикла. Не выполняет на данном шаге код после {{continue}}.
             <h3><a href="#python/cycles" name="python/cycles/break">Остановка цикла ({{break}})</a></h3>
             <div class="listing">
 {{for}} {element} {{in}} {iterable}{{:}}
-    {...code...} {{break}}
+    {{break}}
+    {...code...}
 
 {{while}} {condition}{{:}}
-    {...code...} {{break}}
+    {{break}}
+    {...code...}
             </div>
-            <br>Останавливает цикл принудительно.
+            <br>Останавливает цикл принудительно на месте {{break}}.
         </div>
         <div id="python/conditions" hidden>
             <h1><a href="javascript:view('main','Информатика')" name="python/conditions">Условия</a></h1>
@@ -496,6 +520,27 @@
                     </div>
                     <br>Если выражение {condition} истинное, то выполнится {...code1...},
                     <br>иначе выполнится {...code2...}. Часть с {{else}} можно опустить. 
+                </li>
+                <li>
+                    <h3>Вложенные условия</h3>
+                    <div class="listing">
+{{if}} {condition1}{{:}}
+    {...code1...}
+{{elif}} {condition2}{{:}}
+    {...code2...}
+{{else:}}
+    {...code3...}
+                    </div>
+                    <br>Аналог для:
+                    <div class="listing">
+{{if}} {condition1}{{:}}
+    {...code1...}
+{{else:}}
+    {{if}} {condition2}{{:}}
+        {...code2...}
+    {{else:}}
+        {...code3...}
+                    </div>
                 </li>
                 <li>
                     <h3>Условный оператор</h3>
@@ -870,6 +915,91 @@
                     <tr>
                         <td>{{max({a1},{a2},...,{an})}}</td>
                         <td>Минимальное число из {a1}, {a2},..., {an}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="python/special" hidden>
+            <h1><a name="python/special" href="javascript:view('main','Информатика')">Специальные объекты</a></h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Объект</th>
+                        <th>Описание</th>
+                    </tr>
+                    <tr>
+                        <td>{{None}}</td>
+                        <td>Представляет собой ничего</td>
+                    </tr>
+                    <tr>
+                        <td>{{float('inf')}}</td>
+                        <td>Математическая бесконечность</td>
+                    </tr>
+                    <tr>
+                        <td>{{range({start},{end},{step})}}</td>
+                        <td>
+                            Массивоподобный объект, содержащий целые числа:
+                            <ul>
+                                <li>От {start} включительно, до {end} не включительно, с шагом {step}</li>
+                                <li>{start} и {step} не обязательные</li>
+                                <li>По умолчанию {start} = 0, {step} = 1</li>
+                            </ul>                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="python/arrayGenerator" hidden>
+            <h1><a href="javascript:view('main','Информатика')" name="python/arrayGenerator">Генератор массивов</a></h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Выражение</th>
+                        <th>Возвращаемое значение</th>
+                    </tr>
+                    <tr>
+                        <td>{{[]}}</td>
+                        <td>Пустой массив</td>
+                    </tr>
+                    <tr>
+                        <td>{{[{element1},{element2},...,{elementn}]}}</td>
+                        <td>Массив из указанных элементов</td>
+                    </tr>
+                    <tr>
+                        <td>{{[{element} for {...for_code...} if {condition}]}}</td>
+                        <td>
+                            Массив элементов, полученных на каждом шаге цикла при условии {condition}
+                            <ul>
+                                <li>
+                                    Условная конструкция может отсутствовать.
+                                </li>
+                                <li>
+                                    Конструкций {{for}} может быть несколько.
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{\{\}}}</td>
+                        <td>Пустой ассоциативный массив</td>
+                    </tr>
+                    <tr>
+                        <td>{{\{{key1}:{value1},{key2}:{value2},...,{keyn}:{valuen}\}}}</td>
+                        <td>Ассоциативный массив с заданными ключами и значениями</td>
+                    </tr>
+                    <tr>
+                        <td>{{\{{key}:{value} for {...for_code...} if {condition}\}}}</td>
+                        <td>
+                            Ассоциативный массив с ключами и значениями, полученными на каждом шаге цикла при условии {condition}
+                            <ul>
+                                <li>
+                                    Условная конструкция может отсутствовать.
+                                </li>
+                                <li>
+                                    Конструкций {{for}} может быть несколько.
+                                </li>
+                            </ul>
+                        </td>
                     </tr>
                 </tbody>
             </table>

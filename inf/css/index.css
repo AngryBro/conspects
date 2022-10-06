@@ -41,7 +41,7 @@ tr {
     font-weight: bold;
 }
 .operation {
-    color:blueviolet;
+    color:rgb(205, 43, 226);
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
@@ -57,6 +57,8 @@ tr {
 }
 .code {
     font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-weight: 300;
 }
 .bigTable {
     font-size: 15pt;
@@ -64,4 +66,7 @@ tr {
 caption {
     font-size: 20pt;
     border: solid black 2px;
+}
+table ul {
+    text-align: left;
 }

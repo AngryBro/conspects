@@ -3781,18 +3781,53 @@
         </ol>
         <h4><a href="#trigonometry/algebra">Свойства</a></h4>
         <ol>
-            <li>\(\displaystyle \sin^2{t} + \cos^2{t} = 1 \)</li>
-            <li value=1>\( \displaystyle \operatorname{tg^2}{t} + 1 = \frac{1}{ \cos^2{t}} \)</li>
-            <li value=1>\(\displaystyle \operatorname{ctg^2}{t}+1 = \frac{1}{\sin^2{t}} \)</li>
-            <li>\(\displaystyle \sin{2t} = 2 \sin{t} \cos{t} \)</li>
-            <li>\(\displaystyle \cos{2t} = \cos^2{t} - \sin^2{t} = 2 \cos^2{t} - 1 = 1 - 2 \sin^2{t} \)</li>
-            <li value="3">\(\displaystyle \sin^2{t} = \frac{1-\cos{2t}}{2} \)</li>
-            <li value="3">\(\displaystyle \cos^2{t} = \frac{1+\cos{2t}}{2} \)</li>
-            <li>\(\displaystyle  \sin{(x \pm y)} = \sin{x} \cos{y} \pm \cos{x} \sin{y} \)</li>
-            <li>\(\displaystyle  \cos{(x \pm y)} = \cos{x} \cos{y} \mp \sin{x} \sin{y}\)</li>
+            <li><a href="javascript:OpenList('trigonometry.algebra.unit')">\(\displaystyle \sin^2{t} + \cos^2{t} = 1 \)</a>
+                <ul id="trigonometry.algebra.unit" hidden>
+                    <li>\( \displaystyle \operatorname{tg^2}{t} + 1 = \frac{1}{ \cos^2{t}} \)</li>
+                    <li>\(\displaystyle \operatorname{ctg^2}{t}+1 = \frac{1}{\sin^2{t}} \)</li>
+                </ul>
+            </li>
+            <li>\(\sin{t} = 2 \sin{\frac{t}{2}} \cos{\frac{t}{2}} \)</li>
+            <li><a href="javascript:OpenList('trigonometry.algebra.cosDouble');OpenList('trigonometry.algebra.powerDown')">\(\cos{t} = \cos^2{\frac{t}{2}} - \sin^2{\frac{t}{2}} \)<span id="trigonometry.algebra.cosDouble" hidden>\( ~= 2 \cos^2{\frac{t}{2}} - 1 = 1 - 2 \sin^2{\frac{t}{2}}\)</span></a>
+                <ul id="trigonometry.algebra.powerDown" hidden>
+                    <li>\(\displaystyle \sin^2{t} = \frac{1-\cos{2t}}{2} \)</li>
+                    <li>\(\displaystyle \cos^2{t} = \frac{1+\cos{2t}}{2} \)</li>
+                </ul>
+            </li>
+            <li>\(\displaystyle  \sin{(s \pm t)} = \sin{s} \cos{t} \pm \cos{s} \sin{t} \)</li>
+            <li>\(\displaystyle  \cos{(s \pm t)} = \cos{s} \cos{t} \mp \sin{s} \sin{t}\)</li>
             <li>
-                Формула приведения.
-                [в доработке]
+                <table>
+                    <tbody>
+                        <tr><td><a id="trigonometry.algebra.ghostLink" href="javascript:Bold('trigonometry.algebra.ghostLink');OpenList('trigonometry.algebra.ghost')">Формула приведения</a></td></tr>
+                    </tbody>
+                </table>
+                <ul id="trigonometry.algebra.ghost" hidden>
+                    <li>
+                        <b>Ситуация:</b> \(\operatorname{функция}{(четверть \cdot k \pm t)}\)
+                        <ul>
+                            <li>\(\operatorname{функция} -\) одна из \(\sin,~\cos,~\operatorname{tg},~\operatorname{ctg}\).</li>
+                            <li>\(четверть -\) либо \(90^{\circ}\), либо \(\frac{\pi}{2}\).</li>
+                            <li>\(k -\) целое число.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Решение:</b>
+                        <ol>
+                            <li>Определяем \(знак\) выражения при \(t=45^{\circ}\).</li>
+                            <li>
+                                Определяем \(\operatorname{новаяФункция}\) по принципу:
+                                <ul>
+                                    <li>Точка \((четверть \cdot k)\) на горизонтальной оси &mdash; будет \(\operatorname{функция}\).</li>
+                                    <li>Точка \((четверть \cdot k)\) на вертикальной оси &mdash; будет \(\operatorname{кофункция}\).</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <b>Результат:</b> \(знак \cdot \operatorname{новаяФункция}{(t)}\)
+                    </li>
+                </ul>
             </li>
         </ol>
         <h4><a href="#trigonometry/algebra">Построение точек на тригонометрической окружности</a></h4>
