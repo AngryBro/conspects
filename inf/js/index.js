@@ -18,6 +18,17 @@ OpenLists = (id,ids) => {
         document.getElementById(ids[i]).hidden = true;
     }
 }
+HiddenHeader = (id,ids) => {
+    var header = document.getElementById(id);
+    for(var i = 0; i<ids.length; i++) {
+        if(!document.getElementById(ids[i]).hidden) {
+            header.hidden = false;
+            return;
+        }
+    }
+    header.hidden = true;
+    return;
+}
 
 var lastPageId = 'main';
 function view(id,title) {
