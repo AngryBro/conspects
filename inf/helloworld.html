@@ -7,12 +7,19 @@
     <body>
         <h1><a href="index.html">Начало работы в PyCharm или Hello World</a></h1>
         <ul>
-            <li><a href="javascript:OpenLists('github',['pycharm','python']);HiddenHeader('instruction',['pycharm','github','python'])">Создание репозитория GitHub</a></li>
-            <li><a href="javascript:OpenLists('python',['pycharm','github']);HiddenHeader('instruction',['pycharm','github','python'])">Установка python</a></li>
-            <li><a href="javascript:OpenLists('pycharm',['github','python']);HiddenHeader('instruction',['pycharm','github','python'])">Установка и настройка среды разработки PyCharm</a></li>
+            <li><a href="javascript:OpenLists('github',['pycharm','python','new']);HiddenHeader('instruction',['pycharm','github','python','new'])">Создание репозитория GitHub</a></li>
+            <li><a href="javascript:OpenLists('python',['pycharm','github','new']);HiddenHeader('instruction',['pycharm','github','python','new'])">Установка python</a></li>
+            <li><a href="javascript:OpenLists('pycharm',['github','python','new']);HiddenHeader('instruction',['pycharm','github','python','new'])">Установка и настройка среды разработки PyCharm</a></li>
+            <li><a href="javascript:OpenLists('new',['github','python','pycharm']);HiddenHeader('instruction',['pycharm','github','python','new'])">Создание проекта при уже установленном PyCharm</a></li>
         </ul>
         <div>
             <h2 hidden id="instruction">Инструкция</h2>
+            <ol id="new" hidden>
+                <li>&nbsp;<div><img src="img/other1.png" alt=""></div></li>
+                <li>&nbsp;<div><img src="img/other2.png" alt=""></div></li>
+                <li>&nbsp;<div><img src="img/other3.png" alt=""></div></li>
+                <li>Далее всё так же, как в создании нового проекта.</li>
+            </ol>
             <ol id="python" hidden>
                 <li>Переходим на <a href="https://www.python.org/downloads/" target="_blank"><u>www.python.org/downloads</u></a></li>
                 <li>&nbsp;<div><img src="img/python.png" alt="">Скачиваем последнюю версию.</div></li>
