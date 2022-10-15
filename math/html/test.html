@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test</title>
+    <script src="../js/newTexCommands.js" defer></script>
+    <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/index.js" defer></script>
+    <script src="../js/derivativeProof.js"></script>
+</head>
+<body>
+    <div id="tasksAboutAll" name="tasksAboutAll">
+    <h1><a href="javascript:view('main','Математика')">Сюжетные задачи про разное</a></h1>
+    <ul>
+        <li><a href="javascript:viewOne('tasksAboutAll.possible','tasksAboutAllTobeHidden')">Доказательство возможности ситуации</a></li>
+        <li><a href="javascript:viewOne('tasksAboutAll.impossible','tasksAboutAllTobeHidden')">Доказательство невозможности ситуации</a></li>
+        <li><a href="javascript:viewOne('tasksAboutAll.sequence','tasksAboutAllTobeHidden')">Последовательности</a></li>
+    </ul>        
+    <div id="tasksAboutAll.possible" class="tasksAboutAllTobeHidden" hidden>
+        <h2>Доказательство возможности ситуации</h2>
+        <ol>
+            <li>Пример такой ситуации.</li>
+            <li>Проверка примера.</li>
+        </ol>
+    </div>
+    <div id="tasksAboutAll.impossible" class="tasksAboutAllTobeHidden" hidden>
+        <h2>Доказательство невозможности ситуации</h2>
+        <ol>
+            <li>Предположение, что ситуация возможна.</li>
+            <li>Ввод и описание переменных \(x_1,~x_2,\ldots ,~x_n\).</li>
+            <li>Математическая модель \(M(x_1,~x_2,\ldots ,~x_n)\).</li>
+            <li>Вывод \(M(x_1,~x_2,\ldots ,~x_n) \Rightarrow ложь\) &mdash; противоречие.</li>
+        </ol>
+    </div>
+    <div id="tasksAboutAll.sequence" class="tasksAboutAllTobeHidden" hidden>
+        <h2>Последовательности</h2>
+        <h3>Обозначение</h3>
+        <div>
+            \(a_1,~a_2,~a_3,\ldots ,a_n\)
+        </div>
+        <ul>
+            <li>\(a_i\) &mdash; элемент последовательности с номером \(i\).</li>
+            <li>\(a_1 \leq a_2 \leq \ldots \leq a_n\) &mdash; если нет речи про порядок.</li>
+            <li>\(a_1 < a_2 < \ldots < a_n\) &mdash; если нет речи про порядок и числа различные.</li>
+            <li>\(d_i = a_{i+1} - a_i\) &mdash; разность соседних элементов.</li>
+        </ul>
+        <h3>Оценка суммы последовательности необязательно различных чисел</h3>
+        \(n \cdot \underset{i}{\operatorname{min}}{(a_i)} \leq a_1 + a_2 + \ldots + a_n
+        \leq n \cdot \underset{i}{\operatorname{max}}{(a_i)}\).
+        <h3>Оценка суммы последовательности различных чисел</h3>
+        <ul>
+            <li>
+                Если все \(a_i \in \{ b_1,~b_2,~b_3,\ldots \},~~b_1 < b_2 < b_3 < \ldots\), то <br>
+                \(a_1 + a_2 + \ldots + a_n \geq b_1 + b_2 + \ldots + b_n\).
+            </li>
+            <li>
+                Если все \(a_i \in \{ b_1,~b_2,~b_3,\ldots \},~~b_1 > b_2 > b_3 > \ldots\), то <br>
+                \(a_1 + a_2 + \ldots + a_n \leq b_1 + b_2 + \ldots + b_n\).
+            </li>
+        </ul>
+    </div>
+    </div>
+</body>
+</html>

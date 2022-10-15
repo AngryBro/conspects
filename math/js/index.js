@@ -19,6 +19,14 @@ OpenLists = (id,ids) => {
     }
 }
 
+function viewOne(id,className) {
+    var isHidden = document.getElementById(id).hidden
+    document.querySelectorAll('.'+className).forEach(e => e.hidden = true);
+    if(isHidden) {
+        document.getElementById(id).hidden = false;
+    }
+}
+
 var lastPageId = 'main';
 function view(id,title) {
     document.title = title;
