@@ -17,7 +17,7 @@
                             <li><a href="javascript:view('base','Объекты')">Определения, свойства, признаки объектов</a></li>
                             <li><a href="javascript:view('numbers','Теория чисел')">Теория чисел</a></li>
                             <!-- <li><a href="javascript:view('example','Примеры')">Примеры решения задач по теории чисел</a></li> -->
-                            <li><a href="javascript:view('tasksAboutAll','Сюжетные задачи')">Сюжетные задачи про разное</a></li>
+                            <li><a href="javascript:view('tasksAboutAll','Сюжетные задачи')">Сюжетные задачи</a></li>
                             <li><a href="javascript:view('memory18','Памятка')">Памятка по задачам на составление модели</a></li>
                             <li><a href="javascript:view('properties','Свойства')">Определения и свойства числовых выражений</a></li>
                             <li><a href="javascript:view('compare','Сравнения')">Определения и свойства сравнений</a></li>
@@ -138,7 +138,7 @@
             </ul>
         </div>
         <div id="tasksAboutAll" name="tasksAboutAll" hidden>
-            <h1><a href="javascript:view('main','Математика')">Сюжетные задачи про разное</a></h1>
+            <h1><a href="javascript:view('main','Математика')">Сюжетные задачи</a></h1>
             <ul>
                 <li><a href="javascript:viewOne('tasksAboutAll.possible','tasksAboutAllTobeHidden')">Доказательство возможности ситуации</a></li>
                 <li><a href="javascript:viewOne('tasksAboutAll.impossible','tasksAboutAllTobeHidden')">Доказательство невозможности ситуации</a></li>
@@ -2058,6 +2058,86 @@
         <h2><a href="#numbers" name="numbers/prop">Свойства</a></h2>
         <ol>
             <li>
+                <a href="javascript:OpenList('numbers_equiv')">Свойства \( \Large \equiv \)</a>
+                <ul id="numbers_equiv" hidden>
+                    <li>
+                        \(
+                            a = b \Rightarrow \mequiv{a}{b}{c}
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{a}{b}{c} \Rightarrow a = b + k \cdot c
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{a}{b}{c} \Leftrightarrow
+                            (a-b) ~\vdots~ c
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            a \equiv b \Leftrightarrow
+                            a + c \equiv  b+c
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{a}{b}{c} \Leftrightarrow
+                            \mequiv{a}{b + c \cdot k}{c}
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{a \cdot d}{b \cdot d}{c d}   
+                            \Leftrightarrow
+                            \mequiv{a}{b}{c} 
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            a \equiv b \Rightarrow
+                            a \cdot c \equiv b \cdot c
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{a}{b}{c d}   
+                            \Rightarrow
+                            \mequiv{a}{b}{c} 
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \cases{
+                                    \mequiv{a \cdot d}{b \cdot d}{c} \\
+                                    \operatorname{НОД}{(c;~d)} = 1
+                            } \Rightarrow
+                            \mequiv{a}{b}{c} 
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \cases{
+                                \mequiv{a}{b}{c} \\
+                                \mequiv{d}{e}{c} 
+                            } \Rightarrow
+                            \mequiv{a+d}{b+e}{c}
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \cases{
+                                \mequiv{a}{b}{c} \\
+                                \mequiv{d}{e}{c} 
+                            } \Rightarrow
+                            \mequiv{a \cdot d}{b \cdot e}{c}
+                        \)
+                    </li>
+                </ul>
+            </li>
+            <li>
                 \(
                     a ~\vdots~ b ~\vdots~ c \Rightarrow
                     a ~\vdots~ c
@@ -2143,58 +2223,7 @@
                          
                 \)
             </li>
-            <li>
-                <a href="javascript:OpenList('numbers_equiv')">Свойства \( \Large \equiv \)</a>
-                <ul id="numbers_equiv" hidden>
-                    <li>
-                        \(
-                            \mequiv{a}{b}{c} \Leftrightarrow
-                            (a-b) ~\vdots~ c
-                        \)
-                    </li>
-                    <li>
-                        \(
-                            a \equiv b \Leftrightarrow
-                            a + c \equiv  b+c
-                        \)
-                    </li>
-                    <li>
-                        \(
-                            \mequiv{a}{b}{c} \Leftrightarrow
-                            \mequiv{a}{b + ck}{c}
-                        \)
-                    </li>
-                    <li>
-                        \(
-                            \mequiv{a \cdot d}{b \cdot d}{c d}   
-                            \Leftrightarrow
-                            \mequiv{a}{b}{c} 
-                        \)
-                    </li>
-                    <li>
-                        \(
-                            a \equiv b \Rightarrow
-                            a \cdot c \equiv b \cdot c
-                        \)
-                    </li>
-                    <li>
-                        \(
-                            \mequiv{a}{b}{c d}   
-                            \Rightarrow
-                            \mequiv{a}{b}{c} 
-                        \)
-                    </li>
-                    <li>
-                        \(
-                            \cases{
-                                    \mequiv{a \cdot d}{b \cdot d}{c} \\
-                                    \operatorname{НОД}{(c;~d)} = 1
-                            } \Rightarrow
-                            \mequiv{a}{b}{c} 
-                        \)
-                    </li>
-                </ul>
-            </li>
+            
         </ol>
         <h2><a href="#numbers" name="numbers/sign">Признаки</a></h2>
         <ol>
