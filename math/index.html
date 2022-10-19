@@ -2059,21 +2059,17 @@
         <ol>
             <li>
                 <a href="javascript:OpenList('numbers_equiv')">Свойства \( \Large \equiv \)</a>
-                <ul id="numbers_equiv" hidden>
-                    <li>
-                        \(
-                            a = b \Rightarrow \mequiv{a}{b}{c}
-                        \)
-                    </li>
-                    <li>
-                        \(
-                            \mequiv{a}{b}{c} \Rightarrow a = b + k \cdot c
-                        \)
-                    </li>
+                <ol id="numbers_equiv" hidden>
                     <li>
                         \(
                             \mequiv{a}{b}{c} \Leftrightarrow
                             (a-b) ~\vdots~ c
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            a \equiv b \equiv c ~~(\operatorname{mod}~d)
+                            \Rightarrow \mequiv{a}{c}{d}
                         \)
                     </li>
                     <li>
@@ -2090,15 +2086,15 @@
                     </li>
                     <li>
                         \(
-                            \mequiv{a \cdot d}{b \cdot d}{c d}   
-                            \Leftrightarrow
-                            \mequiv{a}{b}{c} 
+                            a \equiv b \Rightarrow
+                            a \cdot c \equiv b \cdot c
                         \)
                     </li>
                     <li>
                         \(
-                            a \equiv b \Rightarrow
-                            a \cdot c \equiv b \cdot c
+                            \mequiv{a \cdot d}{b \cdot d}{c d}   
+                            \Leftrightarrow
+                            \mequiv{a}{b}{c} 
                         \)
                     </li>
                     <li>
@@ -2135,7 +2131,17 @@
                             \mequiv{a \cdot d}{b \cdot e}{c}
                         \)
                     </li>
-                </ul>
+                    <li>
+                        \(
+                            a = b \Rightarrow \mequiv{a}{b}{c}
+                        \)
+                    </li>
+                    <li>
+                        \(
+                            \mequiv{a}{b}{c} \Rightarrow a = b + k \cdot c,~~k \in \mathbb{Z}
+                        \)
+                    </li>
+                </ol>
             </li>
             <li>
                 \(
