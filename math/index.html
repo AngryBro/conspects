@@ -143,6 +143,7 @@
                 <li><a href="javascript:viewOne('tasksAboutAll.possible','tasksAboutAllTobeHidden')">Доказательство возможности ситуации</a></li>
                 <li><a href="javascript:viewOne('tasksAboutAll.impossible','tasksAboutAllTobeHidden')">Доказательство невозможности ситуации</a></li>
                 <li><a href="javascript:viewOne('tasksAboutAll.sequence','tasksAboutAllTobeHidden')">Последовательности</a></li>
+                <li><a href="javascript:viewOne('tasksAboutAll.dels','tasksAboutAllTobeHidden')">Делимость</a></li>
             </ul>        
             <div id="tasksAboutAll.possible" class="tasksAboutAllTobeHidden" hidden>
                 <h2>Доказательство возможности ситуации</h2>
@@ -185,7 +186,26 @@
                         Если все \(a_i \in \{ b_1,~b_2,~b_3,\ldots \},~~b_1 > b_2 > b_3 > \ldots\), то <br>
                         \(a_1 + a_2 + \ldots + a_n \leq b_1 + b_2 + \ldots + b_n\).
                     </li>
+                    <li>
+                        Если \(a_1 < a_2 < \ldots < a_n\), и \(d = \underset{i}{\operatorname{min}}{(d_i)}\), то <br>
+                        \(a_1+a_2+\ldots + a_n \geq a_1 + (a_1+d) + (a_1+2d) + \ldots + (a_1+(n-1)d)\).
+                    </li>
+                    <li>
+                        Если \(a_1 < a_2 < \ldots < a_n\), и \(d = \underset{i}{\operatorname{min}}{(d_i)}\), то <br>
+                        \(a_1+a_2+\ldots + a_n \leq a_n + (a_n-d) + (a_n-2d) + \ldots + (a_n-(n-1)d)\).
+                    </li>
                 </ul>
+            </div>
+            <div id="tasksAboutAll.dels" class="tasksAboutAllTobeHidden" hidden>
+                <h2>Делимость</h2>
+                <h3>Ситуация</h3>
+                \(a_1 \cdot a_2 \cdot \ldots \cdot a_n = A\)
+                <h3>Вывод</h3>
+                <ul>
+                    <li>\(D\) &mdash; множество делителей \(A\).</li>
+                    <li>\(A ~\vdots~ a_i \Rightarrow a_i \in A\)</li>
+                </ul>
+                
             </div>
             </div>
         <div id="base" hidden>
