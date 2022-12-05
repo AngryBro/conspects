@@ -33,6 +33,13 @@
                         </ol>
                 </li>
                 <li>
+                    <h1>
+                        <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VQgIt7bTuQjpugEvNySOTEkfjWHq9KzzHoQPi-6CE2Q/edit#gid=0">
+                            Запись на зачёт по заданиям первой части
+                        </a>
+                    </h1>
+                </li>
+                <li>
                     <h1><a href="javascript:OpenList('index_progress')">Прогресс учеников 2023</a></h1>
                     <ul hidden id="index_progress">
                         <li><a target="_blank" href="https://docs.google.com/spreadsheets/d/1ji4okTmSxDuQXZjRayYmKF2ZA5NAJW5tflCYGhHpbRI/edit?usp=sharing">Продвинутый уровень</a></li>
@@ -203,7 +210,7 @@
                 <h3>Вывод</h3>
                 <ul>
                     <li>\(D\) &mdash; множество делителей \(A\).</li>
-                    <li>\(A ~\vdots~ a_i \Rightarrow a_i \in A\)</li>
+                    <li>\(A ~\vdots~ a_i \Rightarrow a_i \in D\)</li>
                 </ul>
                 
             </div>
@@ -578,8 +585,8 @@
 				\(c~-\) постоянное число (константа).
 			</li>
 		</ul>
-		<text id='derivative_derpr'>
-		</text>
+		<!-- <text id='derivative_derpr'>
+		</text> -->
 		<ol>
 			<li> 
 				\(
@@ -595,6 +602,52 @@
 					x(t) \searrow \) при  \(t \in [t_1;~t_2].
 				\)
 			</li>
+            <li>
+                Таблица производных
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>\(c'_t = 0\)</td>
+                        </tr>
+                        <tr>
+                            <td>\(t'_t = 1\)</td>
+                        </tr>
+                        <tr>
+                            <td>\((c \cdot x)'_t = c\cdot \left(x'_t\right)\)</td>
+                        </tr>
+                        <tr>
+                            <td>\((x+y)'_t = x'_t + y'_t\)</td>
+                        </tr>
+                        <tr>
+                            <td>\(\left(x^c\right)'_t = c \cdot x^{c-1}\cdot x'_t\)</td>
+                        </tr>
+                        <tr>
+                            <td>\(\left(c^x\right)'_t = c^x \cdot \ln{c} \cdot x'_t\)</td>
+                        </tr>
+                        <tr>
+                            <td>\((x\cdot y)'_t = x'_t \cdot y + y'_t \cdot x\)</td>
+                        </tr>
+                        <tr>
+                            <td>\(\displaystyle\left(\frac{x}{y}\right)'_t = \frac{x'_t \cdot y - y'\cdot x}{y^2}\)</td>
+                        </tr>
+                        <tr>
+                            <td>\(\displaystyle (\log_c{x})'_t = \frac{x'_t}{x \cdot \ln{c}}\)</td>
+                        </tr>
+                        <tr>
+                            <td>\((\sin{x})'_t = \cos{x} \cdot x'_t\)</td>
+                        </tr>
+                        <tr>
+                            <td>\((\cos{x})'_t = -\sin{x} \cdot x'_t\)</td>
+                        </tr>
+                        <tr>
+                            <td>\((\operatorname{tg}{x})'_t = (\operatorname{tg^2}{x}+1)\cdot x'_t\)</td>
+                        </tr>
+                        <tr>
+                            <td>\((\operatorname{ctg}{x})'_t = (-\operatorname{ctg^2}{x}-1)\cdot x'_t\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
 		</ol>
 		<h2><a name='derivative/points' href='#derivative'>Типы точек</a></h2>
 		<ol>
@@ -655,7 +708,8 @@
 				Определение возрастания и убывания на промежутках по знаку производной.
 			</li>
 		</ol>
-		<script>Print(0)</script>
+
+		<!-- <script>Print(0)</script> -->
         </div>
         <div id="equivalents" hidden>
             <h1><a name="equivalents"></a><a href="javascript:view('main','Математика')">Равносильные переходы</a></h1>
@@ -3522,8 +3576,8 @@
             <ol>
             <li>\( \displaystyle \log_a{b^c}= c \cdot \log_a{b} \) <br>
                 <ul>
-                    <li><b>Скинуть чётную степень:</b> должно быть известно \( b \geq 0 \).</li>
-                    <li><b>Закинуть чётную степень:</b> дописать в системе \( b>0 \).</li>
+                    <li><b>Скинуть чётный показатель:</b> должно быть известно \( b \geq 0 \).</li>
+                    <li><b>Закинуть чётный показатель:</b> дописать в системе \( b>0 \).</li>
                 </ul>
             </li>
             <li>
