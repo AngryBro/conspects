@@ -727,13 +727,13 @@
                     \begin{array}[t]{|l|} \hline
                     \displaystyle a_n t^n + a_{n-1} t^{n-1} + \ldots
                     + a_2  t^2 + a_1  t + a_0 = 0 \Leftrightarrow \\
-                    \Leftrightarrow (t - t_1) \cdot(t - t_2) \cdot \ldots \cdot (t - t_m) = 0 \Leftrightarrow
+                    \Leftrightarrow P_1(t) \cdot P_2(t) \cdot \ldots \cdot P_m(t) = 0 \Leftrightarrow
                     \left[
                     \begin{array}{l}
-                    t=t_1 \\
-                    t=t_2 \\
+                    P_1(t)=0 \\
+                    P_2(t)=0 \\
                     \ldots \\
-                    t=t_m
+                    P_m(t)=0
                     \end{array}
                     \right. \\ \hline \end{array} \)</a>
                     <ul hidden id="equivalents_list1">
@@ -3672,12 +3672,11 @@
             <h2><a name="properties/1root"></a><a href="#properties">Корень нечётной степени</a></h2>
             <i>Определение:</i>
             \(
-                \sqrt[b]{a} = c \Leftrightarrow
+                \sqrt[b]{a} = c \overset{b ~\not\vdots~ 2}{\Leftrightarrow}
                 \left\{
                     \begin{array}{l}
                         c^b = a \\
                         b \in \mathbb{N} \\
-                        b ~\not\mathop{\vdots}~ 2
                     \end{array}
                 \right.
             \)
@@ -3697,14 +3696,13 @@
         <h2><a name="properties/0root"></a><a href="#properties">Корень чётной степени</a></h2>
             <i>Определение:</i>
             \(
-                \sqrt[b]{a} = c \Leftrightarrow
+                \sqrt[b]{a} = c \overset{b \vdots 2}{\Leftrightarrow}
                 \left\{
                     \begin{array}{l}
                         c^b = a \\
                         c \geq 0 \\
                         a \geq 0 \\
                         b \in \mathbb{N} \\
-                        b ~\vdots~ 2
                     \end{array}
                 \right.
             \)
