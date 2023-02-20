@@ -3139,7 +3139,7 @@
 		<h4>Постановка задачи</h4>
 		<table>
 		<tr><td>
-		Исследовать множества решений выражения \(ax^2+bx+c \vee 0\)<br>
+		Исследовать решения выражения \(ax^2+bx+c \vee 0\)<br>
 		на заданных множествах, ограниченных числами \(x_i\).
 		</td></tr>
 		</table>
@@ -3161,7 +3161,7 @@
 							D = b^2-4ac
 						\)
 					</li>
-					<li>
+					<li> Вершина параболы
 						\(
 							x_в = -\displaystyle\frac{b}{2a}
 						\)
@@ -3179,16 +3179,6 @@
 					<li>
 						<ol>
 							<li>
-							\(a < 0\) &mdash; ветви вниз
-							</li>
-							<li>
-							\(a > 0\) &mdash; ветви вверх
-							</li>
-						</ol>
-					</li>
-					<li>
-						<ol>
-							<li>
 								\(D < 0\) &mdash; парабола не пересекает ось абсцисс
 							</li>
 							<li>
@@ -3203,24 +3193,32 @@
 						\(x_в \vee x_i\)
 					</li>
 					<li>
-						\(f(x_i) \vee 0\)
+						\(a \cdot f(x_i) \vee 0\)
 					</li>
 				</ul>
-				Реализация перебора:<br><br>
-				<div>
-					\(\tiny n_1)\normalsize ~a \vee 0\)
-					<div style='margin-left:1cm'>
-						\(\tiny n_1.n_2)\normalsize~ D\vee 0\)
-						<div style='margin-left:1cm'>
-							\(\tiny n_1.n_2.n_3)\normalsize ~x_в \vee x_i\)
+				Оформление перебора:<br><br>
+				    <div>
+                        \( 1)~~~D \vee 0 \)
+                        <div style='margin-left:1cm; padding-top: 1cm;'>
+                            \(1.2)~~~ x_{в} \vee x_i)\)
+                            <div style='margin-left:1cm; padding-top: 1cm;'>
+                                \(1.2.3)~~~a \cdot f(x_i)\vee 0\)
+                                <div style='margin-left:1cm; padding-top: 1cm;'>
+									\(1.2.3.4)~~~a \cdot f(x_j)\vee 0\)
+								</div>
+                            </div>
+                        </div>
+						<!-- \(\tiny n_1)\normalsize~ D\vee 0\) -->
+						<!-- <div style='margin-left:1cm'>
+							\(\tiny n_1.n_2)\normalsize ~x_в \vee x_i\)
 							<div style='margin-left:1cm'>
-								\(\tiny n_1.n_2.n_3.n_4)\normalsize ~f(x_i)\vee 0\)
+								\(\tiny n_1.n_2.n_3)\normalsize ~f(x_i)\vee 0\)
 								<div style='margin-left:1cm'>
-									\(\tiny n_1.n_2.n_3.n_4.n_5)\normalsize ~f(x_j)\vee 0\)
+									\(\tiny n_1.n_2.n_3.n_4)\normalsize ~f(x_j)\vee 0\)
 								</div>
 							</div>
-						</div>
-					</div>
+						</div> -->
+					<!-- </div> -->
 				</div>
 				Если случай не подходит, то вложенные случаи не рассматриваются.
 				<br>
