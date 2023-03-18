@@ -1,4 +1,5 @@
 import { useEffect, useState} from 'react';
+import Equivalents from './conspects/Equivalents';
 import Defs from './Defs';
 import IndexPage from './IndexPage';
 import Page404 from './Page404';
@@ -6,17 +7,26 @@ import Page404 from './Page404';
 function App() {
   
 
-  // const page_url = 
-  const [page, setPage] = useState('index');
+  const indexPageName = 'Математика';
+  const extractPage = () => {
+    var url = document.location.href.split('?page=');
+    if(url.length > 1) {
+      return decodeURIComponent(url[1]);
+    }
+    return indexPageName;
+  };
+  const [page, setPage] = useState(extractPage());
   
-  const currentPage = (pageName) => {
+  const p = (pageName) => {
     var pageRouter = (div) => page===pageName?div:<></>;
     pageRouter.link = name => () => setPage(name);
     pageRouter.window = url => () => window.open(url);
+    pageRouter.index = pageRouter.link(indexPageName);
     return pageRouter;
   }
 
   useEffect(() => {
+    document.title = page;
     // MathJax.typeset(); // eslint-disable-next-line
     // eslint-disable-next-line
     eval('MathJax.typeset()');
@@ -24,9 +34,10 @@ function App() {
 
   return (
     <div className="App">
-      <IndexPage page={currentPage('index')} />
-      <Defs page={currentPage('defs')}/>
-      <Page404 page={currentPage('404')} />
+      <IndexPage page={p(indexPageName)} />
+      <Defs page={p('123')}/>
+      <Page404 page={p('404')} />
+      <Equivalents page={p('Переходы')} />
     </div>
   );
 }

@@ -4,6 +4,25 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div hidden>
+      \(
+        \mequiv#1#2#3{{
+        #1 \equiv #2 ~~\left(\operatorname{mod}{~#3}\right)
+        }}
+        \cases#1{{
+          \begin{cases}
+              #1
+          \end{cases}
+        }}
+        \union#1{{
+          \left[
+              \begin{array}{l}
+                  #1
+              \end{array}
+          \right.
+        }}
+      \)
+    </div>
     <div id="root"></div>
     <!--
       This HTML file is a template.

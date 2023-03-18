@@ -13,6 +13,7 @@ const IndexPage = ({page}) => {
                             <ol className="list">
                                 <li>Конспект1</li>
                                 <li>Конспект2</li>
+                                <li onClick={page.link('Переходы')}>Равносильные переходы</li>
                             </ol>
                         }
                     />                    
