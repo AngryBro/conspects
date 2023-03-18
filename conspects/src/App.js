@@ -1,14 +1,18 @@
-import { useEffect, useState } from 'react';
-import Page from './Page';
+import { useEffect, useState} from 'react';
 import Defs from './Defs';
+import IndexPage from './IndexPage';
+import Page404 from './Page404';
 
 function App() {
   
+
+  // const page_url = 
   const [page, setPage] = useState('index');
   
   const currentPage = (pageName) => {
     var pageRouter = (div) => page===pageName?div:<></>;
     pageRouter.link = name => () => setPage(name);
+    pageRouter.window = url => () => window.open(url);
     return pageRouter;
   }
 
@@ -20,8 +24,9 @@ function App() {
 
   return (
     <div className="App">
-      <Page page={currentPage('index')} />
+      <IndexPage page={currentPage('index')} />
       <Defs page={currentPage('defs')}/>
+      <Page404 page={currentPage('404')} />
     </div>
   );
 }

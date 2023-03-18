@@ -4,3 +4,72 @@ ul {
 ol {
     margin: 0px;
 }
+li {
+    width: fit-content;
+}
+table {
+	font-size: 25pt;
+    border-radius: 10px;
+	border-collapse: collapse;
+    background-color: #8c71fe;
+    color: white;
+}
+td {
+	/* border: solid 1px #8c71fe; */
+	padding: 7px;
+    border: solid 1px white;
+}
+th {
+	/* border: solid 1px #8c71fe; */
+    border: solid 1px white;
+	padding: 7px;
+}
+tr {
+	text-align: center;
+}
+.indexPageList {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.indexPageList li h1 {
+    background-color: #8c71fe;
+    color: white;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 15px;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.indexPageList li h1:hover {
+    background-color: #8165ff;
+}
+.indexPageList li h2 {
+    background-color: #8c71fe;
+    color: white;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.indexPageList li h2:hover {
+    background-color: #8165ff;
+}
+.list li {
+    background-color: white;
+    color: #8c71fe;
+    border: solid 1px #8c71fe;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    font-size: 18pt;
+}
+.list li:hover {
+    background-color: #f5f3ff;
+}
