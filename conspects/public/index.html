@@ -1,39 +1,40 @@
 <html lang="en">
   <head>
-    <title>React App</title>
+    <title>&nbsp;</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div hidden>
       \(
-        \mequiv#1#2#3{{
+        \def\mequiv#1#2#3{{
         #1 \equiv #2 ~~\left(\operatorname{mod}{~#3}\right)
         }}
-        \cases#1{{
+        \def\cases#1{{
           \begin{cases}
               #1
           \end{cases}
         }}
-        \union#1{{
+        \def\union#1{{
           \left[
               \begin{array}{l}
                   #1
               \end{array}
           \right.
         }}
+        \def\frame#1{{
+          \begin{array}{|c|}
+              \hline
+                  #1
+              \\ \hline
+          \end{array}
+        }}
+        \def\RR{{ \mathbb{R} }}
+        \def\LR{{~~\Leftrightarrow~~}}
+        \def\tg#1{{\operatorname{tg}{#1}}}
+        \def\LLR{{\Longleftrightarrow}}
       \)
     </div>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </body>
 </html>

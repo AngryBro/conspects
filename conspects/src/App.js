@@ -6,7 +6,6 @@ import Page404 from './Page404';
 
 function App() {
   
-
   const indexPageName = 'Математика';
   const extractPage = () => {
     var url = document.location.href.split('?page=');
@@ -19,9 +18,9 @@ function App() {
   
   const p = (pageName) => {
     var pageRouter = (div) => page===pageName?div:<></>;
-    pageRouter.link = name => () => setPage(name);
+    pageRouter.navigate = name => () => setPage(name);
     pageRouter.window = url => () => window.open(url);
-    pageRouter.index = pageRouter.link(indexPageName);
+    pageRouter.index = pageRouter.navigate(indexPageName);
     return pageRouter;
   }
 

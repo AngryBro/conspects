@@ -17,7 +17,7 @@ const OpenList = ({header, list}) => {
 
 
     return <div >
-        <div onClick={handleClick}>{header}</div>
+        <div style={{overflow:'hidden', width:'fit-content'}} onClick={handleClick}>{header}</div>
         <div style={{padding: '0px',height: `${height}px`, overflow:'hidden', transition: `all ${speed}s`, width:'fit-content'}} ref={listRef}>{list}</div>
     </div>
 };

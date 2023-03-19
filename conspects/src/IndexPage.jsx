@@ -13,7 +13,7 @@ const IndexPage = ({page}) => {
                             <ol className="list">
                                 <li>Конспект1</li>
                                 <li>Конспект2</li>
-                                <li onClick={page.link('Переходы')}>Равносильные переходы</li>
+                                <li onClick={page.navigate('Переходы')}>Равносильные переходы</li>
                             </ol>
                         }
                     />                    
@@ -39,9 +39,9 @@ const IndexPage = ({page}) => {
                                 <li onClick={page.window("https://drive.google.com/file/d/1v_cgdkeKW03JlPVvxZvplHRBMKDqhNV6/view?usp=sharing")}>Неравенства</li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1YLCUCOj8bs0JTuM0i8BWKWl6-vvrT350/view?usp=sharing")}>Экономика</li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1HmD2COo8s5fM6D0D4Mw9l6-LDGKSdzDX/view?usp=sharing")}>Параметры</li>
-                                <li onClick={page.link('404')}>Планиметрия</li>
+                                <li onClick={page.navigate('404')}>Планиметрия</li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1MBu-hVrBRWgctBSSwlTT32BHfh3RKLED/view?usp=sharing")}>Стереометрия</li>
-                                <li onClick={page.link('404')}>Тестовые задачи</li>
+                                <li onClick={page.navigate('404')}>Тестовые задачи</li>
                             </ul>
                         }
                     />
