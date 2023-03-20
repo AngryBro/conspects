@@ -105,12 +105,248 @@ const Equivalents = ({page}) => page(
                     b \\cdot \\left(\\frac{m}{n}\\right)^x + c = 0`,
                     `a\\cdot\\sin{x} = b \\cdot \\cos{x} ~~~\\overset{ab\\neq 0}{\\LLR}~~~
                     a \\cdot \\tg{x} = b`,
-                    `a\\cdot \\sin^2{x} + b \\cdot \\sin{x}\\cdot \\cos{x} + c\\cdot`
+                    `a\\cdot \\sin^2{x} + b \\cdot \\sin{x}\\cdot \\cos{x} + c\\cdot \\cos^2{x} = 0
+                    ~~~\\overset{ac\\neq 0}{\\LLR}~~~
+                    a\\cdot \\operatorname{tg^2}{x} + b \\cdot \\tg{x} + c = 0`
                 ]}
+            />
+        </ol>
+        <h2 className="main-menu">{'\\(\\Huge \\neq \\)'}</h2>
+        <ol>
+            <Equivalent
+                tex = {`
+                    a_1 \\cdot a_2 \\cdot \\ldots \\cdot a_n \\neq 0 \\LR
+                    \\cases{a_1 \\neq 0 \\\\ a_2 \\neq 0 \\\\ \\ldots \\\\ a_n \\neq 0}
+                `}
+            />
+            <Equivalent
+                tex = {`
+                    \\operatorname{МонотоннаяФункция}{(a)} \\neq \\operatorname{МонотоннаяФункция}{(b)}
+                    \\LR \\cases{a \\neq b \\\\ ограничение~на~a \\\\ ограничение~на~b}
+                `}
+                cases = {[
+                    'c^a \\neq c^b ~~~\\overset{c=const\\neq 1}{\\LLR}~~~ a\\neq b',
+                    `\\log_c{(a)} \\neq \\log_c{(b)} ~~~\\overset{c=const\\neq 1}{\\LLR}~~~
+                    \\cases{a \\neq b \\\\ a>0 \\\\ b>0}`,
+                    '\\sqrt[2n]{a} \\neq \\sqrt[2n]{b} \\LR \\cases{a \\neq b \\\\ a\\geq 0 \\\\ b \\geq 0}',
+                    '\\sqrt[2n+1]{a} \\neq \\sqrt[2n+1]{b} \\LR a\\neq b',
+                    'a^{2n+1} \\neq b^{2n+1} \\LR a \\neq b'
+                ]}
+            />
+        </ol>
+        <h2 className="main-menu">{'\\(\\Huge >,<,\\geq , \\leq\\)'}</h2>
+        <ol>
+            <li>
+                <OpenList
+                    header = {<Method name='Метод интервалов'/>}
+                    list = {
+                        <div className="frame">
+                            <h3>Нужный вид:</h3>
+                            <ol>
+                                <li>Справа 0</li>
+                                <li>Слева произведение</li>
+                                <li>Каждый множитель имеет вид {'\\((x - c)\\)'}</li>
+                            </ol>
+                            <h3>Применение:</h3>
+                            <ol>
+                                <li>Рисуется ось {'\\(Ox\\)'}</li>
+                                <li>
+                                    Отмечаются точками нули множителей:
+                                    <ul>
+                                        <li>Если множитель только в числителе и знак неравенства нестрогий
+                                            &ndash; точка закрашенная, иначе выколотая
+                                        </li>
+                                        <li>
+                                            Если множитель повторяется чётное число раз &ndash; точка со стрелочкой
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Справа сверху ведётся непрерывная кривая
+                                    <ul>
+                                        <li>Через точки без стрелочек проходит</li>
+                                        <li>От точек со стрелочками отражается</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Расставляются знаки на интервалах
+                                    <ul>
+                                        <li>Кривая сверху &ndash; знак {'\\(\\large +\\)'}</li>
+                                        <li>Кривая снизу &ndash; знак {'\\(\\large -\\)'}</li>
+                                    </ul>
+                                </li>
+                                <li>Закрашиваются соответствующие знаку неравенства интервалы</li>
+                                <li>Считается количество закрашенных участков</li>
+                                <li>
+                                    Закрашенные участки записываются в виде уравнений или неравенств
+                                    <br /> с использованием совокупности, если их больше 1
+                                </li>
+                            </ol>
+                        </div>
+                    }
+                />
+            </li>
+            <li>
+                <OpenList
+                    header = {<Method name='Снятие функции' />}
+                    list = {
+                        <ul>
+                            <Equivalent
+                                tex = {`
+                                    \\operatorname{ВозрастающаяФункция}{(a)} \\vee \\operatorname{ВозрастающаяФункция}{(b)}
+                                    \\LR \\cases{a \\vee b \\\\ ограничение~на~a \\\\ ограничение~на~b}
+                                `}
+                                cases = {[
+                                    'c^a \\vee c^b ~~~\\overset{c=const>1}{\\LLR}~~~ a \\vee b',
+                                    `\\log_c{(a)} \\vee \\log_c{(b)} ~~~\\overset{c=const>1}{\\LLR}~~~
+                                    \\cases{a \\vee b \\\\ \\operatorname{min}{(a,b)}>0}`,
+                                    `\\sqrt[2n]{a} \\vee \\sqrt[2n]{b} \\LR
+                                    \\cases{a \\vee b \\\\ \\operatorname{min}{(a,b)}\\geq 0}`,
+                                    `\\sqrt[2n+1]{a} \\vee \\sqrt[2n+1]{b} \\LR a \\vee b`,
+                                    `a^{2n+1} \\vee b^{2n+1} \\LR a \\vee b`
+                                ]}
+                            />
+                            <Equivalent
+                                tex = {`
+                                    \\operatorname{УбывающаяФункция}{(a)} \\vee \\operatorname{УбывающаяФункция}{(b)}
+                                    \\LR \\cases{a \\land b \\\\ ограничение~на~a \\\\ ограничение~на~b}
+                                `}
+                                cases = {[
+                                    'c^a \\vee c^b ~~~\\overset{c=const<1}{\\LLR}~~~ a \\land b',
+                                    `\\log_c{(a)} \\vee \\log_c{(b)} ~~~\\overset{c=const<1}{\\LLR}~~~
+                                    \\cases{a \\land b \\\\ \\operatorname{min}{(a,b)}>0}`
+                                ]}
+                            />
+                        </ul>
+                    }
+                />
+            </li>
+            <li>
+                <OpenList
+                    header = {<Method name='Метод рационализации'/>}
+                    list = {
+                        <div className="frame">
+                            <h3>Нужный вид:</h3>
+                            <ol>
+                                <li>Справа 0</li>
+                                <li>Слева множители</li>
+                                <li>
+                                    Выбранный множитель представлен в виде
+                                    <br />разности одинаковой монотонной функции
+                                </li>
+                            </ol>
+                            <h3>Применение:</h3>
+                            <ul>
+                                <Equivalent
+                                    tex = {`
+                                        \\left(\\operatorname{ВозрастающаяФункция}{(a)}-\\operatorname{ВозрастающаяФункция}{(b)}\\right) \\cdot A \\vee 0
+                                        \\LR \\cases{(a-b)\\cdot A \\vee 0 \\\\ ограничение~на~a \\\\ ограничение~на~b}
+                                    `}
+                                />
+                                <Equivalent
+                                    tex = {`
+                                        \\left(\\operatorname{УбывающаяФункция}{(a)}-\\operatorname{УбывающаяФункция}{(b)}\\right) \\cdot A \\vee 0
+                                        \\LR \\cases{(b-a)\\cdot A \\vee 0 \\\\ ограничение~на~a \\\\ ограничение~на~b}
+                                    `}
+                                />
+                            </ul>
+                        </div>
+                    }
+                />
+            </li>
+        </ol>
+        <h2 className="main-menu">{'\\(\\Huge \\{,[ \\)'}</h2>
+        <ol>
+            <Equivalent
+                tex = {'\\cases{A \\\\ A} \\LR A'}
+            />
+            <Equivalent
+                tex = {'\\union{A \\\\ A} \\LR A'}
+            />
+            <Equivalent
+                tex = {'\\cases{\\cases{A \\\\ B} \\\\ C} \\LR \\cases{A \\\\ B \\\\ C}'}
+            />
+            <Equivalent
+                tex = {'\\union{\\union{A \\\\ B} \\\\ C} \\LR \\union{A\\\\ B\\\\ C}'}
+            />
+            <Equivalent
+                tex = {`
+                    \\cases{
+                        \\union{
+                            A \\\\ B
+                        } \\\\
+                        C
+                    } \\LR
+                    \\union{
+                        \\cases{A \\\\ C} \\\\
+                        \\cases{B \\\\ C} 
+                    }
+                `}
+            />
+            <Equivalent
+                tex = {'\\cases{a=b \\\\ \\operatorname{F}{(a)}} \\LR \\cases{a=b \\\\ \\operatorname{F}{(b)}}'}
+            />
+            <Equivalent
+                tex = {'\\cases{A \\\\ B} ~~~\\overset{A \\LR C}{\\LLR}~~~ \\cases{C \\\\ B}'}
+            />
+            <Equivalent
+                tex = {'\\cases{A \\\\ B} ~~~\\overset{A \\Rightarrow B}{\\LLR}~~~ A'}
+            />
+            <Equivalent
+                tex = {'\\cases{A \\\\ x \\in \\RR} \\LR A'}
+            />
+            <Equivalent
+                tex = {'\\cases{A \\\\ x \\in \\varnothing} \\LR x\\in \\varnothing'}
+            />
+            <Equivalent
+                tex = {'\\union{A \\\\ x \\in \\RR} \\LR x \\in \\RR'}
+            />
+            <Equivalent
+                tex = {'\\union{A \\\\ x \\in \\varnothing} \\LR A'}
+            />
+            <Equivalent
+                tex = {'ложь \\LR x\\in \\varnothing'}
+            />
+            <Equivalent
+                tex = {'истина \\LR ограничения'}
+                cases = {[
+                    'истина~без~ограничений \\LR x\\in \\RR'
+                ]}
+            />
+            <Equivalent
+                tex = {`\\operatorname{F}{(x, \\operatorname{f}{(x)})}
+                ~~~\\overset{\\operatorname{F}{(x,\\operatorname{f}{(x)})} \\Rightarrow
+                \\operatorname{F}{(x,const)}}{\\LLR}~~~
+                \\cases{
+                    \\operatorname{F}{(x,const)} \\\\
+                    ограничения~из~\\operatorname{f}{(x)}
+                }`}
+            />
+            <Equivalent
+                tex = {`
+                    A \\LR
+                    \\union{
+                        \\cases{
+                            случай_1 \\\\
+                            A
+                        }\\\\
+                        \\cases{
+                            случай_2 \\\\
+                            A
+                        }\\\\
+                        \\ldots \\\\
+                        \\cases{
+                            случай_n \\\\
+                            A
+                        }
+                    }
+                `}
             />
         </ol>
     </div>
 );
+
+const Method = ({name}) => <div className="sub-menu" style={{fontSize:'25pt', marginBottom:'30px'}}>{name}</div>
 
 const Equivalent = ({tex, cases = []}) => {
 

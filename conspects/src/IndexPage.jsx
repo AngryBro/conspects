@@ -6,13 +6,13 @@ const IndexPage = ({page}) => {
     return page(
         <div>
             <ul className="indexPageList">
+                <li><h1 onClick={page.window('https://angrybro.github.io/conspects/math/old')}>Старая версия</h1></li>
                 <li>
                     <OpenList
                         header={<h1>Конспекты</h1>}
                         list={
                             <ol className="list">
-                                <li>Конспект1</li>
-                                <li>Конспект2</li>
+                                <li onClick={page.navigate('Планиметрия')}>Планиметрия</li>
                                 <li onClick={page.navigate('Переходы')}>Равносильные переходы</li>
                             </ol>
                         }

@@ -1,5 +1,6 @@
 import { useEffect, useState} from 'react';
 import Equivalents from './conspects/Equivalents';
+import Planimetry from './conspects/Planimetry';
 import Defs from './Defs';
 import IndexPage from './IndexPage';
 import Page404 from './Page404';
@@ -37,6 +38,7 @@ function App() {
       <Defs page={p('123')}/>
       <Page404 page={p('404')} />
       <Equivalents page={p('Переходы')} />
+      <Planimetry page = {p('Планиметрия')} />
     </div>
   );
 }

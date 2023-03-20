@@ -12,6 +12,7 @@ ol {
 }
 li {
     width: fit-content;
+    margin-top: 10px;
 }
 table {
     border-radius: 10px;
