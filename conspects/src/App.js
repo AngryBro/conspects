@@ -19,15 +19,26 @@ function App() {
   
   const p = (pageName) => {
     var pageRouter = (div) => page===pageName?div:<></>;
-    pageRouter.navigate = name => () => setPage(name);
     pageRouter.window = url => () => window.open(url);
+    pageRouter.navigate = name => e => {
+      if(e.ctrlKey) {
+        window.open(`/?page=${name}`);
+      }
+      else {
+        if(name === indexPageName && document.location.href.indexOf('?page=')!==-1) {
+          document.location.href = '/';
+        }
+        else {
+          setPage(name);
+        }
+      }
+    };
     pageRouter.index = pageRouter.navigate(indexPageName);
     return pageRouter;
   }
 
   useEffect(() => {
     document.title = page;
-    // MathJax.typeset(); // eslint-disable-next-line
     // eslint-disable-next-line
     eval('MathJax.typeset()');
   }, [page]);

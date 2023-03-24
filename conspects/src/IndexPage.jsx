@@ -41,7 +41,7 @@ const IndexPage = ({page}) => {
                                 <li onClick={page.window("https://drive.google.com/file/d/1HmD2COo8s5fM6D0D4Mw9l6-LDGKSdzDX/view?usp=sharing")}>Параметры</li>
                                 <li onClick={page.navigate('404')}>Планиметрия</li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1MBu-hVrBRWgctBSSwlTT32BHfh3RKLED/view?usp=sharing")}>Стереометрия</li>
-                                <li onClick={page.navigate('404')}>Тестовые задачи</li>
+                                <li onClick={page.navigate('404')}>Текстовые задачи</li>
                             </ul>
                         }
                     />
