@@ -111,3 +111,8 @@ tr {
     font-size: 12pt;
     margin: 5px;
 }
+.timer {
+    font-size: 25pt;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 50px;
+}

@@ -1,10 +1,12 @@
 import OpenList from "./OpenList";
+import Timer from "./Timer";
 import Timetable from "./Timetable";
 
 const IndexPage = ({page}) => {
 
     return page(
-        <div>
+        <div style={{display:'flex'}}>
+            <div>
             <ul className="indexPageList">
                 <li><h1 onClick={page.window('https://angrybro.github.io/conspects/math/old')}>Старая версия</h1></li>
                 <li>
@@ -65,7 +67,10 @@ const IndexPage = ({page}) => {
                 <li onClick={page.window("https://drive.google.com/drive/folders/10i2RwvCOwfOsMkoITA6WvmfDNlP66Xfi?usp=sharing")}><h2>Бланки преподавателя</h2></li>  
                 <li onClick={page.window("https://angrybro.github.io/LatexRealTime")}><h2>Печать формул</h2></li>        
             </ul>
-            
+            </div>
+            <div>
+                <Timer/>
+            </div>
         </div>
     );
 };
