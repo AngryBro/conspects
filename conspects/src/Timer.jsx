@@ -2,7 +2,7 @@ import {useEffect, useState } from "react";
 
 const Timer = () => {
     
-    const fetch_url = '';
+    const fetch_url = 'https://raw.githubusercontent.com/AngryBro/conspects/main/math/timer.json';
     const [deadline, setDeadline] = useState(0);
     const [text, setText] = useState('');
     const [time, setTime] = useState({weeks: 2, days: 3});
