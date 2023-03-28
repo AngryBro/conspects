@@ -5,7 +5,7 @@ const Timer = () => {
     const fetch_url = 'https://raw.githubusercontent.com/AngryBro/conspects/main/math/timer.json';
     const [deadline, setDeadline] = useState(0);
     const [text, setText] = useState('');
-    const [time, setTime] = useState({weeks: 2, days: 3});
+    const [time, setTime] = useState({weeks: 0, days: 0});
     const [display, setDisplay] = useState(false);
 
     const days_ending = {
@@ -65,7 +65,7 @@ const Timer = () => {
     if(display) return (
         <div className="frame timer">
             <div><b>{text}: </b>{parse_deadline()}</div>
-            <div><b>{parse_time()}</b></div>
+            <div>{parse_time()}</div>
         </div>
     );
     else {

@@ -1,16 +1,25 @@
+import { useRef } from "react";
 import displaystyle from "../displaystyle";
 import OpenList from "../OpenList";
 
-const Equivalents = ({page}) => page(
+const Equivalents = ({page}) => {
+
+    const equal = useRef();
+    const notEqual = useRef();
+    const more = useRef();
+    const cases = useRef();
+    const main = useRef();
+
+    return page(
     <div>
-        <h1 className="main-menu" onClick={page.index}>Равносильные переходы</h1>
+        <h1 className="main-menu" ref={main} onClick={page.index}>Равносильные переходы</h1>
         <ul className="list">
-            <li>{'\\( \\LARGE = \\)'}</li>
-            <li>{'\\( \\LARGE \\neq \\)'}</li>
-            <li>{'\\( \\LARGE > \\normalsize,~ \\LARGE< \\normalsize,~ \\LARGE \\geq \\normalsize,~ \\LARGE \\leq \\)'}</li>
-            <li>{'\\( \\LARGE \\{ \\normalsize,~ \\LARGE [ \\)'}</li>
+            <li onClick={page.scroll(equal)}>{'\\( \\LARGE = \\)'}</li>
+            <li onClick={page.scroll(notEqual)}>{'\\( \\LARGE \\neq \\)'}</li>
+            <li onClick={page.scroll(more)}>{'\\( \\LARGE > \\normalsize,~ \\LARGE< \\normalsize,~ \\LARGE \\geq \\normalsize,~ \\LARGE \\leq \\)'}</li>
+            <li onClick={page.scroll(cases)}>{'\\( \\LARGE \\{ \\normalsize,~ \\LARGE [ \\)'}</li>
         </ul>
-        <h2 className="main-menu">{'\\( \\Huge = \\)'}</h2>
+        <h2 onClick={page.scroll(main)} ref={equal} className="main-menu">{'\\( \\Huge = \\)'}</h2>
         <ol>
             <Equivalent
                 tex={`
@@ -111,7 +120,7 @@ const Equivalents = ({page}) => page(
                 ]}
             />
         </ol>
-        <h2 className="main-menu">{'\\(\\Huge \\neq \\)'}</h2>
+        <h2 onClick={page.scroll(main)} ref={notEqual} className="main-menu">{'\\(\\Huge \\neq \\)'}</h2>
         <ol>
             <Equivalent
                 tex = {`
@@ -134,7 +143,7 @@ const Equivalents = ({page}) => page(
                 ]}
             />
         </ol>
-        <h2 className="main-menu">{'\\(\\Huge >,<,\\geq , \\leq\\)'}</h2>
+        <h2 onClick={page.scroll(main)} ref={more} className="main-menu">{'\\(\\Huge >,<,\\geq , \\leq\\)'}</h2>
         <ol>
             <li>
                 <OpenList
@@ -255,7 +264,7 @@ const Equivalents = ({page}) => page(
                 />
             </li>
         </ol>
-        <h2 className="main-menu">{'\\(\\Huge \\{,[ \\)'}</h2>
+        <h2 onClick={page.scroll(main)} ref={cases} className="main-menu">{'\\(\\Huge \\{,[ \\)'}</h2>
         <ol>
             <Equivalent
                 tex = {'\\cases{A \\\\ A} \\LR A'}
@@ -345,6 +354,7 @@ const Equivalents = ({page}) => page(
         </ol>
     </div>
 );
+}
 
 const Method = ({name}) => <div className="sub-menu" style={{fontSize:'25pt', marginBottom:'30px'}}>{name}</div>
 

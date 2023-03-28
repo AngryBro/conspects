@@ -1,7 +1,7 @@
 import { useEffect, useState} from 'react';
 import Equivalents from './conspects/Equivalents';
+import Params from './conspects/Params';
 import Planimetry from './conspects/Planimetry';
-import Defs from './Defs';
 import IndexPage from './IndexPage';
 import Page404 from './Page404';
 
@@ -20,7 +20,7 @@ function App() {
   
   const p = (pageName) => {
     var pageRouter = (div) => page===pageName?div:<></>;
-    pageRouter.window = url => () => window.open(url);
+    pageRouter.window = url => () => window.open(url.indexOf('://')!==-1?url:document.location.href.split(page_url_param)[0]+page_url_param+url);
     pageRouter.navigate = name => e => {
       if(e.ctrlKey) {
         var prev_url = document.location.href;
@@ -37,6 +37,22 @@ function App() {
       }
     };
     pageRouter.index = pageRouter.navigate(indexPageName);
+    const scrollFunction = (ref) => {
+      var offset = ref.current.offsetTop;
+      var d = Math.sign(offset-window.scrollY+20);
+      const scrollSpeed = 25;
+      var timer = setInterval(() => {
+        if(Math.abs(window.scrollY - offset)>=scrollSpeed) {
+          window.scrollTo(0, window.scrollY+d*scrollSpeed);
+        }
+        else {
+          ref.current.scrollIntoView();
+          clearInterval(timer);
+        }
+      }, 1);
+    };
+    // pageRouter.scroll = ref => () => ref.current.scrollIntoView();
+    pageRouter.scroll = ref => () => scrollFunction(ref);
     return pageRouter;
   }
 
@@ -49,10 +65,10 @@ function App() {
   return (
     <div className="App">
       <IndexPage page={p(indexPageName)} />
-      <Defs page={p('123')}/>
       <Page404 page={p('404')} />
       <Equivalents page={p('Переходы')} />
       <Planimetry page = {p('Планиметрия')} />
+      <Params page={p('Параметры')} />
     </div>
   );
 }
