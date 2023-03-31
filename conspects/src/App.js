@@ -29,7 +29,7 @@ function App() {
       }
       else {
         if(name === indexPageName && document.location.href.indexOf(page_url_param)!==-1) {
-          document.location.href = '/';
+          document.location.href = document.location.href.split(page_url_param)[0];
         }
         else {
           setPage(name);

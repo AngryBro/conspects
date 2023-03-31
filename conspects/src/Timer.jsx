@@ -27,7 +27,7 @@ const Timer = () => {
     };
     const parse_time = () => {
         if(time.days === 0 && time.weeks === 0) return 'Не осталось времени';
-        return `Осталось времени: ${time.weeks>0?`${time.weeks} ${weeks_ending(time.weeks)} и `:''}${time.days>0?`${time.days} ${days_ending[time.days]}`:''}`;
+        return `Осталось времени: ${time.weeks>0?`${time.weeks} ${weeks_ending(time.weeks)}`:''}${time.days>0?` и ${time.days} ${days_ending[time.days]}`:''}`;
     };
 
     useEffect(() => {
@@ -45,6 +45,7 @@ const Timer = () => {
             if(response !== undefined) {
                 setText(response.text);
                 var deadline = response.deadline.split('.');
+                // deadline = [10, 4, 2023];
                 var date = new Date(0);
                 date.setFullYear(deadline.pop());
                 date.setMonth(Number(deadline.pop())-1);

@@ -27,10 +27,14 @@ const Equivalents = ({page}) => {
                     \\LR P_1(x) \\cdot P_2(x) \\cdot \\ldots \\cdot P_m(x) = 0 \\LR
                     \\union{P_1(x)=0 \\\\ P_2(x)=0 \\\\ \\ldots \\\\ P_m(x)=0}
                 `}
+                cases={[
+                    `ax^2+bx+c = 0 ~~~\\overset{a\\neq 0,D\\geq 0}{\\LLR}~~~ \\union{x = x_1 \\\\ x=x_2}`,
+                    'x^{2n} = a^{2n} \\LR \\union{x=a\\\\ x = -a}'
+                ]}
             />
             <Equivalent
                 tex={`
-                    a_1 \\cdot a_2 \\cdot \\ldots \\cdot a_n \\LR
+                    a_1 \\cdot a_2 \\cdot \\ldots \\cdot a_n = 0 \\LR
                     \\cases{
                         \\union{
                             a_1 = 0\\\\
