@@ -17,7 +17,7 @@ function App() {
     return indexPageName;
   };
   const [page, setPage] = useState(extractPage());
-  
+  const tex = str => `\\(${str}\\)`;
   const p = (pageName) => {
     var pageRouter = (div) => page===pageName?div:<></>;
     pageRouter.window = url => () => window.open(url.indexOf('://')!==-1?url:document.location.href.split(page_url_param)[0]+page_url_param+url);
@@ -53,6 +53,7 @@ function App() {
     };
     // pageRouter.scroll = ref => () => ref.current.scrollIntoView();
     pageRouter.scroll = ref => () => scrollFunction(ref);
+    pageRouter.tex = tex;
     return pageRouter;
   }
 

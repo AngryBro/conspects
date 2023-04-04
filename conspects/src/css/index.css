@@ -80,9 +80,13 @@ tr {
     border-radius: 10px;
     box-sizing: border-box;
     height: fit-content;
+    width: fit-content;
     padding: 10px;
     display: block;
     overflow: hidden;
+    margin-top: 20px;
+}
+.frame div {
     margin-top: 20px;
 }
 .main-menu {
