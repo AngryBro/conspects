@@ -1,9 +1,16 @@
-const Params = ({page}) => page(
+import { useRef } from "react";
+
+const Params = ({page}) => {
+
+    const main = useRef();
+    const analytic = useRef();
+
+    return page(
     <div>
-        <h1 onClick={page.index} className="main-menu">Задачи с параметром</h1>
+        <h1 ref={main} onClick={page.index} className="main-menu">Задачи с параметром</h1>
         <ul className="list">
             <li>Замена</li>
-            <li>Аналитика</li>
+            <li onClick={page.scroll(analytic)}>Аналитика</li>
             <li>Графика</li>
             <li>Квадратный трёхчлен</li>
             <li>Симметрия</li>
@@ -11,7 +18,7 @@ const Params = ({page}) => page(
             <li>Оценка</li>
         </ul>
         Конспект пока в процессе. Весь материал в старой версии.
-        <h2 className="main-menu">Аналитика</h2>
+        <h2 onClick={page.scroll(main)} ref={analytic} className="main-menu">Аналитика</h2>
         <div className="frame">
             <h3>Типичная задача:</h3>
             <div>{`Определить сколько решений \\(x\\) имеет выражение \\(
@@ -70,6 +77,6 @@ const Params = ({page}) => page(
             </ol>
         </div>
     </div>
-);
+)};
 
 export default Params;

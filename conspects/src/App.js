@@ -40,7 +40,7 @@ function App() {
     const scrollFunction = (ref) => {
       var offset = ref.current.offsetTop;
       var d = Math.sign(offset-window.scrollY+20);
-      const scrollSpeed = 25;
+      const scrollSpeed = 30;
       var timer = setInterval(() => {
         if(Math.abs(window.scrollY - offset)>=scrollSpeed) {
           window.scrollTo(0, window.scrollY+d*scrollSpeed);
