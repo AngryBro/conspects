@@ -76,6 +76,7 @@ tr {
 }
 .frame {
     background-color: #f4f2ff;
+    /* background-color: #dbd5ff; */
     color: black;
     border-radius: 10px;
     box-sizing: border-box;
@@ -87,7 +88,7 @@ tr {
     margin-top: 20px;
 }
 .frame div {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .main-menu {
     background-color: #8c71fe;
@@ -119,4 +120,11 @@ tr {
     font-size: 25pt;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 50px;
+}
+.param-task {
+    padding: 10px;
+    padding-top: 1px;
+    background-color: #eae6ff;
+    border-radius: 10px;
+    width: fit-content;
 }

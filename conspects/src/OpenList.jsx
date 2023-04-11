@@ -12,14 +12,23 @@ const OpenList = ({header, list}) => {
             // setOpened(false);
         }
         else {
+            // setTimeout(() => setHeight(listRef.current.scrollHeight), 1);
             setHeight(listRef.current.scrollHeight);
             // setOpened(true);
         }
     };
 
     const updateHeight = () => {
-            setTimeout(() => listRef.current !== null?setHeight(listRef.current.scrollHeight):1, speed*1000);
-    };
+            // setTimeout(() => listRef.current !== null?setHeight(listRef.current.scrollHeight):1, speed*1000);
+            // (listRef.current !== null)?setHeight(listRef.current.scrollHeight):1;
+            var callback = () => {
+                if(listRef.current !== null) {
+                    setHeight(listRef.current.scrollHeight);
+                }
+            };
+            console.log(list.current);
+            setTimeout(callback, speed*1000);
+        };
 
 
     return <div >
