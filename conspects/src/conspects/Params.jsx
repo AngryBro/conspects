@@ -3,7 +3,7 @@ import { useRef } from "react";
 const Params = ({page}) => {
 
     const main = useRef();
-    const analytic = useRef();
+    // const analytic = useRef();
     const parabole = useRef();
     const analytic_extended = useRef();
 
@@ -12,7 +12,7 @@ const Params = ({page}) => {
         <h1 ref={main} onClick={page.index} className="main-menu">Задачи с параметром</h1>
         <ul className="list">
             <li>Замена</li>
-            <li onClick={page.scroll(analytic)}>Аналитика</li>
+            {/* <li onClick={page.scroll(analytic)}>Аналитика</li> */}
             <li onClick={page.scroll(analytic_extended)}>Аналитика (extended)</li>
             <li>Графика</li>
             <li onClick={page.scroll(parabole)}>Настройка параболы</li>
@@ -46,9 +46,9 @@ const Params = ({page}) => {
                     <div>{`\\(G_i(x,a)\\)`} может выглядеть одним из следующих образов:</div>
                     <ul>
                         <li>
-                            <div>{`\\( \\cases{x = f(a) \\\\ a \\in A} \\).`}</div>
+                            <div>{`\\( \\cases{x = x(a) \\\\ a \\in A} \\).`}</div>
                             <div>Тогда пишется:</div>
-                            <div className="flex">
+                            <div className="flex line">
                                 <div>{`\\((i):~~\\)`}</div> <div>
                                     <div>1 решение при {`\\(a \\in A\\)`}</div>
                                     <div>Нет решений при {`\\(a \\not\\in A\\)`}</div>
@@ -56,10 +56,10 @@ const Params = ({page}) => {
                             </div>
                         </li>
                         <li>
-                            <div>{`\\( \\cases{x \\in T \\\\ a \\in A} ~~~,\\) где \\(~~T ~- \\) бесконечное множество.`}</div>
+                            <div>{`\\( \\cases{x \\in X \\\\ a \\in A} ~~~,\\) где \\(~~X ~- \\) бесконечное множество.`}</div>
                             <div>Тогда пишется:</div>
                             <div>
-                                <div className="flex">
+                                <div className="flex line">
                                     <div>{`\\((i):~~\\)`}</div>
                                     <div>
                                         <div>Бесконечно решений при {`\\(a \\in A\\)`}</div>
@@ -71,8 +71,8 @@ const Params = ({page}) => {
                         <li>
                             <div>{`\\(\\cases{\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A}~~~(i.1) \\\\ f(x,a) \\neq 0}\\), где \\(f(x,a)\\) не имеет ограничений.`}</div>
                             <div>Тогда пишется:</div>
-                            <div className="flex">
-                                <div>{`\\((i):~~\\)`}</div>
+                            <div className="flex line">
+                                <div>{`\\((i.1):~~\\)`}</div>
                                 <div>
                                     <div>
                                         При {`\\(\\alpha = 0:~~\\cases{
@@ -81,16 +81,37 @@ const Params = ({page}) => {
                                         \\alpha = 0
                                         }\\)`}
                                     </div>
-                                    <div>[на доработке пока]</div>
+                                    <div>
+                                        При {`\\(\\alpha \\neq 0:~~\\alpha x^2 + \\beta x + \\gamma = 0 ~-\\)`} квадратное уравнение, {`\\(D=D(a)\\)`}
+                                    </div>
+                                    <div>
+                                        2 решения при {`\\(\\cases{D>0 \\\\ a \\in A \\\\ \\alpha \\neq 0}\\)`}
+                                    </div>
+                                    <div>
+                                        1 решение при {`\\(\\cases{D=0 \\\\ a \\in A\\\\ \\alpha \\neq 0}\\)`}
+                                    </div>
+                                    <div>
+                                        0 решений при {`\\(\\cases{D<0 \\\\ a \\in A\\\\ \\alpha \\neq 0}\\)`}
+                                    </div>
+                                    <div>
+                                        Найдём {`\\(a\\)`}, при которых {`\\(f(x,a)=0\\)`}:
+                                    </div>
+                                    <div>{`\\(\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A \\\\ f(x,a)=0}\\)`}</div>
                                 </div>
                             </div>
+                        </li>
+                        <li>
+                            <div>{`\\(G(x, a)\\)`}</div>
+                            Поиск зависимости количества решений от {`\\(a\\)`} другим способом.
                         </li>
                     </ul>
                 </li>
                 <li>
                     <div>Поиск совпадений решений, пишется:</div>
-                    <div>Общие решения (i) и (j):</div>
-                    <div>{page.tex('\\cases{G_i(x,a) \\\\ G_j(x,a)}')}</div>
+                    <div className="line">
+                        <div>Общие решения ({`\\(i\\)`}) и ({`\\(j\\)`}):</div>
+                        <div>{page.tex('\\cases{G_i(x,a) \\\\ G_j(x,a)}')}</div>
+                    </div>
                 </li>
                 <li>
                     Для каждого выражения (1), (2),..., ({`\\(n\\)`})
@@ -101,7 +122,7 @@ const Params = ({page}) => {
                 </li>
             </ol>
         </div>
-        <h2 onClick={page.scroll(main)} ref={analytic} className="main-menu">Аналитика</h2>
+        {/* <h2 onClick={page.scroll(main)} ref={analytic} className="main-menu">Аналитика</h2>
         <div className="frame">
             <h3>Типичная задача:</h3>
                 <Task
@@ -159,7 +180,7 @@ const Params = ({page}) => {
                 </li>
                 <li>С помощью числовых прямых строится итоговая прямая с зависимостью количества решений от {page.tex('a')}.</li>
             </ol>
-        </div>
+        </div> */}
         <h2 ref={parabole} onClick={page.scroll(main)} className="main-menu">Настройка параболы</h2>
         <div className="frame">
             <h3>Типичная задача:</h3>
