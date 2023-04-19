@@ -5,6 +5,7 @@ const Params = ({page}) => {
     const main = useRef();
     const analytic = useRef();
     const parabole = useRef();
+    const analytic_extended = useRef();
 
     return page(
     <div>
@@ -12,6 +13,7 @@ const Params = ({page}) => {
         <ul className="list">
             <li>Замена</li>
             <li onClick={page.scroll(analytic)}>Аналитика</li>
+            <li onClick={page.scroll(analytic_extended)}>Аналитика (extended)</li>
             <li>Графика</li>
             <li onClick={page.scroll(parabole)}>Настройка параболы</li>
             <li>Симметрия</li>
@@ -19,16 +21,94 @@ const Params = ({page}) => {
             <li>Оценка</li>
         </ul>
         Конспект пока в процессе. Весь материал в старой версии.
-        <h2 onClick={page.scroll(main)} ref={analytic} className="main-menu">Аналитика</h2>
+        <h2 onClick={page.scroll(main)} ref={analytic_extended} className="main-menu">Аналитика (extended)</h2>
         <div className="frame">
             <h3>Типичная задача:</h3>
-            {/* <div> */}
                 <Task
                     text={`Определить сколько решений \\(x\\) имеет выражение<br>\\(
                         <center>F(x, a)
                     \\)<br>в зависимости от параметра \\(a\\).`}
                 />
-            {/* </div> */}
+            <h3>Решение:</h3>
+            <ol>
+                <li>
+                    Преобразование {`\\(F(x, a) \\LR
+                        \\union{
+                            G_1(x,a)~~~(1) \\\\
+                            G_2(x,a)~~~(2) \\\\
+                            \\ldots \\\\
+                            G_n(x, a)~~~(n)
+                        }
+                    \\)`}.
+                </li>
+                <li>
+                    <div>Поиск зависимости количества решений от {`\\(a\\)`} у каждого выражения {page.tex('G_i(x,a)')}.</div>
+                    <div>{`\\(G_i(x,a)\\)`} может выглядеть одним из следующих образов:</div>
+                    <ul>
+                        <li>
+                            <div>{`\\( \\cases{x = f(a) \\\\ a \\in A} \\).`}</div>
+                            <div>Тогда пишется:</div>
+                            <div className="flex">
+                                <div>{`\\((i):~~\\)`}</div> <div>
+                                    <div>1 решение при {`\\(a \\in A\\)`}</div>
+                                    <div>Нет решений при {`\\(a \\not\\in A\\)`}</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>{`\\( \\cases{x \\in T \\\\ a \\in A} ~~~,\\) где \\(~~T ~- \\) бесконечное множество.`}</div>
+                            <div>Тогда пишется:</div>
+                            <div>
+                                <div className="flex">
+                                    <div>{`\\((i):~~\\)`}</div>
+                                    <div>
+                                        <div>Бесконечно решений при {`\\(a \\in A\\)`}</div>
+                                        <div>Нет решений при {`\\(a \\not\\in A\\)`}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>{`\\(\\cases{\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A}~~~(i.1) \\\\ f(x,a) \\neq 0}\\), где \\(f(x,a)\\) не имеет ограничений.`}</div>
+                            <div>Тогда пишется:</div>
+                            <div className="flex">
+                                <div>{`\\((i):~~\\)`}</div>
+                                <div>
+                                    <div>
+                                        При {`\\(\\alpha = 0:~~\\cases{
+                                        \\beta x + \\gamma = 0 \\\\
+                                        a \\in A \\\\
+                                        \\alpha = 0
+                                        }\\)`}
+                                    </div>
+                                    <div>[на доработке пока]</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Поиск совпадений решений, пишется:</div>
+                    <div>Общие решения (i) и (j):</div>
+                    <div>{page.tex('\\cases{G_i(x,a) \\\\ G_j(x,a)}')}</div>
+                </li>
+                <li>
+                    Для каждого выражения (1), (2),..., ({`\\(n\\)`})
+                    строится ось {`\\(a\\)`} с количеством решений. Общие решения соединяются.
+                </li>
+                <li>
+                    Для исходного выражения строится ось {`\\(a\\)`} с итоговым количеством решений.
+                </li>
+            </ol>
+        </div>
+        <h2 onClick={page.scroll(main)} ref={analytic} className="main-menu">Аналитика</h2>
+        <div className="frame">
+            <h3>Типичная задача:</h3>
+                <Task
+                    text={`Определить сколько решений \\(x\\) имеет выражение<br>\\(
+                        <center>F(x, a)
+                    \\)<br>в зависимости от параметра \\(a\\).`}
+                />
             <h3>Решение:</h3>
             <ol>
                 <li>

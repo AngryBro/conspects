@@ -128,3 +128,6 @@ tr {
     border-radius: 10px;
     width: fit-content;
 }
+.flex {
+    display: flex;
+}
