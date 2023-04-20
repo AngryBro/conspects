@@ -4,6 +4,7 @@ import Params from './conspects/Params';
 import Planimetry from './conspects/Planimetry';
 import IndexPage from './IndexPage';
 import Page404 from './Page404';
+import Test from './Test';
 
 function App() {
   
@@ -70,6 +71,7 @@ function App() {
       <Equivalents page={p('Переходы')} />
       <Planimetry page = {p('Планиметрия')} />
       <Params page={p('Параметры')} />
+      <Test page={p('test')} />
     </div>
   );
 }
