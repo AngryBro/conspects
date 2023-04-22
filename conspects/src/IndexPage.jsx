@@ -22,16 +22,7 @@ const IndexPage = ({page}) => {
                     />                    
                 </li>
                 <li>
-                    <OpenList
-                        header={<h1>Прогресс учеников 2023</h1>}
-                        list={
-                            <ul className="list">
-                                <li onClick={page.window("https://docs.google.com/spreadsheets/d/1ji4okTmSxDuQXZjRayYmKF2ZA5NAJW5tflCYGhHpbRI/edit?usp=sharing")}>Продвинутый уровень</li>
-                                <li onClick={page.window("https://docs.google.com/spreadsheets/d/1WYlvnMgevBSUB2NjLM6ry7Yj0u_zsF0zHgwUgD2urxc/edit?usp=sharing")}>Стандартный уровень</li>
-                                <li onClick={page.window("https://docs.google.com/spreadsheets/d/1S7MAjub53zNpa9PArF74OWQ8Qqlzr76gK2XtYyeSu54/edit?usp=sharing")}>Контрольные задания</li>
-                            </ul>
-                        }
-                    />
+                    <h1 onClick={page.window("https://docs.google.com/spreadsheets/d/1S7MAjub53zNpa9PArF74OWQ8Qqlzr76gK2XtYyeSu54/edit?usp=sharing")}>Контрольные задания таблица</h1>
                 </li>
                 <li>
                     <OpenList

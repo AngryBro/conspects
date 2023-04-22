@@ -11,7 +11,6 @@ const Params = ({page}) => {
         <h1 ref={main} onClick={page.index} className="main-menu">Задачи с параметром</h1>
         <ul className="list">
             <li>Замена</li>
-            {/* <li onClick={page.scroll(analytic)}>Аналитика</li> */}
             <li onClick={page.scroll(analytic)}>Аналитика</li>
             <li>Графика</li>
             <li onClick={page.scroll(parabole)}>Настройка параболы</li>
@@ -71,6 +70,9 @@ const Params = ({page}) => {
                             <div>{`\\(\\cases{\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A}~~~(i.1) \\\\ f(x,a) \\neq 0}\\), где \\(f(x,a)\\) не имеет ограничений.`}</div>
                             <div>Тогда пишется:</div>
                             <div className="flex line">
+                            <div>{`\\((i):~~\\)`}</div>
+                            <div>
+                                <div style={{display:'flex'}}>
                                 <div>{`\\((i.1):~~\\)`}</div>
                                 <div>
                                     <div>
@@ -92,11 +94,13 @@ const Params = ({page}) => {
                                     <div>
                                         0 решений при {`\\(\\cases{D<0 \\\\ a \\in A\\\\ \\alpha \\neq 0}\\)`}
                                     </div>
-                                    <div>
-                                        Найдём {`\\(a\\)`}, при которых {`\\(f(x,a)=0\\)`}:
-                                    </div>
-                                    <div>{`\\(\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A \\\\ f(x,a)=0}\\)`}</div>
                                 </div>
+                                </div>
+                                <div>
+                                    Найдём {`\\(a\\)`}, при которых {`\\(f(x,a)=0\\)`}:
+                                </div>
+                                <div>{`\\(\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A \\\\ f(x,a)=0}\\)`}</div>
+                            </div>
                             </div>
                         </li>
                         <li>
