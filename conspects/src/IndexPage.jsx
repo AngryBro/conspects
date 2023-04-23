@@ -22,13 +22,11 @@ const IndexPage = ({page}) => {
                     />                    
                 </li>
                 <li>
-                    <h1 onClick={page.window("https://docs.google.com/spreadsheets/d/1S7MAjub53zNpa9PArF74OWQ8Qqlzr76gK2XtYyeSu54/edit?usp=sharing")}>Контрольные задания таблица</h1>
-                </li>
-                <li>
                     <OpenList
                         header={<h1>Контрольные задания</h1>}
                         list={
                             <ul className="list">
+                                <li style={{border:'none'}}><div style={{marginLeft:'-10px'}} className="main-menu"  onClick={page.window("https://docs.google.com/spreadsheets/d/1S7MAjub53zNpa9PArF74OWQ8Qqlzr76gK2XtYyeSu54/edit?usp=sharing")}>Таблица с прогрессом</div></li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1JqqttNjcHAUipunroOwOfp4I1id3y5ZP/view?usp=sharing")}>Уравнения</li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1v_cgdkeKW03JlPVvxZvplHRBMKDqhNV6/view?usp=sharing")}>Неравенства</li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1YLCUCOj8bs0JTuM0i8BWKWl6-vvrT350/view?usp=sharing")}>Экономика</li>
