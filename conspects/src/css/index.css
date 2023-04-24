@@ -163,3 +163,6 @@ tr {
     width: 100px;
     height: 100px;
 }
+.margin-bottom-list li {
+    margin-bottom: 60px;
+}

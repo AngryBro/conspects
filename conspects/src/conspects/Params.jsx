@@ -42,28 +42,29 @@ const Params = ({page}) => {
                 <li>
                     <div>Поиск зависимости количества решений от {`\\(a\\)`} у каждого выражения {page.tex('G_i(x,a)')}.</div>
                     <div>{`\\(G_i(x,a)\\)`} может выглядеть одним из следующих образов:</div>
-                    <ul>
+                    <ul className="margin-bottom-list">
                         <li>
                             <div>{`\\( \\cases{x = x(a) \\\\ a \\in A} \\).`}</div>
                             <div>Тогда пишется:</div>
                             <div className="flex line">
                                 <div>{`\\((i):~~\\)`}</div> <div>
                                     <div>1 решение при {`\\(a \\in A\\)`}</div>
-                                    <div>Нет решений при {`\\(a \\not\\in A\\)`}</div>
+                                    <div>0 решений при {`\\(a \\not\\in A\\)`}</div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div>{`\\( \\cases{x \\in X \\\\ a \\in A} ~~~,\\) где \\(~~X ~- \\) бесконечное множество.`}</div>
+                            <div>{`\\( \\cases{x \\in X \\\\ a \\in A} ~~~,\\) где \\(X ~- \\) бесконечное множество.`}</div>
                             <div>Тогда пишется:</div>
                             <div>
                                 <div className="flex line">
                                     <div>{`\\((i):~~\\)`}</div>
                                     <div>
-                                        <div>Бесконечно решений при {`\\(a \\in A\\)`}</div>
-                                        <div>Нет решений при {`\\(a \\not\\in A\\)`}</div>
+                                        <div>{'\\(\\infty\\)'} решений при {`\\(a \\in A\\)`}</div>
+                                        <div>0 решений при {`\\(a \\not\\in A\\)`}</div>
                                     </div>
                                 </div>
+                                <div>Не участвует в поиске общих решений.</div>
                             </div>
                         </li>
                         <li>
@@ -76,7 +77,7 @@ const Params = ({page}) => {
                                 <div>{`\\((i.1):~~\\)`}</div>
                                 <div>
                                     <div>
-                                        При {`\\(\\alpha = 0:~~\\cases{
+                                        При {`\\(\\alpha = 0 \\LR a \\in A_0:~~\\cases{
                                         \\beta x + \\gamma = 0 \\\\
                                         a \\in A \\\\
                                         \\alpha = 0
@@ -94,6 +95,78 @@ const Params = ({page}) => {
                                     </div>
                                     <div>
                                         0 решений при {`\\(\\union{\\cases{D<0 \\\\ \\alpha \\neq 0} \\\\ a\\not\\in A}\\)`}
+                                    </div>
+                                </div>
+                                </div>
+                                <div>
+                                    Найдём {`\\(a\\)`}, при которых {`\\(f(x,a)=0\\)`}:
+                                </div>
+                                <div>{`\\(\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A \\\\ f(x,a)=0}\\)`}</div>
+                            </div>
+                            </div>
+                        </li>
+                        <li hidden={true}>
+                            <div>{`\\(\\cases{\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A}~~~(i.1) \\\\ f(x,a) \\neq 0}\\), где \\(f(x,a)\\) не имеет ограничений.`}</div>
+                            <div>Тогда пишется:</div>
+                            <div className="flex line">
+                            <div>{`\\((i):~~\\)`}</div>
+                            <div>
+                                <div style={{display:'flex'}}>
+                                <div>{`\\((i.1):~~\\)`}</div>
+                                <div>
+                                    <div>
+                                        {'\\(\\alpha x^2 + \\beta x + \\gamma = 0~-\\)'} при {`\\(\\alpha=0\\)`} линейное; при {'\\(\\alpha\\neq 0\\)'} квадратное, {'\\(D=\\beta^2-4\\alpha\\gamma\\)'}.
+                                    </div>
+                                    <div>
+                                        {'\\(\\infty\\)'} решений при: {`\\(
+                                            \\cases{
+                                                \\alpha = 0 \\\\
+                                                \\beta = 0 \\\\
+                                                \\gamma = 0 \\\\
+                                                a\\in A
+                                            }
+                                        \\)`}
+                                    </div>
+                                    <div>
+                                        2 решения при: {`\\(
+                                            \\cases{
+                                                \\alpha \\neq 0 \\\\
+                                                D > 0 \\\\
+                                                a \\in A
+                                            }
+                                        \\)`}
+                                    </div>
+                                    <div>
+                                        1 решение при: {`\\(
+                                            \\union{
+                                                \\cases{
+                                                    \\alpha = 0 \\\\
+                                                    \\beta \\neq 0 \\\\
+                                                    a \\in A
+                                                } \\\\
+                                                \\cases{
+                                                    \\alpha \\neq 0 \\\\
+                                                    D = 0 \\\\
+                                                    a \\in A
+                                                }
+                                            }
+                                        \\)`}
+                                    </div>
+                                    <div>
+                                        0 решений при: {`\\(
+                                            \\union{
+                                                \\cases{
+                                                    \\alpha = 0 \\\\
+                                                    \\beta = 0 \\\\
+                                                    \\gamma \\neq 0
+                                                }\\\\
+                                                \\cases{
+                                                    \\alpha \\neq 0 \\\\
+                                                    D < 0
+                                                }\\\\
+                                                a \\not\\in A
+                                            }
+                                        \\)`}
                                     </div>
                                 </div>
                                 </div>
