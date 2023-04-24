@@ -146,7 +146,7 @@ tr {
     width: fit-content;
     height: fit-content;
     animation: spin 1s infinite linear;
-    color: red;
+    color: #8c71fe;
 }
 .loader {
     float: left;

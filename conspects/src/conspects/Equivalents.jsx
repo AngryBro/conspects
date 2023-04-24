@@ -97,29 +97,25 @@ const Equivalents = ({page}) => {
                 tex = {displaystyle(`
                     a_nx^n + a_{n-1}x^{n-1}y^1+a_{n-2}x^{n-2}y^2+\\ldots +
                     a_2x^2y^{n-2}+a_1x^1y^{n-1}+a_0y^n = 0 \\LR <br>
-                    ~~~\\overset{a_na_0\\neq 0}{\\Longleftrightarrow}~~~ \\union{
-                        \\cases{
-                            y = 0 \\\\
-                            x = 0
-                        }\\\\
-                        \\cases{
-                            y \\neq 0 \\\\
+                    ~~~\\overset{a_n\\neq 0}{\\Longleftrightarrow}~~~ \\union{
+                        x=y=0 \\\\
+                        
                             a_n\\left(\\frac{x}{y}\\right)^n + 
                             a_{n-1}\\left(\\frac{x}{y}\\right)^{n-1} + \\ldots +
                             a_1 \\left(\\frac{x}{y}\\right)^1 + a_0 = 0
-                        }
+                        
                     }
                 `)}
                 cases = {[
-                    'a \\cdot m^x = b \\cdot n^x ~~~\\overset{ab \\neq 0}{\\LLR}~~~ a \\cdot \\left(\\frac{m}{n}\\right)^x = b',
+                    'a \\cdot m^x = b \\cdot n^x \\LR a \\cdot \\left(\\frac{m}{n}\\right)^x = b',
                     `a \\cdot \\left(m^2\\right)^x + b \\cdot (mn)^x + c \\cdot \\left(n^2\\right)^x = 0
-                    ~~~\\overset{ac\\neq 0}{\\LLR}~~~
+                    \\LR
                     a \\cdot \\left(\\left(\\frac{m}{n}\\right)^x\\right)^2 + 
                     b \\cdot \\left(\\frac{m}{n}\\right)^x + c = 0`,
-                    `a\\cdot\\sin{x} = b \\cdot \\cos{x} ~~~\\overset{ab\\neq 0}{\\LLR}~~~
+                    `a\\cdot\\sin{x} = b \\cdot \\cos{x} ~~~\\overset{a\\neq 0}{\\LLR}~~~
                     a \\cdot \\tg{x} = b`,
                     `a\\cdot \\sin^2{x} + b \\cdot \\sin{x}\\cdot \\cos{x} + c\\cdot \\cos^2{x} = 0
-                    ~~~\\overset{ac\\neq 0}{\\LLR}~~~
+                    ~~~\\overset{a\\neq 0}{\\LLR}~~~
                     a\\cdot \\operatorname{tg^2}{x} + b \\cdot \\tg{x} + c = 0`
                 ]}
             />
@@ -304,6 +300,9 @@ const Equivalents = ({page}) => {
             />
             <Equivalent
                 tex = {'\\cases{A \\\\ B} ~~~\\overset{A \\Rightarrow B}{\\LLR}~~~ A'}
+            />
+            <Equivalent
+                tex = {'\\union{A \\\\ B} ~~~\\overset{A \\Rightarrow B}{\\LLR}~~~ B'}
             />
             <Equivalent
                 tex = {'\\cases{A \\\\ x \\in \\RR} \\LR A'}
