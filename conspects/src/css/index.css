@@ -15,17 +15,16 @@ li {
     margin-top: 10px;
 }
 table {
-    border-radius: 10px;
 	border-collapse: collapse;
-    background-color: #8c71fe;
-    color: white;
+    font-size: 30pt;
+    font-family:'Courier New', Courier, monospace;
 }
 td {
 	padding: 7px;
-    border: solid 1px white;
+    border: solid 1px black;
 }
 th {
-    border: solid 1px white;
+    border: solid 1px black;
 	padding: 7px;
 }
 tr {
@@ -150,8 +149,8 @@ tr {
 }
 .loader {
     float: left;
-    width: 7%;
-    height: 7%;
+    width: 50%;
+    height: 50%;
     animation: spin 4s infinite linear;
 } 
 @keyframes spin {
@@ -165,4 +164,11 @@ tr {
 }
 .margin-bottom-list li {
     margin-bottom: 60px;
+}
+select {
+    outline: none;
+}
+select option {
+    font-size: 15pt;
+    font-family: 'Courier New', Courier, monospace;
 }

@@ -1,3 +1,4 @@
+import Lessons from "./Lessons";
 import OpenList from "./OpenList";
 import Timer from "./Timer";
 import Timetable from "./Timetable";
@@ -5,7 +6,7 @@ import Timetable from "./Timetable";
 const IndexPage = ({page}) => {
 
     return page(
-        <div style={{display:'flex'}}>
+        <div>
             <div>
             <ul className="indexPageList">
                 <li><h1 onClick={page.window('https://angrybro.github.io/conspects/math/old')}>Старая версия</h1></li>
@@ -38,7 +39,7 @@ const IndexPage = ({page}) => {
                         }
                     />
                 </li>
-                <li>
+                <li hidden={true}>
                     <OpenList
                         header={<h1>Расписание занятий</h1>}
                         list={
@@ -52,13 +53,19 @@ const IndexPage = ({page}) => {
                         }
                     />
                 </li>
+                <li>
+                    <OpenList
+                        header={<h1>Расписание занятий</h1>}
+                        list={<Lessons/>}
+                    />
+                </li>
                 <li onClick={page.window("https://docs.google.com/spreadsheets/d/1ymkx7Tbok4JtQovr6okvu_1bpVVptfb1myr_Rn2VuQI/edit?usp=sharing")}><h2>Результаты учеников на ЕГЭ</h2></li>
                 <li onClick={page.window("https://drive.google.com/drive/folders/1xL7xy0TNA6vJ0Plzh84lB54qohrkL4WA?usp=sharing")}><h2>Бланки учеников</h2></li>
                 <li onClick={page.window("https://drive.google.com/drive/folders/10i2RwvCOwfOsMkoITA6WvmfDNlP66Xfi?usp=sharing")}><h2>Бланки преподавателя</h2></li>  
                 <li onClick={page.window("https://angrybro.github.io/LatexRealTime")}><h2>Печать формул</h2></li>        
             </ul>
             </div>
-            <div>
+            <div style={{position:'absolute', top:'70px', left:'700px'}}>
                 <Timer/>
             </div>
         </div>
