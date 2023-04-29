@@ -4,7 +4,8 @@ import Params from './conspects/Params';
 import Planimetry from './conspects/Planimetry';
 import IndexPage from './IndexPage';
 import Page404 from './Page404';
-import Test from './Test';
+// import Test from './Test';
+// import Checkege from './Checkege';
 
 function App() {
   
@@ -41,7 +42,7 @@ function App() {
     const scrollFunction = (ref) => {
       var offset = ref.current.offsetTop;
       var d = Math.sign(offset-window.scrollY+20);
-      const scrollSpeed = 30;
+      const scrollSpeed = 50;
       var timer = setInterval(() => {
         if(Math.abs(window.scrollY - offset)>=scrollSpeed) {
           window.scrollTo(0, window.scrollY+d*scrollSpeed);
@@ -71,7 +72,7 @@ function App() {
       <Equivalents page={p('Переходы')} />
       <Planimetry page = {p('Планиметрия')} />
       <Params page={p('Параметры')} />
-      <Test page={p('test')} />
+      {/* <Checkege page={p('test')} /> */}
     </div>
   );
 }

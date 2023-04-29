@@ -19,7 +19,7 @@ const Lessons = () => {
             var day_date = date[0];
             var time = date[1];
             date[0] = now.getFullYear()+'-'+date[0].split('.').reverse().join('-');
-            date = date.join('T') + ':00+03:00';
+            date = date.join('T') + ':00+01:00';
             date = new Date(date);
             var day = days[date.getDay()];
             var length = `${lessons[i].length} часа`;

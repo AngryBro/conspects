@@ -32,9 +32,9 @@ const IndexPage = ({page}) => {
                                 <li onClick={page.window("https://drive.google.com/file/d/1v_cgdkeKW03JlPVvxZvplHRBMKDqhNV6/view?usp=sharing")}>Неравенства</li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1YLCUCOj8bs0JTuM0i8BWKWl6-vvrT350/view?usp=sharing")}>Экономика</li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1HmD2COo8s5fM6D0D4Mw9l6-LDGKSdzDX/view?usp=sharing")}>Параметры</li>
-                                <li onClick={page.window('404')}>Планиметрия</li>
+                                {/* <li onClick={page.window('404')}>Планиметрия</li> */}
                                 <li onClick={page.window("https://drive.google.com/file/d/1MBu-hVrBRWgctBSSwlTT32BHfh3RKLED/view?usp=sharing")}>Стереометрия</li>
-                                <li onClick={page.window('404')}>Текстовые задачи</li>
+                                {/* <li onClick={page.window('404')}>Текстовые задачи</li> */}
                             </ul>
                         }
                     />

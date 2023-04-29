@@ -5,16 +5,19 @@ const Params = ({page}) => {
     const main = useRef();
     const analytic = useRef();
     const parabole = useRef();
+    const change = useRef();
+    // const graph = useRef();
+    const symmetry = useRef();
     
     return page(
     <div>
         <h1 ref={main} onClick={page.index} className="main-menu">Задачи с параметром</h1>
         <ul className="list">
-            <li>Замена</li>
             <li onClick={page.scroll(analytic)}>Аналитика</li>
             <li>Графика</li>
             <li onClick={page.scroll(parabole)}>Настройка параболы</li>
-            <li>Симметрия</li>
+            <li onClick={page.scroll(symmetry)}>Симметрия</li>
+            <li onClick={page.scroll(change)}>Замена</li>
             <li>Функция</li>
             <li>Оценка</li>
         </ul>
@@ -43,9 +46,38 @@ const Params = ({page}) => {
                     <div>Поиск зависимости количества решений от {`\\(a\\)`} у каждого выражения {page.tex('G_i(x,a)')}.</div>
                     <div>{`\\(G_i(x,a)\\)`} может выглядеть одним из следующих образов:</div>
                     <ul className="margin-bottom-list">
+                    <li>
+                            <div>{`\\(\\cases{\\cases{H(x,a) \\\\ a \\in A}~~(i.1) \\\\ f(x,a) \\neq 0}~~~\\)`}, где {'\\(f(x,a)\\)'} не имеет ограничений.</div>
+                            <div>Ищутся {`\\(C_k(a)~-\\)`} условия наличия ровно {`\\(k\\)`} решений у {`\\(H(x,a)\\)`}.</div>
+                            <div>Пишется:</div>
+                            <div className="line flex">
+                                <div>{`\\((i):~\\)`}</div>
+                                <div>
+                                <div className="flex">
+                                    <div>{`\\((i.1):~\\)`}</div>
+                                    <div>
+                                        <div>{`\\(\\infty\\) решений при: \\(\\cases{C_{\\infty}(a) \\\\ a \\in A}\\)`}</div>
+                                        <div>{`\\(n\\) решений при: \\(\\cases{C_n(a) \\\\ a \\in A}\\)`}</div>
+                                        <div>{`\\((n-1)\\) решений при: \\(\\cases{C_{n-1}(a) \\\\ a \\in A}\\)`}</div>
+                                        <div>...</div>
+                                        <div>{`2 решения при: \\(\\cases{C_2(a) \\\\ a \\in A}\\)`}</div>
+                                        <div>{`1 решение при: \\(\\cases{C_1(a) \\\\ a \\in A}\\)`}</div>
+                                        <div>{`0 решений при: \\(\\union{C_0(a) \\\\ a \\not\\in A}\\)`}</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        Найдём {`\\(a\\)`}, при которых {`\\(f(x,a)=0\\)`}:
+                                    </div>
+                                    <div>{`\\(\\cases{H(x,a) \\\\ a\\in A \\\\ f(x,a)=0}\\)`}</div>
+                                </div>
+                                </div>
+                            </div>
+                            
+                        </li>
                         <li>
                             <div>{`\\( \\cases{x = x(a) \\\\ a \\in A} \\).`}</div>
-                            <div>Тогда пишется:</div>
+                            <div>Пишется:</div>
                             <div className="flex line">
                                 <div>{`\\((i):~~\\)`}</div> <div>
                                     <div>1 решение при {`\\(a \\in A\\)`}</div>
@@ -55,7 +87,7 @@ const Params = ({page}) => {
                         </li>
                         <li>
                             <div>{`\\( \\cases{x \\in X \\\\ a \\in A} ~~~,\\) где \\(X ~- \\) бесконечное множество.`}</div>
-                            <div>Тогда пишется:</div>
+                            <div>Пишется:</div>
                             <div>
                                 <div className="flex line">
                                     <div>{`\\((i):~~\\)`}</div>
@@ -69,7 +101,7 @@ const Params = ({page}) => {
                         </li>
                         <li>
                             <div>{`\\(\\cases{\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A}~~~(i.1) \\\\ f(x,a) \\neq 0}\\), где \\(f(x,a)\\) не имеет ограничений.`}</div>
-                            <div>Тогда пишется:</div>
+                            <div>Пишется:</div>
                             <div className="flex line">
                             <div>{`\\((i):~~\\)`}</div>
                             <div>
@@ -105,9 +137,9 @@ const Params = ({page}) => {
                             </div>
                             </div>
                         </li>
-                        <li hidden={true}>
+                        <li>
                             <div>{`\\(\\cases{\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A}~~~(i.1) \\\\ f(x,a) \\neq 0}\\), где \\(f(x,a)\\) не имеет ограничений.`}</div>
-                            <div>Тогда пишется:</div>
+                            <div>Пишется:</div>
                             <div className="flex line">
                             <div>{`\\((i):~~\\)`}</div>
                             <div>
@@ -177,16 +209,11 @@ const Params = ({page}) => {
                             </div>
                             </div>
                         </li>
-                        <li>
-                            <div>{`\\(\\cases{H(x,a) \\\\ a \\in A}\\)`}</div>
-                            <div>0 решений при {'\\(a \\not\\in A\\)'}</div>
-                            <div>Поиск зависимости количества решений {'\\(H(x,a)\\)'} от {`\\(a\\)`} другим способом.</div>
-                            
-                        </li>
+                        
                     </ul>
                 </li>
                 <li>
-                    <div>Поиск совпадений решений, пишется:</div>
+                    <div>Поиск попарных совпадений решений, пишется:</div>
                     <div className="line">
                         <div>Общие решения ({`\\(i\\)`}) и ({`\\(j\\)`}):</div>
                         <div>{page.tex('\\cases{G_i(x,a) \\\\ G_j(x,a)}')}</div>
@@ -206,50 +233,176 @@ const Params = ({page}) => {
             <h3>Типичная задача:</h3>
                 <Task
                     text = {`Определить при каких условиях решения выражения<br>\\(
-                        <center>ax^2 + bx + c \\vee 0
+                        <center>\\alpha x^2 + \\beta x + \\gamma \\vee 0
                     \\)<br>расположены нужным образом на множествах, ограниченных числами \\(x_i\\).`}
                 />
             <h3>Решение:</h3>
             <ol>
-                <li>Рассматривается случай (1): {'\\(a = 0\\)'}</li>
-                <li>Обозначается случай (2): {'\\(a \\neq 0\\)'}</li>
+                <li>Рассматривается случай (1): {'\\(\\alpha = 0\\)'}</li>
+                <li>Обозначается случай (2): {'\\(\\alpha \\neq 0\\)'}</li>
                 <li>
                     <div>Пишется:</div>
                         <ul>
-                            <li>{'\\(f(x) = ax^2 + bx+c ~-\\) парабола'}</li>
-                            <li>{'\\(D = b^2 - 4ac\\)'}</li>
-                            <li>{'Вершина \\(x_в = \\frac{-b}{2a}\\)'}</li>
-                            <li>{'\\(f(x_i) = ax_i^2+bx_i+c\\)'}</li>
+                            <li>{'\\(f(x) = \\alpha x^2 + \\beta x + \\gamma ~-\\) парабола'}</li>
+                            <li>{'\\(D = \\beta^2 - 4\\alpha\\gamma\\)'}</li>
+                            <li>{'Вершина \\(x_в = \\frac{-\\beta}{2\\alpha}\\)'}</li>
+                            <li>{'\\(f(x_i) = \\alpha x_i^2+\\beta x_i+\\gamma\\)'}</li>
                         </ul>
                 </li>
                 <li>
                     <div>Рассматриваются случаи:</div>
-                    <div>(2.1) {'\\(D<0;~~\\)'}определяется при каких {'\\(a\\)'} выполняется нужное условие</div>
-                    <div>(2.2) {'\\(D=0;~~\\)'}определяется при каких {'\\(x_в,~a\\)'} выполняется нужное условие</div>
+                    <div>(2.1) {'\\(D<0;~~\\)'}определяется при каких {'\\(\\alpha\\)'} выполняется нужное условие</div>
+                    <div>(2.2) {'\\(D=0;~~\\)'}определяется при каких {'\\(x_в,~\\alpha\\)'} выполняется нужное условие</div>
                     <div>
                         (2.3) {'\\(D>0\\)'}
                         <div style={{marginLeft:'30px'}}>
-                            (2.3.1) {'\\(x_в \\vee x_i;~~\\)'}определяется при каких {'\\(a\\cdot f(x_i)\\)'} выполняется нужное условие
+                            (2.3.1) {'\\(x_в \\vee x_i;~~\\)'}определяется при каких {'\\(\\alpha\\cdot f(x_i)\\)'} выполняется нужное условие
                         </div>
                     </div>
+                </li>
+                <li>
+                    <div>Для получения ответа решается совокупность из найденных случаев.</div>
                 </li>
                 <li>
                     <div>Для рассмотрения случаев используется информация:</div>
                     <ul>
                         <li>
-                            <div>{'\\(a>0~~-\\) ветви параболы вверх'}</div>
-                            <div>{'\\(a<0~~-\\) ветви параболы вниз'}</div>
+                            <div>{'\\(\\alpha >0~~-\\) ветви параболы вверх'}</div>
+                            <div>{'\\(\\alpha <0~~-\\) ветви параболы вниз'}</div>
                         </li>
                         <li>
                             <div>{'\\(D<0~~-\\) парабола не имеет общих точек с осью абсцисс'}</div>
                             <div>{'\\(D=0~~-\\) парабола касается оси абсцисс в вершине'}</div>
-                            <div>{'\\(D>0~~-\\) парабола пересекает осью абсцисс'}</div>
+                            <div>{'\\(D>0~~-\\) парабола пересекает ось абсцисс'}</div>
                         </li>
                         <li>
-                            <div>{'\\(a\\cdot f(x_i)<0~~-\\) парабола под точкой \\(x_i\\)'}</div>
-                            <div>{'\\(a\\cdot f(x_i)>0~~-\\) парабола над точкой \\(x_i\\)'}</div>
-                            <div>{'\\(a\\cdot f(x_i)=0~~-\\) парабола проходит через точку \\(x_i\\)'}</div>
+                            <div>{'\\(\\alpha\\cdot f(x_i)<0~~-\\) ветвь параболы правее точки \\(x_i\\) (под точкой)'}</div>
+                            <div>{'\\(\\alpha\\cdot f(x_i)>0~~-\\) ветвь параболы левее точки \\(x_i\\) (над точкой)'}</div>
+                            <div>{'\\(\\alpha\\cdot f(x_i)=0~~-\\) ветвь параболы проходит через точку \\(x_i\\)'}</div>
                         </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <h2 ref={symmetry} onClick={page.scroll(main)} className="main-menu">Замена</h2>
+        <div className="frame">
+            <h3>Типичная задача:</h3>
+            <Task
+                text={`
+                Определить при каких значениях параметра \\(a\\) выражение<br>
+                <center>\\(F(x,a)\\)<br>
+                имеет ровно \\(n\\) решений.
+                `}
+            />
+            <h3>Решение:</h3>
+            <ol>
+                <li>
+                    <div>Поиск таких выражений {`\\(f(x)\\)`}, чтобы {'\\(F(f(x),a) \\LR F(x,a)\\)'}. Пишется:</div>
+                    <div className="line">
+                        <div>Если {'\\(x~-\\)'} решение, то {'\\(f_1(x),f_2(x),\\ldots, f_k(x)~-\\)'} тоже решения,</div>
+                        <div>так как {`\\(F(x,a) \\LR F(f_i(x), a)\\)`}.</div>
+                    </div>
+                </li>
+                <li>
+                    <div className="line">
+                        <div>Количество решений {`\\(x,~f_1(x),~f_2(x),\\ldots,f_k(x):~~k+1\\)`},</div>
+                        <div>требуется {'\\(n\\)'} решений, и {'\\(n \\ndiv (k+1)~\\Rightarrow\\)'} какие-то решения совпадают.</div>
+                    </div>
+                </li>
+                <li>
+                    <div>Поиск попарных совпадений решений, пишется:</div>
+                    <div className="line">
+                        <div>Совпадения решений:</div>
+                        <div>1) {'\\(\\cases{ F(x,a)\\\\ x = f_i(x) }\\)'}</div>
+                        <div>2) {'\\(\\cases{ F(x,a)\\\\ f_i(x) = f_j(x) }\\)'}</div>
+                    </div>
+                </li>
+                <li>
+                    <div>При каждом найденном на предыдущем шаге {'\\(a\\)'} решается {'\\(F(x,a)\\)'}.</div>
+                    <div>Те {'\\(a\\)'}, при которых решений ровно {'\\(n\\)'}, добавляются в ответ. </div>
+                </li>
+            </ol>
+        </div>
+        <h2 ref={change} onClick={page.scroll(main)} className="main-menu">Замена</h2>
+        <div className="frame">
+            <ol>
+                <li>
+                    <h3>Замена для преобразований</h3>
+                    <div className="line">
+                        {`\\(
+                           F(x, a, f(x,a)) \\overset{t=f(x,a)}{\\LLR}
+                           F(x,a,t) 
+                        \\)`}
+                    </div>
+                    <ul>
+                        <li>Используется только для преобразований.</li>
+                        <li>Обратная замена выполняется после преобразований.</li>
+                    </ul>
+                </li>
+                <li style={{marginTop:'50px'}}>
+                    <h3>Переход к новой неизвестной</h3>
+                    <div className="line flex">
+                        <div>
+                            <div>{`\\(F(f(x,a),a)\\)`}</div>
+                            <div>Замена: {`\\(t = f(x,a)\\)`}</div>
+                            <div>{`\\(F(t,a)\\)`}</div>
+                        </div>
+                        <div>
+                        <table style={{fontSize:'15pt', marginLeft:'10px'}}>
+                                <tbody>
+                                    <tr>
+                                        <th>Множество {'\\(t\\)'}</th>
+                                        <th>Информация про {'\\(x\\)'}</th>
+                                    </tr>
+                                    <tr>
+                                        <td>{'\\(T_1\\)'}</td>
+                                        <td>{'\\(I_1\\)'}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{'\\(T_2\\)'}</td>
+                                        <td>{'\\(I_2\\)'}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{'\\(\\ldots\\)'}</td>
+                                        <td>{'\\(\\ldots\\)'}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{'\\(T_n\\)'}</td>
+                                        <td>{'\\(I_n\\)'}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Используется для приведения выражения в более простой вид.</li>
+                        <li>Обратная замена не выполняется.</li>
+                    </ul>
+                </li>
+                <li style={{marginTop:'50px'}}>
+                    <h3>Переход к новому параметру</h3>
+                    <div className="line">
+                    {'\\(F(x,f(a)) ~~~\\overset{b = f(a)}{\\LLR}~~~F(x,b)\\)'}
+                    </div>
+                    <ul>
+                        <li>
+                            Используется для упрощения выражений с параметром.
+                        </li>
+                        <li>
+                            Обратная замена выполняется в самом конце решения после нахождения нового параметра.
+                        </li>
+                    </ul>
+                </li>
+                <li style={{marginTop:'50px'}}>
+                    <h3>Добавление/исключение неизвестной</h3>
+                    <div className="line">
+                    {'\\(F(x,f(x,a),a) \\Leftarrow \\cases{F(x,y,a) \\\\ y=f(x,a)}\\)'}
+                    </div>
+                    <ul>
+                        <li>Переход не равносильный, сохраняется количество решений.</li>
+                        <li>Используется часто: добавление второй неизвестной для графического решения.</li>
+                        <li>Используется редко: исключение неизвестной для решения не аналитическим способом.</li>
+                        <li>Обратная замена не выполняется.</li>
                     </ul>
                 </li>
             </ol>
@@ -257,15 +410,18 @@ const Params = ({page}) => {
     </div>
 )};
 
-const Task = ({text}) => (
+const Task = ({text, block = undefined}) => (
     <div className="param-task">
+        <div style={{marginTop:'-5px'}}>
         {
-            text.split('<br>').map(str => 
-            <div style={{display:'flex', justifyContent:str.indexOf('<center>')===-1?'start':'center'}}>
+            text.split('<br>').map((str, i) => 
+            <div key={i} style={{display:'flex', justifyContent:str.indexOf('<center>')===-1?'start':'center'}}>
                 <div style={{width:'fit-content'}}>{str.replace('<center>','')}</div>
             </div>
             )
         }
+        </div>
+        {block}
     </div>
 );
 

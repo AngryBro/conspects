@@ -129,6 +129,7 @@ tr {
     background-color: #eae6ff;
     border-radius: 10px;
     width: fit-content;
+    display: flex;
 }
 .flex {
     display: flex;
