@@ -276,15 +276,15 @@ const Params = ({page}) => {
                             <div>{'\\(D>0~~-\\) парабола пересекает ось абсцисс'}</div>
                         </li>
                         <li>
-                            <div>{'\\(\\alpha\\cdot f(x_i)<0~~-\\) ветвь параболы правее точки \\(x_i\\) (под точкой)'}</div>
-                            <div>{'\\(\\alpha\\cdot f(x_i)>0~~-\\) ветвь параболы левее точки \\(x_i\\) (над точкой)'}</div>
+                            <div>{'\\(\\alpha\\cdot f(x_i)<0~~-\\) ветвь параболы под точкой \\(x_i\\)'}</div>
+                            <div>{'\\(\\alpha\\cdot f(x_i)>0~~-\\) ветвь параболы над точкой \\(x_i\\)'}</div>
                             <div>{'\\(\\alpha\\cdot f(x_i)=0~~-\\) ветвь параболы проходит через точку \\(x_i\\)'}</div>
                         </li>
                     </ul>
                 </li>
             </ol>
         </div>
-        <h2 ref={symmetry} onClick={page.scroll(main)} className="main-menu">Замена</h2>
+        <h2 ref={symmetry} onClick={page.scroll(main)} className="main-menu">Симметрия</h2>
         <div className="frame">
             <h3>Типичная задача:</h3>
             <Task
