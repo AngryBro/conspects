@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const Params = ({page}) => {
 
@@ -6,20 +6,29 @@ const Params = ({page}) => {
     const analytic = useRef();
     const parabole = useRef();
     const change = useRef();
-    // const graph = useRef();
+    const graph = useRef();
     const symmetry = useRef();
-    
+    const func = useRef();
+    const evaluate = useRef();
+    const refs = {
+        analyticGeneral: useRef(),
+        analyticSimle: useRef(),
+        analyticInfty: useRef(),
+        analyticSqr1: useRef(),
+        analyticSqr2: useRef()
+    }
+
     return page(
     <div>
         <h1 ref={main} onClick={page.index} className="main-menu">Задачи с параметром</h1>
         <ul className="list">
             <li onClick={page.scroll(analytic)}>Аналитика</li>
-            <li>Графика</li>
+            <li onClick={page.scroll(graph)}>Графика</li>
             <li onClick={page.scroll(parabole)}>Настройка параболы</li>
             <li onClick={page.scroll(symmetry)}>Симметрия</li>
             <li onClick={page.scroll(change)}>Замена</li>
-            <li>Функция</li>
-            <li>Оценка</li>
+            <li onClick={page.scroll(func)}>Функция</li>
+            <li onClick={page.scroll(evaluate)}>Оценка</li>
         </ul>
         Конспект пока в процессе. Весь материал в старой версии.
         <h2 onClick={page.scroll(main)} ref={analytic} className="main-menu">Аналитика</h2>
@@ -33,7 +42,7 @@ const Params = ({page}) => {
             <h3>Решение:</h3>
             <ol>
                 <li>
-                    Преобразование {`\\(F(x, a) \\LR
+                    Преобразование {`\\(F(x, a) ~~~(*) \\LR
                         \\union{
                             G_1(x,a)~~~(1) \\\\
                             G_2(x,a)~~~(2) \\\\
@@ -46,8 +55,11 @@ const Params = ({page}) => {
                     <div>Поиск зависимости количества решений от {`\\(a\\)`} у каждого выражения {page.tex('G_i(x,a)')}.</div>
                     <div>{`\\(G_i(x,a)\\)`} может выглядеть одним из следующих образов:</div>
                     <ul className="margin-bottom-list">
-                    <li>
+                    <li style={{marginTop:'40px'}}>
                             <div>{`\\(\\cases{\\cases{H(x,a) \\\\ a \\in A}~~(i.1) \\\\ f(x,a) \\neq 0}~~~\\)`}, где {'\\(f(x,a)\\)'} не имеет ограничений.</div>
+                            <Hidden
+                            childRef={refs.analyticGeneral}
+                            block={<div ref={refs.analyticGeneral}>
                             <div>Ищутся {`\\(C_k(a)~-\\)`} условия наличия ровно {`\\(k\\)`} решений у {`\\(H(x,a)\\)`}.</div>
                             <div>Пишется:</div>
                             <div className="line flex">
@@ -73,10 +85,14 @@ const Params = ({page}) => {
                                 </div>
                                 </div>
                             </div>
-                            
+                            </div>}
+                            />
                         </li>
                         <li>
                             <div>{`\\( \\cases{x = x(a) \\\\ a \\in A} \\).`}</div>
+                            <Hidden
+                            childRef={refs.analyticSimle}
+                            block={<div ref={refs.analyticSimle}>
                             <div>Пишется:</div>
                             <div className="flex line">
                                 <div>{`\\((i):~~\\)`}</div> <div>
@@ -84,9 +100,14 @@ const Params = ({page}) => {
                                     <div>0 решений при {`\\(a \\not\\in A\\)`}</div>
                                 </div>
                             </div>
+                            </div>}
+                            />
                         </li>
                         <li>
                             <div>{`\\( \\cases{x \\in X \\\\ a \\in A} ~~~,\\) где \\(X ~- \\) бесконечное множество.`}</div>
+                            <Hidden
+                            childRef={refs.analyticInfty}
+                            block={<div ref={refs.analyticInfty}>
                             <div>Пишется:</div>
                             <div>
                                 <div className="flex line">
@@ -98,9 +119,14 @@ const Params = ({page}) => {
                                 </div>
                                 <div>Не участвует в поиске общих решений.</div>
                             </div>
+                            </div>}
+                            />
                         </li>
                         <li>
                             <div>{`\\(\\cases{\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A}~~~(i.1) \\\\ f(x,a) \\neq 0}\\), где \\(f(x,a)\\) не имеет ограничений.`}</div>
+                            <Hidden
+                            childRef={refs.analyticSqr1}
+                            block={<div ref={refs.analyticSqr1}>
                             <div>Пишется:</div>
                             <div className="flex line">
                             <div>{`\\((i):~~\\)`}</div>
@@ -136,9 +162,14 @@ const Params = ({page}) => {
                                 <div>{`\\(\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A \\\\ f(x,a)=0}\\)`}</div>
                             </div>
                             </div>
+                            </div>}
+                            />
                         </li>
                         <li>
                             <div>{`\\(\\cases{\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A}~~~(i.1) \\\\ f(x,a) \\neq 0}\\), где \\(f(x,a)\\) не имеет ограничений.`}</div>
+                            <Hidden
+                            childRef={refs.analyticSqr2}
+                            block={<div ref={refs.analyticSqr2}>
                             <div>Пишется:</div>
                             <div className="flex line">
                             <div>{`\\((i):~~\\)`}</div>
@@ -208,8 +239,9 @@ const Params = ({page}) => {
                                 <div>{`\\(\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A \\\\ f(x,a)=0}\\)`}</div>
                             </div>
                             </div>
+                            </div>}
+                            />
                         </li>
-                        
                     </ul>
                 </li>
                 <li>
@@ -224,7 +256,41 @@ const Params = ({page}) => {
                     строится ось {`\\(a\\)`} с количеством решений. Общие решения соединяются.
                 </li>
                 <li>
-                    Для исходного выражения строится ось {`\\(a\\)`} с итоговым количеством решений.
+                    Для исходного выражения {`\\((*)\\)`} строится ось {`\\(a\\)`} с итоговым количеством решений.
+                </li>
+            </ol>
+        </div>
+        <h2 ref={graph} onClick={page.scroll(main)} className="main-menu">Графика</h2>
+        <div className="frame">
+            <h3>Типичная задача:</h3>
+            <Task
+                text={`
+                    Определить сколько решений \\(x\\) имеет выражение<br>
+                    <center>\\(F(x,y,a)\\)<br>
+                    в зависимости от параметра \\(a\\).
+                `}
+            />
+            <h3>Решение:</h3>
+            <ol className="margin-bottom-list">
+                <li>
+                    Преобразование {`\\(F(x,y,a) \\LR \\cases{G(x,y)~~~~~~~(1) \\\\ A(x,y,a)~~~~(2)} \\)`}.
+                </li>
+                <li>
+                    Описание и построение графика (1).
+                </li>
+                <li>
+                    Описание графика (2) с пояснением что зависит от {`\\(a\\)`}.
+                </li>
+                <li>
+                    Построение на черновике графика (2) при {`\\(a = -\\infty\\)`}.
+                </li>
+                <li>
+                    <div>Медленное увеличение {`\\(a\\)`}, с отслеживанием изменения графика (2),</div>
+                    <div>моменты изменения количества общих точек с графиком (1) фиксируются, нумеруются,</div>
+                    <div>в каждом находится значение {`\\(a\\)`}, подписывается количество решений.</div>
+                </li>
+                <li>
+                    На оси зависимости количества решений от {`\\(a\\)`} указывается количество решений.
                 </li>
             </ol>
         </div>
@@ -407,6 +473,40 @@ const Params = ({page}) => {
                 </li>
             </ol>
         </div>
+        <h2 ref={func} onClick={page.scroll(main)} className="main-menu">Функция</h2>
+        <div className="frame">
+            <h3>Выделяется и исследуется функция:</h3>
+            <ul>
+                <li>
+                    График выражения {`\\(y=f(x,a)\\)`} можно построить исследовав функцию {`\\(\\varphi(x)=f(x,a)\\)`}.
+                </li>
+                <li>
+                    Для выражения {`\\(f(u) \\vee f(v)\\)`} применим переход, если {`\\(f(x)\\)`} монтонная функция.
+                </li>
+                <li>
+                    {`\\(y=f(x) \\LR \\cases{y=f(x)\\\\ y \\in E(f)}~~\\)`}, где {`\\(E(f)~-\\)`} область значений функции.
+                </li>
+            </ul>
+        </div>
+        <h2 ref={evaluate} onClick={page.scroll(main)} className="main-menu">Оценка</h2>
+        <div className="frame">
+            <h3>В систему к выражению дописываются выражения-следствия:</h3>
+            <ul>
+                <li>
+                    {`\\(u^{2n} \\geq 0\\)`}
+                </li>
+                <li>
+                    {`\\(|u| \\geq 0\\)`}
+                </li>
+                <li>
+                    {`\\(-1 \\leq \\sin{u} \\leq 1\\)`}
+                </li>
+                <li>
+                    {`\\(-1 \\leq \\cos{u} \\leq 1\\)`}
+                </li>
+            </ul>
+        </div>
+        <div style={{height:`1000px`}}></div>
     </div>
 )};
 
@@ -424,5 +524,18 @@ const Task = ({text, block = undefined}) => (
         {block}
     </div>
 );
+const Hidden = ({block, childRef}) => {
+    
+    const [hidden, setHidden] = useState(true);
+
+    return <div>
+        <div onClick={() => setHidden(h => !h)} className="sub-menu">
+            {hidden?'Показать исследование':'Скрыть исследование'}
+        </div>
+        <div style={{transition:'max-height 0.5s ease',overflow:'hidden',maxHeight:`${hidden?0:childRef.current.scrollHeight+10}px`}}>
+            {block}
+        </div>
+    </div>
+};
 
 export default Params;

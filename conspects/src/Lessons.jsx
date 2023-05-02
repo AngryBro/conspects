@@ -22,7 +22,7 @@ const Lessons = () => {
             date = date.join('T') + ':00+02:00';
             date = new Date(date);
             var day = days[date.getDay()];
-            var length = `${lessons[i].length} часа`;
+            var length = `${lessons[i].length} ${!isNaN(Number(lessons[i].length))&&lessons[i].length<5?'часа':'часов'}`;
             var lesson_numbers = lessons[i].lessons;
             if(now.getTime() < date.getTime()) {
                 temp.push({date: day_date, day, time, length, lessons: lesson_numbers});
