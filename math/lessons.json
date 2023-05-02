@@ -26,13 +26,13 @@
         {"date":"12.05 15:00", "length":2, "lessons": "78"},
         {"date":"14.05 10:00", "length":2, "lessons": "79"},
         {"date":"16.05 15:00", "length":2, "lessons": "80"},
-        {"date":"21.05 10:00", "length":5, "lessons":"81"},
-        {"date":"22.05 10:00", "length":5, "lessons":"82"},
-        {"date":"23.05 10:00", "length":5, "lessons":"83"},
-        {"date":"24.05 10:00", "length":5, "lessons":"84"},
-        {"date":"25.05 10:00", "length":5, "lessons":"85"},
-        {"date":"30.05 10:00", "length":5, "lessons":"86"},
-        {"date":"31.05 10:00", "length":5, "lessons":"87"}
+        {"date":"21.05 10:00", "length":">5", "lessons":"81"},
+        {"date":"22.05 10:00", "length":">5", "lessons":"82"},
+        {"date":"23.05 10:00", "length":">5", "lessons":"83"},
+        {"date":"24.05 10:00", "length":">5", "lessons":"84"},
+        {"date":"25.05 10:00", "length":">5", "lessons":"85"},
+        {"date":"30.05 10:00", "length":">5", "lessons":"86"},
+        {"date":"31.05 10:00", "length":">5", "lessons":"87"}
     ],
     "37":[
         {"date":"26.04 15:00", "length":3, "lessons": "69"},
@@ -44,12 +44,12 @@
         {"date":"10.05 15:00", "length":3, "lessons": "77"},
         {"date":"13.05 15:00", "length":3, "lessons": "78,79"},
         {"date":"17.05 15:00", "length":2, "lessons": "80"},
-        {"date":"21.05 10:00", "length":5, "lessons":"81"},
-        {"date":"22.05 10:00", "length":5, "lessons":"82"},
-        {"date":"23.05 10:00", "length":5, "lessons":"83"},
-        {"date":"24.05 10:00", "length":5, "lessons":"84"},
-        {"date":"25.05 10:00", "length":5, "lessons":"85"},
-        {"date":"30.05 10:00", "length":5, "lessons":"86"},
-        {"date":"31.05 10:00", "length":5, "lessons":"87"}
+        {"date":"21.05 10:00", "length":">5", "lessons":"81"},
+        {"date":"22.05 10:00", "length":">5", "lessons":"82"},
+        {"date":"23.05 10:00", "length":">5", "lessons":"83"},
+        {"date":"24.05 10:00", "length":">5", "lessons":"84"},
+        {"date":"25.05 10:00", "length":">5", "lessons":"85"},
+        {"date":"30.05 10:00", "length":">5", "lessons":"86"},
+        {"date":"31.05 10:00", "length":">5", "lessons":"87"}
     ]
 }
