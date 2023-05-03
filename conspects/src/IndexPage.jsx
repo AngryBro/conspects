@@ -1,20 +1,19 @@
 import Lessons from "./Lessons";
-import OpenList from "./OpenList";
-import Timer from "./Timer";
-import Timetable from "./Timetable";
-
+import Hidinglist from "./Hidinglist";
+import Timetable from './Timetable';
+import Timer from './Timer';
 const IndexPage = ({page}) => {
 
     return page(
         <div>
             <div>
             <ul className="indexPageList">
-                <li><h1 onClick={page.window('https://angrybro.github.io/conspects/math/old')}>Старая версия</h1></li>
+                <li><div className="h1" onClick={page.window('https://angrybro.github.io/conspects/math/old')}>Старая версия</div></li>
                 <li>
-                    <OpenList
-                        header={<h1>Конспекты</h1>}
-                        list={
-                            <ol className="list">
+                    <Hidinglist
+                        parent={<div className="h1">Конспекты</div>}
+                        child={
+                            <ol className="list" style={{marginTop:'30px'}}>
                                 <li onClick={page.navigate('Планиметрия')}>Планиметрия</li>
                                 <li onClick={page.navigate('Переходы')}>Равносильные переходы</li>
                                 <li onClick={page.navigate('Параметры')}>Задачи с параметром</li>
@@ -23,9 +22,9 @@ const IndexPage = ({page}) => {
                     />                    
                 </li>
                 <li>
-                    <OpenList
-                        header={<h1>Контрольные задания</h1>}
-                        list={
+                    <Hidinglist
+                        parent={<div className="h1">Контрольные задания</div>}
+                        child={
                             <ul className="list">
                                 <li style={{border:'none'}}><div style={{marginLeft:'-10px'}} className="main-menu"  onClick={page.window("https://docs.google.com/spreadsheets/d/1S7MAjub53zNpa9PArF74OWQ8Qqlzr76gK2XtYyeSu54/edit?usp=sharing")}>Таблица с прогрессом</div></li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1JqqttNjcHAUipunroOwOfp4I1id3y5ZP/view?usp=sharing")}>Уравнения</li>
@@ -40,9 +39,9 @@ const IndexPage = ({page}) => {
                     />
                 </li>
                 <li hidden={true}>
-                    <OpenList
-                        header={<h1>Расписание занятий</h1>}
-                        list={
+                    <Hidinglist
+                        parent={<div className="h1">Расписание занятий</div>}
+                        child={
                             <Timetable
                                 groups={[
                                     {number: 35, days: 'ПН, ЧТ', time: '15:00'},
@@ -54,9 +53,9 @@ const IndexPage = ({page}) => {
                     />
                 </li>
                 <li>
-                    <OpenList
-                        header={<h1>Расписание занятий</h1>}
-                        list={<Lessons/>}
+                    <Hidinglist
+                        parent={<div className="h1">Расписание занятий</div>}
+                        child={<Lessons/>}
                     />
                 </li>
                 <li onClick={page.window("https://docs.google.com/spreadsheets/d/1ymkx7Tbok4JtQovr6okvu_1bpVVptfb1myr_Rn2VuQI/edit?usp=sharing")}><h2>Результаты учеников на ЕГЭ</h2></li>

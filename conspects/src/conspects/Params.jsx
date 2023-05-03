@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import {useRef} from "react";
+import Hidinglist from "../Hidinglist";
 
 const Params = ({page}) => {
 
@@ -10,13 +11,6 @@ const Params = ({page}) => {
     const symmetry = useRef();
     const func = useRef();
     const evaluate = useRef();
-    const refs = {
-        analyticGeneral: useRef(),
-        analyticSimle: useRef(),
-        analyticInfty: useRef(),
-        analyticSqr1: useRef(),
-        analyticSqr2: useRef()
-    }
 
     return page(
     <div>
@@ -30,7 +24,6 @@ const Params = ({page}) => {
             <li onClick={page.scroll(func)}>Функция</li>
             <li onClick={page.scroll(evaluate)}>Оценка</li>
         </ul>
-        Конспект пока в процессе. Весь материал в старой версии.
         <h2 onClick={page.scroll(main)} ref={analytic} className="main-menu">Аналитика</h2>
         <div className="frame">
             <h3>Типичная задача:</h3>
@@ -55,11 +48,10 @@ const Params = ({page}) => {
                     <div>Поиск зависимости количества решений от {`\\(a\\)`} у каждого выражения {page.tex('G_i(x,a)')}.</div>
                     <div>{`\\(G_i(x,a)\\)`} может выглядеть одним из следующих образов:</div>
                     <ul className="margin-bottom-list">
-                    <li style={{marginTop:'40px'}}>
+                    <li>
                             <div>{`\\(\\cases{\\cases{H(x,a) \\\\ a \\in A}~~(i.1) \\\\ f(x,a) \\neq 0}~~~\\)`}, где {'\\(f(x,a)\\)'} не имеет ограничений.</div>
                             <Hidden
-                            childRef={refs.analyticGeneral}
-                            block={<div ref={refs.analyticGeneral}>
+                            block={<div>
                             <div>Ищутся {`\\(C_k(a)~-\\)`} условия наличия ровно {`\\(k\\)`} решений у {`\\(H(x,a)\\)`}.</div>
                             <div>Пишется:</div>
                             <div className="line flex">
@@ -91,8 +83,7 @@ const Params = ({page}) => {
                         <li>
                             <div>{`\\( \\cases{x = x(a) \\\\ a \\in A} \\).`}</div>
                             <Hidden
-                            childRef={refs.analyticSimle}
-                            block={<div ref={refs.analyticSimle}>
+                            block={<div>
                             <div>Пишется:</div>
                             <div className="flex line">
                                 <div>{`\\((i):~~\\)`}</div> <div>
@@ -106,8 +97,7 @@ const Params = ({page}) => {
                         <li>
                             <div>{`\\( \\cases{x \\in X \\\\ a \\in A} ~~~,\\) где \\(X ~- \\) бесконечное множество.`}</div>
                             <Hidden
-                            childRef={refs.analyticInfty}
-                            block={<div ref={refs.analyticInfty}>
+                            block={<div>
                             <div>Пишется:</div>
                             <div>
                                 <div className="flex line">
@@ -125,8 +115,7 @@ const Params = ({page}) => {
                         <li>
                             <div>{`\\(\\cases{\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A}~~~(i.1) \\\\ f(x,a) \\neq 0}\\), где \\(f(x,a)\\) не имеет ограничений.`}</div>
                             <Hidden
-                            childRef={refs.analyticSqr1}
-                            block={<div ref={refs.analyticSqr1}>
+                            block={<div>
                             <div>Пишется:</div>
                             <div className="flex line">
                             <div>{`\\((i):~~\\)`}</div>
@@ -168,8 +157,7 @@ const Params = ({page}) => {
                         <li>
                             <div>{`\\(\\cases{\\cases{\\alpha x^2 + \\beta x + \\gamma = 0 \\\\ a\\in A}~~~(i.1) \\\\ f(x,a) \\neq 0}\\), где \\(f(x,a)\\) не имеет ограничений.`}</div>
                             <Hidden
-                            childRef={refs.analyticSqr2}
-                            block={<div ref={refs.analyticSqr2}>
+                            block={<div>
                             <div>Пишется:</div>
                             <div className="flex line">
                             <div>{`\\((i):~~\\)`}</div>
@@ -265,7 +253,7 @@ const Params = ({page}) => {
             <h3>Типичная задача:</h3>
             <Task
                 text={`
-                    Определить сколько решений \\(x\\) имеет выражение<br>
+                    Определить сколько решений \\((x,y)\\) имеет выражение<br>
                     <center>\\(F(x,y,a)\\)<br>
                     в зависимости от параметра \\(a\\).
                 `}
@@ -379,8 +367,7 @@ const Params = ({page}) => {
                     <div>Поиск попарных совпадений решений, пишется:</div>
                     <div className="line">
                         <div>Совпадения решений:</div>
-                        <div>1) {'\\(\\cases{ F(x,a)\\\\ x = f_i(x) }\\)'}</div>
-                        <div>2) {'\\(\\cases{ F(x,a)\\\\ f_i(x) = f_j(x) }\\)'}</div>
+                        <div>{'\\(i)~~\\cases{ F(x,a)\\\\ x = f_i(x) }\\)'}</div>
                     </div>
                 </li>
                 <li>
@@ -506,13 +493,13 @@ const Params = ({page}) => {
                 </li>
             </ul>
         </div>
-        <div style={{height:`1000px`}}></div>
+        {/* <div style={{height:`1000px`}}></div> */}
     </div>
 )};
 
-const Task = ({text, block = undefined}) => (
+const Task = ({text}) => (
     <div className="param-task">
-        <div style={{marginTop:'-5px'}}>
+        <div style={{marginTop:'-5px',marginBottom:'-10px'}}>
         {
             text.split('<br>').map((str, i) => 
             <div key={i} style={{display:'flex', justifyContent:str.indexOf('<center>')===-1?'start':'center'}}>
@@ -521,21 +508,20 @@ const Task = ({text, block = undefined}) => (
             )
         }
         </div>
-        {block}
     </div>
 );
-const Hidden = ({block, childRef}) => {
+const Hidden = ({block}) => {
     
-    const [hidden, setHidden] = useState(true);
-
-    return <div>
-        <div onClick={() => setHidden(h => !h)} className="sub-menu">
-            {hidden?'Показать исследование':'Скрыть исследование'}
-        </div>
-        <div style={{transition:'max-height 0.5s ease',overflow:'hidden',maxHeight:`${hidden?0:childRef.current.scrollHeight+10}px`}}>
-            {block}
-        </div>
-    </div>
+    return <Hidinglist
+        parent={
+            <div className="sub-menu">Показать исследование</div>
+        }
+        parent1={
+            <div className="sub-menu">Скрыть исследование</div>
+        }
+        rerender={false}
+        child={block}
+    />
 };
 
 export default Params;

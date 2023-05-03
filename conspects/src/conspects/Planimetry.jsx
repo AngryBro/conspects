@@ -1,4 +1,4 @@
-import OpenList from "../OpenList";
+import Hidinglist from "../Hidinglist";
 
 
 const Planimetry = ({page}) => { 
@@ -18,7 +18,7 @@ const Planimetry = ({page}) => {
         'теорема син': {
             name: 'Теорема синусов',
             text: `Если в треугольнике \\(a ~-\\) сторона и \\(\\alpha ~-\\) угол напротив неё, а \\(D ~-\\) диаметр описанной окружности,<br>
-            то выполняется равенство \\(\\displaystyle\\frac{a}{\\sin{\\alpha}} = D\\)`
+            то выполняется равенство \\(\\frac{a}{\\sin{\\alpha}} = D\\)`
         },
         'равновеликие': {
             name: 'Свойство медианы',
@@ -350,16 +350,16 @@ const Planimetry = ({page}) => {
         {
             parse(facts).map((facts_group,index) =>
                 <li key={index}>
-                    <OpenList
-                        header = {<div className="main-menu">{facts_group.title}</div>}
-                        list = {
+                    <Hidinglist
+                        parent = {<div className="main-menu">{facts_group.title}</div>}
+                        child = {
                             <ol>
                                 {
                                     facts_group.facts.map((fact,index) =>
                                         <li key={index} style={{color: '#8c71fe'}}>
-                                            <OpenList
-                                                header = {<div className="sub-menu">{fact.name}</div>}
-                                                list = {fact.text===null?<></>:
+                                            <Hidinglist
+                                                parent = {<div className="sub-menu">{fact.name}</div>}
+                                                child = {fact.text===null?<></>:
                                                     <div className="frame">
                                                         <h3 style={{marginTop:'-7px'}}>Формулировка:</h3>
                                                         {

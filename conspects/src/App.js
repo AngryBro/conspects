@@ -4,6 +4,7 @@ import Params from './conspects/Params';
 import Planimetry from './conspects/Planimetry';
 import IndexPage from './IndexPage';
 import Page404 from './Page404';
+import Test from './Test';
 
 function App() {
   
@@ -37,21 +38,39 @@ function App() {
       }
     };
     pageRouter.index = pageRouter.navigate(indexPageName);
+    // const scrollFunction = (ref) => {
+    //   var offset = ref.current.offsetTop;
+    //   var d = Math.sign(offset-window.scrollY+20);
+    //   const scrollSpeed = 50;
+    //   var timer = setInterval(() => {
+    //     if(Math.abs(window.scrollY - offset)>=scrollSpeed) {
+    //       window.scrollTo(0, window.scrollY+d*scrollSpeed);
+    //     }
+    //     else {
+    //       ref.current.scrollIntoView();
+    //       clearInterval(timer);
+    //     }
+    //   }, 1);
+    // };
     const scrollFunction = (ref) => {
-      var offset = ref.current.offsetTop;
-      var d = Math.sign(offset-window.scrollY+20);
-      const scrollSpeed = 50;
+      var offsetTarget = ref.current.offsetTop
+      var offsetCurrent = window.scrollY;
+      var offset = offsetTarget - offsetCurrent;
+      const scrollSpeed = 35;
+      var scrollLength = 0;
+      var firstOffset = offset % scrollSpeed;
+      offset -= firstOffset;
+      window.scrollTo(0, window.scrollY+firstOffset);
       var timer = setInterval(() => {
-        if(Math.abs(window.scrollY - offset)>=scrollSpeed) {
-          window.scrollTo(0, window.scrollY+d*scrollSpeed);
-        }
-        else {
-          ref.current.scrollIntoView();
-          clearInterval(timer);
-        }
+          if(Math.abs(scrollLength - Math.abs(offset))>=scrollSpeed) {
+            window.scrollTo(0, window.scrollY+scrollSpeed*Math.sign(offset));
+            scrollLength += Math.abs(scrollSpeed);
+          } 
+          else {
+            clearInterval(timer)
+          }
       }, 1);
-    };
-    // pageRouter.scroll = ref => () => ref.current.scrollIntoView();
+    }
     pageRouter.scroll = ref => () => scrollFunction(ref);
     pageRouter.tex = tex;
     return pageRouter;
@@ -70,6 +89,7 @@ function App() {
       <Equivalents page={p('Переходы')} />
       <Planimetry page = {p('Планиметрия')} />
       <Params page={p('Параметры')} />
+      <Test page={p('test')} />
     </div>
   );
 }
