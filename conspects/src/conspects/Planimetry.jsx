@@ -18,7 +18,7 @@ const Planimetry = ({page}) => {
         'теорема син': {
             name: 'Теорема синусов',
             text: `Если в треугольнике \\(a ~-\\) сторона и \\(\\alpha ~-\\) угол напротив неё, а \\(D ~-\\) диаметр описанной окружности,<br>
-            то выполняется равенство \\(\\frac{a}{\\sin{\\alpha}} = D\\)`
+            то выполняется равенство \\(\\displaystyle\\frac{a}{\\sin{\\alpha}} = D\\)`
         },
         'равновеликие': {
             name: 'Свойство медианы',
@@ -351,6 +351,7 @@ const Planimetry = ({page}) => {
             parse(facts).map((facts_group,index) =>
                 <li key={index}>
                     <Hidinglist
+                        rerender={true}
                         parent = {<div className="main-menu">{facts_group.title}</div>}
                         child = {
                             <ol>

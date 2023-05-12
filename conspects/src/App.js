@@ -1,28 +1,37 @@
 import { useEffect, useState} from 'react';
-import Equivalents from './conspects/Equivalents';
-import Params from './conspects/Params';
-import Planimetry from './conspects/Planimetry';
-import IndexPage from './IndexPage';
-import Page404 from './Page404';
-import Test from './Test';
+import Routes from './Routes';
 
 function App() {
   
   const page_url_param = '?page=';
   const indexPageName = 'Математика';
+  // const page404 = '404';
   const extractPage = () => {
     var url = document.location.href.split(page_url_param);
     if(url.length > 1) {
-      return decodeURIComponent(url[1]);
+      var url_page = decodeURIComponent(url[1]);
+      // if(!all_pages.includes(url_page)) {
+      //   url_page = page404;
+      // }
+      return url_page;
     }
     return indexPageName;
   };
+
   const [page, setPage] = useState(extractPage());
+  // const [all_pages, setAllPages] = useState([]);
+
   const tex = str => `\\(${str}\\)`;
-  const p = (pageName) => {
+  const route = (pageName) => {
+    // var temp = JSON.parse(JSON.stringify(all_pages));
+    // temp.push(pageName);
+    // setAllPages(temp);
     var pageRouter = (div) => page===pageName?div:<></>;
     pageRouter.window = url => () => window.open(url.indexOf('://')!==-1?url:document.location.href.split(page_url_param)[0]+page_url_param+url);
     pageRouter.navigate = name => e => {
+      // if(!all_pages.includes(name)) {
+      //   name = page404;
+      // }
       if(e.ctrlKey) {
         var prev_url = document.location.href;
         prev_url = prev_url.split(page_url_param)[0];
@@ -38,20 +47,6 @@ function App() {
       }
     };
     pageRouter.index = pageRouter.navigate(indexPageName);
-    // const scrollFunction = (ref) => {
-    //   var offset = ref.current.offsetTop;
-    //   var d = Math.sign(offset-window.scrollY+20);
-    //   const scrollSpeed = 50;
-    //   var timer = setInterval(() => {
-    //     if(Math.abs(window.scrollY - offset)>=scrollSpeed) {
-    //       window.scrollTo(0, window.scrollY+d*scrollSpeed);
-    //     }
-    //     else {
-    //       ref.current.scrollIntoView();
-    //       clearInterval(timer);
-    //     }
-    //   }, 1);
-    // };
     const scrollFunction = (ref) => {
       var offsetTarget = ref.current.offsetTop
       var offsetCurrent = window.scrollY;
@@ -76,6 +71,8 @@ function App() {
     return pageRouter;
   }
 
+  route.indexPage = indexPageName;
+
   useEffect(() => {
     document.title = page;
     // eslint-disable-next-line
@@ -83,14 +80,7 @@ function App() {
   }, [page]);
 
   return (
-    <div className="App">
-      <IndexPage page={p(indexPageName)} />
-      <Page404 page={p('404')} />
-      <Equivalents page={p('Переходы')} />
-      <Planimetry page = {p('Планиметрия')} />
-      <Params page={p('Параметры')} />
-      <Test page={p('test')} />
-    </div>
+      <Routes $={route} />
   );
 }
 

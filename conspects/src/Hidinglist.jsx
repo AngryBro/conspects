@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState } from "react";
 
-const Hidinglist = ({parent, parent1 = parent, child, rerender = true}) => {
+const Hidinglist = ({parent, parent1 = parent, child, rerender = false}) => {
 
     const ref = useRef();
     const [hidden, setHidden] = useState(true);

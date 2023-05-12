@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import displaystyle from "../displaystyle";
-import OpenList from "../OpenList";
+import Hidinglist from "../Hidinglist";
 
 const Equivalents = ({page}) => {
 
@@ -16,7 +16,7 @@ const Equivalents = ({page}) => {
         <ul className="list">
             <li onClick={page.scroll(equal)}>{'\\( \\LARGE = \\)'}</li>
             <li onClick={page.scroll(notEqual)}>{'\\( \\LARGE \\neq \\)'}</li>
-            <li onClick={page.scroll(more)}>{'\\( \\LARGE > \\normalsize,~ \\LARGE< \\normalsize,~ \\LARGE \\geq \\normalsize,~ \\LARGE \\leq \\)'}</li>
+            <li onClick={page.scroll(more)}>{'\\( \\LARGE > \\normalsize,~ \\LARGE< \\normalsize,~ \\LARGE \\geqslant \\normalsize,~ \\LARGE \\leqslant \\)'}</li>
             <li onClick={page.scroll(cases)}>{'\\( \\LARGE \\{ \\normalsize,~ \\LARGE [ \\)'}</li>
         </ul>
         <h2 onClick={page.scroll(main)} ref={equal} className="main-menu">{'\\( \\Huge = \\)'}</h2>
@@ -28,7 +28,7 @@ const Equivalents = ({page}) => {
                     \\union{P_1(x)=0 \\\\ P_2(x)=0 \\\\ \\ldots \\\\ P_m(x)=0}
                 `}
                 cases={[
-                    `ax^2+bx+c = 0 ~~~\\overset{a\\neq 0,D\\geq 0}{\\LLR}~~~ \\union{x = x_1 \\\\ x=x_2}`,
+                    `ax^2+bx+c = 0 ~~~\\overset{a\\neq 0,D\\geqslant 0}{\\LLR}~~~ \\union{x = x_1 \\\\ x=x_2}`,
                     'x^{2n} = a^{2n} \\LR \\union{x=a\\\\ x = -a}'
                 ]}
             />
@@ -82,15 +82,15 @@ const Equivalents = ({page}) => {
                     'c^a = c^b ~~~\\overset{c=const\\neq 1}{\\Longleftrightarrow}~~~ a = b',
                     `\\log_c{(a)} = \\log_c{(b)} ~~~\\overset{c=const\\neq 1}{\\Longleftrightarrow}~~~
                     \\cases{a=b \\\\ a > 0}`,
-                    '\\sqrt[2n]{a}=\\sqrt[2n]{b} \\LR \\cases{a = b \\\\ a \\geq 0}',
+                    '\\sqrt[2n]{a}=\\sqrt[2n]{b} \\LR \\cases{a = b \\\\ a \\geqslant 0}',
                     '\\sqrt[2n+1]{a} = \\sqrt[2n+1]{b} \\LR a = b',
                     'a^{2n+1} = b^{2n+1} \\LR a = b'
                 ]}
             />
             <Equivalent
-                tex = {'\\sqrt[2n]{a} = b \\LR \\cases{a = b^{2n} \\\\ b \\geq 0}'}
+                tex = {'\\sqrt[2n]{a} = b \\LR \\cases{a = b^{2n} \\\\ b \\geqslant 0}'}
                 cases={[
-                    '\\sqrt{a} = b \\LR \\cases{a = b^2 \\\\ b \\geq 0}'
+                    '\\sqrt{a} = b \\LR \\cases{a = b^2 \\\\ b \\geqslant 0}'
                 ]}
             />
             <Equivalent
@@ -137,18 +137,18 @@ const Equivalents = ({page}) => {
                     'c^a \\neq c^b ~~~\\overset{c=const\\neq 1}{\\LLR}~~~ a\\neq b',
                     `\\log_c{(a)} \\neq \\log_c{(b)} ~~~\\overset{c=const\\neq 1}{\\LLR}~~~
                     \\cases{a \\neq b \\\\ a>0 \\\\ b>0}`,
-                    '\\sqrt[2n]{a} \\neq \\sqrt[2n]{b} \\LR \\cases{a \\neq b \\\\ a\\geq 0 \\\\ b \\geq 0}',
+                    '\\sqrt[2n]{a} \\neq \\sqrt[2n]{b} \\LR \\cases{a \\neq b \\\\ a\\geqslant 0 \\\\ b \\geqslant 0}',
                     '\\sqrt[2n+1]{a} \\neq \\sqrt[2n+1]{b} \\LR a\\neq b',
                     'a^{2n+1} \\neq b^{2n+1} \\LR a \\neq b'
                 ]}
             />
         </ol>
-        <h2 onClick={page.scroll(main)} ref={more} className="main-menu">{'\\(\\Huge >,<,\\geq , \\leq\\)'}</h2>
+        <h2 onClick={page.scroll(main)} ref={more} className="main-menu">{'\\(\\Huge >,<,\\geqslant , \\leqslant\\)'}</h2>
         <ol>
             <li>
-                <OpenList
-                    header = {<Method name='Метод интервалов'/>}
-                    list = {
+                <Hidinglist
+                    parent = {<Method name='Метод интервалов'/>}
+                    child = {
                         <div className="frame">
                             <h3>Нужный вид:</h3>
                             <ol>
@@ -196,9 +196,9 @@ const Equivalents = ({page}) => {
                 />
             </li>
             <li>
-                <OpenList
-                    header = {<Method name='Снятие функции' />}
-                    list = {
+                <Hidinglist
+                    parent = {<Method name='Снятие функции' />}
+                    child = {
                         <ul>
                             <Equivalent
                                 tex = {`
@@ -210,7 +210,7 @@ const Equivalents = ({page}) => {
                                     `\\log_c{(a)} \\vee \\log_c{(b)} ~~~\\overset{c=const>1}{\\LLR}~~~
                                     \\cases{a \\vee b \\\\ \\operatorname{min}{(a,b)}>0}`,
                                     `\\sqrt[2n]{a} \\vee \\sqrt[2n]{b} \\LR
-                                    \\cases{a \\vee b \\\\ \\operatorname{min}{(a,b)}\\geq 0}`,
+                                    \\cases{a \\vee b \\\\ \\operatorname{min}{(a,b)}\\geqslant 0}`,
                                     `\\sqrt[2n+1]{a} \\vee \\sqrt[2n+1]{b} \\LR a \\vee b`,
                                     `a^{2n+1} \\vee b^{2n+1} \\LR a \\vee b`
                                 ]}
@@ -231,9 +231,9 @@ const Equivalents = ({page}) => {
                 />
             </li>
             <li>
-                <OpenList
-                    header = {<Method name='Метод рационализации'/>}
-                    list = {
+                <Hidinglist
+                    parent = {<Method name='Метод рационализации'/>}
+                    child = {
                         <div className="frame">
                             <h3>Нужный вид:</h3>
                             <ol>
@@ -326,12 +326,12 @@ const Equivalents = ({page}) => {
                 ]}
             />
             <Equivalent
-                tex = {`\\operatorname{F}{(x, \\operatorname{f}{(x)})}
-                ~~~\\overset{\\operatorname{F}{(x,\\operatorname{f}{(x)})} \\Rightarrow
-                \\operatorname{F}{(x,const)}}{\\LLR}~~~
+                tex = {`F(x, f(x))
+                ~~~\\overset{F(x,f(x)) \\Rightarrow
+                F(x,const)}{\\LLR}~~~
                 \\cases{
-                    \\operatorname{F}{(x,const)} \\\\
-                    ограничения~из~\\operatorname{f}{(x)}
+                    F(x,const) \\\\
+                    ограничения~из~f(x)
                 }`}
             />
             <Equivalent
@@ -378,9 +378,11 @@ const Equivalent = ({tex, cases = []}) => {
                 parse(tex)
             }
         </div>
-        {cases.length?<OpenList
-            header={<div className="sub-menu">Частные случаи</div>}
-            list={
+        {cases.length?<Hidinglist
+            rerender={false}
+            parent={<div className="sub-menu">Показать частные случаи</div>}
+            parent1={<div className="sub-menu">Скрыть частные случаи</div>}
+            child={
                 <ul>
                     {
                         cases.map((case_, index) =>

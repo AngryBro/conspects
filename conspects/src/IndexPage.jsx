@@ -17,6 +17,7 @@ const IndexPage = ({page}) => {
                                 <li onClick={page.navigate('Планиметрия')}>Планиметрия</li>
                                 <li onClick={page.navigate('Переходы')}>Равносильные переходы</li>
                                 <li onClick={page.navigate('Параметры')}>Задачи с параметром</li>
+                                <li onClick={page.navigate('Oxy')}>Координатная плоскость {`\\(Oxy\\)`}</li>
                             </ol>
                         }
                     />                    

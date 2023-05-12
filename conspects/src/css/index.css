@@ -50,7 +50,7 @@ tr {
     margin-top: 40px;
     /* margin-bottom: 30px; */
 }
-.indexPageList li h1:hover {
+.indexPageList li .h1:hover {
     background-color: #8165ff;
 }
 .indexPageList li h2 {
@@ -185,4 +185,16 @@ select {
 select option {
     font-size: 15pt;
     font-family: 'Courier New', Courier, monospace;
+}
+.inline-link {
+    display: inline;
+    cursor: pointer;
+    color:#8c71fe;
+    transition: border 0.3s ease;
+    border-bottom: #8b71fe00 1px solid;
+}
+.inline-link:hover {
+    color: #7f63ff;
+    transition: border 0.3s ease;
+    border-bottom: #8063ff 1px solid;
 }
