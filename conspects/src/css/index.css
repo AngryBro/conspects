@@ -22,17 +22,21 @@ table {
 	border-collapse: collapse;
     font-size: 30pt;
     font-family:'Courier New', Courier, monospace;
+    box-sizing: border-box;
 }
 td {
 	padding: 7px;
     border: solid 1px black;
+    box-sizing: border-box;
 }
 th {
     border: solid 1px black;
 	padding: 7px;
+    box-sizing: border-box;
 }
 tr {
 	text-align: center;
+    box-sizing: border-box;
 }
 .indexPageList {
     margin-top: 50px;
@@ -125,6 +129,9 @@ tr {
     margin-bottom: 10px;
     font-size: 12pt;
     margin: 5px;
+}
+.sub-menu:hover {
+    background-color: #f8f6fe;
 }
 .timer {
     font-size: 25pt;

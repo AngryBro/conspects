@@ -32,9 +32,7 @@ const IndexPage = ({page}) => {
                                 <li onClick={page.window("https://drive.google.com/file/d/1v_cgdkeKW03JlPVvxZvplHRBMKDqhNV6/view?usp=sharing")}>Неравенства</li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1YLCUCOj8bs0JTuM0i8BWKWl6-vvrT350/view?usp=sharing")}>Экономика</li>
                                 <li onClick={page.window("https://drive.google.com/file/d/1HmD2COo8s5fM6D0D4Mw9l6-LDGKSdzDX/view?usp=sharing")}>Параметры</li>
-                                {/* <li onClick={page.window('404')}>Планиметрия</li> */}
                                 <li onClick={page.window("https://drive.google.com/file/d/1MBu-hVrBRWgctBSSwlTT32BHfh3RKLED/view?usp=sharing")}>Стереометрия</li>
-                                {/* <li onClick={page.window('404')}>Текстовые задачи</li> */}
                             </ul>
                         }
                     />
@@ -62,7 +60,8 @@ const IndexPage = ({page}) => {
                 <li onClick={page.window("https://docs.google.com/spreadsheets/d/1ymkx7Tbok4JtQovr6okvu_1bpVVptfb1myr_Rn2VuQI/edit?usp=sharing")}><h2>Результаты учеников на ЕГЭ</h2></li>
                 <li onClick={page.window("https://drive.google.com/drive/folders/1xL7xy0TNA6vJ0Plzh84lB54qohrkL4WA?usp=sharing")}><h2>Бланки учеников</h2></li>
                 <li onClick={page.window("https://angrybro.github.io/checkege")}><h2>Бланки преподавателя</h2></li>  
-                <li onClick={page.window("https://angrybro.github.io/LatexRealTime")}><h2>Печать формул</h2></li>        
+                <li onClick={page.window("https://angrybro.github.io/LatexRealTime")}><h2>Печать формул</h2></li>
+                <li onClick={page.window("https://angrybro.github.io/TaskGenerators")}><h2>Генератор задач (альфа версия)</h2></li>        
             </ul>
             </div>
             <div style={{position:'absolute', top:'70px', left:'700px'}}>

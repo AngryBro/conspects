@@ -84,7 +84,7 @@ const Equivalents = ({page}) => {
                     \\cases{a=b \\\\ a > 0}`,
                     '\\sqrt[2n]{a}=\\sqrt[2n]{b} \\LR \\cases{a = b \\\\ a \\geqslant 0}',
                     '\\sqrt[2n+1]{a} = \\sqrt[2n+1]{b} \\LR a = b',
-                    'a^{2n+1} = b^{2n+1} \\LR a = b'
+                    'a^{2n+1} = b^{2n+1} ~~~\\overset{n>1}{\\LLR}~~~ a = b'
                 ]}
             />
             <Equivalent
@@ -98,7 +98,7 @@ const Equivalents = ({page}) => {
                     a_nx^n + a_{n-1}x^{n-1}y^1+a_{n-2}x^{n-2}y^2+\\ldots +
                     a_2x^2y^{n-2}+a_1x^1y^{n-1}+a_0y^n = 0 \\LR <br>
                     ~~~\\overset{a_n\\neq 0}{\\Longleftrightarrow}~~~ \\union{
-                        x=y=0 \\\\
+                        (x,y) = (0,0) \\\\
                         
                             a_n\\left(\\frac{x}{y}\\right)^n + 
                             a_{n-1}\\left(\\frac{x}{y}\\right)^{n-1} + \\ldots +
@@ -139,7 +139,7 @@ const Equivalents = ({page}) => {
                     \\cases{a \\neq b \\\\ a>0 \\\\ b>0}`,
                     '\\sqrt[2n]{a} \\neq \\sqrt[2n]{b} \\LR \\cases{a \\neq b \\\\ a\\geqslant 0 \\\\ b \\geqslant 0}',
                     '\\sqrt[2n+1]{a} \\neq \\sqrt[2n+1]{b} \\LR a\\neq b',
-                    'a^{2n+1} \\neq b^{2n+1} \\LR a \\neq b'
+                    'a^{2n+1} \\neq b^{2n+1} ~~~\\overset{n>1}{\\LLR}~~~ a \\neq b'
                 ]}
             />
         </ol>
@@ -212,7 +212,7 @@ const Equivalents = ({page}) => {
                                     `\\sqrt[2n]{a} \\vee \\sqrt[2n]{b} \\LR
                                     \\cases{a \\vee b \\\\ \\operatorname{min}{(a,b)}\\geqslant 0}`,
                                     `\\sqrt[2n+1]{a} \\vee \\sqrt[2n+1]{b} \\LR a \\vee b`,
-                                    `a^{2n+1} \\vee b^{2n+1} \\LR a \\vee b`
+                                    `a^{2n+1} \\vee b^{2n+1} ~~~\\overset{n>1}{\\LLR}~~~ a \\vee b`
                                 ]}
                             />
                             <Equivalent
@@ -355,6 +355,7 @@ const Equivalents = ({page}) => {
                 `}
             />
         </ol>
+        <div style={{height:'400px'}}></div>
     </div>
 );
 }
