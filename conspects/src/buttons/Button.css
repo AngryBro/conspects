@@ -1,0 +1,91 @@
+:root {
+    --standart-duration: 0.5s;
+}
+
+.button {
+    transition: all var(--standart-duration) ease;
+    width: fit-content;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.button.__disabled {
+    cursor: default;
+}
+
+.button1 {
+    padding: 20px;
+    color: white;
+    font-size: 20pt;
+    background-color: black;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+.button1:hover {
+    padding: 23px;
+    color: black;
+    background-color: white;
+    font-size: 23pt;
+    border-radius: 23px;
+}
+
+.button2 {
+    padding: 10px;
+    color: black;
+    font-size: 16pt;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+.button2:hover {
+    color: white;
+    background-color: black;
+}
+
+.buttonS {
+    padding: 5px;
+    color: white;
+    font-size: 16pt;
+    background-color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.buttonS:hover {
+    color: black;
+    background-color: white;
+    letter-spacing: 2px;
+}
+.buttonUp {
+    padding: 15px;
+    color: white;
+    font-size: 16pt;
+    background-color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: relative;
+}
+.buttonUp:hover {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+}
+.buttonUp-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    z-index: -1;
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30pt;
+}
+.buttonUp.__disabled {
+    background-color: black;
+}
+.buttonUp.__disabled:hover {
+    color: white;
+}

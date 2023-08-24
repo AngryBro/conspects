@@ -1,15 +1,27 @@
 import { useEffect, useState } from "react";
 
+export const useChangeLocation = (callback) => {
+    useEffect(() => {
+        callback();
+        window.addEventListener("hashchange", callback);
+        
+        return () => window.removeEventListener("hashchange", callback);
+    }, [callback]);
+}
+
 export const useNavigate = (windowFlag = false) => {
     const newWindow = (path) => {
         if(path.indexOf("://") === -1) {
-            window.open(`${window.location.origin}/#${path.slice(1)}`);
+            window.open(`${window.location.origin}/${path === "/" ? "" : "#"}${path.slice(1)}`);
         }
         else {
             window.open(path);
         }
     }
-    const thisWindow = (path) => {
+    const thisWindow = (path, e = {ctrlKey: false}) => {
+        if(e.ctrlKey) {
+            return newWindow(path);
+        }
         if(path.indexOf("://") === -1) {
             window.location.hash = path.slice(1);
         }

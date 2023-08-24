@@ -1,0 +1,16 @@
+@media (max-width: 800px) {
+    .math {
+        font-size: 12pt;
+    }
+    .mini-math {
+        font-size: 8pt;
+    }
+}
+@media (max-width: 600px) {
+    .props-tbody-pc {
+        display: none;
+    }
+    .props-tbody-m {
+        display: block;
+    }
+}

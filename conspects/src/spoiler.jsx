@@ -1,45 +1,46 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
-export const Spoiler = ({children, duration = 0.3, recursive = false}) => {
+export const Spoiler = ({children, duration = 0.3, recursive = false, margin = 0, hoverOpen = false}) => {
 
     const [opened, setOpened] = useState(false);
-    const childrenRef = useRef();
-    const childrenContainerRef = useRef();
 
-    useEffect(() => {
-        if(childrenContainerRef.current) {
-            childrenContainerRef.current.style.height = "0px";
-        }
-    }, [childrenContainerRef]);
 
-    const handle = () => {
-        if(opened) {
-            childrenContainerRef.current.style.height = `${childrenRef.current.scrollHeight}px`;
-            setTimeout(() => {
-                childrenContainerRef.current.style.height = "0px";
-            }, 0);
-        }
-        else {
-            childrenContainerRef.current.style.height = `${childrenRef.current.scrollHeight}px`;
-            setTimeout(() => {
-                childrenContainerRef.current.style.height = "fit-content"
-            }, duration*1000);
-        }
+    const handleClick = () => {
         setOpened(t => !t);
+    }
+
+    const handleMouseEnter = () => {
+        if(hoverOpen) {
+            setOpened(true);
+        }
+    }
+
+    const handleMouseLeave = () => {
+        if(hoverOpen) {
+            setOpened(false);
+        }
     }
 
 
     const style = {
         children: {
             overflow: "hidden",
-            transition: `all ${duration}s ease`
+            maxHeight: opened?"1500px":"0px",
+            transition: `all ${duration}s ease`,
+            width: "fit-content"
+        },
+        parent: {
+            width: "fit-content"
         }
     }
 
-    return <div>
-        <div onClick={handle}>{children[0]}</div>
-        <div ref={childrenContainerRef} style={style.children}>
-            <div key={recursive?opened:true} style={{height:"fit-content"}} ref={childrenRef}>{children[1]}</div>
+    return <div style={{width:"fit-content"}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div onClick={handleClick} style={style.parent}>{children[0]}</div>
+        <div style={style.children}>
+            <div style={{height: `${margin}px`}}></div>
+            <div style={{height:"fit-content"}}>
+                {children[1]}
+            </div>
         </div>
     </div>
 };
