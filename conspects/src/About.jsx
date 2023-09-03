@@ -40,7 +40,7 @@ export const About = () => {
             let promise = undefined;
             let response = undefined;
             try {
-                promise = await fetch("https://raw.githubusercontent.com/AngryBro/conspects/data/about.json");
+                promise = await fetch("https://raw.githubusercontent.com/AngryBro/conspects/main/data/about.json");
             }
             catch(e) {
                 return error(e);
@@ -71,7 +71,7 @@ export const About = () => {
                         Array.isArray(data.info[key]) ?
                         <a target="_blank" rel="noopener noreferrer" href={data.info[key][1]}>{data.info[key][0]}</a>
                         : data.info[key]
-                    }:
+                    }
                 </td>
             </tr>
         )
@@ -106,15 +106,13 @@ export const About = () => {
             }
         </Block>
         <Block title="Про общение">
-            <p>
-                <ol className="teacher-communication">
-                    {
-                        data.communication.map((rule, i) => 
-                            <li key={i}>{rule}</li>
-                        )
-                    }
-                </ol>
-            </p>
+            <ol className="teacher-communication">
+                {
+                    data.communication.map((rule, i) => 
+                        <li key={i}>{rule}</li>
+                    )
+                }
+            </ol>
         </Block>
     </div>
 }
