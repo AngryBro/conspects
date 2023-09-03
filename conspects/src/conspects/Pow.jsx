@@ -29,14 +29,14 @@ export const Pow = () => {
                     <td className="__info">Подвох, если \(b\) или \(c\) дробное</td>
                 </tr>
                 <tr>
-                    <td>\( a^c \cdot b^c \)</td>
-                    <td>\( (a \cdot b)^c \)</td>
-                    <td className="__always"></td>
-                </tr>
-                <tr>
                     <td>\( a^{"{b+c}"} \)</td>
                     <td>\( a^b \cdot a^c \)</td>
                     <td className="__info">Подвох, если \(b\) или \(c\) дробное</td>
+                </tr>
+                <tr>
+                    <td>\( a^c \cdot b^c \)</td>
+                    <td>\( (a \cdot b)^c \)</td>
+                    <td className="__always"></td>
                 </tr>
                 <tr>
                     <td>\( (a \cdot b)^c \)</td>
@@ -46,17 +46,17 @@ export const Pow = () => {
                 <tr>
                     <td>\( \displaystyle\frac{"{a^b}{a^c}"} \)</td>
                     <td>\( a^{"{b-c}"} \)</td>
+                    <td className="__info">Подвох, если \(b\) или \(c\) дробное</td>
+                </tr>
+                <tr>
+                    <td>\( a^{"{b-c}"} \)</td>
+                    <td>\( \displaystyle\frac{"{a^b}{a^c}"} \)</td>
                     <td className="__info">Подвох, если \(b\) или \(c\) дробное</td>
                 </tr>
                 <tr>
                     <td>\( \displaystyle\frac{"{a^c}{b^c}"} \)</td>
                     <td>\( \left( \displaystyle\frac{"{a}{b}"} \right)^c \)</td>
                     <td className="__always"></td>
-                </tr>
-                <tr>
-                    <td>\( a^{"{b-c}"} \)</td>
-                    <td>\( \displaystyle\frac{"{a^b}{a^c}"} \)</td>
-                    <td className="__info">Подвох, если \(b\) или \(c\) дробное</td>
                 </tr>
                 <tr>
                     <td>\( \left( \displaystyle\frac{"{a}{b}"} \right)^c \)</td>
@@ -118,7 +118,7 @@ export const Pow = () => {
                 \cases{"{"} a^b = c \\ b \in \NN {"}"}
                 \LR
                 \cases{"{"}
-                    c = \underbrace{"{a \\cdot a \\cdot \\ldots \\cdot a}_{b раз}"} \\
+                    c = \underbrace{"{a \\cdot a \\cdot \\ldots \\cdot a}_{b~ раз}"} \\
                     c \in \RR
                 {"}"}
                 $$

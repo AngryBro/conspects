@@ -5,6 +5,10 @@ import "./css/media.css";
 import { Polynom } from "./conspects/Polynom";
 import { Frac } from "./conspects/Frac";
 import { Pow } from "./conspects/Pow";
+import { Abs } from "./conspects/Abs";
+import { Log } from "./conspects/Log";
+import { Sqrt } from "./conspects/Sqrt";
+import { About } from "./About";
 
 export const App = () => {
 
@@ -23,5 +27,9 @@ export const App = () => {
         <Route path="/polynom" element={<Polynom/>} />
         <Route path="/frac" element={<Frac/>} />
         <Route path="/pow" element={<Pow/>} />
+        <Route path="/abs" element={<Abs/>} />
+        <Route path="/log" element={<Log/>} />
+        <Route path="/sqrt" element={<Sqrt/>} />
+        <Route path="/about" element={<About/>} />
     </Routes>
 }

@@ -21,7 +21,7 @@ export const Props = ({children}) => {
                     <div>&darr;</div>
                     {
                         tds.slice(1).map((td, j) => 
-                            <div key={j}>{td.props.children}</div>
+                            <div className={td.props.className} key={j}>{td.props.children}</div>
                         )
                     }
                 </div>

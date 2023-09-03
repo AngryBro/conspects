@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button1 } from "./buttons/Button1";
 import { Button2 } from "./buttons/Button2";
 import { Spoiler } from "./spoiler";
@@ -7,10 +8,14 @@ export const Main = () => {
 
     const nav = useNavigate();
 
+    useEffect(() => {
+        document.title = "Математика";
+    }, []);
+
     return <div>
         <ul className="main-list">
             <li>
-                <Button1 onClick={() => nav("/teacher")}>О преподавателе</Button1>
+                <Button1 onClick={() => nav("/about")}>О преподавателе</Button1>
             </li>
             <li>
                 <Spoiler margin={10} hoverOpen={true}>

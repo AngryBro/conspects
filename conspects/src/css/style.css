@@ -81,7 +81,10 @@ td.__know, td.__add, td.__always, td.__info {
     border-left: 1px solid black;
 }
 .__know:before {
-    content: "Знать заранее ";
+    content: "Должно быть известно ";
+}
+.__know:after, .__always:after, .__add:after {
+    content: ".";
 }
 .__add:before {
     content: "Дописать в систему ";
@@ -112,4 +115,7 @@ td.__know, td.__add, td.__always, td.__info {
     height: fit-content;
     overflow-x: scroll;
     overflow-y: hidden;
+}
+.center {
+    text-align: center;
 }

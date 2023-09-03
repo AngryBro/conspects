@@ -17,6 +17,11 @@
     opacity: 1;
     background-color: white;
 }
+@media (max-width: 400px) {
+    .title-page {
+        font-size: 20pt;
+    }
+}
 .title-page.__main:hover {
     opacity: 1;
 }
