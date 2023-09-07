@@ -98,21 +98,26 @@ export const About = () => {
                 <div> </div>
             </div>
         </div>
-        <Block title="Цели и принципы работы">
-            {
-                data.text.map((text, i) => 
-                    <p key={i}>{text}</p>
-                )
-            }
-        </Block>
-        <Block title="Про общение">
-            <ol className="teacher-communication">
+        <div hidden={fetching}>
+            <Block title="Цели и принципы работы">
                 {
-                    data.communication.map((rule, i) => 
-                        <li key={i}>{rule}</li>
+                    data.text.map((text, i) => 
+                        <p key={i}>{text}</p>
                     )
                 }
-            </ol>
-        </Block>
+            </Block>
+            <Block title="Про общение">
+                <ol className="teacher-communication">
+                    {
+                        data.communication.map((rule, i) => 
+                            <li key={i}>{rule}</li>
+                        )
+                    }
+                </ol>
+            </Block>
+            <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/R8Yjn4N2i_U?si=ljtVO3fHQzS9fkE4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 }

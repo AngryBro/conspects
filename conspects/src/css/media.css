@@ -3,6 +3,9 @@
         font-size: 12pt;
     }
     .mini-math {
+        font-size: 10pt;
+    }
+    .micro-math {
         font-size: 8pt;
     }
 }
@@ -12,5 +15,11 @@
     }
     .props-tbody-m {
         display: block;
+    }
+    .equivalents-vertical-mobile {
+        flex-direction: column;
+    }
+    .equivalents-vertical-mobile .equivalents-arrow {
+        transform: rotateZ(90deg);
     }
 }

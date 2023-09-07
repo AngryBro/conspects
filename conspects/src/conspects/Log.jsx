@@ -6,9 +6,27 @@ export const Log = () => <div>
 
     <Title>Логарифм</Title>
 
-    <Block title="Определение">
+    <Block title="Определения">
+        <ol className="def-list mini-math">
+            <li>
+                \(\log_a{"{b}"}\) (логарифм по основанию \(a\) от \(b\)) &mdash; это число \(c\),
+                где \( a^c = b,~~a {">"} 0,~~ a \neq 1,~~b {">"} 0,~~c \in \RR \).
+            </li>
+            <li>
+                \(\lg{"{a}"}\) (десятичный логарифм \(a\)) &mdash; это \( \log_{"{10}{a}"} \).
+            </li>
+            <li>
+                \(\ln{"{a}"}\) (натуральный логарифм \(a\)) &mdash; это \( \log_e{"{a}"} \).
+            </li>
+            <li>
+                \(e\) &mdash; это \( \displaystyle \lim_{"{n \\rightarrow \\infty}{\\left(1 + \\frac{1}{n}\\right)^n}"} \).
+            </li>
+        </ol>
         <div className="center">
-        \(\log_a{"{b}"}\) (логарифм по основанию \(a\) от \(b\)) &mdash; это число \(c\), где \( a^c = b,~~a {">"} 0,~~ a \neq 1,~~b {">"} 0,~~c \in \RR \).
+        
+        </div>
+        <div className="center">
+            
         </div>
     </Block>
     <Block title="Свойства">

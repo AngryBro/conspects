@@ -1,25 +1,8 @@
-import Hidinglist from "./Hidinglist";
+import { Button2 } from "./buttons/Button2";
+import "./css/test.css";
 
-
-const Test = ({page}) => page(
-    <div>
-        <Hidinglist
-        parent={<div>123123412</div>}
-                            child={<div>
-                            <div>Пишется:</div>
-                            <div>
-                                <div className="flex line">
-                                    <div>{`\\((i):~~\\)`}</div>
-                                    <div>
-                                        <div>{'\\(\\infty\\)'} решений при {`\\(a \\in A\\)`}</div>
-                                        <div>0 решений при {`\\(a \\not\\in A\\)`}</div>
-                                    </div>
-                                </div>
-                                <div>Не участвует в поиске общих решений.</div>
-                            </div>
-                            </div>}
-                            />
+export const Test = () =>
+    <div className="test">
         
+        <Button2>Кнопка 2</Button2>
     </div>
-);
-export default Test;

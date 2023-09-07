@@ -6,7 +6,7 @@ export const Abs = () => <div>
     <Title>Модуль</Title>
     <Block title="Определение">
         <div className="center">
-            \( |a| \) (модуль \(a\)) &mdash; это произведение \( знак(a) \cdot a \).
+            \( |a| \) (модуль \(a\)) &mdash; это произведение \( \sgn(a) \cdot a \).
         </div>
     </Block>
     <Block title="Следствие из определения">

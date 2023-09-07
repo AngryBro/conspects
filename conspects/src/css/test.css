@@ -1,0 +1,8 @@
+.test ol li {
+    background-color: red;
+    margin-bottom: 25px;
+    display: block;
+}
+.test ol, .test ul {
+    /* border: 1px solid black; */
+}

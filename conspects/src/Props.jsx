@@ -17,7 +17,7 @@ export const Props = ({children}) => {
             <td className="props-table-number">{i+1}.</td>
             <td className="props-table-td">
                 <div className="props-table-column">
-                    <div>{tds[0].props.children}</div>
+                    <div className={tds[0].props.className}>{tds[0].props.children}</div>
                     <div>&darr;</div>
                     {
                         tds.slice(1).map((td, j) => 
@@ -29,15 +29,17 @@ export const Props = ({children}) => {
         </tr>
     }
 
+    const childrenArray = Array.isArray(children) ? children : [children];
+
     return <table className="props-table math">
         <tbody className="props-tbody-pc">
             {
-                children.map(insertedPC)
+                childrenArray.map(insertedPC)
             }
         </tbody>
         <tbody className="props-tbody-m">
             {
-                children.map(insertedM)
+                childrenArray.map(insertedM)
             }
         </tbody>
     </table>

@@ -7,10 +7,51 @@
     width: fit-content;
     cursor: pointer;
     overflow: hidden;
+    transform-origin: left top;
 }
 
 .button.__disabled {
     cursor: default;
+}
+.button-bird {
+    position: relative;
+    width: 30px;
+    height: 12px;
+}
+.button-bird::before {
+    content: "";
+    height: 2px;
+    width: 50%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 1px;
+    transform-origin: right bottom;
+    transform: rotateZ(45deg);
+}
+.button-bird::after {
+    content: "";
+    height: 2px;
+    width: 50%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 1px;
+    transform-origin: left bottom;
+    transform: rotateZ(-45deg);
+}
+.button-bird-container {
+    transition: all 0.3s ease;
+    transform-origin: center center;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 5px;
+    /* background-color: red; */
+}
+.button-bird-container.__opened {
+    transform: rotateZ(180deg);
 }
 
 .button1 {
@@ -23,11 +64,10 @@
     font-weight: bold;
 }
 .button1:hover {
-    padding: 23px;
     color: black;
     background-color: white;
-    font-size: 23pt;
-    border-radius: 23px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .button2 {
@@ -88,4 +128,35 @@
 }
 .buttonUp.__disabled:hover {
     color: white;
+}
+
+.buttonSpoiler {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 14pt;
+    color: black;
+}
+.buttonSpoiler:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+.buttonBigSpoiler {
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px;
+}
+.buttonBigSpoiler:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.buttonBigSpoiler-bird {
+    transform: scale(2);
+    margin-left: 15px;
+}
+.buttonBigSpoiler-bird.__opened {
+    transform: scale(2) rotateZ(180deg);
 }

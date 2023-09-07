@@ -135,7 +135,7 @@ export const Polynom = () => {
             </p>
             <p>
                 Если \(P(b) = 0\), то:
-                <div className="math mini-math">
+                <div className="micro-math">
                     $$ P(x) = (x-b) \cdot \left( a_n x^{"{n-1}"} + b_{"{n-1}"}x^{"{n-2}"} + \ldots +  b_2 x + b_1\right). $$
                 </div>
             </p>

@@ -9,6 +9,9 @@ import { Abs } from "./conspects/Abs";
 import { Log } from "./conspects/Log";
 import { Sqrt } from "./conspects/Sqrt";
 import { About } from "./About";
+import { Trigonometry } from "./conspects/Trigonometry";
+import { Test } from "./Test";
+import { Equivalents } from "./conspects/Equivalents";
 
 export const App = () => {
 
@@ -23,7 +26,6 @@ export const App = () => {
 
     return <Routes>
         <Route path="/" element={<Main/>} />
-        <Route path="/equivalents" element={<></>} />
         <Route path="/polynom" element={<Polynom/>} />
         <Route path="/frac" element={<Frac/>} />
         <Route path="/pow" element={<Pow/>} />
@@ -31,5 +33,8 @@ export const App = () => {
         <Route path="/log" element={<Log/>} />
         <Route path="/sqrt" element={<Sqrt/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/trigonometry" element={<Trigonometry/>} />
+        <Route path="/equivalents" element={<Equivalents/>} />
+        <Route path="/test" element={<Test/>} />
     </Routes>
 }

@@ -1,30 +1,40 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
 .main-list>li {
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .main-sublist>li {
-    margin-top: 5px;
+    margin-bottom: 5px;
 }
 #root {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.01);
+    /* background-color: rgba(0, 0, 0, 0.01); */
     height: fit-content;
     min-height: 100%;
     padding: 5px;
     padding-bottom: 200px;
+    overflow-x: hidden;
 }
 body {
     font-size: 18pt;
+    width: 100%;
+    overflow-x: hidden;
 }
 .content-container {
     margin: 0 10%;
-    width: fit-content;
+    max-width: 100%;
 }
 .content {
     position: relative;
     width: fit-content;
     height: fit-content;
+    margin-bottom: 20px;
 }
 .content:after {
     position: absolute;
@@ -44,6 +54,11 @@ body {
 }
 .block {
     margin-top: 50px;
+}
+@media (max-width: 400px) {
+    .block {
+        font-size: smaller;
+    }
 }
 .props-table {
     border-collapse: collapse;
@@ -118,4 +133,37 @@ td.__know, td.__add, td.__always, td.__info {
 }
 .center {
     text-align: center;
+}
+.def-list > li {
+    margin-top: 25px;
+}
+.def-list > li::marker {
+    font-weight: bold;
+}
+.angle-table {
+    font-size: 20pt;
+    border-collapse: collapse;
+}
+.angle-table > tbody > tr > td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+.equivalents-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+.equivalents-arrow {
+    margin: 20px;
+}
+.frame {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.equivalents-vertical-mobile {
+    display: flex;
+    align-items: center;
 }
