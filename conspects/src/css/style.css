@@ -173,9 +173,9 @@ td.__know, td.__add, td.__always, td.__info {
     text-align: justify;
 }
 .about-paragraps-container iframe {
-    /* max-width: 100%; */
     width: 560px;
     height: 315px;
+    object-fit: cover;
 }
 .about-paragraps-container li {
     margin-bottom: 15px;

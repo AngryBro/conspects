@@ -22,4 +22,8 @@
     .equivalents-vertical-mobile .equivalents-arrow {
         transform: rotateZ(90deg);
     }
+    .about-paragraps-container iframe {
+        width: 90%;
+        height: auto;
+    }
 }

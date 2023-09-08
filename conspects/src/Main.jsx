@@ -13,7 +13,7 @@ export const Main = () => {
     }, []);
 
     return <div>
-        <ul className="main-list">
+        <ul className="main-list" style={{marginTop: "50px"}}>
             <li>
                 <Button1 onClick={() => nav("/about")}>О преподавателе</Button1>
             </li>
@@ -89,6 +89,15 @@ export const Main = () => {
                         </li>
                     </ol>
                 </Spoiler>
+            </li>
+            <li>
+                <Button1 onClick={() => window.open("https://docs.google.com/spreadsheets/d/1ymkx7Tbok4JtQovr6okvu_1bpVVptfb1myr_Rn2VuQI/edit#gid=2107114599")}>Результаты учеников</Button1>
+            </li>
+            <li>
+                <Button1 onClick={() => window.open("https://drive.google.com/drive/folders/1xL7xy0TNA6vJ0Plzh84lB54qohrkL4WA")}>Бланки учеников</Button1>
+            </li>
+            <li>
+                <Button1 onClick={() => window.open("https://angrybro.github.io/LatexRealTime/")}>Печать формул</Button1>
             </li>
         </ul>
     </div>

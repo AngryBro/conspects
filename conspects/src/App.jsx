@@ -12,6 +12,7 @@ import { About } from "./About";
 import { Trigonometry } from "./conspects/Trigonometry";
 import { Test } from "./Test";
 import { Equivalents } from "./conspects/Equivalents";
+import { Empty } from "./Empty";
 
 export const App = () => {
 
@@ -36,5 +37,7 @@ export const App = () => {
         <Route path="/trigonometry" element={<Trigonometry/>} />
         <Route path="/equivalents" element={<Equivalents/>} />
         <Route path="/test" element={<Test/>} />
+
+        <Empty/>
     </Routes>
 }

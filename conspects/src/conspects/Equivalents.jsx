@@ -320,7 +320,7 @@ export const Equivalents = () => {
         </Block>
         <Block title={"«Антиравенства» \\( \\left(~\\large \\neq ~\\right) \\)"} link={notEqual} beginRef={beginRef}>
                 <ol>
-                    <li>
+                    <li className="math">
                         <Equivalent>
                             {`\\(
                                 a_1 \\cdot a_2 \\cdot \\ldots \\cdot a_n \\neq 0
