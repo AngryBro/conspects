@@ -179,4 +179,5 @@ td.__know, td.__add, td.__always, td.__info {
 }
 .about-paragraps-container li {
     margin-bottom: 15px;
+    text-align: justify;
 }
