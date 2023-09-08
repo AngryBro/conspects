@@ -8,6 +8,13 @@
     cursor: pointer;
     overflow: hidden;
     transform-origin: left top;
+    max-width: 100%;
+}
+.button-text-container {
+    width: fit-content;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .button.__disabled {
@@ -159,4 +166,17 @@
 }
 .buttonBigSpoiler-bird.__opened {
     transform: scale(2) rotateZ(180deg);
+}
+@media (max-width: 400px) {
+    .buttonBigSpoiler {
+        font-size: small;
+    }
+}
+@media (max-width: 300px) {
+    .buttonSpoiler {
+        font-size: x-small;
+    }
+    .buttonSpoiler-bird {
+        transform: scale(0.7);
+    }
 }

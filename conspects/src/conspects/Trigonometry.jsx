@@ -18,7 +18,7 @@ export const Trigonometry = () => {
         <Content>
             <li link={defs}>Определения</li>
             <li link={angleTable}>Табличные углы</li>
-            <li link={circle}>Тригонометрическая окружность</li>
+            <li link={circle}><span className="trigonometry-circle">окружность</span></li>
             <li link={ghost}>Формула приведения</li>
             <li link={formulas}>Свойства</li>
             <li link={equation}>Простейшие уравнения</li>

@@ -22,8 +22,16 @@
     .equivalents-vertical-mobile .equivalents-arrow {
         transform: rotateZ(90deg);
     }
-    .about-paragraps-container iframe {
-        width: 90%;
-        height: auto;
+    .trigonometry-circle::before {
+        content: "Тригоном. ";
+    }
+    .equivalents-content-container {
+        flex-direction: column;
+    }
+    .pc-row-m-col {
+        flex-direction: column;
+    }
+    .before-plus::before {
+        content: "+";
     }
 }

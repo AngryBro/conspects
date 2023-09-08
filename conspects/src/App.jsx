@@ -36,7 +36,7 @@ export const App = () => {
         <Route path="/about" element={<About/>} />
         <Route path="/trigonometry" element={<Trigonometry/>} />
         <Route path="/equivalents" element={<Equivalents/>} />
-        <Route path="/test" element={<Test/>} />
+        {/* <Route path="/test" element={<Test/>} /> */}
 
         <Empty/>
     </Routes>

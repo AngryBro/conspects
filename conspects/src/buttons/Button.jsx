@@ -3,7 +3,7 @@ import "./Button.css";
 const Button = ({children, onClick, disabled, type, opened = false}) => {
 
     return <div onClick={disabled?()=>1:onClick} className={`button button${type}${disabled?" __disabled":""}`}>
-        <div style={{display:"flex", alignItems: "center"}}>
+        <div className="button-text-container">
             {children}
             {
                 ["Spoiler", "BigSpoiler"].includes(type) ?

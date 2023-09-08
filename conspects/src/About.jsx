@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Title } from "./Title"
 import "./css/About.css";
+import "./css/media.css";
 import { Block } from "./Block";
 import { Spinner } from "./Spinner";
 
@@ -43,12 +44,12 @@ export const About = () => {
     
     return <div>
         <Title>Преподаватель</Title>
-        <div className="teacher-info-container">
-            <div className="teacher-photo">
+        <div className="about-info-container">
+            <div className="about-photo">
                 <img src="https://sun9-75.userapi.com/impg/AwPISDBOmIyySa-PMwAi8kFdYFYyjt0QygWaFA/spQ2fhYlqow.jpg?size=1200x1799&quality=95&sign=3c791181da73ad91ea99f4532e2a0526&type=album" alt="Аватарка вк" />
             </div>
-            <div className="teacher-info">
-                <div className="teacher-name">Андрей Петров</div>
+            <div className="about-info">
+                <div className="about-name">Андрей Петров</div>
                 <table>
                     <tbody>
                         <tr>
@@ -63,7 +64,7 @@ export const About = () => {
                             <td><i>Результаты ЕГЭ:</i></td>
                             <td>
                                 <a href="https://angrybro.github.io/checkege" target="_blank" rel="noopener noreferrer">
-                                    angrybro.github.io/checkege
+                                    ссылка
                                 </a>
                             </td>
                         </tr>

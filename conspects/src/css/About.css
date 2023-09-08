@@ -1,41 +1,64 @@
-.teacher-photo > img {
+.about-photo > img {
     width: 100%;
     max-width: 300px;
     margin-bottom: 20px;
     border-radius: 10px;
     /* margin-right: 10px; */
 }
-.teacher-photo {
+.about-photo {
     display: flex;
     justify-content: center;
 }
-.teacher-info-container {
+.about-info-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    max-width: 100%;
 }
 @media (max-width: 700px) {
-    .teacher-info-container {
+    .about-info-container {
         flex-direction: column;
     }
 }
-.teacher-name {
+.about-name {
     font-weight: bold;
     font-size: 25pt;
     text-align: center;
     margin-bottom: 30px;
 }
-.teacher-info > table {
+.about-info > table {
     font-size: 16pt;
 }
 @media (max-width: 400px) {
-    .teacher-info > table {
+    .about-info > table {
         font-size: 12pt;
     }
 }
-.teacher-info > table > tbody > tr > td {
+.about-info > table > tbody > tr > td {
     padding-top: 20px;
 }
-.teacher-communication > li {
-    margin-top: 15px;
+.about-paragraps-container p {
+    margin-bottom: 10px;
+    text-indent: 25px;
+    text-align: justify;
+}
+.about-paragraps-container iframe {
+    width: 90%;
+    height: 315px;
+    object-fit: cover;
+    max-width: 560px;
+}
+@media (max-width: 300px) {
+    .about-paragraps-container iframe {
+        height: auto;
+    }
+}
+@media (max-width: 450px) {
+    .about-paragraps-container iframe {
+        height: 200px;
+    }
+}
+.about-paragraps-container li {
+    margin-bottom: 15px;
+    text-align: justify;
 }

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export const Spoiler = ({children, duration = 0.3, recursive = false, margin = 0, hoverOpen = false}) => {
+export const Spoiler = ({children, duration = 0.3, recursive = false, containsMath = false, margin = 0, hoverOpen = false}) => {
 
     const [opened, setOpened] = useState(false);
     const [childrenContainerHeight, setChildrenContainerHeight] = useState("0px");
@@ -44,6 +44,13 @@ export const Spoiler = ({children, duration = 0.3, recursive = false, margin = 0
         }
     }, [childrenContainerHeight, recursive, duration]);
 
+    useEffect(() => {
+        if(containsMath && recursive) {
+            //eslint-disable-next-line
+            MathJax.typeset();
+        }
+    }, [childKey, containsMath, recursive]);
+
     const handleMouseEnter = () => {
         if(hoverOpen) {
             open();
@@ -64,11 +71,12 @@ export const Spoiler = ({children, duration = 0.3, recursive = false, margin = 0
             height: childrenContainerHeight
         },
         parent: {
-            width: "fit-content"
+            width: "fit-content",
+            maxWidth: "100%"
         }
     }
 
-    return <div style={{width:"fit-content"}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    return <div style={style.parent} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <div onClick={handleClick} style={style.parent}>
             {
                 opened && children.length > 2?

@@ -39,12 +39,22 @@ export const Equivalents = () => {
         
         <Title>Равносильные переходы</Title>
         <Content>
-            <li link={equal}>Уравнения \( \left(~\large = ~\right)\)</li>
-            <li link={notEqual}>&laquo;Антиравенства&raquo; \( \left(~\large \neq ~\right) \)</li>
-            <li link={more}><span>Неравенства</span> <span>\( \left(~\large {">"},~{"<"},~\geqslant,~\leqslant ~\right) \)</span></li>
+            <li link={equal}>Уравнения \( ~\left(~\large = ~\right)\)</li>
+            <li link={notEqual}>
+                <div className="equivalents-content-container">
+                    <div>&laquo;Антиравенства&raquo;</div>
+                    <div>\( ~\left(~\large \neq ~\right) \)</div>
+                </div>
+            </li>
+            <li link={more}>
+                <div className="equivalents-content-container">
+                    <div>Неравенства</div>
+                    <div className="math">\( ~\left(~\large {">"},~{"<"},~\geqslant,~\leqslant ~\right) \)</div>
+                </div>
+            </li>
             <li link={cases}>Логика \(\left(~\large {"\\{"},~{"["} ~\right) \)</li>
         </Content>
-        <Block title={"Уравнения \\( \\left(~\\large = ~\\right)\\)"} beginRef={beginRef} link={equal}>
+        <Block title={"Уравнения \\( ~\\left(~\\large = ~\\right)\\)"} beginRef={beginRef} link={equal}>
             <ol className="def-list">
                 <li>
                     <Equivalent>
@@ -145,7 +155,7 @@ export const Equivalents = () => {
                 </li>
                 <li>
                     <Equivalent>
-                        <div className="equivalents-vertical micro-math">
+                        <div className="equivalents-vertical mini-math">
                             <div>
                                 \(
                                     \monotone{"{(a)}"} = \monotone{"{(b)}"}
@@ -233,20 +243,30 @@ export const Equivalents = () => {
                 <li>
                     <Spoiler>
                         <ButtonBigSpoiler opened={false}>Однородные уравнения</ButtonBigSpoiler>
-                        <div style={{transform: "scaleX(0.7) scaleY(0.7)", transformOrigin:"left top"}}>
-                            <Props>
+                        <div style={{transformOrigin:"left top"}}>
+                            <Props mobile={true}>
                                 <tr>
                                     <td>\( a \cdot m^x = b \cdot n^x \)</td>
                                     <td>\( a \cdot \displaystyle \left( \frac{"{m}{n}"} \right)^x = b \)</td>
                                     <td className="__always"></td>
                                 </tr>
                                 <tr>
-                                    <td>\(
+                                    <td className="mini-math pc-row-m-col">
+                                        <div>
+                                        \(
                                             a \cdot \left(m^2 \right)^x +
-                                            b \cdot (mn)^x +
-                                            c \cdot \left( n^2 \right)^x = 0
-                                        \)</td>
-                                    <td>
+                                            b \cdot (mn)^x ~+
+                                            
+                                        \)
+                                        </div>
+                                        <div className="before-plus">
+                                        \(
+                                             
+                                            ~c \cdot \left( n^2 \right)^x = 0
+                                        \)
+                                        </div>
+                                    </td>
+                                    <td className="micro-math">
                                         \( \displaystyle
                                             a \cdot \left(\left( \frac{"{m}{n}"} \right)^x\right)^2
                                             + b \cdot \left( \frac{"{m}{n}"} \right)^x 
@@ -278,14 +298,19 @@ export const Equivalents = () => {
                                     <td className="__know">\( b \neq 0 \)</td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td className="mini-math pc-row-m-col">
+                                        <div>
                                         \(
                                             a\cdot\sin^2{"{x}"}
                                             + b \cdot \sin{"{x}"} \cdot \cos{"{x}"}
-                                            + c \cdot \cos^2{"{x}"} = 0
+                                            ~+
                                         \)
+                                        </div>
+                                        <div className="before-plus">
+                                            \(~c \cdot \cos^2{"{x}"} = 0\)
+                                        </div>
                                     </td>
-                                    <td>
+                                    <td className="mini-math">
                                         \(
                                             a \cdot \operatorname{"{tg^2}"}{"{x}"}
                                             + b \cdot \tg{"{x}"}
@@ -295,14 +320,19 @@ export const Equivalents = () => {
                                     <td className="__know">\( a \neq 0 \)</td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td className="mini-math pc-row-m-col">
+                                        <div>
                                         \(
                                             a\cdot\sin^2{"{x}"}
                                             + b \cdot \sin{"{x}"} \cdot \cos{"{x}"}
-                                            + c \cdot \cos^2{"{x}"} = 0
+                                            ~+
                                         \)
+                                        </div>
+                                        <div className="before-plus">
+                                            \(~c \cdot \cos^2{"{x}"} = 0\)
+                                        </div>
                                     </td>
-                                    <td>
+                                    <td className="mini-math">
                                         \(
                                             a 
                                             + b \cdot \ctg{"{x}"}
@@ -318,9 +348,9 @@ export const Equivalents = () => {
                 </li>
             </ol>
         </Block>
-        <Block title={"«Антиравенства» \\( \\left(~\\large \\neq ~\\right) \\)"} link={notEqual} beginRef={beginRef}>
-                <ol>
-                    <li className="math">
+        <Block title={<div>«Антиравенства»<span>\( ~\left(\large ~\neq ~\right) \)</span></div>} link={notEqual} beginRef={beginRef}>
+                <ol className="def-list">
+                    <li className="mini-math">
                         <Equivalent>
                             {`\\(
                                 a_1 \\cdot a_2 \\cdot \\ldots \\cdot a_n \\neq 0
@@ -334,13 +364,487 @@ export const Equivalents = () => {
                             \\)`}
                         </Equivalent>
                     </li>
+                    <li className="mini-math">
+                    <Equivalent>
+                        <div className="equivalents-vertical mini-math">
+                            <div>
+                                \(
+                                    \monotone{"{(a)}"} \neq \monotone{"{(b)}"}
+                                \)
+                            </div>
+                            <div className="equivalents-arrow">\(\Updownarrow\)</div>
+                            <div>
+                                \(
+                                    \cases{`{
+                                        a \\neq b \\\\
+                                        ограничение ~ на ~ a \\\\
+                                        ограничение ~ на ~ b
+                                    }`}
+                                \)
+                            </div>
+                        </div>
+                        <Props>
+                            <tr>
+                                <td>
+                                    \( c^a \neq c^b \)
+                                </td>
+                                <td>
+                                    \( a \neq b\)
+                                </td>
+                                <td className="__know">
+                                    \(
+                                        \cases{`{
+                                            c > 0 \\\\
+                                            c \\neq 1
+                                        }`}
+                                    \)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    \( \log_c{"{a}"} \neq \log_c{"{b}"} \)
+                                </td>
+                                <td>
+                                    \( \cases{"{a \\neq b \\\\ a > 0 \\\\ b > 0}"} \)
+                                </td>
+                                <td className="__know">
+                                    \(
+                                        \cases{`{
+                                            c > 0 \\\\
+                                            c \\neq 1
+                                        }`}
+                                    \)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    \( \sqrt[c]{"{a}"} \neq \sqrt[c]{"{b}"} \)
+                                </td>
+                                <td>
+                                    \( \cases{"{a \\neq b \\\\ a \\geqslant 0 \\\\ b \\geqslant 0}"} \)
+                                </td>
+                                <td className="__know">
+                                    \(
+                                        \cases{"{c \\in \\NN \\\\ c \\div 2}"}
+                                    \)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    \( \sqrt[c]{"{a}"} \neq \sqrt[c]{"{b}"} \)
+                                </td>
+                                <td>\( a \neq b \)</td>
+                                <td className="__know">
+                                \(
+                                        \cases{"{c \\in \\NN \\\\ c \\ndiv 2}"}
+                                    \)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>\( a^c \neq b^c \)</td>
+                                <td>\(a \neq b\)</td>
+                                <td className="__know">
+                                    \(
+                                        \cases{"{c \\in \\NN \\\\ c \\ndiv 2}"}
+                                    \)
+                                </td>
+                            </tr>
+                        </Props>
+                    </Equivalent>
+                </li>
                 </ol>
         </Block>
-        <Block title={"Неравенства \\( \\left(~\\large >,~<,~\\geqslant,~\\leqslant ~\\right) \\)"} link={more} beginRef={beginRef}>
-
+        <Block title={<div>Неравенства<span>{" \\( ~\\left(~\\large >,~<,~\\geqslant,~\\leqslant ~\\right) \\)"}</span> </div> } link={more} beginRef={beginRef}>
+                <ol className="def-list">
+                    <li>
+                        <Spoiler>
+                            <ButtonBigSpoiler opened={false}>Метод интервалов</ButtonBigSpoiler>
+                            <div className="frame">
+                                <h3>Нужный вид:</h3>
+                                <ol>
+                                    <li>Справа 0</li>
+                                    <li>Слева произведение</li>
+                                    <li>Каждый множитель имеет вид {'\\((x - c)\\)'}</li>
+                                </ol>
+                                <h3>Применение:</h3>
+                                <ol>
+                                    <li>Рисуется ось {'\\(Ox\\)'}</li>
+                                    <li>
+                                        Отмечаются точками нули множителей:
+                                        <ul>
+                                            <li>Если множитель только в числителе и знак неравенства нестрогий
+                                                &ndash; точка закрашенная, иначе выколотая
+                                            </li>
+                                            <li>
+                                                Если множитель повторяется чётное число раз &ndash; точка со стрелочкой
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Справа сверху ведётся непрерывная кривая
+                                        <ul>
+                                            <li>Через точки без стрелочек проходит</li>
+                                            <li>От точек со стрелочками отражается</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Расставляются знаки на интервалах
+                                        <ul>
+                                            <li>Кривая сверху &ndash; знак {'\\(\\large +\\)'}</li>
+                                            <li>Кривая снизу &ndash; знак {'\\(\\large -\\)'}</li>
+                                        </ul>
+                                    </li>
+                                    <li>Закрашиваются соответствующие знаку неравенства интервалы</li>
+                                    <li>Считается количество закрашенных участков</li>
+                                    <li>
+                                        Закрашенные участки записываются в виде уравнений или неравенств
+                                        <br /> с использованием совокупности, если их больше 1
+                                    </li>
+                                </ol>
+                            </div>
+                            <ButtonBigSpoiler opened={true}>Метод интервалов</ButtonBigSpoiler>
+                        </Spoiler>
+                    </li>
+                    <li>
+                        <Spoiler recursive={true} containsMath={true}>
+                            <ButtonBigSpoiler opened={false}>Снятие функции</ButtonBigSpoiler>
+                            <ul className="def-list equivalents-dot-marker">
+                                <li>
+                                    <Equivalent>
+                                        <div className="equivalents-vertical mini-math">
+                                            <div>
+                                                \(
+                                                    \increasing{"{(a)}"} \vee \increasing{"{(b)}"}
+                                                \)
+                                            </div>
+                                            <div className="equivalents-arrow">\(\Updownarrow\)</div>
+                                            <div>
+                                                \(
+                                                    \cases{`{
+                                                        a \\vee b \\\\
+                                                        ограничение ~ на ~ a \\\\
+                                                        ограничение ~ на ~ b 
+                                                    }`}
+                                                \)
+                                            </div>
+                                        </div>
+                                        <Props>
+                                            <tr>
+                                                <td>
+                                                    \( c^a \vee c^b \)
+                                                </td>
+                                                <td>
+                                                    \( a \vee b\)
+                                                </td>
+                                                <td className="__know">
+                                                    \(
+                                                        {"c > 1"}
+                                                    \)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    \( \log_c{"{a}"} \vee \log_c{"{b}"} \)
+                                                </td>
+                                                <td>
+                                                    \( \cases{"{a \\vee b \\\\ \\min{(a,b)} > 0}"} \)
+                                                </td>
+                                                <td className="__know">
+                                                    \(
+                                                        {"c > 1"}
+                                                    \)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    \( \sqrt[c]{"{a}"} \vee \sqrt[c]{"{b}"} \)
+                                                </td>
+                                                <td>
+                                                    \( \cases{"{a \\vee b \\\\ \\min{(a,b)} \\geqslant 0}"} \)
+                                                </td>
+                                                <td className="__know">
+                                                    \(
+                                                        \cases{"{c \\in \\NN \\\\ c \\div 2}"}
+                                                    \)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    \( \sqrt[c]{"{a}"} \vee \sqrt[c]{"{b}"} \)
+                                                </td>
+                                                <td>\( a \vee b \)</td>
+                                                <td className="__know">
+                                                \(
+                                                        \cases{"{c \\in \\NN \\\\ c \\ndiv 2}"}
+                                                    \)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>\( a^c \vee b^c \)</td>
+                                                <td>\(a \vee b\)</td>
+                                                <td className="__know">
+                                                    \(
+                                                        \cases{"{c \\in \\NN \\\\ c \\ndiv 2}"}
+                                                    \)
+                                                </td>
+                                            </tr>
+                                        </Props>
+                                    </Equivalent>
+                                </li>
+                                <li>
+                                    <Equivalent>
+                                        <div className="equivalents-vertical mini-math">
+                                            <div>
+                                                \(
+                                                    \decreasing{"{(a)}"} \vee \decreasing{"{(b)}"}
+                                                \)
+                                            </div>
+                                            <div className="equivalents-arrow">\(\Updownarrow\)</div>
+                                            <div>
+                                                \(
+                                                    \cases{`{
+                                                        a \\land b \\\\
+                                                        ограничение ~ на ~ a \\\\
+                                                        ограничение ~ на ~ b 
+                                                    }`}
+                                                \)
+                                            </div>
+                                        </div>
+                                        <Props>
+                                            <tr>
+                                                <td>
+                                                    \( c^a \vee c^b \)
+                                                </td>
+                                                <td>
+                                                    \( a \land b\)
+                                                </td>
+                                                <td className="__know">
+                                                    \(
+                                                        {"0 < c < 1"}
+                                                    \)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    \( \log_c{"{a}"} \vee \log_c{"{b}"} \)
+                                                </td>
+                                                <td>
+                                                    \( \cases{"{a \\land b \\\\ \\min{(a,b)} > 0}"} \)
+                                                </td>
+                                                <td className="__know">
+                                                    \(
+                                                        {"0 < c < 1"}
+                                                    \)
+                                                </td>
+                                            </tr>
+                                        </Props>
+                                    </Equivalent>
+                                </li>
+                            </ul>
+                            <ButtonBigSpoiler opened={true}>Снятие функции</ButtonBigSpoiler>
+                        </Spoiler>
+                    </li>
+                    <li>
+                        <Spoiler>
+                            <ButtonBigSpoiler opened={false}>Метод рационализации</ButtonBigSpoiler>
+                            <div className="frame">
+                                <h3>Нужный вид:</h3>
+                                <ol>
+                                    <li>Справа 0</li>
+                                    <li>Слева множители</li>
+                                    <li>
+                                        Выбранный множитель представлен в виде
+                                        разности одинаковой монотонной функции
+                                    </li>
+                                </ol>
+                                <h3>Применение:</h3>
+                                <ul className="def-list equivalents-dot-marker">
+                                    <li>
+                                        <Equivalent>
+                                            <div className="equivalents-vertical">
+                                                <div>
+                                                    {`\\(
+                                                        \\left(\\increasing{(a)}-\\increasing{(b)}\\right) \\cdot A \\vee 0
+                                                        
+                                                    \\)`}
+                                                </div>
+                                                <div className="equivalents-arrow">\( \Updownarrow \)</div>
+                                                <div>
+                                                    {`\\(
+                                                        \\cases{(a-b)\\cdot A \\vee 0 \\\\ ограничение~на~a \\\\ ограничение~на~b}
+                                                    \\)`}
+                                                </div>
+                                            </div>
+                                        </Equivalent>
+                                    </li>
+                                    <li>
+                                        <Equivalent>
+                                            <div className="equivalents-vertical">
+                                                <div>
+                                                    {`\\(
+                                                        \\left(\\decreasing{(a)}-\\decreasing{(b)}\\right) \\cdot A \\vee 0
+                                                        
+                                                    \\)`}
+                                                </div>
+                                                <div className="equivalents-arrow">\( \Updownarrow \)</div>
+                                                <div>
+                                                    {`\\(
+                                                        \\cases{(b-a)\\cdot A \\vee 0 \\\\ ограничение~на~a \\\\ ограничение~на~b}
+                                                    \\)`}
+                                                </div>
+                                            </div>
+                                        </Equivalent>
+                                    </li>
+                                </ul>
+                            </div>
+                            <ButtonBigSpoiler opened={true}>Метод рационализации</ButtonBigSpoiler>
+                        </Spoiler>
+                    </li>
+                </ol>
         </Block>
         <Block title={"Логика \\(\\left(~\\large \\{,~[ ~\\right) \\)"} link={cases} beginRef={beginRef}>
-
+                <Props>
+                    <tr>
+                        <td>\( {"\\cases{A \\\\ A}"} \)</td>
+                        <td>\(A\)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\( {"\\union{A \\\\ A}"} \)</td>
+                        <td>\(A\)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\({"\\cases{\\cases{A \\\\ B} \\\\ C}"}\)</td>
+                        <td>\( {"\\cases{A \\\\ B \\\\ C}"} \)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\( {"\\cases{A \\\\ B \\\\ C}"} \)</td>
+                        <td>\({"\\cases{\\cases{A \\\\ B} \\\\ C}"}\)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\({"\\union{\\union{A \\\\ B} \\\\ C}"}\)</td>
+                        <td>\( {"\\union{A \\\\ B \\\\ C}"} \)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\( ложь \)</td>
+                        <td>\(x \in \varnothing\)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\(истина\)</td>
+                        <td>\(x \in \operatorname{"{ОДЗ}{}"}\)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\( \cases{"{A \\\\ x \\in \\varnothing}"} \)</td>
+                        <td>\(x \in \varnothing\)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\( \cases{"{A \\\\ x \\in \\RR}"} \)</td>
+                        <td>\(A\)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\( \union{"{A \\\\ x \\in \\varnothing}"} \)</td>
+                        <td>\(A\)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\( \union{"{A \\\\ x \\in \\RR}"} \)</td>
+                        <td>\(x \in \RR\)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\( \cases{"{a = b \\\\ F(a)}"} \)</td>
+                        <td>\( \cases{"{a = b \\\\ F(b)}"} \)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\(F(x,~f(x))\)</td>
+                        <td>\(\cases{"{F(x,~const) \\\\ ограничения~из~f(x)}"}\)</td>
+                        <td className="__know">\(F(x,~f(x)) \Rightarrow F(x,~const)  \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cases{"{\\union{A \\\\ B} \\\\ C}"} \)</td>
+                        <td>\( \union{"{\\cases{A \\\\ C} \\\\ \\cases{B \\\\ C}}"} \)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
+                        <td>\( \cases{"{A \\\\ B}"} \)</td>
+                        <td>\( A \)</td>
+                        <td className="__know">\( A \Rightarrow B \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \union{"{A \\\\ B}"} \)</td>
+                        <td>\( B \)</td>
+                        <td className="__know">\(A \Rightarrow B\)</td>
+                    </tr>
+                    <tr>
+                        <td>\(A\)</td>
+                        <td>
+                            \(
+                                {`
+                                \\union{
+                                    \\cases{
+                                        случай_1 \\\\
+                                        A
+                                    } \\\\
+                                    \\cases{
+                                        случай_2 \\\\
+                                        A
+                                    } \\\\
+                                    \\ldots \\\\
+                                    \\cases{
+                                        случай_n \\\\
+                                        A
+                                    }
+                                }
+                                `}
+                            \)
+                        </td>
+                        <td className="__know">, что случаи все</td>
+                    </tr>
+                </Props>
+                {/* <ol className="def-list">
+                    <li>
+                        <Equivalent>
+                            {`\\(
+                                \\cases{A \\\\ A} \\LR A    
+                            \\)`}
+                        </Equivalent>
+                    </li>
+                    <li>
+                        <Equivalent>
+                            {`\\(
+                                \\union{A \\\\ A} \\LR A    
+                            \\)`}
+                        </Equivalent>
+                    </li>
+                    <li>
+                        <Equivalent>
+                            \( ложь \LR x \in \varnothing \)
+                        </Equivalent>
+                    </li>
+                    <li>
+                        <Equivalent>
+                            \( истина \LR x \in \operatorname{"{ОДЗ}{}"} \)
+                        </Equivalent>
+                    </li>
+                    <li>
+                        <Equivalent>
+                            \({`
+                                \\cases{"{A \\\\ x \\in \\varnothing}"}
+                                \\LR
+                                x \\in \\varnothing
+                            `}\)
+                        </Equivalent>
+                    </li>
+                </ol> */}
         </Block>
     </div>
 

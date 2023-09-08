@@ -3,6 +3,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
+    text-align: justify;
 }
 .main-list>li {
     margin-bottom: 10px;
@@ -14,7 +15,7 @@
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    /* background-color: rgba(0, 0, 0, 0.01); */
+    /* background-color: rgba(0, 0, 0, 0.1); */
     height: fit-content;
     min-height: 100%;
     padding: 5px;
@@ -162,22 +163,39 @@ td.__know, td.__add, td.__always, td.__info {
     padding: 10px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.05);
+    width: fit-content;
+    max-width: 100%;
 }
 .equivalents-vertical-mobile {
     display: flex;
     align-items: center;
 }
-.about-paragraps-container p {
-    margin-bottom: 10px;
-    text-indent: 25px;
-    text-align: justify;
+.trigonometry-circle::before {
+    content: "Тригонометрическая ";
 }
-.about-paragraps-container iframe {
-    width: 560px;
-    height: 315px;
-    object-fit: cover;
+.equivalents-content-container {
+    display: flex;
+    flex-direction: row;
 }
-.about-paragraps-container li {
-    margin-bottom: 15px;
-    text-align: justify;
+.pc-mini-math {
+    font-size: 10pt;
+}
+.pc-math {
+    font-size: 12pt;
+}
+.pc-micro-math {
+    font-size: 8pt;
+}
+.props-tbody-pc.__hidden {
+    display: none;
+}
+.props-tbody-m.__view {
+    display: block;
+}
+.pc-row-m-col {
+    display: flex;
+    flex-direction: row;
+}
+.equivalents-dot-marker {
+    list-style-type: disc;
 }
