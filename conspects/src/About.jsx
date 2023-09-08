@@ -34,6 +34,7 @@ export const About = () => {
             let response = await promise.text();
             setFetching(false);
             setData(response);
+            console.log(response);
         }
         fetchData();
         fetchTime();
@@ -91,14 +92,11 @@ export const About = () => {
             {
                 data.split("\n\n\n").map((block, i) =>
                     <Block key={i} title={block.split("\n\n")[0].replace("<title>", "").replace("</title>","")}>
-                        <div dangerouslySetInnerHTML={{__html: block.split("\n\n")[1]}}>
-
-                        </div>
+                        <div dangerouslySetInnerHTML={{__html: block.split("\n\n")[1]}} />
                     </Block>
                 )
             }
             <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/R8Yjn4N2i_U?si=ljtVO3fHQzS9fkE4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             </div>
         </div>
     </div>
