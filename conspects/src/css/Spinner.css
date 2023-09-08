@@ -1,0 +1,17 @@
+.spinner {
+    font-size: 50pt;
+    width: fit-content;
+    height: fit-content;
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes spin {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}

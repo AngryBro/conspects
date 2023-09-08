@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Title } from "./Title"
 import "./css/About.css";
 import { Block } from "./Block";
+import { Spinner } from "./Spinner";
 
 export const About = () => {
 
@@ -34,7 +35,6 @@ export const About = () => {
             let response = await promise.text();
             setFetching(false);
             setData(response);
-            console.log(response);
         }
         fetchData();
         fetchTime();
@@ -77,18 +77,8 @@ export const About = () => {
                 <div> </div>
             </div>
         </div>
+        <div hidden={!fetching}><Spinner/></div>
         <div hidden={fetching} className="about-paragraps-container">
-            {/* {
-                data.split("\n\n\n").map((block, i) =>
-                    <Block key={i} title={block.split("\n\n")[0]}>
-                        {
-                            block.split("\n\n").slice(1).map((par, j) =>
-                                <p key={j}>{par}</p>
-                            )
-                        }
-                    </Block>
-                )
-            } */}
             {
                 data.split("\n\n\n").map((block, i) =>
                     <Block key={i} title={block.split("\n\n")[0].replace("<title>", "").replace("</title>","")}>
@@ -96,8 +86,6 @@ export const About = () => {
                     </Block>
                 )
             }
-            <div>
-            </div>
         </div>
     </div>
 }

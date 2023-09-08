@@ -18,9 +18,6 @@ export const Log = () => <div>
             <li>
                 \(\ln{"{a}"}\) (натуральный логарифм \(a\)) &mdash; это \( \log_e{"{a}"} \).
             </li>
-            <li>
-                \(e\) &mdash; это \( \displaystyle \lim_{"{n \\rightarrow \\infty}{\\left(1 + \\frac{1}{n}\\right)^n}"} \).
-            </li>
         </ol>
         <div className="center">
         

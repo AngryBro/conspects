@@ -1,8 +1,7 @@
-import { Button2 } from "./buttons/Button2";
+import { Spinner } from "./Spinner";
 import "./css/test.css";
 
 export const Test = () =>
     <div className="test">
-        
-        <Button2>Кнопка 2</Button2>
+        <Spinner/>
     </div>
