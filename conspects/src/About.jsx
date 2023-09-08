@@ -5,13 +5,11 @@ import { Block } from "./Block";
 
 export const About = () => {
 
+    const contentURL = "https://raw.githubusercontent.com/AngryBro/conspects/main/data/about.txt";
+
     const [time, setTime] = useState("??:??");
 
-    const [data, setData] = useState({
-        text: [],
-        communication: [],
-        info: {}
-    });
+    const [data, setData] = useState("");
 
     const [fetching, setFetching] = useState(false);
 
@@ -32,50 +30,15 @@ export const About = () => {
 
         const fetchData = async () => {
             setFetching(true);
-            const error = (e) => {
-                setFetching(false);
-                console.log(e)
-                alert("Ошибка загрузки, перезагрузите страницу");
-            }
-            let promise = undefined;
-            let response = undefined;
-            try {
-                promise = await fetch("https://raw.githubusercontent.com/AngryBro/conspects/main/data/about.json");
-            }
-            catch(e) {
-                return error(e);
-            }
-            if(!promise.ok) {
-                return error(promise.status);
-            }
-            try {
-                response = await promise.json();
-                setData(response);
-                setFetching(false);
-            }
-            catch(e) {
-                return error(e);
-            }
-            
+            let promise = await fetch(contentURL);
+            let response = await promise.text();
+            setFetching(false);
+            setData(response);
         }
         fetchData();
         fetchTime();
     }, []);
 
-    const renderInfo = () => {
-        return Object.keys(data.info).map((key, i) =>
-            <tr key={i}>
-                <td><i>{key}:</i></td>
-                <td>
-                    {
-                        Array.isArray(data.info[key]) ?
-                        <a target="_blank" rel="noopener noreferrer" href={data.info[key][1]}>{data.info[key][0]}</a>
-                        : data.info[key]
-                    }
-                </td>
-            </tr>
-        )
-    }
     
     return <div>
         <Title>Преподаватель</Title>
@@ -91,32 +54,42 @@ export const About = () => {
                             <td><i>Город обитания:</i></td>
                             <td>Владивосток, время {time}</td>
                         </tr>
-                        {renderInfo()}
+                        <tr>
+                            <td><i>Образование:</i></td>
+                            <td>ДВФУ, Математика и компьютерные науки</td>
+                        </tr>
+                        <tr>
+                            <td><i>Результаты ЕГЭ:</i></td>
+                            <td>
+                                <a href="https://angrybro.github.io/checkege" target="_blank" rel="noopener noreferrer">
+                                    angrybro.github.io/checkege
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><i>Лет работы в РИ:</i></td>
+                            <td>4</td>
+                        </tr>
                     </tbody>
                 </table>
                 <div> </div>
                 <div> </div>
             </div>
         </div>
-        <div hidden={fetching}>
-            <Block title="Цели и принципы работы">
-                {
-                    data.text.map((text, i) => 
-                        <p key={i}>{text}</p>
-                    )
-                }
-            </Block>
-            <Block title="Про общение">
-                <ol className="teacher-communication">
-                    {
-                        data.communication.map((rule, i) => 
-                            <li key={i}>{rule}</li>
-                        )
-                    }
-                </ol>
-            </Block>
+        <div hidden={fetching} className="about-paragraps-container">
+            {
+                data.split("\n\n\n").map((block, i) =>
+                    <Block key={i} title={block.split("\n\n")[0]}>
+                        {
+                            block.split("\n\n").slice(1).map((par, j) =>
+                                <p key={j}>{par}</p>
+                            )
+                        }
+                    </Block>
+                )
+            }
             <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/R8Yjn4N2i_U?si=ljtVO3fHQzS9fkE4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/R8Yjn4N2i_U?si=ljtVO3fHQzS9fkE4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
             </div>
         </div>
     </div>
