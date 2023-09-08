@@ -5,7 +5,7 @@ import { Block } from "./Block";
 
 export const About = () => {
 
-    const contentURL = "https://raw.githubusercontent.com/AngryBro/conspects/main/data/about.txt";
+    const contentURL = "https://raw.githubusercontent.com/AngryBro/conspects/main/data/about.html";
 
     const [time, setTime] = useState("??:??");
 
@@ -77,7 +77,7 @@ export const About = () => {
             </div>
         </div>
         <div hidden={fetching} className="about-paragraps-container">
-            {
+            {/* {
                 data.split("\n\n\n").map((block, i) =>
                     <Block key={i} title={block.split("\n\n")[0]}>
                         {
@@ -85,6 +85,15 @@ export const About = () => {
                                 <p key={j}>{par}</p>
                             )
                         }
+                    </Block>
+                )
+            } */}
+            {
+                data.split("\n\n\n").map((block, i) =>
+                    <Block key={i} title={block.split("\n\n")[0].replace("<title>", "").replace("</title>","")}>
+                        <div dangerouslySetInnerHTML={{__html: block.split("\n\n")[1]}}>
+
+                        </div>
                     </Block>
                 )
             }
