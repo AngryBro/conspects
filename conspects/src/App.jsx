@@ -10,9 +10,10 @@ import { Log } from "./conspects/Log";
 import { Sqrt } from "./conspects/Sqrt";
 import { About } from "./About";
 import { Trigonometry } from "./conspects/Trigonometry";
-import { Test } from "./Test";
 import { Equivalents } from "./conspects/Equivalents";
 import { Empty } from "./Empty";
+import { Params } from "./conspects/Params";
+import { Oxy } from "./conspects/Oxy";
 
 export const App = () => {
 
@@ -36,6 +37,8 @@ export const App = () => {
         <Route path="/about" element={<About/>} />
         <Route path="/trigonometry" element={<Trigonometry/>} />
         <Route path="/equivalents" element={<Equivalents/>} />
+        <Route path="/params" element={<Params/>} />
+        <Route path="/oxy" element={<Oxy/>} />
         {/* <Route path="/test" element={<Test/>} /> */}
 
         <Empty/>

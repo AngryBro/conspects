@@ -24,7 +24,7 @@ export const Trigonometry = () => {
             <li link={equation}>Простейшие уравнения</li>
         </Content>
         <Block title="Определения" beginRef={beginRef} link={defs}>
-            <ol className="def-list math">
+            <ol className="def-list x-smaller-xx">
                 <li>
                 \(\sin{"{\\alpha}"}\) (синус острого угла \(\alpha\) в прямоугольном треугольнике)
                 &mdash; это дробь \( \displaystyle\frac{"{противолежащий~катет}{гипотенуза}"} \). 
@@ -58,7 +58,7 @@ export const Trigonometry = () => {
             </ol>
         </Block>
         <Block title="Табличные углы" link={angleTable} beginRef={beginRef}>
-            <table className="angle-table math">
+            <table className="angle-table smaller-xx">
                 <tbody>
                     <tr>
                         <td>Градусы</td>
@@ -100,7 +100,7 @@ export const Trigonometry = () => {
             </table>
         </Block>
         <Block title="Тригонометрическая окружность" beginRef={beginRef} link={circle}>
-            <ul className="def-list math">
+            <ul className="def-list">
                 <li>Центр (0; 0), радиус 1.</li>
                 <li>Начало отсчёта &ndash; число 0, точка (1; 0).</li>
                 <li>Направление &laquo;вперёд&raquo; &ndash; против часовой стрелки.</li>
@@ -112,7 +112,7 @@ export const Trigonometry = () => {
 
         </Block>
         <Block title="Свойства" link={formulas} beginRef={beginRef}>
-            <Props>
+            <Props className="x-smaller-xx">
                 <tr>
                     <td>\(\sin^2{"{a}"} + \cos^2{"{b}"}\)</td>
                     <td>1</td>

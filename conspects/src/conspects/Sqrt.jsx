@@ -16,7 +16,7 @@ export const Sqrt = () => {
             <li link={oddRef}>Корень нечётной степени</li>
         </Content>
         <Block link={evenRef} beginRef={beginRef} title="Определение корня чётной степени" >
-            <div className="center">
+            <div className="center smaller-xx">
                 \(\sqrt[b]{"{a}"}\) (корень степени \(b\) из \(a\)) &mdash; это число \(c\),
                 где \({"c^b = a,~~a \\geqslant 0,~~b"}\) &ndash; натуральное чётное, \(c \geqslant 0\).
             </div>

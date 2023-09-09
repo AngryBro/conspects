@@ -1,4 +1,4 @@
-export const Props = ({children, mobile = false}) => {
+export const Props = ({children, mobile = false, className = ""}) => {
 
     const insertedPC = (tr, i) => {
         let tds = tr.props.children;
@@ -31,7 +31,7 @@ export const Props = ({children, mobile = false}) => {
 
     const childrenArray = Array.isArray(children) ? children : [children];
 
-    return <table className="props-table math">
+    return <table className={`props-table ${className === "" ? "smaller-xx": className}`}>
         <tbody className={`props-tbody-pc${mobile?" __hidden":""}`}>
             {
                 childrenArray.map(insertedPC)

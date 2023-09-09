@@ -1,20 +1,84 @@
-@media (max-width: 800px) {
-    .math {
-        font-size: 12pt;
+@media (max-width: 70px) {
+    
+    
+    .equivalents-mobile-smaller-font {
+        font-size: small;
     }
-    .mini-math {
-        font-size: 10pt;
-    }
+    
+}
+@media (max-width: 53px) {
+    
     .micro-math {
         font-size: 8pt;
+        width: fit-content;
+    }
+    .nano-math {
+        font-size: 7pt;
+        width: fit-content;
+    }
+    
+    .trigonometry-circle::before {
+        content: "Тригоном. ";
+    }
+    .equivalents-content-container {
+        flex-direction: column;
+    }
+    
+    .before-plus::before {
+        content: "+";
+    }
+    
+    
+}
+
+@media (max-width: 992px) {
+    .smaller {
+        font-size: 14pt;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .props-tbody-pc {
         display: none;
     }
     .props-tbody-m {
         display: block;
+    }
+    .props-table > tbody > tr > td {
+        padding: 10px;
+    }
+}
+@media (max-width: 576px) {
+    .x-smaller {
+        font-size: 12pt;
+    }
+}
+@media (max-width: 420px) {
+    .xxxx-smaller-xx {
+        font-size: 7pt;
+    }
+    .xxx-smaller-xx {
+        font-size: 8pt;
+    }
+    .xx-smaller-xx {
+        font-size: 10pt;
+    }
+    .x-smaller-xx {
+        font-size: 12pt;
+    }
+    .smaller-xx {
+        font-size: 14pt;
+    }
+    .margin-left {
+        margin-left: 10px;
+    }
+    .button1 {
+        font-size: 16pt;
+    }
+    .button2, .buttonS, .buttonUp {
+        font-size: 14pt;
+    }
+    .buttonSpoiler {
+        font-size: 10pt;
     }
     .equivalents-vertical-mobile {
         flex-direction: column;
@@ -22,16 +86,26 @@
     .equivalents-vertical-mobile .equivalents-arrow {
         transform: rotateZ(90deg);
     }
-    .trigonometry-circle::before {
-        content: "Тригоном. ";
+    ul, ol {
+        padding-left: 25px;
+        /* margin-left: 0px; */
     }
-    .equivalents-content-container {
-        flex-direction: column;
+    .equivalents-tight-text {
+        letter-spacing: inherit;
+        letter-spacing: 2px;
+    }
+    .params-change-table td {
+        padding: 5px;
     }
     .pc-row-m-col {
         flex-direction: column;
     }
-    .before-plus::before {
-        content: "+";
+    .flex-mobile {
+        flex-direction: column;
+    }
+    .params-change-table {
+        font-size: 10pt;
+        margin-left: 0px;
+        margin-top: 10px;
     }
 }

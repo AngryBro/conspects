@@ -7,7 +7,7 @@ export const Log = () => <div>
     <Title>Логарифм</Title>
 
     <Block title="Определения">
-        <ol className="def-list mini-math">
+        <ol className="def-list smaller-xx">
             <li>
                 \(\log_a{"{b}"}\) (логарифм по основанию \(a\) от \(b\)) &mdash; это число \(c\),
                 где \( a^c = b,~~a {">"} 0,~~ a \neq 1,~~b {">"} 0,~~c \in \RR \).

@@ -23,22 +23,15 @@ export const Polynom = () => {
             <li link={torkRef}>Теорема о рациональных корнях</li>
         </Content> 
         <Block title="Определение" link={defRef} beginRef={beginRef}>
-            <p>
+            <p className="smaller-xx">
             Полином (с одной переменной) степени \(n\) это выражение вида:
-                <div className="math">
+                <div>
                     $$ a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n. $$
                 </div>
             </p>
-            <p>
-                Полином (с \(m\) переменными) степени \(n\) это выражение вида:
-                <div className="math">
-                    $$ \operatorname{`{sum}{`}\left( a_i \cdot x_1^{`{k_{i,1}}`} \cdot x_2^{`{k_{i,2}}`} \cdot \ldots \cdot x_m^{`{k_{i,m}}`}  \right){"}"}, $$
-                </div>
-            где <span className="math">\({`k_{i,1} + k_{i,2}`} + \ldots + {`k_{i,m}`} = n.\)</span>
-            </p>
         </Block>
         <Block title="Формулы сокращённого умножения" link={fsuRef} beginRef={beginRef}>
-            <Props>
+            <Props className="smaller-xx">
                 <tr>
                     <td>\( (a \pm b)^2 \)</td>
                     <td>\( a^2 \pm 2ab + b^2 \)</td>
@@ -66,7 +59,7 @@ export const Polynom = () => {
             </Props>
         </Block>
         <Block title="Общий множитель" link={multRef} beginRef={beginRef}>
-            <Props>
+            <Props className="x-smaller-xx">
                 <tr>
                     <td>\( b \cdot \left(a_1 + a_2 + \ldots + a_n \right) \)</td>
                     <td>\( b \cdot a_1 + b \cdot a_2 + \ldots + b \cdot a_n \)</td>
@@ -78,13 +71,13 @@ export const Polynom = () => {
             </Props>
         </Block>
         <Block title="Схема Горнера" link={hornerRef} beginRef={beginRef}>
-            <p>
-                Дан полином <span className="math">\( P(x) = a_n x^n + a_{`{n-1}`} x^{"{n-1}"} + \ldots \) \( + a_1 x + a_0, \)</span>
+            <p className="smaller-xx">
+                Дан полином <span>\( P(x) = a_n x^n + a_{`{n-1}`} x^{"{n-1}"} + \ldots \) \( + a_1 x + a_0, \)</span>
                 требуется вычислить \(P(b)\).
             </p>
             <p>
                 <div className="long-container">
-                    <table className="horner-table math">
+                    <table className="horner-table x-smaller-xx">
                         <tbody>
                             <tr className="border">
                                 <td>\(x\)</td>
@@ -133,21 +126,21 @@ export const Polynom = () => {
             <p>
                 \( P(b) = b_0. \)
             </p>
-            <p>
+            <p className="smaller-xx">
                 Если \(P(b) = 0\), то:
-                <div className="micro-math">
+                <div className="xxx-smaller-xx">
                     $$ P(x) = (x-b) \cdot \left( a_n x^{"{n-1}"} + b_{"{n-1}"}x^{"{n-2}"} + \ldots +  b_2 x + b_1\right). $$
                 </div>
             </p>
         </Block>
         <Block title="Теорема о рациональных корнях" link={torkRef} beginRef={beginRef}>
-            <p> 
-                <div className="math">
+            <p className="smaller-xx"> 
+                <div>
                     \( P(x) = a_n x^n + \ldots + a_1x + a_0 \)
                 </div>
             </p>
             <p>
-                <div className="math">
+                <div className="smaller-xx">
                     \(
                     \cases{"{"}
                         P\left(\frac{"{m}{n}"}\right) = 0 \\

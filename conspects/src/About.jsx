@@ -42,7 +42,7 @@ export const About = () => {
     }, []);
 
     
-    return <div>
+    return <div className="about smaller-xx">
         <Title>Преподаватель</Title>
         <div className="about-info-container">
             <div className="about-photo">

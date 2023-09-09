@@ -27,7 +27,7 @@ export const Spoiler = ({children, duration = 0.3, recursive = false, containsMa
 
     const close = () => {
         if(childrenRef.current !== undefined) {
-            setChildrenContainerHeight(() => `${childrenRef.current.offsetHeight + margin}px`);
+            setChildrenContainerHeight(`${childrenRef.current.offsetHeight + margin}px`);
             setOpened(false);
         }
     }
@@ -68,7 +68,8 @@ export const Spoiler = ({children, duration = 0.3, recursive = false, containsMa
             overflow: "hidden",
             transition: `all ${duration}s ease`,
             width: "fit-content",
-            height: childrenContainerHeight
+            height: childrenContainerHeight,
+            maxWidth: "100%"
         },
         parent: {
             width: "fit-content",
@@ -76,8 +77,8 @@ export const Spoiler = ({children, duration = 0.3, recursive = false, containsMa
         }
     }
 
-    return <div style={style.parent} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <div onClick={handleClick} style={style.parent}>
+    return <div style={style.parent} onMouseLeave={handleMouseLeave}>
+        <div onClick={handleClick} onMouseEnter={handleMouseEnter} style={style.parent}>
             {
                 opened && children.length > 2?
                 children[2]

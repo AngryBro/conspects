@@ -167,16 +167,19 @@
 .buttonBigSpoiler-bird.__opened {
     transform: scale(2) rotateZ(180deg);
 }
-@media (max-width: 400px) {
+@media (max-width: 390px) {
     .buttonBigSpoiler {
         font-size: small;
     }
 }
-@media (max-width: 300px) {
+@media (max-width: 390px) {
     .buttonSpoiler {
         font-size: x-small;
     }
     .buttonSpoiler-bird {
         transform: scale(0.7);
+    }
+    .buttonSpoiler-bird.__opened {
+        transform: scale(0.7) rotateZ(180deg);
     }
 }
