@@ -4,6 +4,8 @@ import { Content } from "../Content";
 import { Block } from "../Block";
 import { Description } from "../Description";
 import { Cases } from "../Cases";
+import { Output } from "../Output";
+import { Formula } from "../Formula";
 
 export const Oxy = () => {
 
@@ -24,51 +26,62 @@ export const Oxy = () => {
             <li link={templates}>Шаблоны работы с уравнениями линий</li>
         </Content>
         <Block title="Точка" link={point} beginRef={beginRef}>
-            <ol className="def-list">
-                <li>
-                    Точка \(A\) имеет координаты \(x,~y:~~~A(x,y)\).
-                </li>
-                <li>
-                    <div className="flex-mobile flex-align">
-                        <div>
-                            \(
-                                {` \\displaystyle
-                                \\cases{
-                                    C \\in AB  \\\\
-                                    AC~:~CB = a~:~b
-                                }
-                                `}    
-                            \)
+            <div className="frame">
+                <ol className="def-list">
+                    <li>
+                        Точка \(A\) имеет координаты \(x,~y:~~~A(x,y)\).
+                    </li>
+                    <li>
+                        <div className="flex-mobile flex-align">
+                            <div>
+                                \(
+                                    {` \\displaystyle
+                                    \\cases{
+                                        C \\in AB  \\\\
+                                        AC~:~CB = a~:~b
+                                    }
+                                    `}    
+                                \)
+                            </div>
+                            <div>
+                                \(~~\Rightarrow~~ \)
+                            </div>
+                            <div>
+                                \(
+                                    {` \\displaystyle
+                                    C_i = \\frac{1}{a+b} \\cdot 
+                                    (A_i \\cdot b + B_i \\cdot a)
+                                    `}    
+                                \).
+                            </div>
                         </div>
-                        <div>
-                            \(~~\Rightarrow~~ \)
-                        </div>
-                        <div>
-                            \(
-                                {` \\displaystyle
-                                C_i = \\frac{1}{a+b} \\cdot 
-                                (A_i \\cdot b + B_i \\cdot a)
-                                `}    
-                            \)
-                        </div>
-                    </div>
-                </li>
-            </ol>
+                        <Cases>
+                            <p>
+                                \(C\) &ndash; середина \(AB~\Rightarrow 
+                                    C_i = \frac{"{1}{2}"}(A_i + B_i)
+                                \).
+                            </p>
+                        </Cases>
+                    </li>
+                </ol>
+            </div>
         </Block>
         <Block title="Вектор" link={vector} beginRef={beginRef}>
-            <ol className="def-list">
-                <li>Вектор \(\veca\) имеет координаты \(x,~y:~~~a{"\\{x,~y\\}"}\).</li>
-                <li>Вектор с началом в точке \(A\) и концом в точке \(B:~~~\vector{"{AB}"}\).</li>
-                <li>\( \vector{"{AB}"}_i = B_i - A_i \).</li>
-                <li>\( \veca \parallel k \cdot \veca, \) где \(k\) &ndash; целое число.</li>
-                <li>Скалярное произведение векторов: \(\veca \cdot \vecb = a_x \cdot b_x + a_y \cdot b_y \).</li>
-                <li>Длина вектора: \( \left|\veca\right| = \sqrt{"{\\veca^2}"} \).</li>
-                <li>
-                    Угол между векторами: \( \displaystyle \cos{"{\\angle\\left(\\veca,\\vecb\\right)}"} 
-                        = \frac{"{\\veca \\cdot \\vecb}{\\left|\\veca\\right| \\cdot \\left|\\vecb\\right|}"}
-                    \).
-                </li>
-            </ol>
+            <div className="frame">
+                <ol className="def-list">
+                    <li>Вектор \(\veca\) имеет координаты \(x,~y:~~~a{"\\{x,~y\\}"}\).</li>
+                    <li>Вектор с началом в точке \(A\) и концом в точке \(B:~~~\vector{"{AB}"}\).</li>
+                    <li>\( \vector{"{AB}"}_i = B_i - A_i \).</li>
+                    <li>\( \veca \parallel k \cdot \veca, \) где \(k\) &ndash; целое число.</li>
+                    <li>Скалярное произведение векторов: \(\veca \cdot \vecb = a_x \cdot b_x + a_y \cdot b_y \).</li>
+                    <li>Длина вектора: \( \left|\veca\right| = \sqrt{"{\\veca^2}"} \).</li>
+                    <li>
+                        Угол между векторами: \( \displaystyle \cos{"{\\angle\\left(\\veca,\\vecb\\right)}"} 
+                            = \frac{"{\\veca \\cdot \\vecb}{\\left|\\veca\\right| \\cdot \\left|\\vecb\\right|}"}
+                        \).
+                    </li>
+                </ol>
+            </div>
         </Block>
         <Block title="Уравнения линий" link={lines} beginRef={beginRef}>
             <ol className="def-list">
@@ -224,7 +237,99 @@ export const Oxy = () => {
             </ol>
         </Block>
         <Block title="Шаблоны работы с уравнениями линий" link={templates} beginRef={beginRef}>
-
+            <ol className="def-list">
+                <li>
+                    <div className="frame">
+                        <p>
+                            График \(G(x,y)\) проходит через точку \(A:~~~A \in G(x,y)\)
+                        </p>
+                        <Output>\(G(A)\)</Output>
+                    </div>
+                </li>
+                <li>
+                    <div className="frame">
+                        <p>
+                            Поиск общих точек линий \(G(x,y)\) и \(F(x,y)\)
+                        </p>
+                        <Output>
+                            \( \cases{"{G(x,y) \\\\ F(x,y)}"} \)
+                        </Output>
+                    </div>
+                </li>
+                <li>
+                    <div className="frame">
+                        <p>
+                            Прямые \(y = a_1x+b_1\) и \(y = a_2x+b_2\) параллельны или совпадают
+                        </p>
+                        <Output>\(a_1 = a_2\)</Output>
+                    </div>
+                </li>
+                <li>
+                    <div className="frame">
+                        <p>
+                            Касание линии \(y = f(x)\) и кривой \(y = g(x)\)
+                        </p>
+                        <Output>
+                            \( \cases{"{f(x) = g(x) \\\\ f'(x) = g'(x)}"} \)
+                        </Output>
+                    </div>
+                </li>
+                <li>
+                    <div className="frame">
+                        <p>
+                            Касание прямой \(l\) и окружности с центром \(C\) и радиусом \(r\)
+                        </p>
+                        <Output>
+                            \( \rho(C, l) = r \)
+                        </Output>
+                    </div>
+                </li>
+                <li>
+                    <div className="frame">
+                        <p>
+                            Касание внешним образом окружностей \((C_1,r_1)\) и \((C_2,r_2)\)
+                        </p>
+                        <Output>
+                            \( \rho(C_1,C_2) = r_1 + r_2 \)
+                        </Output>
+                    </div>
+                </li>
+                <li>
+                    <div className="frame">
+                        <p>
+                            Касание внутренним образом окружностей \((C_1,r_1)\) и \((C_2,r_2)\)
+                        </p>
+                        <Output>
+                            \( \rho(C_1,C_2) = |r_1 - r_2| \)
+                        </Output>
+                    </div>
+                </li>
+                <li>
+                    <div className="frame">
+                        <p>
+                            Формула расстояния от точки до точки
+                        </p>
+                        <Formula>
+                            \( \rho(A,B) = \sqrt{"{(A_x - B_x)^2+(A_y - B_y)^2}"} \)
+                            <p>
+                            «Ро из точки \(A\) в точку \(B\)» © Oxxxymiron
+                            </p>
+                        </Formula>
+                    </div>
+                </li>
+                <li>
+                    <div className="frame">
+                        <p>
+                            Формула расстояния от точки до прямой
+                        </p>
+                        <Formula>
+                            \( \displaystyle
+                                \rho(A, ax+by+c=0) = \frac{"{|aA_x+bA_y+c|}{\\sqrt{a^2+b^2}}"}    
+                            \)
+                        </Formula>
+                    </div>
+                </li>
+            </ol>
         </Block>
 
     </div>
