@@ -27,7 +27,7 @@ export const Oxy = () => {
         </Content>
         <Block title="Точка" link={point} beginRef={beginRef}>
             <div className="frame">
-                <ol className="def-list">
+                <ol className="def-list smaller-xx">
                     <li>
                         Точка \(A\) имеет координаты \(x,~y:~~~A(x,y)\).
                     </li>
@@ -43,23 +43,25 @@ export const Oxy = () => {
                                     `}    
                                 \)
                             </div>
-                            <div>
+                            <div className="mobile-arrow">
                                 \(~~\Rightarrow~~ \)
                             </div>
                             <div>
                                 \(
                                     {` \\displaystyle
                                     C_i = \\frac{1}{a+b} \\cdot 
-                                    (A_i \\cdot b + B_i \\cdot a)
+                                    (A_i \\cdot b + B_i \\cdot a).
                                     `}    
-                                \).
+                                \)
                             </div>
                         </div>
                         <Cases>
-                            <p>
-                                \(C\) &ndash; середина \(AB~\Rightarrow 
-                                    C_i = \frac{"{1}{2}"}(A_i + B_i)
-                                \).
+                            <p className="flex-mobile flex-align">
+                                <div>\(C\) &ndash; середина \(AB\)</div>
+                                <div className="mobile-arrow">
+                                    \(\Rightarrow\)
+                                </div>
+                                <div>\(C_i = \frac{"{1}{2}"}(A_i + B_i).\)</div>
                             </p>
                         </Cases>
                     </li>
@@ -67,7 +69,7 @@ export const Oxy = () => {
             </div>
         </Block>
         <Block title="Вектор" link={vector} beginRef={beginRef}>
-            <div className="frame">
+            <div className="frame smaller-xx">
                 <ol className="def-list">
                     <li>Вектор \(\veca\) имеет координаты \(x,~y:~~~a{"\\{x,~y\\}"}\).</li>
                     <li>Вектор с началом в точке \(A\) и концом в точке \(B:~~~\vector{"{AB}"}\).</li>
@@ -84,7 +86,7 @@ export const Oxy = () => {
             </div>
         </Block>
         <Block title="Уравнения линий" link={lines} beginRef={beginRef}>
-            <ol className="def-list">
+            <ol className="def-list smaller-xx">
                 <li>
                     <div className="frame">
                         <div>Прямая: \(~~~ax+by+c=0\)</div>  
@@ -183,7 +185,7 @@ export const Oxy = () => {
             <p>
                 <b>Области строятся с учётом ОДЗ выражений.</b>
             </p>
-            <ol className="def-list">
+            <ol className="def-list smaller-xx">
                 <li>
                     <div className="frame">
                         <p>
@@ -237,7 +239,7 @@ export const Oxy = () => {
             </ol>
         </Block>
         <Block title="Шаблоны работы с уравнениями линий" link={templates} beginRef={beginRef}>
-            <ol className="def-list">
+            <ol className="def-list smaller-xx">
                 <li>
                     <div className="frame">
                         <p>
@@ -310,7 +312,7 @@ export const Oxy = () => {
                             Формула расстояния от точки до точки
                         </p>
                         <Formula>
-                            \( \rho(A,B) = \sqrt{"{(A_x - B_x)^2+(A_y - B_y)^2}"} \)
+                            <div className="xx-smaller-xx">\( \rho(A,B) = \sqrt{"{(A_x - B_x)^2+(A_y - B_y)^2}"} \)</div>
                             <p>
                             «Ро из точки \(A\) в точку \(B\)» © Oxxxymiron
                             </p>
@@ -323,9 +325,20 @@ export const Oxy = () => {
                             Формула расстояния от точки до прямой
                         </p>
                         <Formula>
-                            \( \displaystyle
-                                \rho(A, ax+by+c=0) = \frac{"{|aA_x+bA_y+c|}{\\sqrt{a^2+b^2}}"}    
-                            \)
+                            <div className="flex-mobile flex-align">
+                                <div>
+                                    \( \displaystyle
+                                    \rho(A, ax+by+c=0)    
+                                    \)
+                                </div>
+                                <div className="mobile-arrow">\( = \)</div>
+                                <div>
+                                    \( \displaystyle
+                                    \frac{"{|aA_x+bA_y+c|}{\\sqrt{a^2+b^2}}"}    
+                                    \)
+                                </div>
+                            </div>
+                            
                         </Formula>
                     </div>
                 </li>

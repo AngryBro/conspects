@@ -58,10 +58,10 @@ export const Main = () => {
                             <Button2 onClick={(e) => nav("/function", e)}>Функция</Button2>
                         </li>
                         <li>
-                            <Button2 onClick={(e) => nav("/oxy", e)}>Координаты \(Oxy\)</Button2>
+                            <Button2 onClick={(e) => nav("/oxy", e)}>Координаты \(~Oxy\)</Button2>
                         </li>
                         <li>
-                            <Button2 onClick={(e) => nav("/oxyz", e)}>Координаты \(Oxyz\)</Button2>
+                            <Button2 onClick={(e) => nav("/oxyz", e)}>Координаты \(~Oxyz\)</Button2>
                         </li>
                         <li>
                             <Button2 onClick={(e) => nav("/plani", e)}>Планиметрия</Button2>
@@ -98,6 +98,12 @@ export const Main = () => {
             </li>
             <li>
                 <Button1 onClick={() => window.open("https://angrybro.github.io/LatexRealTime/")}>Печать формул</Button1>
+            </li>
+            <li>
+                <Button1 onClick={() => window.open("https://angrybro.github.io/conspects/math/old")}>Старая версия</Button1>
+            </li>
+            <li>
+                <Button1 onClick={() => window.open("https://angrybro.github.io/conspects/math/old/old")}>Очень старая версия</Button1>
             </li>
         </ul>
     </div>

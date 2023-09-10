@@ -56,11 +56,9 @@ body {
 .block {
     margin-top: 50px;
 }
-/* @media (max-width: 400px) {
-    .block {
-        font-size: smaller;
-    }
-} */
+.smaller {
+    font-size: 16pt;
+}
 .props-table {
     border-collapse: collapse;
     font-size: 20pt;
@@ -144,6 +142,9 @@ td.__know, td.__add, td.__always, td.__info {
 }
 .flex-align {
     align-items: center;
+}
+.mobile-arrow {
+    margin: 10px;
 }
 li {
     margin-bottom: 10px;

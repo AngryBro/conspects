@@ -80,10 +80,10 @@
     .buttonSpoiler {
         font-size: 10pt;
     }
-    .equivalents-vertical-mobile {
+    .flex-mobile {
         flex-direction: column;
     }
-    .equivalents-vertical-mobile .equivalents-arrow {
+    .mobile-arrow {
         transform: rotateZ(90deg);
     }
     ul, ol {

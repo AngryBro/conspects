@@ -75,11 +75,11 @@ export const Equivalents = () => {
                 </li>
                 <li>
                     <Equivalent>
-                        <div className="equivalents-vertical-mobile">
+                        <div className="flex-mobile flex-align">
                             <div>
                                 \( \displaystyle\frac{"{a_1 \\cdot a_2 \\cdot \\ldots \\cdot a_n}{b_1 \\cdot b_2 \\cdot \\ldots \\cdot b_m}"} = 0 \)
                             </div>
-                            <div className="equivalents-arrow">\( \LR \)</div>
+                            <div className="mobile-arrow">\( \LR \)</div>
                             <div>
                                 \({`
                                     \\cases{
@@ -763,7 +763,7 @@ export const Equivalents = () => {
                     <tr>
                         <td>\(F(x,~f(x))\)</td>
                         <td>\(\cases{"{F(x,~const) \\\\ ограничения~из~f(x)}"}\)</td>
-                        <td className="__know"><div className="">\(F(x,~f(x)) \Rightarrow F(x,~const)  \)</div></td>
+                        <td className="__know"><div className="smaller">\(F(x,~f(x)) \Rightarrow F(x,~const)\)</div></td>
                     </tr>
                     <tr>
                         <td>\( \cases{"{\\union{A \\\\ B} \\\\ C}"} \)</td>
