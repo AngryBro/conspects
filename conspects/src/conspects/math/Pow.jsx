@@ -1,8 +1,8 @@
 import { useRef } from "react"
-import { Title } from "../Title";
-import { Content } from "../Content";
-import { Block } from "../Block";
-import { Props } from "../Props";
+import { Title } from "../../Title";
+import { Content } from "../../Content";
+import { Block } from "../../Block";
+import { Props } from "../../Props";
 
 export const Pow = () => {
     const propsRef = useRef();

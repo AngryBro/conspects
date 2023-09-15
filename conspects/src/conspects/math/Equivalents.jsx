@@ -1,11 +1,11 @@
 import { useRef } from "react";
-import { Spoiler } from "../spoiler";
-import { Title } from "../Title";
-import { Content } from "../Content";
-import { Block } from "../Block";
-import { Props } from "../Props";
-import { ButtonBigSpoiler } from "../buttons/ButtonBigSpoiler";
-import { Cases } from "../Cases";
+import { Spoiler } from "../../spoiler";
+import { Title } from "../../Title";
+import { Content } from "../../Content";
+import { Block } from "../../Block";
+import { Props } from "../../Props";
+import { ButtonBigSpoiler } from "../../buttons/ButtonBigSpoiler";
+import { Cases } from "../../Cases";
 
 export const Equivalents = () => {
 
@@ -451,7 +451,7 @@ export const Equivalents = () => {
                 </ol>
         </Block>
         <Block title={<div>Неравенства<span>{" \\( ~\\left(~\\large >,~<,~\\geqslant,~\\leqslant ~\\right) \\)"}</span> </div> } link={more} beginRef={beginRef}>
-                <ol className="def-list x-smaller-xx">
+                <ol className="def-list x-smaller-xx equivalents-intervals">
                     <li>
                         <Spoiler>
                             <ButtonBigSpoiler opened={false}>Метод интервалов</ButtonBigSpoiler>
@@ -726,6 +726,11 @@ export const Equivalents = () => {
                         <td className="__always"></td>
                     </tr>
                     <tr>
+                        <td>\( \cases{"{\\union{A \\\\ B} \\\\ C}"} \)</td>
+                        <td>\( \union{"{\\cases{A \\\\ C} \\\\ \\cases{B \\\\ C}}"} \)</td>
+                        <td className="__always"></td>
+                    </tr>
+                    <tr>
                         <td>\( ложь \)</td>
                         <td>\(x \in \varnothing\)</td>
                         <td className="__always"></td>
@@ -764,11 +769,6 @@ export const Equivalents = () => {
                         <td>\(F(x,~f(x))\)</td>
                         <td>\(\cases{"{F(x,~const) \\\\ ограничения~из~f(x)}"}\)</td>
                         <td className="__know"><div className="smaller">\(F(x,~f(x)) \Rightarrow F(x,~const)\)</div></td>
-                    </tr>
-                    <tr>
-                        <td>\( \cases{"{\\union{A \\\\ B} \\\\ C}"} \)</td>
-                        <td>\( \union{"{\\cases{A \\\\ C} \\\\ \\cases{B \\\\ C}}"} \)</td>
-                        <td className="__always"></td>
                     </tr>
                     <tr>
                         <td>\( \cases{"{A \\\\ B}"} \)</td>

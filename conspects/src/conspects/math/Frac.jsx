@@ -1,6 +1,6 @@
-import { Title } from "../Title";
-import { Block } from "../Block";
-import { Props } from "../Props";
+import { Block } from "../../Block";
+import { Props } from "../../Props";
+import { Title } from "../../Title";
 
 export const Frac = () => {
 

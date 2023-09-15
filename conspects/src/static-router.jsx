@@ -12,7 +12,7 @@ export const useChangeLocation = (callback) => {
 export const useNavigate = (windowFlag = false) => {
     const newWindow = (path) => {
         if(path.indexOf("://") === -1) {
-            window.open(`${window.location.origin}/${path === "/" ? "" : "#"}${path.slice(1)}`);
+            window.open(`${window.location.href.split("#")[0]}${path === "/" ? "" : "#"}${path.slice(1)}`);
         }
         else {
             window.open(path);
@@ -52,10 +52,12 @@ export const Routes = ({children}) => {
     const child = () => {
         let childrenArray = Array.isArray(children) ? children : [children];
         let activeChild = childrenArray.find(child => child.props.path === activeRoute);
+        let defaultElement = undefined;
         if(activeChild === undefined) {
-            let defaultElement = childrenArray.find(child => child.type.name !== "Route");
+            defaultElement = childrenArray.find(child => child.type.name !== "Route");
             activeChild = defaultElement === undefined ? <div></div> : defaultElement;
         }
+        console.log(activeChild, defaultElement);
         return activeChild;
     }
 

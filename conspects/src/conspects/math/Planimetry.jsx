@@ -1,4 +1,4 @@
-import Hidinglist from "../Hidinglist";
+import Hidinglist from "../../Hidinglist";
 
 
 const Planimetry = ({page}) => { 
