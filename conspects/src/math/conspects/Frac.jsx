@@ -1,6 +1,6 @@
 import { Block } from "../../Block";
 import { Props } from "../../Props";
-import { Title } from "../../Title";
+import { Title } from "../Title";
 
 export const Frac = () => {
 
@@ -8,14 +8,10 @@ export const Frac = () => {
     return <div>
         <Title>Дробь</Title>
         <Block title="Определение">
-            $$ 
-                \displaystyle \frac{"{a}{b}"} = c \LR \cases{"{"}
-                    a = b \cdot c \\
-                    a \in \RR \\
-                    b \neq 0 \\
-                    c \in \RR
-                {"}"} 
-            $$
+            <div className="center">
+                \( \displaystyle\frac{"{a}{b}"} \) (\(a\) делённое на \(b\)) &mdash; это число \(c\),
+                где \( c \cdot b = a,~~a \in \RR, ~~ b \neq 0,~~c \in \RR \).
+            </div>
         </Block>
         <Block title="Свойства">
             <Props>

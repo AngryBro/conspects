@@ -1,6 +1,6 @@
 import { Block } from "../../Block";
 import { Props } from "../../Props";
-import { Title } from "../../Title";
+import { Title } from "../Title";
 
 export const Log = () => <div>
 

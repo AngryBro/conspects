@@ -4,12 +4,15 @@ import "./css/About.css";
 import "./css/media.css";
 import { Block } from "./Block";
 import { Spinner } from "./Spinner";
+import { useLocation } from "./static-router";
+// import { Api } from "./Api";
+
 
 export const About = () => {
 
     const contentURL = "https://raw.githubusercontent.com/AngryBro/conspects/main/data/about.html";
 
-    const [time, setTime] = useState("??:??");
+    // const [time, setTime] = useState("??:??");
 
     const [data, setData] = useState("");
 
@@ -17,18 +20,26 @@ export const About = () => {
 
 
     useEffect(() => {
-        const fetchTime = async () => {
-            let promise = await fetch("http://worldtimeapi.org/api/timezone/Asia/Vladivostok.txt");
-            let response = await promise.text();
-            let key = "datetime: ";
-            let index = response.indexOf(key);
-            let vdkTime = "";
-            while(response[index] !== "\n") {
-                vdkTime += response[index];
-                index++;
-            }
-            setTime(new Date(vdkTime.replace(key, "")).toLocaleTimeString().split(":").slice(0,2).join(":"));
-        }
+        // const fetchTime = () => {
+        //     Api("https://api.api-ninjas.com/v1/worldtime")
+        //     .get({city: "Vladivostok"})
+        //     .callback(({ok, data}) => {
+        //         if(ok) {
+        //             setTime(data.time);
+        //         }
+        //     })
+        //     .send();
+            // let promise = await fetch("http://worldtimeapi.org/api/timezone/Asia/Vladivostok.txt");
+            // let response = await promise.text();
+            // let key = "datetime: ";
+            // let index = response.indexOf(key);
+            // let vdkTime = "";
+            // while(response[index] !== "\n") {
+            //     vdkTime += response[index];
+            //     index++;
+            // }
+            // setTime(new Date(vdkTime.replace(key, "")).toLocaleTimeString().split(":").slice(0,2).join(":"));
+        // }
 
         const fetchData = async () => {
             setFetching(true);
@@ -38,12 +49,23 @@ export const About = () => {
             setData(response);
         }
         fetchData();
-        fetchTime();
+        // fetchTime();
     }, []);
+
+    const loc = useLocation();
+
+    const mainPage = () => {
+        let route = loc.split("/");
+        const pages = {
+            "math": "/math",
+            "inf": "/inf"
+        };
+        return pages[route[1]];
+    }
 
     
     return <div className="about smaller-xx">
-        <Title>Преподаватель</Title>
+        <Title main={mainPage()}>Преподаватель</Title>
         <div className="about-info-container">
             <div className="about-photo">
                 <img src="https://sun9-75.userapi.com/impg/AwPISDBOmIyySa-PMwAi8kFdYFYyjt0QygWaFA/spQ2fhYlqow.jpg?size=1200x1799&quality=95&sign=3c791181da73ad91ea99f4532e2a0526&type=album" alt="Аватарка вк" />
@@ -54,7 +76,7 @@ export const About = () => {
                     <tbody>
                         <tr>
                             <td><i>Город обитания:</i></td>
-                            <td>Владивосток, время {time}</td>
+                            <td>Владивосток</td>
                         </tr>
                         <tr>
                             <td><i>Образование:</i></td>

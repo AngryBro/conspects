@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { Title } from "../../Title";
+import { Title } from "../Title";
 import { Content } from "../../Content";
 import { Block } from "../../Block";
 import { Props } from "../../Props";
@@ -94,7 +94,7 @@ export const Pow = () => {
                     <td className="__always"></td>
                 </tr>
                 <tr>
-                    <td>\( a^{"{\\frac{1}{b}}"} \)</td>
+                    <td>\(\displaystyle a^{"{\\frac{1}{b}}"} \)</td>
                     <td>\( \sqrt[b]{"{a}"} \)</td>
                     <td className="__info">
                         <div className="__know">\(b \in \NN,~ b {">"} 1\)</div>
@@ -103,7 +103,7 @@ export const Pow = () => {
                 </tr>
                 <tr>
                     <td>\( \sqrt[b]{"{a}"} \)</td>
-                    <td>\( a^{"{\\frac{1}{b}}"} \)</td>
+                    <td>\(\displaystyle a^{"{\\frac{1}{b}}"} \)</td>
                     <td className="__info">
                         <div className="__know">\(a {">"} 0\)</div>
                         <div className="__add">\(b \in \NN ,~ b {">"} 1\)</div>
@@ -112,78 +112,36 @@ export const Pow = () => {
             </Props>
         </Block>
         <Block title="Степень с натуральным показателем" beginRef={beginRef} link={Nref}>
-            <p>
-                Определение:
-                $$
-                \cases{"{"} a^b = c \\ b \in \NN {"}"}
-                \LR
-                \cases{"{"}
-                    c = \underbrace{"{a \\cdot a \\cdot \\ldots \\cdot a}_{b~ раз}"} \\
-                    c \in \RR
-                {"}"}
-                $$
-            </p>
+            <div className="center">
+                \(a^b\) (\(a\) в натуральной степени \(b\)) &mdash; это произведение
+                \( \underbrace{"{a \\cdot a \\cdot \\ldots \\cdot a}_{b~ раз}"} \), где
+                \( a \in \RR,~~b \in \NN \).
+            </div>
         </Block>
         <Block title="Степень с целым показателем" beginRef={beginRef} link={Zref}>
-            <p>
-                Определение:
-                $$
-                \cases{"{"} a^b = c \\ b \in \ZZ {"}"}
-                \LR
-                \union{"{"}
-                    \cases{"{"}
-                        b {">"} 0 \\
-                        a \neq 0 \\
-                        c = a^b
-                    {"}"} \\
-                    \cases{"{"}
-                        b = 0 \\
-                        a \neq 0 \\
-                        c = 1
-                    {"}"} \\
-                    \cases{"{"}
-                        b {"<"} 0 \\
-                        a \neq 0 \\
-                        c = \displaystyle\frac{"{1}{a^{-b}}"}
-                    {"}"}
-                {"}"}
-                $$
-            </p>
+            <div className="center">
+                \(a^b\) (\(a\) в целой степени \(b\)) &mdash; это прозведение
+                \(\underbrace{"{a \\cdot a \\cdot \\ldots \\cdot a}_{b~ раз}"}\), если \(b {">"} 0\);
+                \(~~1\), если \(b = 0\); &nbsp;&nbsp; дробь
+                \(\displaystyle\frac{"{1}{a^{-b}}"} \), если \(b {"<"} 0\),
+                где \( a \neq 0,~~ b \in \ZZ \).
+            </div>
         </Block>
         <Block link={Qref} title="Степень с рациональным показателем" beginRef={beginRef}>
-            <p>
-                Определение:
-                $$
-                    \cases{"{"}
-                        a^b = c \\
-                        b = \frac{"{m}{n}"} \in \QQ \\
-                        n \in \NN
-                    {"}"} \LR
-                    \cases{"{"}
-                        c = \sqrt[n]{"{a^m}"} \\
-                        a {">"} 0 \\
-                        c {">"} 0
-                    {"}"}
-                $$
-            </p>
+            <div className="center">
+                \(a^b\) (\(a\) в рациональной степени \(b\)) &mdash; это
+                корень \( \sqrt[n]{"{a^m}"} \), где \( {"a > 0"},~~b = \frac{"{m}{n}"},
+                ~~m \in \ZZ,~~n \in \NN
+                \).
+            </div>
         </Block>
         <Block link={Rref} title="Степень с действительным показателем" beginRef={beginRef}>
-            <p>
-                Определение:
-                $$
-                    \cases{"{"}
-                        a^b = c \\
-                        b \in \RR
-                    {"}"} \LR
-                    \cases{"{"}
-                        b_i \in \QQ \\
-                        b = \displaystyle\lim_{"{n \\rightarrow \\infty}{b_n}"} \\
-                        c = \displaystyle\lim_{"{n \\rightarrow \\infty}{a^{b_n}}"} \\
-                        a {">"} 0 \\
-                        c {">"} 0
-                    {"}"}
-                $$
-            </p>
+            <div className="center">
+                \(a^b\) (\(a\) в действительной степени \(b\)) &mdash; это
+                предел последовательности \( \displaystyle\lim_{"{n \\rightarrow \\infty}{a^{b_n}}"} \)
+                , где \({"a > 0"},~~ b_i \in \QQ,~~ b = \displaystyle\lim_{"{n \\rightarrow \\infty}{b_n}"}
+                \).
+            </div>
         </Block>
 
     </div>

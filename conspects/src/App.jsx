@@ -1,19 +1,20 @@
-import { Main } from "./Main"
+import { Main as MainMath} from "./math/Main"
 import { Route, Routes, useChangeLocation } from "./static-router"
 import "./css/style.css";
 import "./css/media.css";
-import { Polynom } from "./conspects/math/Polynom";
-import { Frac } from "./conspects/math/Frac";
-import { Pow } from "./conspects/math/Pow";
-import { Abs } from "./conspects/math/Abs";
-import { Log } from "./conspects/math/Log";
-import { Sqrt } from "./conspects/math/Sqrt";
+import { Polynom } from "./math/conspects/Polynom";
+import { Frac } from "./math/conspects/Frac";
+import { Pow } from "./math/conspects/Pow";
+import { Abs } from "./math/conspects/Abs";
+import { Log } from "./math/conspects/Log";
+import { Sqrt } from "./math/conspects/Sqrt";
 import { About } from "./About";
-import { Trigonometry } from "./conspects/math/Trigonometry";
-import { Equivalents } from "./conspects/math/Equivalents";
+import { Trigonometry } from "./math/conspects/Trigonometry";
+import { Equivalents } from "./math/conspects/Equivalents";
 import { Empty } from "./Empty";
-import { Params } from "./conspects/math/Params";
-import { Oxy } from "./conspects/math/Oxy";
+import { Params } from "./math/conspects/Params";
+import { Oxy } from "./math/conspects/Oxy";
+import { Main } from "./Main";
 
 export const App = () => {
 
@@ -27,19 +28,29 @@ export const App = () => {
 
 
     return <Routes>
-        <Route path="/math" element={<Main/>} />
-        <Route path="/math/polynom" element={<Polynom/>} />
-        <Route path="/math/frac" element={<Frac/>} />
-        <Route path="/math/pow" element={<Pow/>} />
-        <Route path="/math/abs" element={<Abs/>} />
-        <Route path="/math/log" element={<Log/>} />
-        <Route path="/math/sqrt" element={<Sqrt/>} />
-        <Route path="/math/about" element={<About/>} />
-        <Route path="/math/trigonometry" element={<Trigonometry/>} />
-        <Route path="/math/equivalents" element={<Equivalents/>} />
-        <Route path="/math/params" element={<Params/>} />
-        <Route path="/math/oxy" element={<Oxy/>} />
-        {/* <Route path="/math/test" element={<Test/>} /> */}
+
+        <Route path="/" element={<Main title="Конспекты" />} />
+        <Route path="/about" element={<About/>} />
+
+        <Route path="/math">
+            <Route path="" element={<MainMath/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/polynom" element={<Polynom/>} />
+            <Route path="/frac" element={<Frac/>} />
+            <Route path="/pow" element={<Pow/>} />
+            <Route path="/abs" element={<Abs/>} />
+            <Route path="/log" element={<Log/>} />
+            <Route path="/sqrt" element={<Sqrt/>} />
+            <Route path="/trigonometry" element={<Trigonometry/>} />
+            <Route path="/equivalents" element={<Equivalents/>} />
+            <Route path="/params" element={<Params/>} />
+            <Route path="/oxy" element={<Oxy/>} />
+        </Route>
+
+        <Route path="/inf">
+            <Route path="" element={<></>} />
+            <Route path="/about" element={<About/>} />
+        </Route>
 
         <Empty/>
     </Routes>

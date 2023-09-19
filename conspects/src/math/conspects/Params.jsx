@@ -1,5 +1,5 @@
 import {useRef} from "react";
-import { Title } from "../../Title";
+import { Title } from "../Title";
 import { Content } from "../../Content";
 import { Block } from "../../Block";
 import { Cases } from "../../Cases";
@@ -288,7 +288,7 @@ export const Params = () => {
             <h4>Идея метода:</h4>
                 <ul>
                     <li>
-                        Выражениям ставятся в соответствие графики на <span className="inline-link" onClick={() => win("/oxy")}>координатной плоскости</span>.
+                        Выражениям ставятся в соответствие графики на <span className="inline-link" onClick={() => win("/math/oxy")}>координатной плоскости</span>.
                     </li>
                     <li>
                         При различных зачениях параметра графики выражений с параметрами выглядят по-разному.

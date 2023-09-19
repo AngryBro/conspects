@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Content } from "../../Content";
-import { Title } from "../../Title";
+import { Title } from "../Title";
 import { Block } from "../../Block";
 import { Props } from "../../Props";
 

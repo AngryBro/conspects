@@ -9,6 +9,10 @@ export const useChangeLocation = (callback) => {
     }, [callback]);
 }
 
+export const useLocation = () => {
+    return window.location.hash.replace("#", "/");
+}
+
 export const useNavigate = (windowFlag = false) => {
     const newWindow = (path) => {
         if(path.indexOf("://") === -1) {
@@ -49,22 +53,39 @@ export const Routes = ({children}) => {
         return () => window.removeEventListener("hashchange", handle);
     }, []);
 
-    const child = () => {
+    const activeElement = () => {
         let childrenArray = Array.isArray(children) ? children : [children];
-        let activeChild = childrenArray.find(child => child.props.path === activeRoute);
-        let defaultElement = undefined;
-        if(activeChild === undefined) {
-            defaultElement = childrenArray.find(child => child.type.name !== "Route");
-            activeChild = defaultElement === undefined ? <div></div> : defaultElement;
+        let elements = {};
+        const addElement = (ch, chPath = "") => {
+            if(ch.type.name !== "Route") return;
+            if(ch.props.element !== undefined) {
+                elements[`${chPath}${ch.props.path}`] = ch.props.element;
+            }
+            else {
+                let chChildrenArray = ch.props.children;
+                if(!Array.isArray(ch.props.children)) {
+                    chChildrenArray = [ch.props.children];
+                }
+                chChildrenArray.forEach(ch1 => addElement(ch1, `${chPath}${ch.props.path}`));
+            }
         }
-        console.log(activeChild, defaultElement);
-        return activeChild;
+        childrenArray.forEach(ch => addElement(ch));
+        if(activeRoute in elements) {
+            return elements[activeRoute];
+        }
+        else {
+            let defaultElement = childrenArray.find(el => el.type.name !== "Route");
+            if(defaultElement === undefined) {
+                defaultElement = <div></div>;
+            }
+            return defaultElement;
+        }
     }
 
-    return child();
+    return activeElement();
 
 }
 
 export const Route = ({element}) => {
-    return element;
+    return element
 }

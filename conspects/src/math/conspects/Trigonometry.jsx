@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { Title } from "../../Title";
+import { Title } from "../Title";
 import {Content} from "../../Content";
 import { Block } from "../../Block";
 import { Props } from "../../Props";
@@ -191,9 +191,6 @@ export const Trigonometry = () => {
                     <td>\( \cos{"{(a \\mp b)}"} \)</td>
                 </tr>
             </Props>
-        </Block>
-        <Block title="Простейшие уравнения" link={equation} beginRef={beginRef}>
-            
         </Block>
     </div>
     

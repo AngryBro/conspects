@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Title } from "../../Title";
+import { Title } from "../Title";
 import { Content } from "../../Content";
 import { Block } from "../../Block";
 import { Description } from "../../Description";
@@ -71,7 +71,7 @@ export const Oxy = () => {
         <Block title="Вектор" link={vector} beginRef={beginRef}>
             <div className="frame smaller-xx">
                 <ol className="def-list">
-                    <li>Вектор \(\veca\) имеет координаты \(x,~y:~~~a{"\\{x,~y\\}"}\).</li>
+                    <li>Вектор \(\veca\) имеет координаты \(x,~y:~~~\vec{"{a}"}{"\\{x,~y\\}"}\).</li>
                     <li>Вектор с началом в точке \(A\) и концом в точке \(B:~~~\vector{"{AB}"}\).</li>
                     <li>\( \vector{"{AB}"}_i = B_i - A_i \).</li>
                     <li>\( \veca \parallel k \cdot \veca, \) где \(k\) &ndash; целое число.</li>
