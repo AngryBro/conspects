@@ -19,7 +19,6 @@ import { Main } from "./Main";
 export const App = () => {
 
     useChangeLocation(() => {
-        console.log(1);
         if(typeof MathJax !== "undefined") {
             // eslint-disable-next-line
             MathJax.typeset();
@@ -52,6 +51,6 @@ export const App = () => {
             <Route path="/about" element={<About/>} />
         </Route>
 
-        <Empty/>
+        <Route path="/*" element={<Empty/>} />
     </Routes>
 }

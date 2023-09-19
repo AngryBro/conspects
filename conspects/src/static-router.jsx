@@ -38,51 +38,53 @@ export const useNavigate = (windowFlag = false) => {
 
 export const Routes = ({children}) => {
 
-    const path = () => "/" + window.location.hash.slice(1);
-
-    const [activeRoute, setActiveRoute] = useState(path());
+    const [activeElement, setActiveElement] = useState(<></>);
 
     useEffect(() => {
 
         const handle = () => {
-            setActiveRoute(path());
+            let childrenArray = Array.isArray(children) ? children : [children];
+            let elements = {};
+            const addElement = (ch, chPath = "") => {
+                if(ch.props.element !== undefined) {
+                    elements[`${chPath}${ch.props.path}`] = ch.props.element;
+                }
+                else {
+                    let chChildrenArray = ch.props.children;
+                    if(!Array.isArray(ch.props.children)) {
+                        chChildrenArray = [ch.props.children];
+                    }
+                    chChildrenArray.forEach(ch1 => addElement(ch1, `${chPath}${ch.props.path}`));
+                }
+            }
+            childrenArray.forEach(ch => addElement(ch));
+            let actEl;
+            let p = window.location.hash.replace("#", "/");
+            console.log(p, elements);
+            if(p === "") {
+                p = "/";
+            }
+            if(p in elements) {
+                actEl = elements[p];
+            }
+            else {
+                let defaultElement = childrenArray.find(el => el.props.path === "/*");
+                if(defaultElement === undefined) {
+                    defaultElement = <div></div>;
+                }
+                actEl = defaultElement;
+            }
+            setActiveElement(actEl);
         }
 
         window.addEventListener("hashchange", handle);
+
+        handle();
         
         return () => window.removeEventListener("hashchange", handle);
-    }, []);
+    }, [children]);
 
-    const activeElement = () => {
-        let childrenArray = Array.isArray(children) ? children : [children];
-        let elements = {};
-        const addElement = (ch, chPath = "") => {
-            if(ch.type.name !== "Route") return;
-            if(ch.props.element !== undefined) {
-                elements[`${chPath}${ch.props.path}`] = ch.props.element;
-            }
-            else {
-                let chChildrenArray = ch.props.children;
-                if(!Array.isArray(ch.props.children)) {
-                    chChildrenArray = [ch.props.children];
-                }
-                chChildrenArray.forEach(ch1 => addElement(ch1, `${chPath}${ch.props.path}`));
-            }
-        }
-        childrenArray.forEach(ch => addElement(ch));
-        if(activeRoute in elements) {
-            return elements[activeRoute];
-        }
-        else {
-            let defaultElement = childrenArray.find(el => el.type.name !== "Route");
-            if(defaultElement === undefined) {
-                defaultElement = <div></div>;
-            }
-            return defaultElement;
-        }
-    }
-
-    return activeElement();
+    return activeElement;
 
 }
 
