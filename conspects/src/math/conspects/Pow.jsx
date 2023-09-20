@@ -112,14 +112,14 @@ export const Pow = () => {
             </Props>
         </Block>
         <Block title="Степень с натуральным показателем" beginRef={beginRef} link={Nref}>
-            <div className="center">
+            <div className="center smaller-xx">
                 \(a^b\) (\(a\) в натуральной степени \(b\)) &mdash; это произведение
                 \( \underbrace{"{a \\cdot a \\cdot \\ldots \\cdot a}_{b~ раз}"} \), где
                 \( a \in \RR,~~b \in \NN \).
             </div>
         </Block>
         <Block title="Степень с целым показателем" beginRef={beginRef} link={Zref}>
-            <div className="center">
+            <div className="center smaller-xx">
                 \(a^b\) (\(a\) в целой степени \(b\)) &mdash; это прозведение
                 \(\underbrace{"{a \\cdot a \\cdot \\ldots \\cdot a}_{b~ раз}"}\), если \(b {">"} 0\);
                 \(~~1\), если \(b = 0\); &nbsp;&nbsp; дробь
@@ -128,7 +128,7 @@ export const Pow = () => {
             </div>
         </Block>
         <Block link={Qref} title="Степень с рациональным показателем" beginRef={beginRef}>
-            <div className="center">
+            <div className="center smaller-xx">
                 \(a^b\) (\(a\) в рациональной степени \(b\)) &mdash; это
                 корень \( \sqrt[n]{"{a^m}"} \), где \( {"a > 0"},~~b = \frac{"{m}{n}"},
                 ~~m \in \ZZ,~~n \in \NN
@@ -136,7 +136,7 @@ export const Pow = () => {
             </div>
         </Block>
         <Block link={Rref} title="Степень с действительным показателем" beginRef={beginRef}>
-            <div className="center">
+            <div className="center smaller-xx">
                 \(a^b\) (\(a\) в действительной степени \(b\)) &mdash; это
                 предел последовательности \( \displaystyle\lim_{"{n \\rightarrow \\infty}{a^{b_n}}"} \)
                 , где \({"a > 0"},~~ b_i \in \QQ,~~ b = \displaystyle\lim_{"{n \\rightarrow \\infty}{b_n}"}

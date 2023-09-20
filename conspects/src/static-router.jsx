@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export const useChangeLocation = (callback) => {
     useEffect(() => {
-        callback();
+        // callback();
         window.addEventListener("hashchange", callback);
         
         return () => window.removeEventListener("hashchange", callback);

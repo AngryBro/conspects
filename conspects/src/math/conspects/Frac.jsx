@@ -8,7 +8,7 @@ export const Frac = () => {
     return <div>
         <Title>Дробь</Title>
         <Block title="Определение">
-            <div className="center">
+            <div className="center smaller-xx">
                 \( \displaystyle\frac{"{a}{b}"} \) (\(a\) делённое на \(b\)) &mdash; это число \(c\),
                 где \( c \cdot b = a,~~a \in \RR, ~~ b \neq 0,~~c \in \RR \).
             </div>

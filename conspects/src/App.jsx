@@ -15,15 +15,23 @@ import { Empty } from "./Empty";
 import { Params } from "./math/conspects/Params";
 import { Oxy } from "./math/conspects/Oxy";
 import { Main } from "./Main";
+import { useCallback, useEffect } from "react";
 
 export const App = () => {
 
-    useChangeLocation(() => {
+    const renderMath = useCallback(() => {
         if(typeof MathJax !== "undefined") {
             // eslint-disable-next-line
             MathJax.typeset();
         }
-    });
+    }, []);
+
+    useChangeLocation(renderMath);
+
+    useEffect(() => {
+        window.addEventListener("load", renderMath);
+        return () => window.removeEventListener("load", renderMath);
+    }, [renderMath]);
 
 
     return <Routes>
