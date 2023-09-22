@@ -294,3 +294,10 @@ li:last-child {
 .inline-link:hover {
     color: grey;
 }
+.p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.bold {
+    font-weight: bold;
+}

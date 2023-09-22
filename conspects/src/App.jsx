@@ -16,6 +16,8 @@ import { Params } from "./math/conspects/Params";
 import { Oxy } from "./math/conspects/Oxy";
 import { Main } from "./Main";
 import { useCallback, useEffect } from "react";
+import { SqrEquations } from "./math/conspects/SqrEquations";
+import { Comp } from "./math/conspects/Comp";
 
 export const App = () => {
 
@@ -52,6 +54,8 @@ export const App = () => {
             <Route path="/equivalents" element={<Equivalents/>} />
             <Route path="/params" element={<Params/>} />
             <Route path="/oxy" element={<Oxy/>} />
+            <Route path="/sqreq" element={<SqrEquations/>} />
+            <Route path="/compare" element={<Comp/>} />
         </Route>
 
         <Route path="/inf">
