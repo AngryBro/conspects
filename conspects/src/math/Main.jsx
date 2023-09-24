@@ -37,7 +37,7 @@ export const Main = () =>
             ]},
             {text: "Результаты учеников", win: "https://docs.google.com/spreadsheets/d/1ymkx7Tbok4JtQovr6okvu_1bpVVptfb1myr_Rn2VuQI/edit#gid=2107114599"},
             {text: "Бланки учеников", win: "https://drive.google.com/drive/folders/1xL7xy0TNA6vJ0Plzh84lB54qohrkL4WA"},
-            {text: "Печать формул", win: "https://angrybro.github.io/LatexRealTime/"},
+            {text: "Набор формул", win: "https://angrybro.github.io/LatexRealTime/"},
             {text: "Старая версия", win: "https://angrybro.github.io/conspects/math/old"},
             {text: "Очень старая версия", win: "https://angrybro.github.io/conspects/math/old/old"}
         ]}

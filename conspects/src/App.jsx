@@ -1,4 +1,5 @@
 import { Main as MainMath} from "./math/Main"
+import { Main as MainInf} from "./inf/Main"
 import { Route, Routes, useChangeLocation } from "./static-router"
 import "./css/style.css";
 import "./css/media.css";
@@ -18,6 +19,9 @@ import { Main } from "./Main";
 import { useCallback, useEffect } from "react";
 import { SqrEquations } from "./math/conspects/SqrEquations";
 import { Comp } from "./math/conspects/Comp";
+import { Python } from "./inf/dev/Python";
+import { Pycharm } from "./inf/dev/Pycharm";
+import { Terminal } from "./inf/python/Terminal";
 
 export const App = () => {
 
@@ -59,8 +63,15 @@ export const App = () => {
         </Route>
 
         <Route path="/inf">
-            <Route path="" element={<></>} />
+            <Route path="" element={<MainInf/>} />
             <Route path="/about" element={<About/>} />
+            <Route path="/ide">
+                <Route path="/pycharm" element={<Pycharm/>} />
+            </Route>
+            <Route path="/python">
+                <Route path="" element={<Python/>} />
+                <Route path="/terminal" element={<Terminal/>} />
+            </Route>
         </Route>
 
         <Route path="/*" element={<Empty/>} />

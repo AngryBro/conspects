@@ -3,6 +3,7 @@ import { Button1 } from "./buttons/Button1";
 import { Button2 } from "./buttons/Button2";
 import { Spoiler } from "./spoiler";
 import { useNavigate } from "./static-router";
+import { ButtonSpoiler } from "./buttons/ButtonSpoiler";
 
 export const MainTemplate = ({children, title, route = ""}) => {
 
@@ -20,7 +21,7 @@ export const MainTemplate = ({children, title, route = ""}) => {
             </Button2>
         }
         return <Spoiler margin={10} containsMath={true} recursive={true}>
-            <Button2>{child.text}</Button2>
+            <ButtonSpoiler opened={false}>{child.text}</ButtonSpoiler>
             {child.num?
             <ol className="main-sublist">
                 {
@@ -41,6 +42,7 @@ export const MainTemplate = ({children, title, route = ""}) => {
                 }
             </ul>
             }
+            <ButtonSpoiler opened={true}>{child.text}</ButtonSpoiler>
         </Spoiler>
     }
 

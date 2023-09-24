@@ -27,6 +27,9 @@ body {
     width: 100%;
     overflow-x: hidden;
 }
+img {
+    max-width: 100%;
+}
 .content-container {
     margin: 0 10%;
     max-width: 100%;
@@ -300,4 +303,20 @@ li:last-child {
 }
 .bold {
     font-weight: bold;
+}
+.listing {
+    font-family:'Courier New', Courier, monospace;
+}
+.functions-table td, .functions-table th {
+    border: 1px solid black;
+    padding: 5px;
+}
+.functions-table td {
+    text-align: justify;
+}
+.functions-table th {
+    text-align: center;
+}
+.functions-table {
+    border-collapse: collapse;
 }
