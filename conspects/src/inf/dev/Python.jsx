@@ -22,7 +22,7 @@ export const Python = () =>
             </li>
             <li>
                 <div className="p">Скачиваем последнюю версию</div>
-                <div>
+                <div className="instruction">
                     <img src={python} alt="python download"/>
                 </div>
             </li>

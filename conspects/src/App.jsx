@@ -22,6 +22,7 @@ import { Comp } from "./math/conspects/Comp";
 import { Python } from "./inf/dev/Python";
 import { Pycharm } from "./inf/dev/Pycharm";
 import { Terminal } from "./inf/python/Terminal";
+import { Idle } from "./inf/dev/Idle";
 
 export const App = () => {
 
@@ -67,6 +68,7 @@ export const App = () => {
             <Route path="/about" element={<About/>} />
             <Route path="/ide">
                 <Route path="/pycharm" element={<Pycharm/>} />
+                <Route path="/idle" element={<Idle/>} />
             </Route>
             <Route path="/python">
                 <Route path="" element={<Python/>} />

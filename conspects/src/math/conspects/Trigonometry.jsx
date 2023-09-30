@@ -10,7 +10,6 @@ export const Trigonometry = () => {
     const angleTable = useRef();
     const ghost = useRef();
     const circle = useRef();
-    const equation = useRef();
     const beginRef = useRef();
 
     return <div ref={beginRef}>
@@ -21,7 +20,6 @@ export const Trigonometry = () => {
             <li link={circle}><span className="trigonometry-circle">окружность</span></li>
             <li link={ghost}>Формула приведения</li>
             <li link={formulas}>Свойства</li>
-            <li link={equation}>Простейшие уравнения</li>
         </Content>
         <Block title="Определения" beginRef={beginRef} link={defs}>
             <ol className="def-list x-smaller-xx">

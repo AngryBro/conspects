@@ -40,7 +40,7 @@ export const Main = () =>
             {text: "Программное обеспечение", num: true, children: [
                 {text: "Python", nav: "/python"},
                 {text: "Pycharm", nav: "/ide/pycharm"},
-                // {text: "Idle", nav: "/ide/idle"},
+                {text: "Idle", nav: "/ide/idle"},
                 // {text: "КуМир", nav: "/ide/kumir"},
                 // {text: "Libre Office", nav: "/libreoffice"}
             ]}

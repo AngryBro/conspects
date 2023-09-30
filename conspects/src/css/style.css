@@ -320,3 +320,7 @@ li:last-child {
 .functions-table {
     border-collapse: collapse;
 }
+.instruction img {
+    border-radius: 10px;
+    border: 2px solid black;
+}
