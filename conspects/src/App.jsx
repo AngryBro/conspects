@@ -16,25 +16,33 @@ import { Empty } from "./Empty";
 import { Params } from "./math/conspects/Params";
 import { Oxy } from "./math/conspects/Oxy";
 import { Main } from "./Main";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { SqrEquations } from "./math/conspects/SqrEquations";
 import { Comp } from "./math/conspects/Comp";
 import { Python } from "./inf/dev/Python";
 import { Pycharm } from "./inf/dev/Pycharm";
 import { Terminal } from "./inf/python/Terminal";
 import { Idle } from "./inf/dev/Idle";
+import { Models } from "./inf/Models";
 
 export const App = () => {
 
-    const renderMath = useCallback(() => {
+    // eslint-disable-next-line
+    const renderMath = () => {
         if(typeof MathJax !== "undefined") {
             // eslint-disable-next-line
             MathJax.typeset();
+            // eslint-disable-next-line
+            setTimeout(() => MathJax.typeset(), 3000);
         }
-    }, []);
+        else {
+            console.log("Ошибка рендера");
+        }
+    };
 
     useChangeLocation(renderMath);
 
+    
     useEffect(() => {
         window.addEventListener("load", renderMath);
         return () => window.removeEventListener("load", renderMath);
@@ -65,6 +73,7 @@ export const App = () => {
 
         <Route path="/inf">
             <Route path="" element={<MainInf/>} />
+            <Route path="/models" element={<Models/>}/>
             <Route path="/about" element={<About/>} />
             <Route path="/ide">
                 <Route path="/pycharm" element={<Pycharm/>} />

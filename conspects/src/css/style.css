@@ -136,6 +136,8 @@ td.__know, td.__add, td.__always, td.__info {
     height: fit-content;
     overflow-x: scroll;
     overflow-y: hidden;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 .center {
     text-align: center;

@@ -78,11 +78,11 @@ export const Log = () => <div>
             </tr>
             <tr>
                 <td>\( \log_a{"{b}"} + \log_a{"{c}"} \)</td>
-                <td>\( \log_a{"{b \\cdot c}"} \)</td>
+                <td>\( \log_a{"{(b \\cdot c)}"} \)</td>
                 <td className="__add">\( b \geqslant 0 \) либо \( c \geqslant 0 \)</td>
             </tr>
             <tr>
-                <td>\( \log_a{"{b \\cdot c}"} \)</td>
+                <td>\( \log_a{"{(b \\cdot c)}"} \)</td>
                 <td>\( \log_a{"{b}"} + \log_a{"{c}"} \)</td>
                 <td className="__know">\( b \geqslant 0 \) либо \( c \geqslant 0 \)</td>
             </tr>

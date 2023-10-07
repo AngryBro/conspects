@@ -7,6 +7,7 @@ export const Main = () =>
         {text: "О преподавателе", nav: "/about"},
         {text: "Результаты учеников", win: "https://docs.google.com/spreadsheets/d/1ymkx7Tbok4JtQovr6okvu_1bpVVptfb1myr_Rn2VuQI/edit#gid=1842070037"},
         {text: "Конспекты", children: [
+            {text: "Математические модели", nav: "/models"},
             // {text: "Алгоритмы", num: true, children: [
             //     {text: "Системы счисления", nav: "/alg/cc"},
             //     {text: "Поиск делителей", nav: "/alg/divs"},

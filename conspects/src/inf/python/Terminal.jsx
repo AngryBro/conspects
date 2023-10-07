@@ -1,4 +1,3 @@
-import { Block } from "../../Block";
 import { Functions } from "../Functions";
 import { Title } from "../Title";
 
@@ -6,7 +5,6 @@ export const Terminal = () =>
 
 <div>
     <Title>Данные и терминал</Title>
-    <Block title="Вывод данных в терминал">
         <Functions action={true}>
             <tr>
                 <td className="listing">print(<b>a</b>,...,sep=<b>b</b>, end=<b>c</b> )</td>
@@ -22,10 +20,6 @@ export const Terminal = () =>
 
                 </td>
             </tr>
-        </Functions>
-    </Block>
-    <Block title="Ввод данных из терминала">
-        <Functions action={true}>
             <tr>
                 <td className="listing">input(<b>message</b>)</td>
                 <td>
@@ -34,11 +28,10 @@ export const Terminal = () =>
                         <li>По умолчанию <span className="listing">message=""</span></li>
                     </ul>
                 </td>
-                <td className="listing">Строка, введённая с клавиатуры</td>
+                <td>Строка, введённая с клавиатуры</td>
                 <td>
                     Выводит в терминал <b>message</b> и запрашивает ввод с клавиатуры
                 </td>
             </tr>
         </Functions>
-    </Block>
 </div>

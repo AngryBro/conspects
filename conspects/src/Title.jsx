@@ -10,7 +10,7 @@ export const Title = ({children, docTitle, main}) => {
         document.title = docTitle === undefined ? children : docTitle;
     }, [children, docTitle]);
 
-    return <div className="title" onClick={() => nav(main)}>
+    return <div className="title" onClick={(e) => nav(main, e)}>
         <div className="title-page __current">{children}</div>
         <div className="title-page __main">На главную</div>
     </div>
