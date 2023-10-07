@@ -17,7 +17,7 @@ export const Models = () => {
             <li link={img}>Кодирование растровых изображений</li>
         </Content>
         <Block link={info} title="Передача информации" beginRef={main}>
-            <div className="frame">
+            <div className="frame-border">
                 \( \Large I = V \cdot t \)
             </div>
             <ul className="dot-list">
@@ -27,7 +27,7 @@ export const Models = () => {
             </ul>
         </Block>
         <Block link={sound} title="Кодирование звука" beginRef={main}>
-            <div className="frame">
+            <div className="frame-border">
                 \( \Large I = i \cdot \nu \cdot t \cdot k \)
             </div>
             <ul className="dot-list">
@@ -39,11 +39,12 @@ export const Models = () => {
             </ul>
         </Block>
         <Block link={img} title="Кодирование растровых изображений" beginRef={main}>
-            <div className="frame">
+            <div className="frame-border">
                 \(
                     \Large
                     \cases{"{"}
                         I = k \cdot i \\
+                        i \in \ZZ \\
                         N = 2^i \\
                         \widetilde{"{N}"} \leqslant N
                     {"}"}
