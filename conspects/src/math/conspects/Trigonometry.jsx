@@ -8,7 +8,6 @@ export const Trigonometry = () => {
     const defs = useRef();
     const formulas = useRef();
     const angleTable = useRef();
-    const ghost = useRef();
     const circle = useRef();
     const beginRef = useRef();
 
@@ -18,7 +17,6 @@ export const Trigonometry = () => {
             <li link={defs}>Определения</li>
             <li link={angleTable}>Табличные углы</li>
             <li link={circle}><span className="trigonometry-circle">окружность</span></li>
-            <li link={ghost}>Формула приведения</li>
             <li link={formulas}>Свойства</li>
         </Content>
         <Block title="Определения" beginRef={beginRef} link={defs}>
@@ -106,25 +104,22 @@ export const Trigonometry = () => {
                 <li>Центральный угол равен дуге, на которую опирается.</li>
             </ul>
         </Block>
-        <Block title="Формула приведения" link={ghost} beginRef={beginRef}>
-
-        </Block>
         <Block title="Свойства" link={formulas} beginRef={beginRef}>
             <Props className="x-smaller-xx">
                 <tr>
-                    <td>\(\sin^2{"{a}"} + \cos^2{"{b}"}\)</td>
+                    <td>\(\sin^2{"{a}"} + \cos^2{"{a}"}\)</td>
                     <td>1</td>
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>\(\sin^2{"{a}"} + \cos^2{"{b}"}\)</td>
+                    <td>\(\sin^2{"{a}"} + \cos^2{"{a}"}\)</td>
                 </tr>
                 <tr>
                     <td>\(\sin^2{"{a}"}\)</td>
                     <td>\( 1 - \cos^2{"{a}"} \)</td>
                 </tr>
                 <tr>
-                    <td>\(\cos^2{"{b}"}\)</td>
+                    <td>\(\cos^2{"{a}"}\)</td>
                     <td>\( 1 - \sin^2{"{a}"} \)</td>
                 </tr>
                 <tr>

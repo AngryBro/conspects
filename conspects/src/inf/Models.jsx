@@ -14,7 +14,7 @@ export const Models = () => {
         <Content>
             <li link={info}>Передача информации</li>
             <li link={sound}>Кодирование звука</li>
-            <li link={img}>Кодирование растровых изображений</li>
+            <li link={img}>Поэлементное кодирование информации</li>
         </Content>
         <Block link={info} title="Передача информации" beginRef={main}>
             <div className="frame-border">
@@ -38,24 +38,26 @@ export const Models = () => {
                 <li>\(k\) &mdash; количество каналов.</li>
             </ul>
         </Block>
-        <Block link={img} title="Кодирование растровых изображений" beginRef={main}>
+        <Block link={img} title="Поэлементное кодирование информации" beginRef={main}>
+            <p>
+                Некоторая информация кодируется с помощью конечного набора элементов,
+                имеющих одинаковый вес.
+            </p>
             <div className="frame-border">
                 \(
                     \Large
                     \cases{"{"}
                         I = k \cdot i \\
                         i \in \ZZ \\
-                        N = 2^i \\
-                        \widetilde{"{N}"} \leqslant N
+                        N \leqslant 2^i
                     {"}"}
                  \)
             </div>
             <ul className="dot-list">
-                <li>\(I\) (бит) &mdash; вес растрового изображения.</li>
-                <li>\(k\) &mdash; количество пикселей.</li>
-                <li>\(i\) (бит) &mdash; вес одного пикселя.</li>
-                <li>\(N\) &mdash; максимальное количество цветов, которое может быть использовано.</li>
-                <li>\(\widetilde{"{N}"}\) &mdash; фактическое количество использованных цветов.</li>
+                <li>\(I\) (бит) &mdash; вес информации.</li>
+                <li>\(k\) &mdash; количество элементов в составе информации.</li>
+                <li>\(i\) (бит) &mdash; вес одного элемента.</li>
+                <li>\(N\) &mdash; количество различных элементов, которое может быть использовано.</li>
             </ul>
         </Block>
     </div>
