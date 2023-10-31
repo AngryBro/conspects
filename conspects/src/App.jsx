@@ -24,6 +24,7 @@ import { Pycharm } from "./inf/dev/Pycharm";
 import { Terminal } from "./inf/python/Terminal";
 import { Idle } from "./inf/dev/Idle";
 import { Models } from "./inf/Models";
+import { Probability } from "./math/conspects/Probability";
 
 export const App = () => {
 
@@ -69,6 +70,7 @@ export const App = () => {
             <Route path="/oxy" element={<Oxy/>} />
             <Route path="/sqreq" element={<SqrEquations/>} />
             <Route path="/compare" element={<Comp/>} />
+            <Route path="/probability" element={<Probability/>} />
         </Route>
 
         <Route path="/inf">

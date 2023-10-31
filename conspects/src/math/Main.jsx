@@ -21,7 +21,7 @@ export const Main = () =>
                 ]},
                 {text: "Тригонометрия", nav: "/trigonometry"},
                 // {text: "Теория чисел", nav: "/numbers"},
-                // {text: "Теория вероятностей", nav: "/probability"},
+                {text: "Теория вероятностей", nav: "/probability"},
                 // {text: "Функция", nav: "/function"},
                 {text: "Координаты \\(~Oxy\\)", nav: "/oxy"},
                 // {text: "Координаты \\(~Oxyz\\)", nav: "/oxyz"},
