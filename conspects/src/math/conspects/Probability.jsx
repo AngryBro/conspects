@@ -20,7 +20,7 @@ export const Probability = () => {
     return <div ref={main}>
         <Title>Теория вероятностей</Title>
         <Content>
-            <li link={defs}>Обозначения</li>
+            <li link={defs}>Обозначения и определения</li>
             <li link={classic}>Классическое определение</li>
             <li link={not}>Противоположное событие</li>
             <li link={or}>Объединение событий</li>
@@ -30,11 +30,28 @@ export const Probability = () => {
             <li link={full}>Формула полной вероятности</li>
             <li link={bernully}>Формула Бернулли</li>
         </Content>
-        <Block title="Обозначения" link={defs} beginRef={main}>
-
+        <Block title="Обозначения и определения" link={defs} beginRef={main}>
+            <div className="frame">
+                <ul>
+                    <li><b>Испытание</b> &mdash; действие, в результате которого могут возникать случайные события.</li>
+                    <li>\(P(A)\) &mdash; вероятность события \(A\).</li>
+                    <li>\(\overline{"{A}"}\) &mdash; событие, противоположное событию \(A\).</li>
+                    <li>\(A \cup B\) &mdash; событие, при котором происходит хотя бы одно из событий \(A\) или \(B\).</li>
+                    <li>\(A \cap B\) &mdash; событие при котором происходят все события и \(A\) и \(B\).</li>
+                </ul>
+            </div>
         </Block>
         <Block title="Классическое определение" link={classic} beginRef={main}>
-
+            <div className="frame">
+                \( P(A) = \displaystyle \frac{"{m}{n}"} \)
+            </div>
+            <ul>
+                <li>\(n = |U|\) &mdash; количество равновозможных исходов испытания \(U\).</li>
+                <li>\(m = |A|\) &mdash; количество тех исходов, из которых состоит событие \(A\).</li>
+                <li>\(P(\varnothing) = 0\).</li>
+                <li>\(P(U) = 1\).</li>
+                <li>\( 0 \leqslant P(A) \leqslant 1 \).</li>
+            </ul>
         </Block>
         <Block title="Противоположное событие" link={not} beginRef={main}>
             <div className="frame">
@@ -86,8 +103,12 @@ export const Probability = () => {
             </div>
         </Block>
         <Block title="Условная вероятность" link={conditional} beginRef={main}>
+            <div className="frame">
+                \(P(A|B)\) &mdash; вероятность события \(A\), если событие \(B\) считается случившимся.
+            </div>
             <ul>
-                <li></li>
+                <li>\( P(A|B) = \displaystyle \frac{"{|A \\cap B|}{|B|}"} \)</li>
+                <li>\( P(A|B) = \displaystyle \frac{"{P(A \\cap B)}{P(B)}"} \)</li>
             </ul>
         </Block>
         <Block title="Формула Байеса" link={bias} beginRef={main}>
@@ -104,9 +125,19 @@ export const Probability = () => {
                     P(H_n) \cdot P(A|H_n)
                 \)
             </div>
+            <ul>
+                <li>\(H_i\) &mdash; все возможные непересекающиеся гипотезы.</li>
+            </ul>
         </Block>
         <Block title="Формула Бернулли" link={bernully} beginRef={main}>
-
+            <div className="frame">
+                \( P(A) = C_n^k \cdot p^k \cdot (1 - p)^{"{n-k}"} \)
+            </div>
+            <ul>
+                <li>Испытание повторяется \(n\) раз с неизменными начальными данными.</li>
+                <li>\(A\) &mdash; событие \(B\) произошло \(k\) раз (без учёта порядка).</li>
+                <li>\(P(B) = p\).</li>
+            </ul>
         </Block>
     </div>
 }
