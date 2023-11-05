@@ -25,6 +25,7 @@ import { Terminal } from "./inf/python/Terminal";
 import { Idle } from "./inf/dev/Idle";
 import { Models } from "./inf/Models";
 import { Probability } from "./math/conspects/Probability";
+import { TextTask } from "./math/conspects/TextTask";
 
 export const App = () => {
 
@@ -66,11 +67,14 @@ export const App = () => {
             <Route path="/sqrt" element={<Sqrt/>} />
             <Route path="/trigonometry" element={<Trigonometry/>} />
             <Route path="/equivalents" element={<Equivalents/>} />
-            <Route path="/params" element={<Params/>} />
             <Route path="/oxy" element={<Oxy/>} />
             <Route path="/sqreq" element={<SqrEquations/>} />
             <Route path="/compare" element={<Comp/>} />
             <Route path="/probability" element={<Probability/>} />
+            <Route path="/templates">
+                <Route path="/params" element={<Params/>} />
+                <Route path="/text-task" element={<TextTask/>} />
+            </Route>
         </Route>
 
         <Route path="/inf">
