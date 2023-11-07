@@ -7,6 +7,7 @@ import { General } from "../../General";
 export const Probability = () => {
     
     const main = useRef();
+    const statistic = useRef();
     const classic = useRef();
     const not = useRef();
     const or = useRef();
@@ -21,6 +22,7 @@ export const Probability = () => {
         <Title>Теория вероятностей</Title>
         <Content>
             <li link={defs}>Обозначения и определения</li>
+            <li link={statistic}>Статистическое определение</li>
             <li link={classic}>Классическое определение</li>
             <li link={not}>Противоположное событие</li>
             <li link={or}>Объединение событий</li>
@@ -41,6 +43,16 @@ export const Probability = () => {
                     <li>\( C_n^k = \displaystyle \frac{"{n!}{(n-k)!k!}"} \) &mdash; количество способов выбрать \(k\) элементов из \(n\).</li>
                 </ul>
             </div>
+        </Block>
+        <Block title="Статистическое определение" link={statistic} beginRef={main}>
+            <div className="frame">
+                \( P(A) \approx \displaystyle F(A) = \frac{"{m}{n}"} \)
+            </div>
+            <ul>
+                <li>\(F(A)\) &mdash; частота события \(A\).</li>
+                <li>\(n\) &mdash; фактическое количество раз проведения испытания.</li>
+                <li>\(m\) &mdash; фактическое количество раз появления события \(A\).</li>
+            </ul>
         </Block>
         <Block title="Классическое определение" link={classic} beginRef={main}>
             <div className="frame">
