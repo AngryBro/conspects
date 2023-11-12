@@ -85,7 +85,7 @@ export const Derivative = () => {
         <Block link={table} title="Таблица производных" beginRef={main}>
             <Props>
                 <tr>
-                    <td>\(C'\)</td>
+                    <td>\(C'_x\)</td>
                     <td>\(0\)</td>
                 </tr>
                 <tr>
@@ -122,7 +122,7 @@ export const Derivative = () => {
                 </tr>
                 <tr>
                     <td>\( (\cos{"{y}"})' \)</td>
-                    <td>\( -\sin{"{y}"} \cdot y \)</td>
+                    <td>\( -\sin{"{y}"} \cdot y' \)</td>
                 </tr>
                 <tr>
                     <td>\( (\tg{"{y}"})' \)</td>
