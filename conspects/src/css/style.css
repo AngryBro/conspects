@@ -326,3 +326,12 @@ li:last-child {
     border-radius: 10px;
     border: 2px solid black;
 }
+.regular-table {
+    border-collapse: collapse;
+    font-size: 20pt;
+}
+.regular-table > tbody > tr > td, .regular-table > tbody > tr > th {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}

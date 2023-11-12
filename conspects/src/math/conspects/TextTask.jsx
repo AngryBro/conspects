@@ -100,6 +100,9 @@ export const TextTask = () => {
                 </li>
                 <li>
                     Если нет речи про порядок, то \( {"a_1 \\leqslant a_2 \\leqslant \\ldots \\leqslant a_n"} \).<br/>
+                </li>
+                <li>
+                    Если числа не обязательно различные, то 
                     <div className="frame-border">
                     \(\min{"{(a_i)}"} \cdot n \leqslant a_1 + a_2 + \ldots + a_n \leqslant \max{"{(a_i)}"} \cdot n\).
                     </div>
