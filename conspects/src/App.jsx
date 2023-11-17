@@ -27,6 +27,7 @@ import { Models } from "./inf/Models";
 import { Probability } from "./math/conspects/Probability";
 import { TextTask } from "./math/conspects/TextTask";
 import { Derivative } from "./math/conspects/Derivative";
+import { DerivativeSample } from "./math/conspects/DerivativeSample";
 
 export const App = () => {
 
@@ -74,6 +75,7 @@ export const App = () => {
             <Route path="/probability" element={<Probability/>} />
             <Route path="/derivative" element={<Derivative/>} />
             <Route path="/templates">
+                <Route path="/derivative" element={<DerivativeSample/>} />
                 <Route path="/params" element={<Params/>} />
                 <Route path="/text-task" element={<TextTask/>} />
             </Route>

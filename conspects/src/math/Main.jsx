@@ -32,6 +32,7 @@ export const Main = () =>
                 
                 // {text: "Комплексные числа", nav: "/complex"},
                 {text: "Шаблоны решения задач", num: true, children: [
+                    {text: "Исследование функции", nav: "/templates/derivative"},
                     {text: "Задачи с параметром", nav: "/templates/params"},
                     {text: "Сюжетные задачи", nav: "/templates/text-task"}
                 ]}
