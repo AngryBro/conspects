@@ -3,6 +3,7 @@ import { Title } from "../Title";
 import { Content } from "../../Content";
 import { Block } from "../../Block";
 import { Props } from "../../Props";
+import { Cases } from "../../Cases";
 
 export const Derivative = () => {
 
@@ -64,18 +65,30 @@ export const Derivative = () => {
         </Block>
         <Block link={geometry} title="Геометрический смысл" beginRef={main}>
             <p>
-                Линия \(y = f(x)\) касается линии \(y = \varphi(x)\) в точке \(x_0\):
+                Кривая \(y = f(x)\) касается линии \(y = \varphi(x)\) в точке \(x_0\):
             </p><br/>
             <p>
                 \(
                     \cases{"{f(x) = \\varphi(x) \\\\ f'_x(x) = \\varphi'_x(x) \\\\ x = x_0}"}
                 \)
             </p>
+            <div className="p">
+                <Cases one={1}>
+                    <div className="frame-border">
+                        <p>
+                            Кривая \(y = f(x)\) касается прямой \( y = ax+b \) в точке \(x_0\):
+                        </p><br />
+                        <p>
+                            \( f'_x(x_0) = a \)
+                        </p>
+                    </div>
+                </Cases>
+            </div>
         </Block>
         <Block link={integral} title="Первообразная и интеграл" beginRef={main}>
             <p>
-                Первообразная функции \(f(x)\) &mdash; функция \(F(x)\), удовлетворяющая 
-                равенству \(f(x) = F'_x(x) \).
+                Первообразная функции \(f(x)\) &mdash; функция \(F(x)\), где 
+                \(f(x) = F'_x(x) \).
             </p>
             <br />
             <p>
